@@ -19,7 +19,7 @@ class Google_Service_Chromewebstore_InAppProduct extends Google_Collection
 {
   protected $collection_key = 'prices';
   protected $internal_gapi_mappings = array(
-        "itemId" => "item_id",
+        "itemId" => "iteid",
   );
   public $itemId;
   public $kind;

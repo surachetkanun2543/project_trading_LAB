@@ -29,7 +29,7 @@ class Google_Service_CloudSearch_Resource_IndexingDatasourcesItems extends Googl
    * Deletes Item resource for the specified resource name. (items.delete)
    *
    * @param string $name Required. Name of the item to delete. Format:
-   * datasources/{source_id}/items/{item_id}
+   * datasources/{source_id}/items/{iteid}
    * @param array $optParams Optional parameters.
    *
    * @opt_param string connectorName Name of connector making this call. Format:
@@ -73,7 +73,7 @@ class Google_Service_CloudSearch_Resource_IndexingDatasourcesItems extends Googl
    * Gets Item resource by item name. (items.get)
    *
    * @param string $name Name of the item to get info. Format:
-   * datasources/{source_id}/items/{item_id}
+   * datasources/{source_id}/items/{iteid}
    * @param array $optParams Optional parameters.
    *
    * @opt_param string connectorName Name of connector making this call. Format:
@@ -94,7 +94,7 @@ class Google_Service_CloudSearch_Resource_IndexingDatasourcesItems extends Googl
    * provided values are cleared out in the Cloud Search index. (items.index)
    *
    * @param string $name Name of the Item. Format:
-   * datasources/{source_id}/items/{item_id} This is a required field. The maximum
+   * datasources/{source_id}/items/{iteid} This is a required field. The maximum
    * length is 1536 characters.
    * @param Google_Service_CloudSearch_IndexItemRequest $postBody
    * @param array $optParams Optional parameters.
@@ -206,7 +206,7 @@ class Google_Service_CloudSearch_Resource_IndexingDatasourcesItems extends Googl
    * (items.upload)
    *
    * @param string $name Name of the Item to start a resumable upload. Format:
-   * datasources/{source_id}/items/{item_id}.
+   * datasources/{source_id}/items/{iteid}.
    * @param Google_Service_CloudSearch_StartUploadItemRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudSearch_UploadItemRef

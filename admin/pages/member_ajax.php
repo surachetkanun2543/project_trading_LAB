@@ -7,11 +7,11 @@ $status = "";
 $msg = "";
 
 if ($_POST['action'] == 'edit') {
-    if (!empty($_POST['m_id'])) {
+    if (!empty($_POST['id'])) {
 
-        $m_id = secureStr($_POST['m_id']);
-        $m_id = $conn->escape_string($_POST['m_id']);
-        $sql = "select * from  tbl_member where m_id='" . $m_id . "' limit 1 ";
+        $id = secureStr($_POST['id']);
+        $id = $conn->escape_string($_POST['id']);
+        $sql = "select * from  tb_user where id='" . $id . "' limit 1 ";
         $rs = $conn->query($sql);
         $row = $rs->fetch_array();
         echo json_encode($row);
@@ -21,11 +21,11 @@ if ($_POST['action'] == 'edit') {
 
 // delete function
 if ($_POST['action'] == 'delete') {
-    if (!empty($_POST['m_id'])) {
+    if (!empty($_POST['id'])) {
 
-        $m_id = secureStr($_POST['m_id']);
-        $m_id = $conn->escape_string($_POST['m_id']);
-        $sql = "delete from tbl_member where m_id='" . $m_id . "' ";
+        $id = secureStr($_POST['id']);
+        $id = $conn->escape_string($_POST['id']);
+        $sql = "delete from tb_user where id='" . $id . "' ";
         $rs = $conn->query($sql);
         if ($rs) {
             $status = "ok";
@@ -49,23 +49,15 @@ if ($_POST['action'] == 'delete') {
 if ($_POST['action'] == 'update') {
     if (!empty($_POST['txt_user'])) {
 
-        $m_id = secureStr($_POST['m_id']);
-        $m_user =  secureStr($_POST['txt_user']);
-        $m_pass =  secureStr($_POST['txt_pass']);
-        $m_name =  secureStr($_POST['txt_name']);
-        $m_email = secureStr($_POST['txt_email']);
-        $m_tel =  secureStr($_POST['txt_tel']);
-        $m_address =  secureStr($_POST['txt_address']);
+        $id = secureStr($_POST['id']);
+        $name =  secureStr($_POST['txt_user']);
+        $email = secureStr($_POST['txt_email']);
 
-        $m_id = $conn->escape_string($_POST['m_id']);
-        $m_user =  $conn->escape_string($_POST['txt_user']);
-        $m_pass =  sha1($conn->escape_string($_POST['txt_pass']));
-        $m_name =  $conn->escape_string($_POST['txt_name']);
-        $m_email =  $conn->escape_string($_POST['txt_email']);
-        $m_tel =  ($conn->escape_string($_POST['txt_tel']));
-        $m_address =  $conn->escape_string($_POST['txt_address']);
+        $id = $conn->escape_string($_POST['id']);
+        $name =  $conn->escape_string($_POST['txt_user']);
+        $email =  $conn->escape_string($_POST['txt_email']);
 
-        $sql = "UPDATE tbl_member SET  m_user='$m_user', m_pass='$m_pass', m_name='$m_name',m_email='$m_email',m_tel='$m_tel', m_address='$m_address' WHERE m_id='$m_id' ";
+        $sql = "UPDATE tb_user SET  name='$name',email='$email' WHERE id='$id' ";
 
         $rs = $conn->query($sql);
         if ($rs) {
@@ -91,23 +83,15 @@ if ($_POST['action'] == 'update') {
 if ($_POST['action'] == 'add') {
     if (!empty($_POST['txt_user'])) {
 
-        $m_id = secureStr($_POST['m_id']);
-        $m_user =  secureStr($_POST['txt_user']);
-        $m_pass =  secureStr($_POST['txt_pass']);
-        $m_name =  secureStr($_POST['txt_name']);
-        $m_email = secureStr($_POST['txt_email']);
-        $m_tel =  secureStr($_POST['txt_tel']);
-        $m_address =  secureStr($_POST['txt_address']);
+        $id = secureStr($_POST['id']);
+        $name =  secureStr($_POST['txt_user']);
+        $email = secureStr($_POST['txt_email']);
 
-        $m_id = $conn->escape_string($_POST['m_id']);
-        $m_user =  $conn->escape_string($_POST['txt_user']);
-        $m_pass =  sha1($conn->escape_string($_POST['txt_pass']));
-        $m_name =  $conn->escape_string($_POST['txt_name']);
-        $m_email =  $conn->escape_string($_POST['txt_email']);
-        $m_tel =  ($conn->escape_string($_POST['txt_tel']));
-        $m_address =  $conn->escape_string($_POST['txt_address']);
+        $id = $conn->escape_string($_POST['id']);
+        $name =  $conn->escape_string($_POST['txt_user']);
+        $email =  $conn->escape_string($_POST['txt_email']);
 
-        $sql = "INSERT INTO tbl_member(m_user, m_pass, m_name, m_email, m_tel, m_address) VALUES('$m_user', '$m_pass', '$m_name', '$m_email', '$m_tel', '$m_address')";
+        $sql = "INSERT INTO tb_user(name, email ) VALUES('$name', '$email')";
 
         $rs = $conn->query($sql);
         if ($rs) {

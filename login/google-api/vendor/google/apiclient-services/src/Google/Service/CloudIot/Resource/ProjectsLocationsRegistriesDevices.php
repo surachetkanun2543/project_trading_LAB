@@ -46,7 +46,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    *
    * @param string $name The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{nuid}`.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudIot_CloudiotEmpty
    */
@@ -61,7 +61,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    *
    * @param string $name The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{nuid}`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string fieldMask The fields of the `Device` resource to be
@@ -87,7 +87,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    * `ListDevicesResponse`; indicates that this is a continuation of a prior
    * `ListDevices` call and the system should return the next page of data.
    * @opt_param string fieldMask The fields of the `Device` resource to be
-   * returned in the response. The fields `id` and `num_id` are always returned,
+   * returned in the response. The fields `id` and `nuid` are always returned,
    * along with any other fields specified.
    * @opt_param int pageSize The maximum number of devices to return in the
    * response. If this value is zero, the service will select a default size. A
@@ -100,17 +100,17 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    * field is ignored. Maximum IDs: 10,000.
    * @opt_param string gatewayListOptions.associationsDeviceId If set, returns
    * only the gateways with which the specified device is associated. The device
-   * ID can be numeric (`num_id`) or the user-defined string (`id`). For example,
+   * ID can be numeric (`nuid`) or the user-defined string (`id`). For example,
    * if `456` is specified, returns only the gateways to which the device with
-   * `num_id` 456 is bound.
+   * `nuid` 456 is bound.
    * @opt_param string gatewayListOptions.gatewayType If `GATEWAY` is specified,
    * only gateways are returned. If `NON_GATEWAY` is specified, only non-gateway
    * devices are returned. If `GATEWAY_TYPE_UNSPECIFIED` is specified, all devices
    * are returned.
    * @opt_param string gatewayListOptions.associationsGatewayId If set, only
    * devices associated with the specified gateway are returned. The gateway ID
-   * can be numeric (`num_id`) or the user-defined string (`id`). For example, if
-   * `123` is specified, only devices bound to the gateway with `num_id` 123 are
+   * can be numeric (`nuid`) or the user-defined string (`id`). For example, if
+   * `123` is specified, only devices bound to the gateway with `nuid` 123 are
    * returned.
    * @return Google_Service_CloudIot_ListDevicesResponse
    */
@@ -127,7 +127,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    *
    * @param string $name The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{nuid}`.
    * @param Google_Service_CloudIot_ModifyCloudToDeviceConfigRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudIot_DeviceConfig
@@ -143,7 +143,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    *
    * @param string $name The resource path name. For example,
    * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
-   * `projects/p1/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * `projects/p1/locations/us-central1/registries/registry0/devices/{nuid}`.
    * When `name` is populated as a response from the service, it always ends in
    * the device numeric ID.
    * @param Google_Service_CloudIot_Device $postBody
@@ -177,7 +177,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevices extend
    *
    * @param string $name The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{nuid}`.
    * @param Google_Service_CloudIot_SendCommandToDeviceRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudIot_SendCommandToDeviceResponse

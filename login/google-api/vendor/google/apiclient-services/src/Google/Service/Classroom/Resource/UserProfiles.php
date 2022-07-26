@@ -40,12 +40,12 @@ class Google_Service_Classroom_Resource_UserProfiles extends Google_Service_Reso
    * * the numeric identifier for the user * the email address of the user * the
    * string literal `"me"`, indicating the requesting user
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Classroom_UserProfile
+   * @return Google_Service_ClassroonameProfile
    */
   public function get($userId, $optParams = array())
   {
     $params = array('userId' => $userId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Classroom_UserProfile");
+    return $this->call('get', array($params), "Google_Service_ClassroonameProfile");
   }
 }

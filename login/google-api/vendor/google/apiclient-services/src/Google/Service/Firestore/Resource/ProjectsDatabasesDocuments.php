@@ -79,7 +79,7 @@ class Google_Service_Firestore_Resource_ProjectsDatabasesDocuments extends Googl
    *
    * @param string $parent The parent resource. For example:
    * `projects/{project_id}/databases/{database_id}/documents` or `projects/{proje
-   * ct_id}/databases/{database_id}/documents/chatrooms/{chatroom_id}`
+   * ct_id}/databases/{database_id}/documents/chatrooms/{chatrooid}`
    * @param string $collectionId The collection ID, relative to `parent`, to list.
    * For example: `chatrooms`.
    * @param Google_Service_Firestore_Document $postBody

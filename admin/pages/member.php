@@ -59,7 +59,7 @@
                                 timer: 950
                             })
                             // clear data in form
-                            $("#m_id").val("");
+                            $("#id").val("");
                             $("#action").val("add"); // คืนค่ากลับไปที่เพิ่มข้อมูล
                             $("#txt_user").val("");
                             $("#txt_pass").val("");
@@ -78,20 +78,20 @@
             });
         });
 
-        function edit(m_id) {
+        function edit(id) {
             $.ajax({
                 type: "POST",
                 url: "member_ajax.php",
                 dataType: "json",
-                data: "action=edit&m_id=" + m_id,
+                data: "action=edit&id=" + id,
                 success: function(data) {
-                    $("#m_id").val(data.m_id);
+                    $("#id").val(data.id);
                     $("#action").val("update");
-                    $("#m_id").val(data.m_id);
-                    $("#txt_user").val(data.m_user);
+                    $("#id").val(data.id);
+                    $("#txt_user").val(data.name);
                     $("#txt_pass").val(data.m_pass);
                     $("#txt_name").val(data.m_name);
-                    $("#txt_email").val(data.m_email);
+                    $("#txt_email").val(data.email);
                     $("#txt_tel").val(data.m_tel);
                     $("#txt_address").val(data.m_address);
                 },
@@ -102,7 +102,7 @@
 
         }
 
-        function del(m_id) {
+        function del(id) {
             if (swal({
                     position: 'top-end',
                     icon: 'success',
@@ -115,7 +115,7 @@
                     type: "POST",
                     url: "member_ajax.php",
                     dataType: "json",
-                    data: "action=delete&m_id=" + m_id,
+                    data: "action=delete&id=" + id,
                     success: function(data) {
                         if (data.status != "ok") {
                             $("#report").html(data.msg); // show error
@@ -182,7 +182,7 @@
                         <textarea name="txt_address" class="form-control" id="txt_address" required></textarea><br>
                 </div>
                 <div class="modal-footer">
-                    <input type="hidden" name="m_id" id="m_id">
+                    <input type="hidden" name="id" id="id">
                     <input type="hidden" name="action" id="action" value="add">
                     <button style="width: 60px;height: 40px;" id="bt" class="btn btn-outline-primary shadow p-1"> <span class="fa fa-cloud-upload"></span> </button>&ensp;
                     </form>

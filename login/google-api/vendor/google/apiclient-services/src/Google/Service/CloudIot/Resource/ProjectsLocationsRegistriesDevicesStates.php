@@ -31,7 +31,7 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesDevicesStates 
    *
    * @param string $name The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
-   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{nuid}`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param int numStates The number of states to list. States are listed in

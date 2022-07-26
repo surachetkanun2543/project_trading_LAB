@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Classroom_UserProfile extends Google_Collection
+class Google_Service_ClassroonameProfile extends Google_Collection
 {
   protected $collection_key = 'permissions';
   public $emailAddress;

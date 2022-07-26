@@ -19,7 +19,7 @@ class Google_Service_Chromewebstore_Item extends Google_Collection
 {
   protected $collection_key = 'statusDetail';
   protected $internal_gapi_mappings = array(
-        "itemId" => "item_id",
+        "itemId" => "iteid",
   );
   public $crxVersion;
   public $id;

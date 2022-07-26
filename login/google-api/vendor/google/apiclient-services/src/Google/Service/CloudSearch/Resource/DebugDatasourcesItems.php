@@ -30,7 +30,7 @@ class Google_Service_CloudSearch_Resource_DebugDatasourcesItems extends Google_S
    * (items.checkAccess)
    *
    * @param string $name Item name, format:
-   * datasources/{source_id}/items/{item_id}
+   * datasources/{source_id}/items/{iteid}
    * @param Google_Service_CloudSearch_Principal $postBody
    * @param array $optParams Optional parameters.
    *

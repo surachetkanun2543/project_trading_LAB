@@ -10,7 +10,7 @@
   $query = "SELECT COUNT(*) AS SUM FROM tbl_admin ORDER BY admin_id" or die;
   $result1 = mysqli_query($conn, $query);
 
-  $query = "SELECT COUNT(*) AS SUM FROM tbl_member ORDER BY m_id" or die;
+  $query = "SELECT COUNT(*) AS SUM FROM tb_user ORDER BY id" or die;
   $result2 = mysqli_query($conn, $query);
 
   $query = "SELECT COUNT(*) AS SUM FROM tbl_type ORDER BY type_id" or die;
@@ -136,7 +136,7 @@
                 <div class="h2 card-title">
                   <?php
                   foreach ($result2 as $results) { ?>
-                    <h1 value="<?php echo $results["m_id"]; ?>">
+                    <h1 value="<?php echo $results["id"]; ?>">
                       <h1><?php echo $results["SUM"]; ?> คน</h1>
                     </h1>
                   <?php }

@@ -5,13 +5,13 @@ include('../../service/admin_connect.php');
 // if page is empty return  $_GET['page'] else return 1 ;
 $page = (!empty($_GET['page'])) ? $_GET['page'] : 1;
 if (!empty($_POST['q_name'])) {
-    $sql_search = " where m_user like '%" . $_POST['q_name'] . "%' "; // like '%keyword%'
+    $sql_search = " where name like '%" . $_POST['q_name'] . "%' "; // like '%keyword%'
 } else {
     $sql_search = '';
 }
 
 //get total rows
-$rs = $conn->query("select count(m_id) as num from tbl_member $sql_search "); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
+$rs = $conn->query("select count(id) as num from tb_user $sql_search "); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
 $totalRow =  $rs->fetch_array()['num'];
 $rowPerPage = 5;  // show 5 rows per a page
 // calulate number of Pages
@@ -22,7 +22,7 @@ else
 // calculate Start row
 $startRow = ($page - 1) * $rowPerPage;
 // query
-$rs = $conn->query("select * from tbl_member $sql_search limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$rs = $conn->query("select * from tb_user $sql_search limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 //echo $conn->error ; // for check error ;
 ?>
 <div class="table-responsive shadow mb-3 ">
@@ -32,10 +32,7 @@ $rs = $conn->query("select * from tbl_member $sql_search limit $startRow,$rowPer
     <tr>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ไอดี</td>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">บัญชีผู้ใช้</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">รหัสผ่าน</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ชื่อ</td>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">อีเมล</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ที่อยู่</td>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">แก้ไข</td>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ลบ</td>
     </tr>
@@ -45,14 +42,11 @@ $rs = $conn->query("select * from tbl_member $sql_search limit $startRow,$rowPer
         while ($row = $rs->fetch_array()) {
     ?>
             <tr>
-                <td><?php echo $row['m_id']; ?></td>
-                <td><?php echo $row['m_user']; ?></td>
-                <td><?php echo $row['m_pass']; ?></td>
-                <td><?php echo $row['m_name']; ?></td>
-                <td><?php echo $row['m_email']; ?></td>
-                <td><?php echo $row['m_address']; ?></td>
-                <td> <a href="#" onclick="edit(<?php echo $row['m_id']; ?>);" data-toggle="modal" data-target="#dataModal"  class='btn btn-outline-warning btn-lg font1 shadow p-1' style="width: 50px;height: 38px;" ><i class='fa fa-cog'></i> </a></td>
-                <td> <a href="#" onclick="javascript:del('<?php echo $row['m_id']; ?>');" class='btn btn-outline-danger btn-lg shadow p-1' style="width: 50px;height: 38px;"><i class="fa fa-bitbucket"></i> </a></td>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td> <a href="#" onclick="edit(<?php echo $row['id']; ?>);" data-toggle="modal" data-target="#dataModal"  class='btn btn-outline-warning btn-lg font1 shadow p-1' style="width: 50px;height: 38px;" ><i class='fa fa-cog'></i> </a></td>
+                <td> <a href="#" onclick="javascript:del('<?php echo $row['id']; ?>');" class='btn btn-outline-danger btn-lg shadow p-1' style="width: 50px;height: 38px;"><i class="fa fa-bitbucket"></i> </a></td>
             </tr>
 
     <?php

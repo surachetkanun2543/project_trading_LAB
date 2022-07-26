@@ -18,7 +18,7 @@
 class Google_Service_Classroom_Teacher extends Google_Model
 {
   public $courseId;
-  protected $profileType = 'Google_Service_Classroom_UserProfile';
+  protected $profileType = 'Google_Service_ClassroonameProfile';
   protected $profileDataType = '';
   public $userId;
 
@@ -31,14 +31,14 @@ class Google_Service_Classroom_Teacher extends Google_Model
     return $this->courseId;
   }
   /**
-   * @param Google_Service_Classroom_UserProfile
+   * @param Google_Service_ClassroonameProfile
    */
-  public function setProfile(Google_Service_Classroom_UserProfile $profile)
+  public function setProfile(Google_Service_ClassroonameProfile $profile)
   {
     $this->profile = $profile;
   }
   /**
-   * @return Google_Service_Classroom_UserProfile
+   * @return Google_Service_ClassroonameProfile
    */
   public function getProfile()
   {

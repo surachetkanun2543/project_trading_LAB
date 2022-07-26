@@ -18,7 +18,7 @@
 class Google_Service_Classroom_Guardian extends Google_Model
 {
   public $guardianId;
-  protected $guardianProfileType = 'Google_Service_Classroom_UserProfile';
+  protected $guardianProfileType = 'Google_Service_ClassroonameProfile';
   protected $guardianProfileDataType = '';
   public $invitedEmailAddress;
   public $studentId;
@@ -32,14 +32,14 @@ class Google_Service_Classroom_Guardian extends Google_Model
     return $this->guardianId;
   }
   /**
-   * @param Google_Service_Classroom_UserProfile
+   * @param Google_Service_ClassroonameProfile
    */
-  public function setGuardianProfile(Google_Service_Classroom_UserProfile $guardianProfile)
+  public function setGuardianProfile(Google_Service_ClassroonameProfile $guardianProfile)
   {
     $this->guardianProfile = $guardianProfile;
   }
   /**
-   * @return Google_Service_Classroom_UserProfile
+   * @return Google_Service_ClassroonameProfile
    */
   public function getGuardianProfile()
   {
