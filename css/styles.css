@@ -6,7 +6,6 @@
 
 html,
 body {
-  /* background-image: url('https://scontent.fbkk2-6.fna.fbcdn.net/v/t39.30808-6/295958352_2194855467340758_6486175851598264687_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH6oWDbFQGAO8cG8nA28NkE6ASFWmeJ8rjoBIVaZ4nyuLuhC7B3a3N2g25PKt_884ehd83jOW5qbWsJEqUG1PUx&_nc_ohc=KUOnSr8U0K0AX8T5vrM&_nc_zt=23&_nc_ht=scontent.fbkk2-6.fna&oh=00_AT_mAJdX17Z5Fb-row-7aiJltq7w_j8UcuzURHrAlw1S3w&oe=62E39EF3'); */
   background-image: url("../assets/img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;

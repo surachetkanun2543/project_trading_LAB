@@ -125,12 +125,8 @@ else :
                         ));
 
                         $response = curl_exec($curl);
-
                         curl_close($curl);
-
                         echo "<p>" . ($response) . "</p>";
-
-
 
                         ?>
                         <br>
@@ -139,7 +135,7 @@ else :
                         <a href="" class="active"></a>
                         <a class="btn" href="<?php echo $client->createAuthUrl(); ?>">SIGN IN WITH GOOGLE</a>
                     <?php endif; ?>
-                    <a class="btn" href="./admin/pages/index.php">ADMIN LOGIN</a>
+                    <a class="btn" href="./admin/pages/index.php">ADMIN</a>
                     </div>
                 </div>
             </div>
