@@ -28,7 +28,7 @@
   $p_id = secureStr($_GET['ID']);
   $p_id = $conn->escape_string($_GET['ID']);
   //2. query ข้อมูลจากตาราง:
-  $sql = "SELECT * FROM tbl_product as p INNER JOIN tbl_type as t on p.type_id=t.type_id ORDER BY p.type_id asc";
+  $sql = "SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id ORDER BY p.Assettype_id asc";
   $result = mysqli_query($conn, $sql) or die;
   $row = mysqli_fetch_array($result);
   extract($row);
@@ -79,7 +79,7 @@
         <li class="form-horizontal m-5 " align="left" style="font-size: 18px;"> <?php echo $row['p_detail']; ?></li>
         <hr>
         <h3 class="form-horizontal m-5" align="left" style="font-size: 18px; font-weight: bold;"> หมวดหมู่ </h3>
-        <li class="form-horizontal m-5" align="left" style="font-size: 18px;"><?php echo $row['type_name']; ?></li>
+        <li class="form-horizontal m-5" align="left" style="font-size: 18px;"><?php echo $row['Assettype_name']; ?></li>
         <hr>
         <hr>
         <div class="jumbotron  w-100 p-1">

@@ -22,7 +22,7 @@ else
 // calculate Start row
 $startRow = ($page - 1) * $rowPerPage;
 // query
-$rs = $conn->query("SELECT * FROM tbl_product as p INNER JOIN tbl_type as t on p.type_id=t.type_id   $sql_search  limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$rs = $conn->query("SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id   $sql_search  limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 //echo $conn->error ; // for check error ;
 
 // $query2 = "SELECT * FROM tbl_quantity ORDER BY p_q_id asc" or die;
@@ -48,7 +48,7 @@ if ($rs->num_rows > 0) {
     echo "<tr>";
     echo "<td>" . $row["p_id"] .  "</td> ";
     echo "<td>" . $row["p_name"] . "</td> ";
-    echo "<td>" . $row["type_id"] .  "</td> ";
+    echo "<td>" . $row["Assettype_id"] .  "</td> ";
     echo "<td>" . $row["p_detail"] . "</td> ";
     echo "<td class='img-fluid hover-shadow' align=center>" . "<img src='p_img/" . $row["p_img"] . "' width='100'>" . "</td>";
     echo "<td>" . $row["p_price"] . "&ensp;<label> บาท </label>" . "</td>";

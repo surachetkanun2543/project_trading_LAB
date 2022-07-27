@@ -7,13 +7,13 @@ include('../../service/admin_connect.php');  //ไฟล์เชื่อมต
 $p_id = secureStr($_GET['ID']);
 $p_id = $conn->escape_string($_GET['ID']);
 //2. query ข้อมูลจากตาราง:
-$sql = "SELECT * FROM tbl_product as p INNER JOIN tbl_type as t on p.type_id=t.type_id WHERE p.p_id = '$p_id' ORDER BY p.type_id asc";
+$sql = "SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id WHERE p.p_id = '$p_id' ORDER BY p.Assettype_id asc";
 $result2 = mysqli_query($conn, $sql) or die;
 $row = mysqli_fetch_array($result2);
 extract($row);
 
 //2. query ข้อมูลจากตาราง 
-$query = "SELECT * FROM tbl_type ORDER BY type_id asc" or die;
+$query = "SELECT * FROM tb_assettype ORDER BY Assettype_id asc" or die;
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 $result = mysqli_query($conn, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
@@ -36,12 +36,12 @@ $result = mysqli_query($conn, $query);
     <form name="addproduct" action="product_form_edit_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
       <input type="text" name="p_name" class="form-control" required placeholder="ชื่อสินค้า" value="<?php echo $p_name; ?>"><br>
       <input type="text" name="p_price" class="form-control" required placeholder="ราคาสินค้า" value="<?php echo $p_price; ?>">&ensp;
-      <select name="type_id" class="form-control" required>
-        <option value="<?php echo $row["type_id"]; ?>">
-          <?php echo $row["type_name"]; ?>
-        <option value="type_id">ประเภทสินค้า</option>
+      <select name="Assettype_id" class="form-control" required>
+        <option value="<?php echo $row["Assettype_id"]; ?>">
+          <?php echo $row["Assettype_name"]; ?>
+        <option value="Assettype_id">ประเภทสินค้า</option>
         <?php foreach ($result as $results) { ?>
-          <option value="<?php echo $results["type_id"]; ?>">
+          <option value="<?php echo $results["Assettype_id"]; ?>">
             <?php echo $results["t_name"]; ?>
           </option>
         <?php } ?>

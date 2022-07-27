@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title> จัดการชนิดสินค้า </title>
+    <title> จัดการหมวดหมู่สินทรัพย์ </title>
     <?php
     include('h.php');
     include("check.php");
@@ -11,6 +11,7 @@
     ?>
     <meta charset="utf-8">
 
+    <link rel="icon" href="../../assets/img/logo.png" type="image/icon type">
     <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/353/353343.svg" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.15.3/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -20,13 +21,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+
+
     <script language-="javascript">
         $().ready(function() {
             swal({
                 position: 'top-left',
                 buttons: false,
                 title: 'ยินดีต้อนรับเข้าสู่',
-                text: "หน้าจัดการชนิดสินค้า",
+                text: "หน้าจัดการหมวดหมู่สินทรัพย์",
                 timer: 700
             })
             show(1);
@@ -60,7 +63,7 @@
                                 timer: 950
                             })
                             // clear data in form
-                            $("#type_id").val("");
+                            $("#Assettype_id").val("");
                             $("#action").val("add"); // คืนค่ากลับไปที่เพิ่มข้อมูล
                             $("#txt_name").val("");
                         }
@@ -75,17 +78,17 @@
 
         });
 
-        function edit(type_id) {
+        function edit(Assettype_id) {
             $.ajax({
                 type: "POST",
                 url: "type_ajax.php",
                 dataType: "json",
-                data: "action=edit&type_id=" + type_id,
+                data: "action=edit&Assettype_id=" + Assettype_id,
                 success: function(data) {
-                    $("#type_id").val(data.type_id);
+                    $("#Assettype_id").val(data.Assettype_id);
                     $("#action").val("update");
-                    $("#type_id").val(data.type_id);
-                    $("#txt_name").val(data.type_name);
+                    $("#Assettype_id").val(data.Assettype_id);
+                    $("#txt_name").val(data.Assettype_name);
                 },
                 error: function(data) {
                     console.log(data.responseText);
@@ -94,7 +97,7 @@
 
         }
 
-        function del(type_id) {
+        function del(Assettype_id) {
             if (swal({
                     position: 'top-end',
                     icon: 'success',
@@ -106,7 +109,7 @@
                     type: "POST",
                     url: "type_ajax.php",
                     dataType: "json",
-                    data: "action=delete&type_id=" + type_id,
+                    data: "action=delete&Assettype_id=" + Assettype_id,
                     success: function(data) {
                         if (data.status != "ok") {
                             $("#report").html(data.msg); // show error
@@ -165,7 +168,7 @@
                 <div class="modal-body">
                     <form method="post" id="f" action="javascript:;" class="form-horizontal">
                         <input name="txt_name" type="text" required class="form-control" id="txt_name" placeholder="ชื่อหมวดหมู่สินค้า">
-                        <input type="hidden" name="type_id" id="type_id">
+                        <input type="hidden" name="Assettype_id" id="Assettype_id">
                         <input type="hidden" name="action" id="action" value="add">
                 </div>
                 <div class="modal-footer">

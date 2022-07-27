@@ -2,11 +2,11 @@
 include('./service/admin_connect.php');
 $page = (!empty($_GET['page'])) ? $_GET['page'] : 1;
 if (!empty($_POST['q_name'])) {
-    $sql_search = " WHERE p_name LIKE '%" . $_POST['q_name'] . "%' OR  type_name  LIKE '%" . $_POST['q_name'] . "%'";
+    $sql_search = " WHERE p_name LIKE '%" . $_POST['q_name'] . "%' OR  Assettype_name  LIKE '%" . $_POST['q_name'] . "%'";
 } else {
     $sql_search = '';
 }
-$sql = ("SELECT * FROM tbl_product as p INNER JOIN tbl_type as t on p.type_id=t.type_id $sql_search ORDER BY p_id DESC  "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$sql = ("SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id $sql_search ORDER BY p_id DESC  "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 $result = $conn->query($sql);
 ?>
 
@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
                     <div class="card-body">
                         <img class="card-img-top" src="admin/p_img/<?php echo $row["p_img"]; ?>">
                         <p class="card-text">>ชื่อ : <?php echo $row['p_name']; ?> </h2>
-                        <p class="card-text">>หมวดหมู่ : <?php echo $row['type_name']; ?> </h2>
+                        <p class="card-text">>หมวดหมู่ : <?php echo $row['Assettype_name']; ?> </h2>
                         </p>
                         <a href="#" class="btn btn-primary">฿ <?php echo $row['p_price']; ?> บาท</h2></a>
                         <input type="hidden" name="p_id" value="<?php echo $row["p_id"]; ?>" /><br>

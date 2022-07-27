@@ -11,7 +11,7 @@ $numrand = (mt_rand());
 //รับค่าไฟล์จากฟอร์ม
 $p_name = secureStr($_POST['p_name']);
 $p_price = secureStr($_POST['p_price']);
-$type_id = secureStr($_POST['type_id']);
+$Assettype_id = secureStr($_POST['Assettype_id']);
 $p_detail = secureStr($_POST['p_detail']);
 $upload = $_FILES['p_img'];
 // $p_img = (isset($_POST['p_img']) ? $_POST['p_img'] : '');
@@ -38,7 +38,7 @@ if ($upload <> '') {
 $sql = "INSERT INTO tbl_product
 		(
 		p_name,
-		type_id,
+		Assettype_id,
 		p_price,
 		p_detail,
 		p_img
@@ -46,7 +46,7 @@ $sql = "INSERT INTO tbl_product
 		VALUES
 		(
 		'$p_name',
-		'$type_id',
+		'$Assettype_id',
 		'$p_price',
 		'$p_detail',
 		'$newname')";

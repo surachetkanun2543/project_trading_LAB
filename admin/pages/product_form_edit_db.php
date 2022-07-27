@@ -14,7 +14,7 @@ $numrand = (mt_rand());
 $p_id = secureStr($_POST["p_id"]);
 $p_name = secureStr($_POST["p_name"]);
 $p_price = secureStr($_POST["p_price"]);
-$type_id = secureStr($_POST["type_id"]);
+$Assettype_id = secureStr($_POST["Assettype_id"]);
 $p_detail = secureStr($_POST["p_detail"]);
 $p_img = (isset($_POST['p_img']) ? $_POST['p_img'] : '');
 $img2 = $_POST['img2'];
@@ -39,7 +39,7 @@ if ($upload != '') {
 
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
 
-$sql = "UPDATE tbl_product SET  p_name='$p_name', type_id='$type_id' ,p_detail='$p_detail', p_img='$newname', p_price='$p_price'
+$sql = "UPDATE tbl_product SET  p_name='$p_name', Assettype_id='$Assettype_id' ,p_detail='$p_detail', p_img='$newname', p_price='$p_price'
 		WHERE p_id='$p_id' ";
 
 $result = mysqli_query($conn, $sql) or die;

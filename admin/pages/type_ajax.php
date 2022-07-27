@@ -7,12 +7,12 @@ $status = "";
 $msg = "";
 
 if ($_POST['action'] == 'edit') {
-    if (!empty($_POST['type_id'])) {
+    if (!empty($_POST['Assettype_id'])) {
 
-        $type_id = secureStr($_POST['type_id']);
-        $type_id = $conn->escape_string($_POST['type_id']);
+        $Assettype_id = secureStr($_POST['Assettype_id']);
+        $Assettype_id = $conn->escape_string($_POST['Assettype_id']);
         
-        $sql = "select * from  tbl_type where type_id='" . $type_id . "' limit 1 ";
+        $sql = "select * from  tb_assettype where Assettype_id='" . $Assettype_id . "' limit 1 ";
         $rs = $conn->query($sql);
         $row = $rs->fetch_array();
         // encode คือการแปล array ในแบบ php เป็นในรูปแบบ json
@@ -23,11 +23,11 @@ if ($_POST['action'] == 'edit') {
 
 // delete function
 if ($_POST['action'] == 'delete') {
-    if (!empty($_POST['type_id'])) {
+    if (!empty($_POST['Assettype_id'])) {
 
-        $type_id = secureStr($_POST['type_id']);
-        $type_id = $conn->escape_string($_POST['type_id']);
-        $sql = "delete from tbl_type where type_id='" . $type_id . "' ";
+        $Assettype_id = secureStr($_POST['Assettype_id']);
+        $Assettype_id = $conn->escape_string($_POST['Assettype_id']);
+        $sql = "delete from tb_assettype where Assettype_id='" . $Assettype_id . "' ";
         $rs = $conn->query($sql);
         if ($rs) {
             $status = "ok";
@@ -51,12 +51,12 @@ if ($_POST['action'] == 'delete') {
 if ($_POST['action'] == 'update') {
     if (!empty($_POST['txt_name'])) {
 
-        $type_id = secureStr($_POST['type_id']);
-        $type_id = $conn->escape_string($_POST['type_id']);
-        $type_name = secureStr($_POST['txt_name']);
-        $type_name =  $conn->escape_string($_POST['txt_name']);
+        $Assettype_id = secureStr($_POST['Assettype_id']);
+        $Assettype_id = $conn->escape_string($_POST['Assettype_id']);
+        $Assettype_name = secureStr($_POST['txt_name']);
+        $Assettype_name =  $conn->escape_string($_POST['txt_name']);
 
-        $sql = "UPDATE tbl_type SET type_name='$type_name' WHERE type_id='$type_id' ";
+        $sql = "UPDATE tb_assettype SET Assettype_name='$Assettype_name' WHERE Assettype_id='$Assettype_id' ";
 
         $rs = $conn->query($sql);
 
@@ -84,12 +84,12 @@ if ($_POST['action'] == 'update') {
 if ($_POST['action'] == 'add') {
     if (!empty($_POST['txt_name'])) {
 
-        $type_id = secureStr($_POST['type_id']);
-        $type_id = $conn->escape_string($_POST['type_id']);
-        $type_name = secureStr($_POST['txt_name']);
-        $type_name =  $conn->escape_string($_POST['txt_name']);
+        $Assettype_id = secureStr($_POST['Assettype_id']);
+        $Assettype_id = $conn->escape_string($_POST['Assettype_id']);
+        $Assettype_name = secureStr($_POST['txt_name']);
+        $Assettype_name =  $conn->escape_string($_POST['txt_name']);
 
-        $sql = "INSERT INTO tbl_type(type_name) VALUES ('$type_name')";
+        $sql = "INSERT INTO tb_assettype(Assettype_name) VALUES ('$Assettype_name')";
 
         $rs = $conn->query($sql);
         if ($rs) {

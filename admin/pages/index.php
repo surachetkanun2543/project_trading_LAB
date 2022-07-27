@@ -13,7 +13,7 @@
   $query = "SELECT COUNT(*) AS SUM FROM tb_user ORDER BY id" or die;
   $result2 = mysqli_query($conn, $query);
 
-  $query = "SELECT COUNT(*) AS SUM FROM tbl_type ORDER BY type_id" or die;
+  $query = "SELECT COUNT(*) AS SUM FROM tb_assettype ORDER BY Assettype_id" or die;
   $result3 = mysqli_query($conn, $query);
 
   $query = "SELECT COUNT(p_id) AS SUM FROM tbl_product ORDER BY p_id" or die;
@@ -154,7 +154,7 @@
                 <div class="h2 card-title">
                   <?php
                   foreach ($result3 as $results) { ?>
-                    <h1 value="<?php echo $results["type_id"]; ?>">
+                    <h1 value="<?php echo $results["Assettype_id"]; ?>">
                       <h1><?php echo $results["SUM"]; ?> หมวด</h1>
                     </h1>
                   <?php }

@@ -10,7 +10,7 @@
     include('../../service/admin_connect.php');
     error_reporting(error_reporting() & ~E_NOTICE);
 
-    $query = "SELECT * FROM tbl_type ORDER BY type_id asc" or die;
+    $query = "SELECT * FROM tb_assettype ORDER BY Assettype_id asc" or die;
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($conn, $query);
     //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
@@ -107,11 +107,11 @@
                 <form name="addproduct" action="product_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     <input type="text" name="p_name" class="form-control" required placeholder="ชื่อสินค้า" />&ensp;
                     <input type="text" name="p_price" class="form-control" required placeholder="ราคาสินค้า" />&ensp;
-                    <select name="type_id" class="form-control" required>
-                        <option value="type_id">ประเภทสินค้า</option>
+                    <select name="Assettype_id" class="form-control" required>
+                        <option value="Assettype_id">ประเภทสินค้า</option>
                         <?php foreach ($result as $results) { ?>
-                            <option value="<?php echo $results["type_id"]; ?>">
-                                <?php echo $results["type_name"]; ?>
+                            <option value="<?php echo $results["Assettype_id"]; ?>">
+                                <?php echo $results["Assettype_name"]; ?>
                             </option>
                         <?php } ?>
                     </select>&ensp;
