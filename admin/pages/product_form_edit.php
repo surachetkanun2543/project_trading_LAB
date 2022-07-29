@@ -7,13 +7,13 @@ include('../../service/admin_connect.php');  //ไฟล์เชื่อมต
 $p_id = secureStr($_GET['ID']);
 $p_id = $conn->escape_string($_GET['ID']);
 //2. query ข้อมูลจากตาราง:
-$sql = "SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id WHERE p.p_id = '$p_id' ORDER BY p.Assettype_id asc";
+$sql = "SELECT * FROM tbl_product as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id WHERE p.p_id = '$p_id' ORDER BY p.Assettype_id asc";
 $result2 = mysqli_query($conn, $sql) or die;
 $row = mysqli_fetch_array($result2);
 extract($row);
 
 //2. query ข้อมูลจากตาราง 
-$query = "SELECT * FROM tb_assettype ORDER BY Assettype_id asc" or die;
+$query = "SELECT * FROM tb_type ORDER BY Assettype_id asc" or die;
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 $result = mysqli_query($conn, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:

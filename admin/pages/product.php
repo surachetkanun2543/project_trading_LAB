@@ -10,7 +10,7 @@
     include('../../service/admin_connect.php');
     error_reporting(error_reporting() & ~E_NOTICE);
 
-    $query = "SELECT * FROM tb_assettype ORDER BY Assettype_id asc" or die;
+    $query = "SELECT * FROM tb_type ORDER BY Assettype_id asc" or die;
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($conn, $query);
     //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:

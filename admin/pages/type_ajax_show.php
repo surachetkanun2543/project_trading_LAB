@@ -11,7 +11,7 @@ if (!empty($_POST['q_name'])) {
 }
 
 //get total rows
-$rs = $conn->query("select count(Assettype_id) as num from tb_assettype $sql_search "); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
+$rs = $conn->query("select count(Assettype_id) as num from tb_type $sql_search "); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
 $totalRow =  $rs->fetch_array()['num'];
 $rowPerPage = 5;  // show 5 rows per a page
 // calulate number of Pages
@@ -22,7 +22,7 @@ else
 // calculate Start row
 $startRow = ($page - 1) * $rowPerPage;
 // query
-$rs = $conn->query("select * from tb_assettype $sql_search limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$rs = $conn->query("select * from tb_type $sql_search limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 //echo $conn->error ; // for check error ;
 ?>
 <table class="table table-striped shadow  mb-3 ">
@@ -31,11 +31,6 @@ $rs = $conn->query("select * from tb_assettype $sql_search limit $startRow,$rowP
     <tr>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ไอดี</td>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ชื่อประเภทสินทรัพย์</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ชื่อสินทรัพย์</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ราคาสินทรัพย์</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">รายละเอียด</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ไอคอนสินทรัพย์</td>
-        <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">บัญชีผู้ใช้</td>
 
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">แก้ไข</td>
         <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ลบ</td>
@@ -48,11 +43,6 @@ $rs = $conn->query("select * from tb_assettype $sql_search limit $startRow,$rowP
             <tr>
                 <td><?php echo $row['Assettype_id']; ?></td>
                 <td><?php echo $row['Assettype_name']; ?></td>
-                <td><?php echo $row['Assettype_assetname']; ?></td>
-                <td><?php echo $row['Assettype_assetprice']; ?></td>
-                <td><?php echo $row['Assettype_assetdetail']; ?></td>
-                <td><?php echo $row['Assettype_asseticon']; ?></td>
-                <td><?php echo $row['User_id']; ?></td>
 
 
                 <td> <a href="#" onclick="edit(<?php echo $row['Assettype_id']; ?>);" data-toggle="modal" data-target="#dataModal" class='btn btn-outline-warning btn-lg font1 shadow p-1 ' style="width: 50px;height: 38px;"><i class='fa fa-cog'></i> </a></td>

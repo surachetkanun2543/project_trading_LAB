@@ -6,7 +6,7 @@ if (!empty($_POST['q_name'])) {
 } else {
     $sql_search = '';
 }
-$sql = ("SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id $sql_search ORDER BY p_id DESC  "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$sql = ("SELECT * FROM tbl_product as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id $sql_search ORDER BY p_id DESC  "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 $result = $conn->query($sql);
 ?>
 

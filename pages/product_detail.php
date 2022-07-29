@@ -28,7 +28,7 @@
   $p_id = secureStr($_GET['ID']);
   $p_id = $conn->escape_string($_GET['ID']);
   //2. query ข้อมูลจากตาราง:
-  $sql = "SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id ORDER BY p.Assettype_id asc";
+  $sql = "SELECT * FROM tbl_product as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id ORDER BY p.Assettype_id asc";
   $result = mysqli_query($conn, $sql) or die;
   $row = mysqli_fetch_array($result);
   extract($row);

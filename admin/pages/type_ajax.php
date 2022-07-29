@@ -12,7 +12,7 @@ if ($_POST['action'] == 'edit') {
         $Assettype_id = secureStr($_POST['Assettype_id']);
         $Assettype_id = $conn->escape_string($_POST['Assettype_id']);
         
-        $sql = "select * from  tb_assettype where Assettype_id='" . $Assettype_id . "' limit 1 ";
+        $sql = "select * from  tb_type where Assettype_id='" . $Assettype_id . "' limit 1 ";
         $rs = $conn->query($sql);
         $row = $rs->fetch_array();
         // encode คือการแปล array ในแบบ php เป็นในรูปแบบ json
@@ -27,7 +27,7 @@ if ($_POST['action'] == 'delete') {
 
         $Assettype_id = secureStr($_POST['Assettype_id']);
         $Assettype_id = $conn->escape_string($_POST['Assettype_id']);
-        $sql = "delete from tb_assettype where Assettype_id='" . $Assettype_id . "' ";
+        $sql = "delete from tb_type where Assettype_id='" . $Assettype_id . "' ";
         $rs = $conn->query($sql);
         if ($rs) {
             $status = "ok";
@@ -56,7 +56,7 @@ if ($_POST['action'] == 'update') {
         $Assettype_name = secureStr($_POST['txt_name']);
         $Assettype_name =  $conn->escape_string($_POST['txt_name']);
 
-        $sql = "UPDATE tb_assettype SET Assettype_name='$Assettype_name' WHERE Assettype_id='$Assettype_id' ";
+        $sql = "UPDATE tb_type SET Assettype_name='$Assettype_name' WHERE Assettype_id='$Assettype_id' ";
 
         $rs = $conn->query($sql);
 
@@ -89,7 +89,7 @@ if ($_POST['action'] == 'add') {
         $Assettype_name = secureStr($_POST['txt_name']);
         $Assettype_name =  $conn->escape_string($_POST['txt_name']);
 
-        $sql = "INSERT INTO tb_assettype(Assettype_name) VALUES ('$Assettype_name')";
+        $sql = "INSERT INTO tb_type(Assettype_name) VALUES ('$Assettype_name')";
 
         $rs = $conn->query($sql);
         if ($rs) {

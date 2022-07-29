@@ -13,18 +13,18 @@
   $query = "SELECT COUNT(*) AS SUM FROM tb_user ORDER BY id" or die;
   $result2 = mysqli_query($conn, $query);
 
-  $query = "SELECT COUNT(*) AS SUM FROM tb_assettype ORDER BY Assettype_id" or die;
+  $query = "SELECT COUNT(*) AS SUM FROM tb_type ORDER BY Assettype_id" or die;
   $result3 = mysqli_query($conn, $query);
 
-  $query = "SELECT COUNT(p_id) AS SUM FROM tbl_product ORDER BY p_id" or die;
-  $result5 = mysqli_query($conn, $query);
+  // $query = "SELECT COUNT(p_id) AS SUM FROM tbl_product ORDER BY p_id" or die;
+  // $result5 = mysqli_query($conn, $query);
 
   ?>
 
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="refresh" content="5; url="<?php echo $_SERVER['PHP_SELF']; ?>"> -->
+    <!-- <meta http-equiv="refresh" content="20; url="<?php echo $_SERVER['PHP_SELF']; ?>"> -->
     <title>หน้าแรก - Admin Dashboard</title>
     <link rel="icon" href="../../assets/img/logo.png" type="image/icon type">
     <link href="../css/hrader-1.css" rel="stylesheet" />
@@ -111,7 +111,7 @@
         <p class="text-black">Admin Dashboard - รายงานภาพรวมของเว็บไซต์</p>
         <hr />
         <div class="row my-4">
-          <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="card">
               <h5 class="card-header text-black font-weight-normal">จำนวนแอดมิน</h5>
               <div class="card-body">
@@ -129,7 +129,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="card">
               <h5 class="card-header  text-black font-weight-normal">จำนวนสมาชิก</h5>
               <div class="card-body">
@@ -147,7 +147,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="card">
               <h5 class="card-header text-black font-weight-normal">หมวดหมู่สินทรัพย์</h5>
               <div class="card-body">
@@ -165,7 +165,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+          <!-- <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
             <div class="card">
               <h5 class="card-header text-black font-weight-normal">ประเมินความเสี่ยง</h5>
               <div class="card-body">
@@ -182,7 +182,7 @@
                 <a href="#" class="card-text text-seconds ">รายละเอียด</a>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="h1"></div>
           <div class="h1"></div>
           <div class="col-12 ">

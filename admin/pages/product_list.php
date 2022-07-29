@@ -22,7 +22,7 @@ else
 // calculate Start row
 $startRow = ($page - 1) * $rowPerPage;
 // query
-$rs = $conn->query("SELECT * FROM tbl_product as p INNER JOIN tb_assettype as t on p.Assettype_id=t.Assettype_id   $sql_search  limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$rs = $conn->query("SELECT * FROM tbl_product as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id   $sql_search  limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 //echo $conn->error ; // for check error ;
 
 // $query2 = "SELECT * FROM tbl_quantity ORDER BY p_q_id asc" or die;
