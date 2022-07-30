@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 .wrapper {
 
   padding: 50px; 
@@ -15,16 +15,13 @@ a {
   /* box-shadow: 5px 23px 31px -18px rgba(64,61,64,1); */
   text-decoration: none;
   color: #222;
+  font-family: 'Roboto Mono', monospace;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
   font-family: 'Roboto Mono', monospace;
-  
 }
 
 .sr-only {

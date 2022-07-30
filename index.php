@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- css -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <!-- font -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -65,7 +65,7 @@ if (isset($_GET['code'])) :
         if (mysqli_num_rows($get_user) > 0) {
 
             $_SESSION['login_id'] = $id;
-            header('Location: ./pages/home.php');
+            header('Location: ./pages/dashboard.php');
             exit;
         } else {
 
@@ -74,7 +74,7 @@ if (isset($_GET['code'])) :
 
             if ($insert) {
                 $_SESSION['login_id'] = $id;
-                header('Location: ./pages/home.php');
+                header('Location: ./pages/dashboard.php');
                 exit;
             } else {
                 echo "Sign up failed!(Something went wrong).";
