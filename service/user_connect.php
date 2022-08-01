@@ -9,3 +9,6 @@ if(mysqli_connect_errno()){
     exit;
 }
 
+
+$conn = mysqli_connect("localhost","root","","62011211078") or die;
+?>

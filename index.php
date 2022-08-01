@@ -22,7 +22,7 @@ require './service/user_connect.php';
 
 
 if (isset($_SESSION['login_id'])) {
-    header('Location: ./pages/home.php');
+    header('Location: ./pages/dashboard.php');
     exit;
 }
 

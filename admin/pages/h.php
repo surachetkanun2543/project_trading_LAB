@@ -61,8 +61,7 @@ $admin_name = ($_SESSION['admin_name']);
     background-color: red;
     color: #F1F1F1;
     text-align: center;
-    background: rgb(0,0,0);
-background: linear-gradient(122deg, rgba(0,0,0,1) 0%, rgba(104,103,147,1) 100%);
+    background: #343a40;
   }
 
   .table-table-striped {

@@ -1,5 +1,5 @@
 <?php
-include('./service/admin_connect.php');
+include('./service/user_connect.php');
 error_reporting(error_reporting() & ~E_NOTICE);
 $query = "SELECT * FROM tb_type ORDER BY Assettype_id asc" or die;
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .

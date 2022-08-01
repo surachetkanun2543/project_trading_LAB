@@ -13,8 +13,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: rgb(0,0,0);
-background: linear-gradient(122deg, rgba(0,0,0,1) 0%, rgba(104,103,147,1) 100%);
+  background: #343a40;
   /* box-shadow: 10px 4px 10px rgb(147, 141, 141); */
 }
 
@@ -78,6 +77,6 @@ background: linear-gradient(122deg, rgba(0,0,0,1) 0%, rgba(104,103,147,1) 100%);
 }
 
 .card-header {
-  background-color: #000010;
+  background: #343a40;
   color: rgb(255, 246, 246);
 }
