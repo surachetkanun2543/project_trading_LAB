@@ -75,159 +75,141 @@ if (mysqli_num_rows($get_user) > 0) {
             </div>
         </div>
     </nav>
-    <div class="container-fluid bg-light ">
+    <div class="container-fluid  ">
         <div class="row">
             <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb col-lg-12">
                         <h1 class="breadcrumb-item ">DASHBOARD</h1>
                     </ol>
+                    <br>
                 </nav>
-                <div class="row my-4 mb-4 ">
-                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="row my-4 mb-6 ">
+                    <div class="col-12 col-md-6 col-lg-3 mb-6 mb-lg-0">
                         <div class="card text-center">
-                            <h4 class="card-header bg-info text-white">ACCUMULATIVE RETURN</h4>
+                            <h3 class="card-header bg-info text-white">ACCUMULATIVE RETURN</h3>
                             <div class="card-body">
                                 <!-- <h5 class="card-title"> <?php foreach ($result as $results) { ?>  <?php echo $results["Assettype_name"]; ?> <?php } ?></h5> -->
                                 <br>
-                                <h2 class="card-title">5,000 USD</h2>
+                                <br>
+                                <h2 class="card-title text-success">+5,000 USD</h2>
+                                <br>
                                 <br>
                                 <p class="card-text text-success">18.2% increase since last month</p>
                                 <br>
+                                <br>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-3 mb-5 mb-lg-2 pb-3">
+                    <div class="col-12 col-md-6 col-lg-3 mb-8 mb-lg-2 pb-3">
                         <div class="card text-center">
-                            <h4 class="card-header bg-success text-white">WIN no.</h4>
+                            <h3 class="card-header bg-success text-white">WIN no.</h3>
                             <div class="card-body">
+                            <br>
                                 <br>
-                                <h2 class="card-title  "> 188 no.</h2>
+                                <h2 class="card-title">69 no.</h2>
                                 <br>
-                                <p class="card-text text-success">4.6% increase since last month</p>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
                                 <br>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card text-center">
-                            <h4 class="card-header bg-danger text-white">LOSS no.</h4>
+                            <h3 class="card-header bg-danger text-white">LOSS no.</h3>
                             <div class="card-body">
+                            <br>
                                 <br>
-                                <h2 class="card-title"> 59 no.</h5>
-                                    <br>
-                                    <p class="card-text text-danger">2.6% decrease since last month</p>
-                                    <br>
+                                <h2 class="card-title">20 no.</h2>
+                                <br>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
+                                <br>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card text-center">
-                            <h4 class="card-header bg-info text-white">TOTAL TRADERS</h4>
+                            <h3 class="card-header bg-info text-white">TOTAL TRADERS</h3>
                             <div class="card-body">
+                            <br>
                                 <br>
-                                <h2 class="card-title"> 247 no.</h5>
-                                    <br>
-                                    <p class="card-text text-success">2.5% increase since last month</p>
-                                    <br>
+                                <h2 class="card-title">160 no.</h2>
+                                <br>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
+                                <br>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card text-center">
-                            <h5 class="card-header">Latest transactions</h5>
+                            <h3 class="card-header bg-success text-white">RETURN FOR WIN</h3>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Order</th>
-                                                <th scope="col">Product</th>
-                                                <th scope="col">Customer</th>
-                                                <th scope="col">Total</th>
-                                                <th scope="col">Date</th>
-                                                <th scope="col"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">17371705</th>
-                                                <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                                <td>johndoe@gmail.com</td>
-                                                <td>€61.11</td>
-                                                <td>Aug 31 2020</td>
-                                                <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">17370540</th>
-                                                <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                                                <td>jacob.monroe@company.com</td>
-                                                <td>$153.11</td>
-                                                <td>Aug 28 2020</td>
-                                                <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">17371705</th>
-                                                <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                                <td>johndoe@gmail.com</td>
-                                                <td>€61.11</td>
-                                                <td>Aug 31 2020</td>
-                                                <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">17370540</th>
-                                                <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                                                <td>jacob.monroe@company.com</td>
-                                                <td>$153.11</td>
-                                                <td>Aug 28 2020</td>
-                                                <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">17371705</th>
-                                                <td>Volt Premium Bootstrap 5 Dashboard</td>
-                                                <td>johndoe@gmail.com</td>
-                                                <td>€61.11</td>
-                                                <td>Aug 31 2020</td>
-                                                <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">17370540</th>
-                                                <td>Pixel Pro Premium Bootstrap UI Kit</td>
-                                                <td>jacob.monroe@company.com</td>
-                                                <td>$153.11</td>
-                                                <td>Aug 28 2020</td>
-                                                <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <a href="#" class="btn btn-block btn-light">View all</a>
+                            <br>
+                                <br>
+                                <h2 class="card-title text-success ">+45,000 USD</h2>
+                                <br>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
+                                <br>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-xl-4">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
                         <div class="card text-center">
-                            <h5 class="card-header">Traffic last 6 months</h5>
+                            <h3 class="card-header bg-danger text-white">RETURN FOR LOSS</h3>
                             <div class="card-body">
-                                <div id="traffic-chart"></div>
+                            <br>
+                                <br>
+                                <h2 class="card-title text-danger">-3,000 USD</h2>
+                                <br>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
+                                <br>
                             </div>
                         </div>
-
-                        <div class="col-12 col-xl-12 mt-2 ">
-                            <div class="card text-center">
-                                <h5 class="card-header">Traffic last 6 months</h5>
-                                <div class="card-body">
-                                    <div id="traffic-chart2"></div>
-                                </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card text-center">
+                            <h3 class="card-header bg-success text-white">AVG RETURN FOR WIN</h3>
+                            <div class="card-body">
+                            <br>
+                                <br>
+                                <h2 class="card-title text-success">+4,000 USD</h2>
+                                <br>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card text-center">
+                            <h3 class="card-header bg-danger text-white">AVG RETURN FOR LOSS</h3>
+                            <div class="card-body">
+                            <br>
+                                <br>
+                                <h2 class="card-title text-danger">-400 USD</h2>
+                                <br>
+                                <br>
+                                <p class="card-text text-success">18.2% increase since last month</p>
+                                <br>
+                                <br>
                             </div>
                         </div>
                     </div>
                 </div>
         </div>
-        <footer class="pt-5 d-flex justify-content-between">
+        <!-- <footer class="pt-5 d-flex justify-content-between">
             <span>Copyright © 2022-2025 <> SURACHET</span>
             <ul class="nav m-0">
                 <li class="nav-item">
@@ -240,7 +222,7 @@ if (mysqli_num_rows($get_user) > 0) {
                     <a class="nav-link text-secondary" href="#">Contact</a>
                 </li>
             </ul>
-        </footer>
+        </footer> -->
         </main>
     </div>
     </div>
