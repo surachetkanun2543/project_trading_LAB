@@ -29,7 +29,7 @@ class Google_Service_AdSenseHost_Resource_Associationsessions extends Google_Ser
    * Create an association session for initiating an association with an AdSense
    * user. (associationsessions.start)
    *
-   * @param string|array $productCode Products to associate with the user.
+   * @param string|array $journalCode journals to associate with the user.
    * @param string $websiteUrl The URL of the user's hosted website.
    * @param array $optParams Optional parameters.
    *
@@ -37,9 +37,9 @@ class Google_Service_AdSenseHost_Resource_Associationsessions extends Google_Ser
    * @opt_param string websiteLocale The locale of the user's hosted website.
    * @return Google_Service_AdSenseHost_AssociationSession
    */
-  public function start($productCode, $websiteUrl, $optParams = array())
+  public function start($journalCode, $websiteUrl, $optParams = array())
   {
-    $params = array('productCode' => $productCode, 'websiteUrl' => $websiteUrl);
+    $params = array('journalCode' => $journalCode, 'websiteUrl' => $websiteUrl);
     $params = array_merge($params, $optParams);
     return $this->call('start', array($params), "Google_Service_AdSenseHost_AssociationSession");
   }

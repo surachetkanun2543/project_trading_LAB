@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductAmount extends Google_Model
+class Google_Service_ShoppingContent_journalAmount extends Google_Model
 {
   protected $priceAmountType = 'Google_Service_ShoppingContent_Price';
   protected $priceAmountDataType = '';

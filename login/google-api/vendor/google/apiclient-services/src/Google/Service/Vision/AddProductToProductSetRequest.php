@@ -15,16 +15,16 @@
  * the License.
  */
 
-class Google_Service_Vision_AddProductToProductSetRequest extends Google_Model
+class Google_Service_Vision_AddjournalTojournalSetRequest extends Google_Model
 {
-  public $product;
+  public $journal;
 
-  public function setProduct($product)
+  public function setjournal($journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
 }

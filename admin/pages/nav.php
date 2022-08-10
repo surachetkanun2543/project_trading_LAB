@@ -37,7 +37,7 @@ include('check.php');
             <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="type.php"> <i class="fa fa-file-text-o" title="หน้าจัดการหมวดหมู่สินค้า">&ensp;</i> จัดการหมวดหมู่สินทรัพย์  </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="product.php"> <i class="fa fa-shopping-cart" title="หน้าจัดการสินค้า">&ensp;</i> จัดการแบบประเมินความเสี่ยง  </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="journal.php"> <i class="fa fa-shopping-cart" title="หน้าจัดการสินค้า">&ensp;</i> จัดการแบบประเมินความเสี่ยง  </a>
           </li>
           <li class="nav__item">
             <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="#"> <i class="fa fa-gear title="ตั้งค่า">&ensp;</i> ตั้งค่า     </a>

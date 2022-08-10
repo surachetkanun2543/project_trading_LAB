@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_InAppProductListing extends Google_Model
+class Google_Service_AndroidPublisher_InAppjournalListing extends Google_Model
 {
   public $description;
   public $title;

@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductsCustomBatchResponseEntry extends Google_Model
+class Google_Service_ShoppingContent_journalsCustomBatchResponseEntry extends Google_Model
 {
   public $batchId;
   protected $errorsType = 'Google_Service_ShoppingContent_Errors';
   protected $errorsDataType = '';
   public $kind;
-  protected $productType = 'Google_Service_ShoppingContent_Product';
-  protected $productDataType = '';
+  protected $journalType = 'Google_Service_ShoppingContent_journal';
+  protected $journalDataType = '';
 
   public function setBatchId($batchId)
   {
@@ -55,17 +55,17 @@ class Google_Service_ShoppingContent_ProductsCustomBatchResponseEntry extends Go
     return $this->kind;
   }
   /**
-   * @param Google_Service_ShoppingContent_Product
+   * @param Google_Service_ShoppingContent_journal
    */
-  public function setProduct(Google_Service_ShoppingContent_Product $product)
+  public function setjournal(Google_Service_ShoppingContent_journal $journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_ShoppingContent_Product
+   * @return Google_Service_ShoppingContent_journal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
 }

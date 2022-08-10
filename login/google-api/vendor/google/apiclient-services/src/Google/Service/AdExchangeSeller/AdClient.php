@@ -20,7 +20,7 @@ class Google_Service_AdExchangeSeller_AdClient extends Google_Model
   public $arcOptIn;
   public $id;
   public $kind;
-  public $productCode;
+  public $journalCode;
   public $supportsReporting;
 
   public function setArcOptIn($arcOptIn)
@@ -47,13 +47,13 @@ class Google_Service_AdExchangeSeller_AdClient extends Google_Model
   {
     return $this->kind;
   }
-  public function setProductCode($productCode)
+  public function setjournalCode($journalCode)
   {
-    $this->productCode = $productCode;
+    $this->journalCode = $journalCode;
   }
-  public function getProductCode()
+  public function getjournalCode()
   {
-    return $this->productCode;
+    return $this->journalCode;
   }
   public function setSupportsReporting($supportsReporting)
   {

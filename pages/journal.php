@@ -2,9 +2,6 @@
 error_reporting(error_reporting() & ~E_NOTICE);
 require '../service/user_connect.php';
 
-$query = "SELECT * FROM tb_type ORDER BY Assettype_id asc" or die;
-$result = mysqli_query($conn, $query);
-
 
 if (!isset($_SESSION['login_id'])) {
     header('Location: ./index.php');
@@ -35,7 +32,7 @@ if (mysqli_num_rows($get_user) > 0) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -66,12 +63,12 @@ if (mysqli_num_rows($get_user) > 0) {
             <div class="col-8 col-md-5 col-lg-9 d-flex align-items-center  justify-content-md-end mt-3 mt-md-0">
                 <div class="dropdown text-light">
                     <button class="btn   text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                        สวัสดีตอนเย็นคุณ : <?php echo $user['name']; ?>
+                       สวัสดีตอนเที่ยงคุณ : <?php echo $user['name']; ?>
                         <img class="btn  dropdown-toggle" src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" alt="img_user" width="60" height="45">
                     </button>
 
                     <ul class="dropdown-menu text-light" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">Risk Profile</a></li>
+                        <li><a class="dropdown-item" href="riskprofile.php">Risk Profile</a></li>
                         <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
                     </ul>
                 </div>
@@ -91,71 +88,81 @@ if (mysqli_num_rows($get_user) > 0) {
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
                         <div class="card">
                             <h5 class="card-header">TRADING LOG</h5>
-                           
-                            <div class="card-body">
+                          
+                            <div class="card-body text-right">
+                            <button type="button" class='  btn btn-success view_data mb-3'><i class="fa fa-plus " > </i> เพิ่มบันทึกใหม่ </button>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-hover" id="myTable" style="width: 100%;">
-                                        <thead class="thead-dark">
+                                    <table class="table table-bordered table-hover" id="myTable" style="width: 100%;">
+                                        <thead class="thead-dark mb-3">
+                                        
                                             <th>
-                                                assetname
+                                                หมวดหมู่
                                             </th>
                                             <th>
-                                                assetprice
+                                                สินทรัพย์
                                             </th>
                                             <th>
-                                                assettype
+                                                ราคาสินทรัพย์ที่ซื้อ
+                                            </th>
+
+                                            <th>
+                                                จำนวนสินทรัพย์
                                             </th>
                                             <th>
-                                                assetvolume
+                                                วันที่ซื้อ
                                             </th>
                                             <th>
-                                                assetdate
+                                                บันทึก
                                             </th>
                                             <th>
-                                                assetnote
+                                                รูปภาพ
                                             </th>
                                             <th>
-                                                assetimge
+                                                ราคาตัดขาดทุน
                                             </th>
                                             <th>
-                                                assetsl
+                                                ราคาขายทำกำไร
                                             </th>
                                             <th>
-                                                assettg
+                                                ต้นทุนเฉลี่ย
                                             </th>
                                             <th>
-                                                assetavgcost
+                                                ต้นทุนเฉลี่ยทั้งหมด
                                             </th>
                                             <th>
-                                                assettotalcost
+                                                แก้ไข
                                             </th>
                                             <th>
-                                                tb_type
+                                                ลบ
                                             </th>
-                                            <th>
-                                                User_id
-                                            </th>
+
                                         </thead>
 
                                         <tbody>
                                             <?php
 
-                                            $query = "SELECT * FROM tb_journal";
-                                            $result = mysqli_query($conn, $query);
+                                            // $query = "SELECT * FROM tb_journal";
+
+                                            $sql = ("SELECT * FROM tb_journal as j INNER JOIN tb_type as t on j.tb_type=t.Assettype_id  "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+
+
+
+                                            $result = mysqli_query($conn, $sql);
 
                                             foreach ($result as $user) {
-
                                             ?>
+
                                                 <tr>
+                                                    <td>
+                                                        <?php echo $user['Assettype_name']  ?>
+                                                    </td>
                                                     <td>
                                                         <?php echo $user['assetname']  ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $user['assetprice']  ?>
                                                     </td>
-                                                    <td>
-                                                        <?php echo $user['assettype']  ?>
-                                                    </td>
+
                                                     <td>
                                                         <?php echo $user['assetvolume']  ?>
                                                     </td>
@@ -181,17 +188,21 @@ if (mysqli_num_rows($get_user) > 0) {
                                                         <?php echo $user['assettotalcost']  ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $user['tb_type']  ?>
+                                                        <a href="#" onclick="edit(<?php echo $row['id']; ?>);" data-toggle="modal" data-target="#dataModal" class='btn btn-warning btn-lg font1  p-1' style="width: 50px;height: 38px;"><i class='fas fa-cog'></i> </a>
                                                     </td>
+
                                                     <td>
-                                                        <?php echo $user['User_id']  ?>
+                                                        <a href="#" onclick="javascript:del('<?php echo $row['id']; ?>');" class='btn btn-danger btn-lg  p-1' style="width: 50px;height: 38px;"><i class="fa-solid fa-box-archive"></i> </a>
                                                     </td>
+
                                                 </tr>
 
                                             <?php
 
+
                                             }
                                             ?>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -205,10 +216,10 @@ if (mysqli_num_rows($get_user) > 0) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script>
-            $(document).ready(function() {
-                $("#myTable").DataTable();
-            });
-        </script>
+        $(document).ready(function() {
+            $("#myTable").DataTable();
+        });
+    </script>
 </body>
 
 </html>

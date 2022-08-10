@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="./assets/img/logo.png" type="image/icon type">
     <title>จดบันทึกและวิเคราะห์การลงทุน</title>
 </head>
@@ -131,11 +131,11 @@ else :
                         ?>
                         <br>
                         <br>
-                         <div class="btnbtn">
+                    <div class="btnbtn">
                         <a href="" class="active"></a>
-                        <a class="btn" href="<?php echo $client->createAuthUrl(); ?>">SIGN IN WITH GOOGLE</a>
+                        <a class="btn" href="<?php echo $client->createAuthUrl(); ?>"><i class="fa-brands fa-google-plus-g"></i> SIGN IN WITH GOOGLE</a>
                     <?php endif; ?>
-                    <a class="btn" href="./admin/pages/index.php">ADMIN</a>
+                    <!-- <a class="btn" href="./admin/pages/index.php">ADMIN</a> -->
                     </div>
                 </div>
             </div>

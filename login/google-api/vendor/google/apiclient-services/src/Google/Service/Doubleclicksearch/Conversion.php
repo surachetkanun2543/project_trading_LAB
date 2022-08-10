@@ -41,10 +41,10 @@ class Google_Service_Doubleclicksearch_Conversion extends Google_Collection
   public $engineAccountId;
   public $floodlightOrderId;
   public $inventoryAccountId;
-  public $productCountry;
-  public $productGroupId;
-  public $productId;
-  public $productLanguage;
+  public $journalCountry;
+  public $journalGroupId;
+  public $journalId;
+  public $journalLanguage;
   public $quantityMillis;
   public $revenueMicros;
   public $segmentationId;
@@ -234,37 +234,37 @@ class Google_Service_Doubleclicksearch_Conversion extends Google_Collection
   {
     return $this->inventoryAccountId;
   }
-  public function setProductCountry($productCountry)
+  public function setjournalCountry($journalCountry)
   {
-    $this->productCountry = $productCountry;
+    $this->journalCountry = $journalCountry;
   }
-  public function getProductCountry()
+  public function getjournalCountry()
   {
-    return $this->productCountry;
+    return $this->journalCountry;
   }
-  public function setProductGroupId($productGroupId)
+  public function setjournalGroupId($journalGroupId)
   {
-    $this->productGroupId = $productGroupId;
+    $this->journalGroupId = $journalGroupId;
   }
-  public function getProductGroupId()
+  public function getjournalGroupId()
   {
-    return $this->productGroupId;
+    return $this->journalGroupId;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
-  public function setProductLanguage($productLanguage)
+  public function setjournalLanguage($journalLanguage)
   {
-    $this->productLanguage = $productLanguage;
+    $this->journalLanguage = $journalLanguage;
   }
-  public function getProductLanguage()
+  public function getjournalLanguage()
   {
-    return $this->productLanguage;
+    return $this->journalLanguage;
   }
   public function setQuantityMillis($quantityMillis)
   {

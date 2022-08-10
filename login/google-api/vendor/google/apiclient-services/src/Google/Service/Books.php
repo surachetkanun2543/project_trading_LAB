@@ -1158,7 +1158,7 @@ class Google_Service_Books extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'product' => array(
+                'journal' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1195,7 +1195,7 @@ class Google_Service_Books extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'product' => array(
+                'journal' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -1224,7 +1224,7 @@ class Google_Service_Books extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'product' => array(
+                'journal' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

@@ -18,19 +18,19 @@
 class Google_Service_AndroidEnterprise_AppVersion extends Google_Collection
 {
   protected $collection_key = 'trackId';
-  public $isProduction;
+  public $isjournalion;
   public $track;
   public $trackId;
   public $versionCode;
   public $versionString;
 
-  public function setIsProduction($isProduction)
+  public function setIsjournalion($isjournalion)
   {
-    $this->isProduction = $isProduction;
+    $this->isjournalion = $isjournalion;
   }
-  public function getIsProduction()
+  public function getIsjournalion()
   {
-    return $this->isProduction;
+    return $this->isjournalion;
   }
   public function setTrack($track)
   {

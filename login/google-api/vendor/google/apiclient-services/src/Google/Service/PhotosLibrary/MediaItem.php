@@ -25,7 +25,7 @@ class Google_Service_PhotosLibrary_MediaItem extends Google_Model
   protected $mediaMetadataType = 'Google_Service_PhotosLibrary_MediaMetadata';
   protected $mediaMetadataDataType = '';
   public $mimeType;
-  public $productUrl;
+  public $journalUrl;
 
   public function setBaseUrl($baseUrl)
   {
@@ -87,12 +87,12 @@ class Google_Service_PhotosLibrary_MediaItem extends Google_Model
   {
     return $this->mimeType;
   }
-  public function setProductUrl($productUrl)
+  public function setjournalUrl($journalUrl)
   {
-    $this->productUrl = $productUrl;
+    $this->journalUrl = $journalUrl;
   }
-  public function getProductUrl()
+  public function getjournalUrl()
   {
-    return $this->productUrl;
+    return $this->journalUrl;
   }
 }

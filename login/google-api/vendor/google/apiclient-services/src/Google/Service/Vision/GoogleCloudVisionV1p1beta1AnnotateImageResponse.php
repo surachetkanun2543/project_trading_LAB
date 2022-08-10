@@ -38,8 +38,8 @@ class Google_Service_Vision_GoogleCloudVisionV1p1beta1AnnotateImageResponse exte
   protected $localizedObjectAnnotationsDataType = 'array';
   protected $logoAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1EntityAnnotation';
   protected $logoAnnotationsDataType = 'array';
-  protected $productSearchResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResults';
-  protected $productSearchResultsDataType = '';
+  protected $journalSearchResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResults';
+  protected $journalSearchResultsDataType = '';
   protected $safeSearchAnnotationType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1SafeSearchAnnotation';
   protected $safeSearchAnnotationDataType = '';
   protected $textAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1EntityAnnotation';
@@ -188,18 +188,18 @@ class Google_Service_Vision_GoogleCloudVisionV1p1beta1AnnotateImageResponse exte
     return $this->logoAnnotations;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResults
+   * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResults
    */
-  public function setProductSearchResults(Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResults $productSearchResults)
+  public function setjournalSearchResults(Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResults $journalSearchResults)
   {
-    $this->productSearchResults = $productSearchResults;
+    $this->journalSearchResults = $journalSearchResults;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResults
+   * @return Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResults
    */
-  public function getProductSearchResults()
+  public function getjournalSearchResults()
   {
-    return $this->productSearchResults;
+    return $this->journalSearchResults;
   }
   /**
    * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1SafeSearchAnnotation

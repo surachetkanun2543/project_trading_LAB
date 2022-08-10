@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductstatusesCustomBatchResponseEntry extends Google_Model
+class Google_Service_ShoppingContent_journalstatusesCustomBatchResponseEntry extends Google_Model
 {
   public $batchId;
   protected $errorsType = 'Google_Service_ShoppingContent_Errors';
   protected $errorsDataType = '';
   public $kind;
-  protected $productStatusType = 'Google_Service_ShoppingContent_ProductStatus';
-  protected $productStatusDataType = '';
+  protected $journalStatusType = 'Google_Service_ShoppingContent_journalStatus';
+  protected $journalStatusDataType = '';
 
   public function setBatchId($batchId)
   {
@@ -55,17 +55,17 @@ class Google_Service_ShoppingContent_ProductstatusesCustomBatchResponseEntry ext
     return $this->kind;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductStatus
+   * @param Google_Service_ShoppingContent_journalStatus
    */
-  public function setProductStatus(Google_Service_ShoppingContent_ProductStatus $productStatus)
+  public function setjournalStatus(Google_Service_ShoppingContent_journalStatus $journalStatus)
   {
-    $this->productStatus = $productStatus;
+    $this->journalStatus = $journalStatus;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductStatus
+   * @return Google_Service_ShoppingContent_journalStatus
    */
-  public function getProductStatus()
+  public function getjournalStatus()
   {
-    return $this->productStatus;
+    return $this->journalStatus;
   }
 }

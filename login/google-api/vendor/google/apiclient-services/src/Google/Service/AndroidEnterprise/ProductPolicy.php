@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductPolicy extends Google_Collection
+class Google_Service_AndroidEnterprise_journalPolicy extends Google_Collection
 {
   protected $collection_key = 'tracks';
   protected $autoInstallPolicyType = 'Google_Service_AndroidEnterprise_AutoInstallPolicy';
   protected $autoInstallPolicyDataType = '';
   protected $managedConfigurationType = 'Google_Service_AndroidEnterprise_ManagedConfiguration';
   protected $managedConfigurationDataType = '';
-  public $productId;
+  public $journalId;
   public $trackIds;
   public $tracks;
 
@@ -54,13 +54,13 @@ class Google_Service_AndroidEnterprise_ProductPolicy extends Google_Collection
   {
     return $this->managedConfiguration;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setTrackIds($trackIds)
   {

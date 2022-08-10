@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ManufacturerCenter_ProductDetail extends Google_Model
+class Google_Service_ManufacturerCenter_journalDetail extends Google_Model
 {
   public $attributeName;
   public $attributeValue;

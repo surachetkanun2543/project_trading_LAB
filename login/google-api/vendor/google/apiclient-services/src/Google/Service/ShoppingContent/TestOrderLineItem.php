@@ -17,8 +17,8 @@
 
 class Google_Service_ShoppingContent_TestOrderLineItem extends Google_Model
 {
-  protected $productType = 'Google_Service_ShoppingContent_TestOrderLineItemProduct';
-  protected $productDataType = '';
+  protected $journalType = 'Google_Service_ShoppingContent_TestOrderLineItemjournal';
+  protected $journalDataType = '';
   public $quantityOrdered;
   protected $returnInfoType = 'Google_Service_ShoppingContent_OrderLineItemReturnInfo';
   protected $returnInfoDataType = '';
@@ -26,18 +26,18 @@ class Google_Service_ShoppingContent_TestOrderLineItem extends Google_Model
   protected $shippingDetailsDataType = '';
 
   /**
-   * @param Google_Service_ShoppingContent_TestOrderLineItemProduct
+   * @param Google_Service_ShoppingContent_TestOrderLineItemjournal
    */
-  public function setProduct(Google_Service_ShoppingContent_TestOrderLineItemProduct $product)
+  public function setjournal(Google_Service_ShoppingContent_TestOrderLineItemjournal $journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_ShoppingContent_TestOrderLineItemProduct
+   * @return Google_Service_ShoppingContent_TestOrderLineItemjournal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
   public function setQuantityOrdered($quantityOrdered)
   {

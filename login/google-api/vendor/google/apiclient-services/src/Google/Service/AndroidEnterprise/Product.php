@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_Product extends Google_Collection
+class Google_Service_AndroidEnterprise_journal extends Google_Collection
 {
   protected $collection_key = 'screenshotUrls';
   protected $appTracksType = 'Google_Service_AndroidEnterprise_TrackInfo';
@@ -34,14 +34,14 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
   public $kind;
   public $lastUpdatedTimestampMillis;
   public $minAndroidSdkVersion;
-  protected $permissionsType = 'Google_Service_AndroidEnterprise_ProductPermission';
+  protected $permissionsType = 'Google_Service_AndroidEnterprise_journalPermission';
   protected $permissionsDataType = 'array';
-  public $productId;
-  public $productPricing;
+  public $journalId;
+  public $journalPricing;
   public $recentChanges;
   public $requiresContainerApp;
   public $screenshotUrls;
-  protected $signingCertificateType = 'Google_Service_AndroidEnterprise_ProductSigningCertificate';
+  protected $signingCertificateType = 'Google_Service_AndroidEnterprise_journalSigningCertificate';
   protected $signingCertificateDataType = '';
   public $smallIconUrl;
   public $title;
@@ -172,34 +172,34 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
     return $this->minAndroidSdkVersion;
   }
   /**
-   * @param Google_Service_AndroidEnterprise_ProductPermission
+   * @param Google_Service_AndroidEnterprise_journalPermission
    */
   public function setPermissions($permissions)
   {
     $this->permissions = $permissions;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_ProductPermission
+   * @return Google_Service_AndroidEnterprise_journalPermission
    */
   public function getPermissions()
   {
     return $this->permissions;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
-  public function setProductPricing($productPricing)
+  public function setjournalPricing($journalPricing)
   {
-    $this->productPricing = $productPricing;
+    $this->journalPricing = $journalPricing;
   }
-  public function getProductPricing()
+  public function getjournalPricing()
   {
-    return $this->productPricing;
+    return $this->journalPricing;
   }
   public function setRecentChanges($recentChanges)
   {
@@ -226,14 +226,14 @@ class Google_Service_AndroidEnterprise_Product extends Google_Collection
     return $this->screenshotUrls;
   }
   /**
-   * @param Google_Service_AndroidEnterprise_ProductSigningCertificate
+   * @param Google_Service_AndroidEnterprise_journalSigningCertificate
    */
-  public function setSigningCertificate(Google_Service_AndroidEnterprise_ProductSigningCertificate $signingCertificate)
+  public function setSigningCertificate(Google_Service_AndroidEnterprise_journalSigningCertificate $signingCertificate)
   {
     $this->signingCertificate = $signingCertificate;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_ProductSigningCertificate
+   * @return Google_Service_AndroidEnterprise_journalSigningCertificate
    */
   public function getSigningCertificate()
   {

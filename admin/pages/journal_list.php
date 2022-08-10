@@ -11,7 +11,7 @@ if (!empty($_POST['q_name'])) {
 }
 
 //get total rows
-$rs = $conn->query("select count(p_id) as num from tbl_product $sql_search "); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
+$rs = $conn->query("select count(p_id) as num from tbl_journal $sql_search "); // query แบบมีเงื่อนไข ถ้ามีการส่งค่าค้นหา
 $totalRow =  $rs->fetch_array()['num'];
 $rowPerPage = 10;  // show 5 rows per a page
 // calulate number of Pages
@@ -22,7 +22,7 @@ else
 // calculate Start row
 $startRow = ($page - 1) * $rowPerPage;
 // query
-$rs = $conn->query("SELECT * FROM tbl_product as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id   $sql_search  limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+$rs = $conn->query("SELECT * FROM tbl_journal as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id   $sql_search  limit $startRow,$rowPerPage "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
 //echo $conn->error ; // for check error ;
 
 // $query2 = "SELECT * FROM tbl_quantity ORDER BY p_q_id asc" or die;
@@ -54,9 +54,9 @@ if ($rs->num_rows > 0) {
     echo "<td>" . $row["p_price"] . "&ensp;<label> บาท </label>" . "</td>";
 
     //แก้ไขข้อมูล
-    echo "<td> <a  href='product.php?act=edit&ID=$row[0]'  class='btn btn-outline-warning btn-lg font1 shadow p-1' style='width: 50px;height: 38px;'><i class='fa fa-cog'></i> </a></td> ";
+    echo "<td> <a  href='journal.php?act=edit&ID=$row[0]'  class='btn btn-outline-warning btn-lg font1 shadow p-1' style='width: 50px;height: 38px;'><i class='fa fa-cog'></i> </a></td> ";
     //ลบข้อมูล
-    echo "<td><a href='product_from_delete_db.php?ID=$row[0]' onclick=\"return confirm('ยืนยันการลบข้อมูล')\" class='btn btn-outline-danger btn-lg shadow p-1' style='width: 50px;height: 38px;'><i class='fa fa-bitbucket'></i> </a></td>";
+    echo "<td><a href='journal_from_delete_db.php?ID=$row[0]' onclick=\"return confirm('ยืนยันการลบข้อมูล')\" class='btn btn-outline-danger btn-lg shadow p-1' style='width: 50px;height: 38px;'><i class='fa fa-bitbucket'></i> </a></td>";
     echo "</tr>";
   }
 }

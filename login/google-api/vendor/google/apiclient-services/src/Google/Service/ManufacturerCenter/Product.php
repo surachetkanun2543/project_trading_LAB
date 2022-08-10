@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ManufacturerCenter_Product extends Google_Collection
+class Google_Service_ManufacturerCenter_journal extends Google_Collection
 {
   protected $collection_key = 'issues';
   protected $attributesType = 'Google_Service_ManufacturerCenter_Attributes';
@@ -27,7 +27,7 @@ class Google_Service_ManufacturerCenter_Product extends Google_Collection
   protected $issuesDataType = 'array';
   public $name;
   public $parent;
-  public $productId;
+  public $journalId;
   public $targetCountry;
 
   /**
@@ -96,13 +96,13 @@ class Google_Service_ManufacturerCenter_Product extends Google_Collection
   {
     return $this->parent;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setTargetCountry($targetCountry)
   {

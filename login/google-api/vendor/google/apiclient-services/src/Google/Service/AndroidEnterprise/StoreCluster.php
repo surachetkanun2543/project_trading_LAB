@@ -17,13 +17,13 @@
 
 class Google_Service_AndroidEnterprise_StoreCluster extends Google_Collection
 {
-  protected $collection_key = 'productId';
+  protected $collection_key = 'journalId';
   public $id;
   public $kind;
   protected $nameType = 'Google_Service_AndroidEnterprise_LocalizedText';
   protected $nameDataType = 'array';
   public $orderInPage;
-  public $productId;
+  public $journalId;
 
   public function setId($id)
   {
@@ -63,12 +63,12 @@ class Google_Service_AndroidEnterprise_StoreCluster extends Google_Collection
   {
     return $this->orderInPage;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

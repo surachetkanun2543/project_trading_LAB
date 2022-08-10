@@ -15,20 +15,20 @@
  * the License.
  */
 
-class Google_Service_Vision_PurgeProductsRequest extends Google_Model
+class Google_Service_Vision_PurgejournalsRequest extends Google_Model
 {
-  public $deleteOrphanProducts;
+  public $deleteOrphanjournals;
   public $force;
-  protected $productSetPurgeConfigType = 'Google_Service_Vision_ProductSetPurgeConfig';
-  protected $productSetPurgeConfigDataType = '';
+  protected $journalSetPurgeConfigType = 'Google_Service_Vision_journalSetPurgeConfig';
+  protected $journalSetPurgeConfigDataType = '';
 
-  public function setDeleteOrphanProducts($deleteOrphanProducts)
+  public function setDeleteOrphanjournals($deleteOrphanjournals)
   {
-    $this->deleteOrphanProducts = $deleteOrphanProducts;
+    $this->deleteOrphanjournals = $deleteOrphanjournals;
   }
-  public function getDeleteOrphanProducts()
+  public function getDeleteOrphanjournals()
   {
-    return $this->deleteOrphanProducts;
+    return $this->deleteOrphanjournals;
   }
   public function setForce($force)
   {
@@ -39,17 +39,17 @@ class Google_Service_Vision_PurgeProductsRequest extends Google_Model
     return $this->force;
   }
   /**
-   * @param Google_Service_Vision_ProductSetPurgeConfig
+   * @param Google_Service_Vision_journalSetPurgeConfig
    */
-  public function setProductSetPurgeConfig(Google_Service_Vision_ProductSetPurgeConfig $productSetPurgeConfig)
+  public function setjournalSetPurgeConfig(Google_Service_Vision_journalSetPurgeConfig $journalSetPurgeConfig)
   {
-    $this->productSetPurgeConfig = $productSetPurgeConfig;
+    $this->journalSetPurgeConfig = $journalSetPurgeConfig;
   }
   /**
-   * @return Google_Service_Vision_ProductSetPurgeConfig
+   * @return Google_Service_Vision_journalSetPurgeConfig
    */
-  public function getProductSetPurgeConfig()
+  public function getjournalSetPurgeConfig()
   {
-    return $this->productSetPurgeConfig;
+    return $this->journalSetPurgeConfig;
   }
 }

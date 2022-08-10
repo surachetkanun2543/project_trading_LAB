@@ -30,7 +30,7 @@ class Google_Service_AndroidEnterprise_Resource_Entitlements extends Google_Serv
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
-   * @param string $entitlementId The ID of the entitlement (a product ID), e.g.
+   * @param string $entitlementId The ID of the entitlement (a journal ID), e.g.
    * "app:com.google.android.gm".
    * @param array $optParams Optional parameters.
    */
@@ -45,7 +45,7 @@ class Google_Service_AndroidEnterprise_Resource_Entitlements extends Google_Serv
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
-   * @param string $entitlementId The ID of the entitlement (a product ID), e.g.
+   * @param string $entitlementId The ID of the entitlement (a journal ID), e.g.
    * "app:com.google.android.gm".
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidEnterprise_Entitlement
@@ -77,12 +77,12 @@ class Google_Service_AndroidEnterprise_Resource_Entitlements extends Google_Serv
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
-   * @param string $entitlementId The ID of the entitlement (a product ID), e.g.
+   * @param string $entitlementId The ID of the entitlement (a journal ID), e.g.
    * "app:com.google.android.gm".
    * @param Google_Service_AndroidEnterprise_Entitlement $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool install Set to true to also install the product on all the
+   * @opt_param bool install Set to true to also install the journal on all the
    * user's devices where possible. Failure to install on one or more devices will
    * not prevent this operation from returning successfully, as long as the
    * entitlement was successfully assigned to the user.
@@ -99,12 +99,12 @@ class Google_Service_AndroidEnterprise_Resource_Entitlements extends Google_Serv
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
-   * @param string $entitlementId The ID of the entitlement (a product ID), e.g.
+   * @param string $entitlementId The ID of the entitlement (a journal ID), e.g.
    * "app:com.google.android.gm".
    * @param Google_Service_AndroidEnterprise_Entitlement $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool install Set to true to also install the product on all the
+   * @opt_param bool install Set to true to also install the journal on all the
    * user's devices where possible. Failure to install on one or more devices will
    * not prevent this operation from returning successfully, as long as the
    * entitlement was successfully assigned to the user.

@@ -19,8 +19,8 @@ class Google_Service_Licensing_LicenseAssignment extends Google_Model
 {
   public $etags;
   public $kind;
-  public $productId;
-  public $productName;
+  public $journalId;
+  public $journalName;
   public $selfLink;
   public $skuId;
   public $skuName;
@@ -42,21 +42,21 @@ class Google_Service_Licensing_LicenseAssignment extends Google_Model
   {
     return $this->kind;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
-  public function setProductName($productName)
+  public function setjournalName($journalName)
   {
-    $this->productName = $productName;
+    $this->journalName = $journalName;
   }
-  public function getProductName()
+  public function getjournalName()
   {
-    return $this->productName;
+    return $this->journalName;
   }
   public function setSelfLink($selfLink)
   {

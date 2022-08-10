@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductSet extends Google_Collection
+class Google_Service_AndroidEnterprise_journalSet extends Google_Collection
 {
-  protected $collection_key = 'productVisibility';
+  protected $collection_key = 'journalVisibility';
   public $kind;
-  public $productId;
-  public $productSetBehavior;
-  protected $productVisibilityType = 'Google_Service_AndroidEnterprise_ProductVisibility';
-  protected $productVisibilityDataType = 'array';
+  public $journalId;
+  public $journalSetBehavior;
+  protected $journalVisibilityType = 'Google_Service_AndroidEnterprise_journalVisibility';
+  protected $journalVisibilityDataType = 'array';
 
   public function setKind($kind)
   {
@@ -32,34 +32,34 @@ class Google_Service_AndroidEnterprise_ProductSet extends Google_Collection
   {
     return $this->kind;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
-  public function setProductSetBehavior($productSetBehavior)
+  public function setjournalSetBehavior($journalSetBehavior)
   {
-    $this->productSetBehavior = $productSetBehavior;
+    $this->journalSetBehavior = $journalSetBehavior;
   }
-  public function getProductSetBehavior()
+  public function getjournalSetBehavior()
   {
-    return $this->productSetBehavior;
-  }
-  /**
-   * @param Google_Service_AndroidEnterprise_ProductVisibility
-   */
-  public function setProductVisibility($productVisibility)
-  {
-    $this->productVisibility = $productVisibility;
+    return $this->journalSetBehavior;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_ProductVisibility
+   * @param Google_Service_AndroidEnterprise_journalVisibility
    */
-  public function getProductVisibility()
+  public function setjournalVisibility($journalVisibility)
   {
-    return $this->productVisibility;
+    $this->journalVisibility = $journalVisibility;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_journalVisibility
+   */
+  public function getjournalVisibility()
+  {
+    return $this->journalVisibility;
   }
 }

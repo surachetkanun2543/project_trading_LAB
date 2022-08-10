@@ -17,11 +17,11 @@
 
 class Google_Service_AnalyticsReporting_EcommerceData extends Google_Collection
 {
-  protected $collection_key = 'products';
+  protected $collection_key = 'journals';
   public $actionType;
   public $ecommerceType;
-  protected $productsType = 'Google_Service_AnalyticsReporting_ProductData';
-  protected $productsDataType = 'array';
+  protected $journalsType = 'Google_Service_AnalyticsReporting_journalData';
+  protected $journalsDataType = 'array';
   protected $transactionType = 'Google_Service_AnalyticsReporting_TransactionData';
   protected $transactionDataType = '';
 
@@ -42,18 +42,18 @@ class Google_Service_AnalyticsReporting_EcommerceData extends Google_Collection
     return $this->ecommerceType;
   }
   /**
-   * @param Google_Service_AnalyticsReporting_ProductData
+   * @param Google_Service_AnalyticsReporting_journalData
    */
-  public function setProducts($products)
+  public function setjournals($journals)
   {
-    $this->products = $products;
+    $this->journals = $journals;
   }
   /**
-   * @return Google_Service_AnalyticsReporting_ProductData
+   * @return Google_Service_AnalyticsReporting_journalData
    */
-  public function getProducts()
+  public function getjournals()
   {
-    return $this->products;
+    return $this->journals;
   }
   /**
    * @param Google_Service_AnalyticsReporting_TransactionData

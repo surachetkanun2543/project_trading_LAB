@@ -23,14 +23,14 @@
  *   $referenceImages = $visionService->referenceImages;
  *  </code>
  */
-class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages extends Google_Service_Resource
+class Google_Service_Vision_Resource_ProjectsLocationsjournalsReferenceImages extends Google_Service_Resource
 {
   /**
    * Creates and returns a new ReferenceImage resource.
    *
    * The `bounding_poly` field is optional. If `bounding_poly` is not specified,
    * the system will try to detect regions of interest in the image that are
-   * compatible with the product_category on the parent product. If it is
+   * compatible with the journal_category on the parent journal. If it is
    * specified, detection is ALWAYS skipped. The system converts polygons into
    * non-rotated rectangles.
    *
@@ -40,16 +40,16 @@ class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages ex
    * Possible errors:
    *
    * * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-   * characters. * Returns INVALID_ARGUMENT if the product does not exist. *
+   * characters. * Returns INVALID_ARGUMENT if the journal does not exist. *
    * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-   * compatible with the parent product's product_category is detected. * Returns
+   * compatible with the parent journal's journal_category is detected. * Returns
    * INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
    * (referenceImages.create)
    *
-   * @param string $parent Resource name of the product in which to create the
+   * @param string $parent Resource name of the journal in which to create the
    * reference image.
    *
-   * Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+   * Format is `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID`.
    * @param Google_Service_Vision_ReferenceImage $postBody
    * @param array $optParams Optional parameters.
    *
@@ -70,7 +70,7 @@ class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages ex
    * Permanently deletes a reference image.
    *
    * The image metadata will be deleted right away, but search queries against
-   * ProductSets containing the image may still work until all related caches are
+   * journalSets containing the image may still work until all related caches are
    * refreshed.
    *
    * The actual image files are not deleted from Google Cloud Storage.
@@ -80,7 +80,7 @@ class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages ex
    *
    * Format is:
    *
-   * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMA
+   * `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID/referenceImages/IMA
    * GE_ID`
    * @param array $optParams Optional parameters.
    * @return Google_Service_Vision_VisionEmpty
@@ -103,7 +103,7 @@ class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages ex
    *
    * Format is:
    *
-   * `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMA
+   * `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID/referenceImages/IMA
    * GE_ID`.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Vision_ReferenceImage
@@ -119,14 +119,14 @@ class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages ex
    *
    * Possible errors:
    *
-   * * Returns NOT_FOUND if the parent product does not exist. * Returns
+   * * Returns NOT_FOUND if the parent journal does not exist. * Returns
    * INVALID_ARGUMENT if the page_size is greater than 100, or less   than 1.
-   * (referenceImages.listProjectsLocationsProductsReferenceImages)
+   * (referenceImages.listProjectsLocationsjournalsReferenceImages)
    *
-   * @param string $parent Resource name of the product containing the reference
+   * @param string $parent Resource name of the journal containing the reference
    * images.
    *
-   * Format is `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+   * Format is `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken A token identifying a page of results to be
@@ -138,7 +138,7 @@ class Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages ex
    * maximum 100.
    * @return Google_Service_Vision_ListReferenceImagesResponse
    */
-  public function listProjectsLocationsProductsReferenceImages($parent, $optParams = array())
+  public function listProjectsLocationsjournalsReferenceImages($parent, $optParams = array())
   {
     $params = array('parent' => $parent);
     $params = array_merge($params, $optParams);

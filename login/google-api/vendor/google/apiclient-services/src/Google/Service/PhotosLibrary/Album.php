@@ -20,7 +20,7 @@ class Google_Service_PhotosLibrary_Album extends Google_Model
   public $coverPhotoBaseUrl;
   public $id;
   public $isWriteable;
-  public $productUrl;
+  public $journalUrl;
   protected $shareInfoType = 'Google_Service_PhotosLibrary_ShareInfo';
   protected $shareInfoDataType = '';
   public $title;
@@ -50,13 +50,13 @@ class Google_Service_PhotosLibrary_Album extends Google_Model
   {
     return $this->isWriteable;
   }
-  public function setProductUrl($productUrl)
+  public function setjournalUrl($journalUrl)
   {
-    $this->productUrl = $productUrl;
+    $this->journalUrl = $journalUrl;
   }
-  public function getProductUrl()
+  public function getjournalUrl()
   {
-    return $this->productUrl;
+    return $this->journalUrl;
   }
   /**
    * @param Google_Service_PhotosLibrary_ShareInfo

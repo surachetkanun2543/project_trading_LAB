@@ -33,7 +33,7 @@ class Google_Service_Playmoviespartner_Avail extends Google_Collection
   public $pphNames;
   public $priceType;
   public $priceValue;
-  public $productId;
+  public $journalId;
   public $ratingReason;
   public $ratingSystem;
   public $ratingValue;
@@ -171,13 +171,13 @@ class Google_Service_Playmoviespartner_Avail extends Google_Collection
   {
     return $this->priceValue;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setRatingReason($ratingReason)
   {

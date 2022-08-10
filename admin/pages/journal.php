@@ -45,7 +45,7 @@
         });
 
         function show(page) {
-            $("#showContain").load("product_list.php?page=" + page, {
+            $("#showContain").load("journal_list.php?page=" + page, {
                 q_name: $("#q_name").val()
             }, function() {});
         }
@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="input-field first">
                                 <input style="font-family: 'Athiti', sans-serif;" type="search" name="q_name" id="q_name" placeholder="ค้นหา"><br>&ensp;
-                                <!-- <a class='btn btn-outline btn-lg ' name="dataModal"id="dataModal" style="color:lightgrey;" href="product.php?act=add"><i class="fa fa-plus"></i> </a> -->
+                                <!-- <a class='btn btn-outline btn-lg ' name="dataModal"id="dataModal" style="color:lightgrey;" href="journal.php?act=add"><i class="fa fa-plus"></i> </a> -->
                                 <button type="button" style="color:lightgrey;" class='btn btn-outline btn-lg view_data' data-toggle="modal" data-target="#dataModal"><i class="fa fa-plus"></i></button>
                                 <button style="display: none;" id="btsearch" type="submit">ค้นหา</button>
                             </div>
@@ -87,7 +87,7 @@
         $act = $_GET['act'];
 
         if ($act == 'edit') {
-            include('product_form_edit.php');
+            include('journal_form_edit.php');
             echo "<div id='showContain'></div>";
         } else {
             echo "<div id='showContain'></div>";
@@ -104,7 +104,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="addproduct" action="product_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                <form name="addjournal" action="journal_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     <input type="text" name="p_name" class="form-control" required placeholder="ชื่อสินค้า" />&ensp;
                     <input type="text" name="p_price" class="form-control" required placeholder="ราคาสินค้า" />&ensp;
                     <select name="Assettype_id" class="form-control" required>

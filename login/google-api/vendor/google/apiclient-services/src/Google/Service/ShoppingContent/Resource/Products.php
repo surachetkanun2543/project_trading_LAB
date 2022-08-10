@@ -16,95 +16,95 @@
  */
 
 /**
- * The "products" collection of methods.
+ * The "journals" collection of methods.
  * Typical usage is:
  *  <code>
  *   $contentService = new Google_Service_ShoppingContent(...);
- *   $products = $contentService->products;
+ *   $journals = $contentService->journals;
  *  </code>
  */
-class Google_Service_ShoppingContent_Resource_Products extends Google_Service_Resource
+class Google_Service_ShoppingContent_Resource_journals extends Google_Service_Resource
 {
   /**
-   * Retrieves, inserts, and deletes multiple products in a single request.
-   * (products.custombatch)
+   * Retrieves, inserts, and deletes multiple journals in a single request.
+   * (journals.custombatch)
    *
-   * @param Google_Service_ShoppingContent_ProductsCustomBatchRequest $postBody
+   * @param Google_Service_ShoppingContent_journalsCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_ShoppingContent_ProductsCustomBatchResponse
+   * @return Google_Service_ShoppingContent_journalsCustomBatchResponse
    */
-  public function custombatch(Google_Service_ShoppingContent_ProductsCustomBatchRequest $postBody, $optParams = array())
+  public function custombatch(Google_Service_ShoppingContent_journalsCustomBatchRequest $postBody, $optParams = array())
   {
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('custombatch', array($params), "Google_Service_ShoppingContent_ProductsCustomBatchResponse");
+    return $this->call('custombatch', array($params), "Google_Service_ShoppingContent_journalsCustomBatchResponse");
   }
   /**
-   * Deletes a product from your Merchant Center account. (products.delete)
+   * Deletes a journal from your Merchant Center account. (journals.delete)
    *
-   * @param string $merchantId The ID of the account that contains the product.
+   * @param string $merchantId The ID of the account that contains the journal.
    * This account cannot be a multi-client account.
-   * @param string $productId The REST ID of the product.
+   * @param string $journalId The REST ID of the journal.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string feedId The Content API Supplemental Feed ID.
    */
-  public function delete($merchantId, $productId, $optParams = array())
+  public function delete($merchantId, $journalId, $optParams = array())
   {
-    $params = array('merchantId' => $merchantId, 'productId' => $productId);
+    $params = array('merchantId' => $merchantId, 'journalId' => $journalId);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
   /**
-   * Retrieves a product from your Merchant Center account. (products.get)
+   * Retrieves a journal from your Merchant Center account. (journals.get)
    *
-   * @param string $merchantId The ID of the account that contains the product.
+   * @param string $merchantId The ID of the account that contains the journal.
    * This account cannot be a multi-client account.
-   * @param string $productId The REST ID of the product.
+   * @param string $journalId The REST ID of the journal.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_ShoppingContent_Product
+   * @return Google_Service_ShoppingContent_journal
    */
-  public function get($merchantId, $productId, $optParams = array())
+  public function get($merchantId, $journalId, $optParams = array())
   {
-    $params = array('merchantId' => $merchantId, 'productId' => $productId);
+    $params = array('merchantId' => $merchantId, 'journalId' => $journalId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_ShoppingContent_Product");
+    return $this->call('get', array($params), "Google_Service_ShoppingContent_journal");
   }
   /**
-   * Uploads a product to your Merchant Center account. If an item with the same
+   * Uploads a journal to your Merchant Center account. If an item with the same
    * channel, contentLanguage, offerId, and targetCountry already exists, this
-   * method updates that entry. (products.insert)
+   * method updates that entry. (journals.insert)
    *
-   * @param string $merchantId The ID of the account that contains the product.
+   * @param string $merchantId The ID of the account that contains the journal.
    * This account cannot be a multi-client account.
-   * @param Google_Service_ShoppingContent_Product $postBody
+   * @param Google_Service_ShoppingContent_journal $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string feedId The Content API Supplemental Feed ID.
-   * @return Google_Service_ShoppingContent_Product
+   * @return Google_Service_ShoppingContent_journal
    */
-  public function insert($merchantId, Google_Service_ShoppingContent_Product $postBody, $optParams = array())
+  public function insert($merchantId, Google_Service_ShoppingContent_journal $postBody, $optParams = array())
   {
     $params = array('merchantId' => $merchantId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('insert', array($params), "Google_Service_ShoppingContent_Product");
+    return $this->call('insert', array($params), "Google_Service_ShoppingContent_journal");
   }
   /**
-   * Lists the products in your Merchant Center account. (products.listProducts)
+   * Lists the journals in your Merchant Center account. (journals.listjournals)
    *
-   * @param string $merchantId The ID of the account that contains the products.
+   * @param string $merchantId The ID of the account that contains the journals.
    * This account cannot be a multi-client account.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string maxResults The maximum number of products to return in the
+   * @opt_param string maxResults The maximum number of journals to return in the
    * response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.
-   * @return Google_Service_ShoppingContent_ProductsListResponse
+   * @return Google_Service_ShoppingContent_journalsListResponse
    */
-  public function listProducts($merchantId, $optParams = array())
+  public function listjournals($merchantId, $optParams = array())
   {
     $params = array('merchantId' => $merchantId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_ShoppingContent_ProductsListResponse");
+    return $this->call('list', array($params), "Google_Service_ShoppingContent_journalsListResponse");
   }
 }

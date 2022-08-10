@@ -22,7 +22,7 @@ class Google_Service_ShoppingContent_OrdersSetLineItemMetadataRequest extends Go
   protected $annotationsDataType = 'array';
   public $lineItemId;
   public $operationId;
-  public $productId;
+  public $journalId;
 
   /**
    * @param Google_Service_ShoppingContent_OrderMerchantProvidedAnnotation
@@ -54,12 +54,12 @@ class Google_Service_ShoppingContent_OrdersSetLineItemMetadataRequest extends Go
   {
     return $this->operationId;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

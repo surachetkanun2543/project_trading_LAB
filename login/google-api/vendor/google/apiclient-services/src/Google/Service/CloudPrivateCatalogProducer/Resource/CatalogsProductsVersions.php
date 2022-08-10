@@ -23,12 +23,12 @@
  *   $versions = $cloudprivatecatalogproducerService->versions;
  *  </code>
  */
-class Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProductsVersions extends Google_Service_Resource
+class Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsjournalsVersions extends Google_Service_Resource
 {
   /**
-   * Creates a Version instance under a given Product. (versions.create)
+   * Creates a Version instance under a given journal. (versions.create)
    *
-   * @param string $parent The product name of the new version's parent.
+   * @param string $parent The journal name of the new version's parent.
    * @param Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1Version $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudPrivateCatalogProducer_GoogleLongrunningOperation
@@ -67,7 +67,7 @@ class Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProductsVersio
   }
   /**
    * Lists Version resources that the producer has access to, within the scope of
-   * the parent Product. (versions.listCatalogsProductsVersions)
+   * the parent journal. (versions.listCatalogsjournalsVersions)
    *
    * @param string $parent The resource name of the parent resource.
    * @param array $optParams Optional parameters.
@@ -78,7 +78,7 @@ class Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProductsVersio
    * @opt_param int pageSize The maximum number of versions to return.
    * @return Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1ListVersionsResponse
    */
-  public function listCatalogsProductsVersions($parent, $optParams = array())
+  public function listCatalogsjournalsVersions($parent, $optParams = array())
   {
     $params = array('parent' => $parent);
     $params = array_merge($params, $optParams);
@@ -88,9 +88,9 @@ class Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProductsVersio
    * Updates a specific Version resource. (versions.patch)
    *
    * @param string $name Required. The resource name of the version, in the format
-   * `catalogs/{catalog_id}/products/{product_id}/versions/a-z*[a-z0-9]'.
+   * `catalogs/{catalog_id}/journals/{journal_id}/versions/a-z*[a-z0-9]'.
    *
-   * A unique identifier for the version under a product, which can't be changed
+   * A unique identifier for the version under a journal, which can't be changed
    * after the version is created. The final segment of the name must between 1
    * and 63 characters in length.
    * @param Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1Version $postBody

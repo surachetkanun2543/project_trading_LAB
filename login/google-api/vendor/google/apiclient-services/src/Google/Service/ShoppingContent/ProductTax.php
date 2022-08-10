@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductTax extends Google_Model
+class Google_Service_ShoppingContent_journalTax extends Google_Model
 {
   public $country;
   public $locationId;

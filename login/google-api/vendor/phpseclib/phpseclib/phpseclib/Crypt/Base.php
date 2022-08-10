@@ -2187,7 +2187,7 @@ abstract class Base
      *    </code>
      *
      *    See also the \phpseclib\Crypt\*::_setupInlineCrypt()'s for
-     *    productive inline $cipher_code's how they works.
+     *    journalive inline $cipher_code's how they works.
      *
      *    Structure of:
      *    <code>

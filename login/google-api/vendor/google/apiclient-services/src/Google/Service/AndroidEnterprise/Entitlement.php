@@ -18,7 +18,7 @@
 class Google_Service_AndroidEnterprise_Entitlement extends Google_Model
 {
   public $kind;
-  public $productId;
+  public $journalId;
   public $reason;
 
   public function setKind($kind)
@@ -29,13 +29,13 @@ class Google_Service_AndroidEnterprise_Entitlement extends Google_Model
   {
     return $this->kind;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setReason($reason)
   {

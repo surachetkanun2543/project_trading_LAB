@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductsListResponse extends Google_Collection
+class Google_Service_AndroidEnterprise_journalsListResponse extends Google_Collection
 {
-  protected $collection_key = 'product';
+  protected $collection_key = 'journal';
   public $kind;
   protected $pageInfoType = 'Google_Service_AndroidEnterprise_PageInfo';
   protected $pageInfoDataType = '';
-  protected $productType = 'Google_Service_AndroidEnterprise_Product';
-  protected $productDataType = 'array';
+  protected $journalType = 'Google_Service_AndroidEnterprise_journal';
+  protected $journalDataType = 'array';
   protected $tokenPaginationType = 'Google_Service_AndroidEnterprise_TokenPagination';
   protected $tokenPaginationDataType = '';
 
@@ -49,18 +49,18 @@ class Google_Service_AndroidEnterprise_ProductsListResponse extends Google_Colle
     return $this->pageInfo;
   }
   /**
-   * @param Google_Service_AndroidEnterprise_Product
+   * @param Google_Service_AndroidEnterprise_journal
    */
-  public function setProduct($product)
+  public function setjournal($journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_Product
+   * @return Google_Service_AndroidEnterprise_journal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
   /**
    * @param Google_Service_AndroidEnterprise_TokenPagination

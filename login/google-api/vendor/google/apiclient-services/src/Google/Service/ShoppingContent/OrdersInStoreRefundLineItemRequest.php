@@ -21,7 +21,7 @@ class Google_Service_ShoppingContent_OrdersInStoreRefundLineItemRequest extends 
   public $operationId;
   protected $priceAmountType = 'Google_Service_ShoppingContent_Price';
   protected $priceAmountDataType = '';
-  public $productId;
+  public $journalId;
   public $quantity;
   public $reason;
   public $reasonText;
@@ -58,13 +58,13 @@ class Google_Service_ShoppingContent_OrdersInStoreRefundLineItemRequest extends 
   {
     return $this->priceAmount;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setQuantity($quantity)
   {

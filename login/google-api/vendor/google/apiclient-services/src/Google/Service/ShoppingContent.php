@@ -19,7 +19,7 @@
  * Service definition for ShoppingContent (v2.1).
  *
  * <p>
- * Manages product items, inventory, and Merchant Center accounts for Google
+ * Manages journal items, inventory, and Merchant Center accounts for Google
  * Shopping.</p>
  *
  * <p>
@@ -31,7 +31,7 @@
  */
 class Google_Service_ShoppingContent extends Google_Service
 {
-  /** Manage your product listings and accounts for Google Shopping. */
+  /** Manage your journal listings and accounts for Google Shopping. */
   const CONTENT =
       "https://www.googleapis.com/auth/content";
 
@@ -46,8 +46,8 @@ class Google_Service_ShoppingContent extends Google_Service
   public $orderreturns;
   public $orders;
   public $pos;
-  public $products;
-  public $productstatuses;
+  public $journals;
+  public $journalstatuses;
   public $regionalinventory;
   public $returnaddress;
   public $returnpolicy;
@@ -1253,18 +1253,18 @@ class Google_Service_ShoppingContent extends Google_Service
           )
         )
     );
-    $this->products = new Google_Service_ShoppingContent_Resource_Products(
+    $this->journals = new Google_Service_ShoppingContent_Resource_journals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'custombatch' => array(
-              'path' => 'products/batch',
+              'path' => 'journals/batch',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'delete' => array(
-              'path' => '{merchantId}/products/{productId}',
+              'path' => '{merchantId}/journals/{journalId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'merchantId' => array(
@@ -1272,7 +1272,7 @@ class Google_Service_ShoppingContent extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1283,7 +1283,7 @@ class Google_Service_ShoppingContent extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{merchantId}/products/{productId}',
+              'path' => '{merchantId}/journals/{journalId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'merchantId' => array(
@@ -1291,14 +1291,14 @@ class Google_Service_ShoppingContent extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'insert' => array(
-              'path' => '{merchantId}/products',
+              'path' => '{merchantId}/journals',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'merchantId' => array(
@@ -1312,7 +1312,7 @@ class Google_Service_ShoppingContent extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{merchantId}/products',
+              'path' => '{merchantId}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'merchantId' => array(
@@ -1333,18 +1333,18 @@ class Google_Service_ShoppingContent extends Google_Service
           )
         )
     );
-    $this->productstatuses = new Google_Service_ShoppingContent_Resource_Productstatuses(
+    $this->journalstatuses = new Google_Service_ShoppingContent_Resource_journalstatuses(
         $this,
         $this->serviceName,
-        'productstatuses',
+        'journalstatuses',
         array(
           'methods' => array(
             'custombatch' => array(
-              'path' => 'productstatuses/batch',
+              'path' => 'journalstatuses/batch',
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'get' => array(
-              'path' => '{merchantId}/productstatuses/{productId}',
+              'path' => '{merchantId}/journalstatuses/{journalId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'merchantId' => array(
@@ -1352,7 +1352,7 @@ class Google_Service_ShoppingContent extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1364,7 +1364,7 @@ class Google_Service_ShoppingContent extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{merchantId}/productstatuses',
+              'path' => '{merchantId}/journalstatuses',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'merchantId' => array(
@@ -1401,7 +1401,7 @@ class Google_Service_ShoppingContent extends Google_Service
               'httpMethod' => 'POST',
               'parameters' => array(),
             ),'insert' => array(
-              'path' => '{merchantId}/products/{productId}/regionalinventory',
+              'path' => '{merchantId}/journals/{journalId}/regionalinventory',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'merchantId' => array(
@@ -1409,7 +1409,7 @@ class Google_Service_ShoppingContent extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

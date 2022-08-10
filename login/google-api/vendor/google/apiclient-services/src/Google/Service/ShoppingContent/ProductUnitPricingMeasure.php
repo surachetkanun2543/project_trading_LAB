@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductUnitPricingMeasure extends Google_Model
+class Google_Service_ShoppingContent_journalUnitPricingMeasure extends Google_Model
 {
   public $unit;
   public $value;

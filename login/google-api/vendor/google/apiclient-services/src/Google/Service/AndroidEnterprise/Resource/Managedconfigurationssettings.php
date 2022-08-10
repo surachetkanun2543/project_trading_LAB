@@ -31,14 +31,14 @@ class Google_Service_AndroidEnterprise_Resource_Managedconfigurationssettings ex
    * (managedconfigurationssettings.listManagedconfigurationssettings)
    *
    * @param string $enterpriseId The ID of the enterprise.
-   * @param string $productId The ID of the product for which the managed
+   * @param string $journalId The ID of the journal for which the managed
    * configurations settings applies to.
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidEnterprise_ManagedConfigurationsSettingsListResponse
    */
-  public function listManagedconfigurationssettings($enterpriseId, $productId, $optParams = array())
+  public function listManagedconfigurationssettings($enterpriseId, $journalId, $optParams = array())
   {
-    $params = array('enterpriseId' => $enterpriseId, 'productId' => $productId);
+    $params = array('enterpriseId' => $enterpriseId, 'journalId' => $journalId);
     $params = array_merge($params, $optParams);
     return $this->call('list', array($params), "Google_Service_AndroidEnterprise_ManagedConfigurationsSettingsListResponse");
   }

@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductSigningCertificate extends Google_Model
+class Google_Service_AndroidEnterprise_journalSigningCertificate extends Google_Model
 {
   public $certificateHashSha1;
   public $certificateHashSha256;

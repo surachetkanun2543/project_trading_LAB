@@ -23,7 +23,7 @@ class Google_Service_AndroidPublisher_DeviceMetadata extends Google_Model
   public $glEsVersion;
   public $manufacturer;
   public $nativePlatform;
-  public $productName;
+  public $journalName;
   public $ramMb;
   public $screenDensityDpi;
   public $screenHeightPx;
@@ -77,13 +77,13 @@ class Google_Service_AndroidPublisher_DeviceMetadata extends Google_Model
   {
     return $this->nativePlatform;
   }
-  public function setProductName($productName)
+  public function setjournalName($journalName)
   {
-    $this->productName = $productName;
+    $this->journalName = $journalName;
   }
-  public function getProductName()
+  public function getjournalName()
   {
-    return $this->productName;
+    return $this->journalName;
   }
   public function setRamMb($ramMb)
   {

@@ -35,7 +35,7 @@ if ($upload <> '') {
 
 // เพิ่มไฟล์เข้าไปในตาราง uploadfile
 
-$sql = "INSERT INTO tbl_product
+$sql = "INSERT INTO tbl_journal
 		(
 		p_name,
 		Assettype_id,
@@ -60,7 +60,7 @@ mysqli_close($conn);
 if ($result) {
 	echo "<script type='text/javascript'>";
 	echo "alert('เพิ่มข้อมูลสินค้า $p_name สำเร็จ!! ');";
-	echo "window.location = 'product.php'; ";
+	echo "window.location = 'journal.php'; ";
 	echo "</script>";
 } else {
 }

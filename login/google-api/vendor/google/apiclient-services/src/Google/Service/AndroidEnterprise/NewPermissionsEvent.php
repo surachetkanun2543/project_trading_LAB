@@ -19,7 +19,7 @@ class Google_Service_AndroidEnterprise_NewPermissionsEvent extends Google_Collec
 {
   protected $collection_key = 'requestedPermissions';
   public $approvedPermissions;
-  public $productId;
+  public $journalId;
   public $requestedPermissions;
 
   public function setApprovedPermissions($approvedPermissions)
@@ -30,13 +30,13 @@ class Google_Service_AndroidEnterprise_NewPermissionsEvent extends Google_Collec
   {
     return $this->approvedPermissions;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setRequestedPermissions($requestedPermissions)
   {

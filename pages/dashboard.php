@@ -2,9 +2,6 @@
 error_reporting(error_reporting() & ~E_NOTICE);
 require '../service/user_connect.php';
 
-$query = "SELECT * FROM tb_type ORDER BY Assettype_id asc" or die;
-$result = mysqli_query($conn, $query);
-
 if (!isset($_SESSION['login_id'])) {
     header('Location: ./index.php');
     exit;
@@ -63,12 +60,12 @@ if (mysqli_num_rows($get_user) > 0) {
             <div class="col-8 col-md-5 col-lg-9 d-flex align-items-center  justify-content-md-end mt-3 mt-md-0">
                 <div class="dropdown text-light">
                     <button class="btn   text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                        สวัสดีตอนเย็นคุณ : <?php echo $user['name']; ?>
+                       สวัสดีตอนเที่ยงคุณ : <?php echo $user['name']; ?>
                         <img class="btn  dropdown-toggle" src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" alt="img_user" width="60" height="45">
                     </button>
 
                     <ul class="dropdown-menu text-light" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">Risk Profile</a></li>
+                        <li><a class="dropdown-item" href="riskprofile.php">Risk Profile</a></li>
                         <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
                     </ul>
                 </div>

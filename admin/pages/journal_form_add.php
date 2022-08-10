@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $query);
     </div>
     <div class="card-body col-12">
         <div id="report" class="alert-danger"></div>
-        <form name="addproduct" action="product_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form name="addjournal" action="journal_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
             <input type="text" name="p_name" class="form-control" required placeholder="ชื่อสินค้า" />&ensp;
             <input type="text" name="p_price" class="form-control" required placeholder="ราคาสินค้า" />&ensp;
             <select name="Assettype_id" class="form-control" required>

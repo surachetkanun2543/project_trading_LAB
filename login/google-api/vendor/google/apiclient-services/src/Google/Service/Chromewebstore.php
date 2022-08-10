@@ -34,7 +34,7 @@ class Google_Service_Chromewebstore extends Google_Service
   const CHROMEWEBSTORE_READONLY =
       "https://www.googleapis.com/auth/chromewebstore.readonly";
 
-  public $inAppProducts;
+  public $inAppjournals;
   public $items;
   public $licenses;
   public $payments;
@@ -52,10 +52,10 @@ class Google_Service_Chromewebstore extends Google_Service
     $this->version = 'v1.1';
     $this->serviceName = 'chromewebstore';
 
-    $this->inAppProducts = new Google_Service_Chromewebstore_Resource_InAppProducts(
+    $this->inAppjournals = new Google_Service_Chromewebstore_Resource_InAppjournals(
         $this,
         $this->serviceName,
-        'inAppProducts',
+        'inAppjournals',
         array(
           'methods' => array(
             'get' => array(

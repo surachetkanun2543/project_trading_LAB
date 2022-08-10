@@ -20,7 +20,7 @@ class Google_Service_Cih_GammaData extends Google_Model
   public $campaignId;
   public $dispatchId;
   public $experimentId;
-  public $gammaProductId;
+  public $gammajournalId;
   public $nodeId;
   protected $uaidType = 'Google_Service_Cih_Uaid';
   protected $uaidDataType = '';
@@ -49,13 +49,13 @@ class Google_Service_Cih_GammaData extends Google_Model
   {
     return $this->experimentId;
   }
-  public function setGammaProductId($gammaProductId)
+  public function setGammajournalId($gammajournalId)
   {
-    $this->gammaProductId = $gammaProductId;
+    $this->gammajournalId = $gammajournalId;
   }
-  public function getGammaProductId()
+  public function getGammajournalId()
   {
-    return $this->gammaProductId;
+    return $this->gammajournalId;
   }
   public function setNodeId($nodeId)
   {

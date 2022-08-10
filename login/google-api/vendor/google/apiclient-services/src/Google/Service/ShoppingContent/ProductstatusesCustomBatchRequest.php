@@ -15,21 +15,21 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductstatusesCustomBatchRequest extends Google_Collection
+class Google_Service_ShoppingContent_journalstatusesCustomBatchRequest extends Google_Collection
 {
   protected $collection_key = 'entries';
-  protected $entriesType = 'Google_Service_ShoppingContent_ProductstatusesCustomBatchRequestEntry';
+  protected $entriesType = 'Google_Service_ShoppingContent_journalstatusesCustomBatchRequestEntry';
   protected $entriesDataType = 'array';
 
   /**
-   * @param Google_Service_ShoppingContent_ProductstatusesCustomBatchRequestEntry
+   * @param Google_Service_ShoppingContent_journalstatusesCustomBatchRequestEntry
    */
   public function setEntries($entries)
   {
     $this->entries = $entries;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductstatusesCustomBatchRequestEntry
+   * @return Google_Service_ShoppingContent_journalstatusesCustomBatchRequestEntry
    */
   public function getEntries()
   {

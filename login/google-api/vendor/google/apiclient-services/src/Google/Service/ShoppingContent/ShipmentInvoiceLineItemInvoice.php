@@ -19,7 +19,7 @@ class Google_Service_ShoppingContent_ShipmentInvoiceLineItemInvoice extends Goog
 {
   protected $collection_key = 'shipmentUnitIds';
   public $lineItemId;
-  public $productId;
+  public $journalId;
   public $shipmentUnitIds;
   protected $unitInvoiceType = 'Google_Service_ShoppingContent_UnitInvoice';
   protected $unitInvoiceDataType = '';
@@ -32,13 +32,13 @@ class Google_Service_ShoppingContent_ShipmentInvoiceLineItemInvoice extends Goog
   {
     return $this->lineItemId;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setShipmentUnitIds($shipmentUnitIds)
   {

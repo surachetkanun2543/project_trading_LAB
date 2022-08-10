@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderLineItemProductVariantAttribute extends Google_Model
+class Google_Service_ShoppingContent_OrderLineItemjournalVariantAttribute extends Google_Model
 {
   public $dimension;
   public $value;

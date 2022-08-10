@@ -16,53 +16,53 @@
  */
 
 /**
- * The "products" collection of methods.
+ * The "journals" collection of methods.
  * Typical usage is:
  *  <code>
  *   $visionService = new Google_Service_Vision(...);
- *   $products = $visionService->products;
+ *   $journals = $visionService->journals;
  *  </code>
  */
-class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Service_Resource
+class Google_Service_Vision_Resource_ProjectsLocationsjournals extends Google_Service_Resource
 {
   /**
-   * Creates and returns a new product resource.
+   * Creates and returns a new journal resource.
    *
    * Possible errors:
    *
    * * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
    * characters. * Returns INVALID_ARGUMENT if description is longer than 4096
-   * characters. * Returns INVALID_ARGUMENT if product_category is missing or
-   * invalid. (products.create)
+   * characters. * Returns INVALID_ARGUMENT if journal_category is missing or
+   * invalid. (journals.create)
    *
-   * @param string $parent The project in which the Product should be created.
+   * @param string $parent The project in which the journal should be created.
    *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param Google_Service_Vision_Product $postBody
+   * @param Google_Service_Vision_journal $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string productId A user-supplied resource id for this Product. If
+   * @opt_param string journalId A user-supplied resource id for this journal. If
    * set, the server will attempt to use this value as the resource id. If it is
    * already in use, an error is returned with code ALREADY_EXISTS. Must be at
    * most 128 characters long. It cannot contain the character `/`.
-   * @return Google_Service_Vision_Product
+   * @return Google_Service_Vision_journal
    */
-  public function create($parent, Google_Service_Vision_Product $postBody, $optParams = array())
+  public function create($parent, Google_Service_Vision_journal $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Vision_Product");
+    return $this->call('create', array($params), "Google_Service_Vision_journal");
   }
   /**
-   * Permanently deletes a product and its reference images.
+   * Permanently deletes a journal and its reference images.
    *
-   * Metadata of the product and all its images will be deleted right away, but
-   * search queries against ProductSets containing the product may still work
-   * until all related caches are refreshed. (products.delete)
+   * Metadata of the journal and all its images will be deleted right away, but
+   * search queries against journalSets containing the journal may still work
+   * until all related caches are refreshed. (journals.delete)
    *
-   * @param string $name Resource name of product to delete.
+   * @param string $name Resource name of journal to delete.
    *
-   * Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * Format is: `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID`
    * @param array $optParams Optional parameters.
    * @return Google_Service_Vision_VisionEmpty
    */
@@ -73,33 +73,33 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
     return $this->call('delete', array($params), "Google_Service_Vision_VisionEmpty");
   }
   /**
-   * Gets information associated with a Product.
+   * Gets information associated with a journal.
    *
    * Possible errors:
    *
-   * * Returns NOT_FOUND if the Product does not exist. (products.get)
+   * * Returns NOT_FOUND if the journal does not exist. (journals.get)
    *
-   * @param string $name Resource name of the Product to get.
+   * @param string $name Resource name of the journal to get.
    *
-   * Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
+   * Format is: `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID`
    * @param array $optParams Optional parameters.
-   * @return Google_Service_Vision_Product
+   * @return Google_Service_Vision_journal
    */
   public function get($name, $optParams = array())
   {
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Vision_Product");
+    return $this->call('get', array($params), "Google_Service_Vision_journal");
   }
   /**
-   * Lists products in an unspecified order.
+   * Lists journals in an unspecified order.
    *
    * Possible errors:
    *
    * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   * (products.listProjectsLocationsProducts)
+   * (journals.listProjectsLocationsjournals)
    *
-   * @param string $parent The project OR ProductSet from which Products should be
+   * @param string $parent The project OR journalSet from which journals should be
    * listed.
    *
    * Format: `projects/PROJECT_ID/locations/LOC_ID`
@@ -109,16 +109,16 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    * request, if any.
    * @opt_param int pageSize The maximum number of items to return. Default 10,
    * maximum 100.
-   * @return Google_Service_Vision_ListProductsResponse
+   * @return Google_Service_Vision_ListjournalsResponse
    */
-  public function listProjectsLocationsProducts($parent, $optParams = array())
+  public function listProjectsLocationsjournals($parent, $optParams = array())
   {
     $params = array('parent' => $parent);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Vision_ListProductsResponse");
+    return $this->call('list', array($params), "Google_Service_Vision_ListjournalsResponse");
   }
   /**
-   * Makes changes to a Product resource. Only the `display_name`, `description`,
+   * Makes changes to a journal resource. Only the `display_name`, `description`,
    * and `labels` fields can be updated right now.
    *
    * If labels are updated, the change will not be reflected in queries until the
@@ -126,66 +126,66 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    *
    * Possible errors:
    *
-   * * Returns NOT_FOUND if the Product does not exist. * Returns INVALID_ARGUMENT
+   * * Returns NOT_FOUND if the journal does not exist. * Returns INVALID_ARGUMENT
    * if display_name is present in update_mask but is   missing from the request
    * or longer than 4096 characters. * Returns INVALID_ARGUMENT if description is
    * present in update_mask but is   longer than 4096 characters. * Returns
-   * INVALID_ARGUMENT if product_category is present in update_mask.
-   * (products.patch)
+   * INVALID_ARGUMENT if journal_category is present in update_mask.
+   * (journals.patch)
    *
-   * @param string $name The resource name of the product.
+   * @param string $name The resource name of the journal.
    *
-   * Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`.
+   * Format is: `projects/PROJECT_ID/locations/LOC_ID/journals/journal_ID`.
    *
-   * This field is ignored when creating a product.
-   * @param Google_Service_Vision_Product $postBody
+   * This field is ignored when creating a journal.
+   * @param Google_Service_Vision_journal $postBody
    * @param array $optParams Optional parameters.
    *
    * @opt_param string updateMask The FieldMask that specifies which fields to
    * update. If update_mask isn't specified, all mutable fields are to be updated.
-   * Valid mask paths include `product_labels`, `display_name`, and `description`.
-   * @return Google_Service_Vision_Product
+   * Valid mask paths include `journal_labels`, `display_name`, and `description`.
+   * @return Google_Service_Vision_journal
    */
-  public function patch($name, Google_Service_Vision_Product $postBody, $optParams = array())
+  public function patch($name, Google_Service_Vision_journal $postBody, $optParams = array())
   {
     $params = array('name' => $name, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('patch', array($params), "Google_Service_Vision_Product");
+    return $this->call('patch', array($params), "Google_Service_Vision_journal");
   }
   /**
-   * Asynchronous API to delete all Products in a ProductSet or all Products that
-   * are in no ProductSet.
+   * Asynchronous API to delete all journals in a journalSet or all journals that
+   * are in no journalSet.
    *
-   * If a Product is a member of the specified ProductSet in addition to other
-   * ProductSets, the Product will still be deleted.
+   * If a journal is a member of the specified journalSet in addition to other
+   * journalSets, the journal will still be deleted.
    *
-   * It is recommended to not delete the specified ProductSet until after this
+   * It is recommended to not delete the specified journalSet until after this
    * operation has completed. It is also recommended to not add any of the
-   * Products involved in the batch delete to a new ProductSet while this
-   * operation is running because those Products may still end up deleted.
+   * journals involved in the batch delete to a new journalSet while this
+   * operation is running because those journals may still end up deleted.
    *
-   * It's not possible to undo the PurgeProducts operation. Therefore, it is
-   * recommended to keep the csv files used in ImportProductSets (if that was how
-   * you originally built the Product Set) before starting PurgeProducts, in case
+   * It's not possible to undo the Purgejournals operation. Therefore, it is
+   * recommended to keep the csv files used in ImportjournalSets (if that was how
+   * you originally built the journal Set) before starting Purgejournals, in case
    * you need to re-import the data after deletion.
    *
-   * If the plan is to purge all of the Products from a ProductSet and then re-use
-   * the empty ProductSet to re-import new Products into the empty ProductSet, you
-   * must wait until the PurgeProducts operation has finished for that ProductSet.
+   * If the plan is to purge all of the journals from a journalSet and then re-use
+   * the empty journalSet to re-import new journals into the empty journalSet, you
+   * must wait until the Purgejournals operation has finished for that journalSet.
    *
    * The google.longrunning.Operation API can be used to keep track of the
    * progress and results of the request. `Operation.metadata` contains
-   * `BatchOperationMetadata`. (progress) (products.purge)
+   * `BatchOperationMetadata`. (progress) (journals.purge)
    *
-   * @param string $parent The project and location in which the Products should
+   * @param string $parent The project and location in which the journals should
    * be deleted.
    *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
-   * @param Google_Service_Vision_PurgeProductsRequest $postBody
+   * @param Google_Service_Vision_PurgejournalsRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Vision_Operation
    */
-  public function purge($parent, Google_Service_Vision_PurgeProductsRequest $postBody, $optParams = array())
+  public function purge($parent, Google_Service_Vision_PurgejournalsRequest $postBody, $optParams = array())
   {
     $params = array('parent' => $parent, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);

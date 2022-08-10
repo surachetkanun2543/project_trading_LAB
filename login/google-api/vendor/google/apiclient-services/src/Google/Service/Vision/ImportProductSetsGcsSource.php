@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Vision_ImportProductSetsGcsSource extends Google_Model
+class Google_Service_Vision_ImportjournalSetsGcsSource extends Google_Model
 {
   public $csvFileUri;
 

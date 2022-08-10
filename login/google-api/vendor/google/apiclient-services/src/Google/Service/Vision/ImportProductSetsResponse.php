@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Vision_ImportProductSetsResponse extends Google_Collection
+class Google_Service_Vision_ImportjournalSetsResponse extends Google_Collection
 {
   protected $collection_key = 'statuses';
   protected $referenceImagesType = 'Google_Service_Vision_ReferenceImage';

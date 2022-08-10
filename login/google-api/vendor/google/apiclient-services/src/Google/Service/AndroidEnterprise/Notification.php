@@ -31,10 +31,10 @@ class Google_Service_AndroidEnterprise_Notification extends Google_Model
   protected $newPermissionsEventType = 'Google_Service_AndroidEnterprise_NewPermissionsEvent';
   protected $newPermissionsEventDataType = '';
   public $notificationType;
-  protected $productApprovalEventType = 'Google_Service_AndroidEnterprise_ProductApprovalEvent';
-  protected $productApprovalEventDataType = '';
-  protected $productAvailabilityChangeEventType = 'Google_Service_AndroidEnterprise_ProductAvailabilityChangeEvent';
-  protected $productAvailabilityChangeEventDataType = '';
+  protected $journalApprovalEventType = 'Google_Service_AndroidEnterprise_journalApprovalEvent';
+  protected $journalApprovalEventDataType = '';
+  protected $journalAvailabilityChangeEventType = 'Google_Service_AndroidEnterprise_journalAvailabilityChangeEvent';
+  protected $journalAvailabilityChangeEventDataType = '';
   public $timestampMillis;
 
   /**
@@ -138,32 +138,32 @@ class Google_Service_AndroidEnterprise_Notification extends Google_Model
     return $this->notificationType;
   }
   /**
-   * @param Google_Service_AndroidEnterprise_ProductApprovalEvent
+   * @param Google_Service_AndroidEnterprise_journalApprovalEvent
    */
-  public function setProductApprovalEvent(Google_Service_AndroidEnterprise_ProductApprovalEvent $productApprovalEvent)
+  public function setjournalApprovalEvent(Google_Service_AndroidEnterprise_journalApprovalEvent $journalApprovalEvent)
   {
-    $this->productApprovalEvent = $productApprovalEvent;
+    $this->journalApprovalEvent = $journalApprovalEvent;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_ProductApprovalEvent
+   * @return Google_Service_AndroidEnterprise_journalApprovalEvent
    */
-  public function getProductApprovalEvent()
+  public function getjournalApprovalEvent()
   {
-    return $this->productApprovalEvent;
+    return $this->journalApprovalEvent;
   }
   /**
-   * @param Google_Service_AndroidEnterprise_ProductAvailabilityChangeEvent
+   * @param Google_Service_AndroidEnterprise_journalAvailabilityChangeEvent
    */
-  public function setProductAvailabilityChangeEvent(Google_Service_AndroidEnterprise_ProductAvailabilityChangeEvent $productAvailabilityChangeEvent)
+  public function setjournalAvailabilityChangeEvent(Google_Service_AndroidEnterprise_journalAvailabilityChangeEvent $journalAvailabilityChangeEvent)
   {
-    $this->productAvailabilityChangeEvent = $productAvailabilityChangeEvent;
+    $this->journalAvailabilityChangeEvent = $journalAvailabilityChangeEvent;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_ProductAvailabilityChangeEvent
+   * @return Google_Service_AndroidEnterprise_journalAvailabilityChangeEvent
    */
-  public function getProductAvailabilityChangeEvent()
+  public function getjournalAvailabilityChangeEvent()
   {
-    return $this->productAvailabilityChangeEvent;
+    return $this->journalAvailabilityChangeEvent;
   }
   public function setTimestampMillis($timestampMillis)
   {

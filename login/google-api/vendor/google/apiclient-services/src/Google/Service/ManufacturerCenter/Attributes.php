@@ -43,12 +43,12 @@ class Google_Service_ManufacturerCenter_Attributes extends Google_Collection
   public $material;
   public $mpn;
   public $pattern;
-  protected $productDetailType = 'Google_Service_ManufacturerCenter_ProductDetail';
-  protected $productDetailDataType = 'array';
-  public $productLine;
-  public $productName;
-  public $productPageUrl;
-  public $productType;
+  protected $journalDetailType = 'Google_Service_ManufacturerCenter_journalDetail';
+  protected $journalDetailDataType = 'array';
+  public $journalLine;
+  public $journalName;
+  public $journalPageUrl;
+  public $journalType;
   public $releaseDate;
   public $scent;
   public $size;
@@ -252,50 +252,50 @@ class Google_Service_ManufacturerCenter_Attributes extends Google_Collection
     return $this->pattern;
   }
   /**
-   * @param Google_Service_ManufacturerCenter_ProductDetail
+   * @param Google_Service_ManufacturerCenter_journalDetail
    */
-  public function setProductDetail($productDetail)
+  public function setjournalDetail($journalDetail)
   {
-    $this->productDetail = $productDetail;
+    $this->journalDetail = $journalDetail;
   }
   /**
-   * @return Google_Service_ManufacturerCenter_ProductDetail
+   * @return Google_Service_ManufacturerCenter_journalDetail
    */
-  public function getProductDetail()
+  public function getjournalDetail()
   {
-    return $this->productDetail;
+    return $this->journalDetail;
   }
-  public function setProductLine($productLine)
+  public function setjournalLine($journalLine)
   {
-    $this->productLine = $productLine;
+    $this->journalLine = $journalLine;
   }
-  public function getProductLine()
+  public function getjournalLine()
   {
-    return $this->productLine;
+    return $this->journalLine;
   }
-  public function setProductName($productName)
+  public function setjournalName($journalName)
   {
-    $this->productName = $productName;
+    $this->journalName = $journalName;
   }
-  public function getProductName()
+  public function getjournalName()
   {
-    return $this->productName;
+    return $this->journalName;
   }
-  public function setProductPageUrl($productPageUrl)
+  public function setjournalPageUrl($journalPageUrl)
   {
-    $this->productPageUrl = $productPageUrl;
+    $this->journalPageUrl = $journalPageUrl;
   }
-  public function getProductPageUrl()
+  public function getjournalPageUrl()
   {
-    return $this->productPageUrl;
+    return $this->journalPageUrl;
   }
-  public function setProductType($productType)
+  public function setjournalType($journalType)
   {
-    $this->productType = $productType;
+    $this->journalType = $journalType;
   }
-  public function getProductType()
+  public function getjournalType()
   {
-    return $this->productType;
+    return $this->journalType;
   }
   public function setReleaseDate($releaseDate)
   {

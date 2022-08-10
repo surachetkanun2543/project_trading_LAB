@@ -18,8 +18,8 @@
 class Google_Service_Vision_Result extends Google_Model
 {
   public $image;
-  protected $productType = 'Google_Service_Vision_Product';
-  protected $productDataType = '';
+  protected $journalType = 'Google_Service_Vision_journal';
+  protected $journalDataType = '';
   public $score;
 
   public function setImage($image)
@@ -31,18 +31,18 @@ class Google_Service_Vision_Result extends Google_Model
     return $this->image;
   }
   /**
-   * @param Google_Service_Vision_Product
+   * @param Google_Service_Vision_journal
    */
-  public function setProduct(Google_Service_Vision_Product $product)
+  public function setjournal(Google_Service_Vision_journal $journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_Vision_Product
+   * @return Google_Service_Vision_journal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
   public function setScore($score)
   {

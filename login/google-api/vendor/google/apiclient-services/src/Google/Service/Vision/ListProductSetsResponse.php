@@ -15,12 +15,12 @@
  * the License.
  */
 
-class Google_Service_Vision_ListProductSetsResponse extends Google_Collection
+class Google_Service_Vision_ListjournalSetsResponse extends Google_Collection
 {
-  protected $collection_key = 'productSets';
+  protected $collection_key = 'journalSets';
   public $nextPageToken;
-  protected $productSetsType = 'Google_Service_Vision_ProductSet';
-  protected $productSetsDataType = 'array';
+  protected $journalSetsType = 'Google_Service_Vision_journalSet';
+  protected $journalSetsDataType = 'array';
 
   public function setNextPageToken($nextPageToken)
   {
@@ -31,17 +31,17 @@ class Google_Service_Vision_ListProductSetsResponse extends Google_Collection
     return $this->nextPageToken;
   }
   /**
-   * @param Google_Service_Vision_ProductSet
+   * @param Google_Service_Vision_journalSet
    */
-  public function setProductSets($productSets)
+  public function setjournalSets($journalSets)
   {
-    $this->productSets = $productSets;
+    $this->journalSets = $journalSets;
   }
   /**
-   * @return Google_Service_Vision_ProductSet
+   * @return Google_Service_Vision_journalSet
    */
-  public function getProductSets()
+  public function getjournalSets()
   {
-    return $this->productSets;
+    return $this->journalSets;
   }
 }

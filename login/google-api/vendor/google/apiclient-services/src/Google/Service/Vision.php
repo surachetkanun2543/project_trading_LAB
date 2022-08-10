@@ -48,10 +48,10 @@ class Google_Service_Vision extends Google_Service
   public $projects_locations_files;
   public $projects_locations_images;
   public $projects_locations_operations;
-  public $projects_locations_productSets;
-  public $projects_locations_productSets_products;
-  public $projects_locations_products;
-  public $projects_locations_products_referenceImages;
+  public $projects_locations_journalSets;
+  public $projects_locations_journalSets_journals;
+  public $projects_locations_journals;
+  public $projects_locations_journals_referenceImages;
   public $projects_operations;
   
   /**
@@ -327,14 +327,14 @@ class Google_Service_Vision extends Google_Service
           )
         )
     );
-    $this->projects_locations_productSets = new Google_Service_Vision_Resource_ProjectsLocationsProductSets(
+    $this->projects_locations_journalSets = new Google_Service_Vision_Resource_ProjectsLocationsjournalSets(
         $this,
         $this->serviceName,
-        'productSets',
+        'journalSets',
         array(
           'methods' => array(
-            'addProduct' => array(
-              'path' => 'v1/{+name}:addProduct',
+            'addjournal' => array(
+              'path' => 'v1/{+name}:addjournal',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'name' => array(
@@ -344,7 +344,7 @@ class Google_Service_Vision extends Google_Service
                 ),
               ),
             ),'create' => array(
-              'path' => 'v1/{+parent}/productSets',
+              'path' => 'v1/{+parent}/journalSets',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(
@@ -352,7 +352,7 @@ class Google_Service_Vision extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productSetId' => array(
+                'journalSetId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -378,7 +378,7 @@ class Google_Service_Vision extends Google_Service
                 ),
               ),
             ),'import' => array(
-              'path' => 'v1/{+parent}/productSets:import',
+              'path' => 'v1/{+parent}/journalSets:import',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(
@@ -388,7 +388,7 @@ class Google_Service_Vision extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1/{+parent}/productSets',
+              'path' => 'v1/{+parent}/journalSets',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'parent' => array(
@@ -419,8 +419,8 @@ class Google_Service_Vision extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),'removeProduct' => array(
-              'path' => 'v1/{+name}:removeProduct',
+            ),'removejournal' => array(
+              'path' => 'v1/{+name}:removejournal',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'name' => array(
@@ -433,14 +433,14 @@ class Google_Service_Vision extends Google_Service
           )
         )
     );
-    $this->projects_locations_productSets_products = new Google_Service_Vision_Resource_ProjectsLocationsProductSetsProducts(
+    $this->projects_locations_journalSets_journals = new Google_Service_Vision_Resource_ProjectsLocationsjournalSetsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'list' => array(
-              'path' => 'v1/{+name}/products',
+              'path' => 'v1/{+name}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(
@@ -461,14 +461,14 @@ class Google_Service_Vision extends Google_Service
           )
         )
     );
-    $this->projects_locations_products = new Google_Service_Vision_Resource_ProjectsLocationsProducts(
+    $this->projects_locations_journals = new Google_Service_Vision_Resource_ProjectsLocationsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'create' => array(
-              'path' => 'v1/{+parent}/products',
+              'path' => 'v1/{+parent}/journals',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(
@@ -476,7 +476,7 @@ class Google_Service_Vision extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -502,7 +502,7 @@ class Google_Service_Vision extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1/{+parent}/products',
+              'path' => 'v1/{+parent}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'parent' => array(
@@ -534,7 +534,7 @@ class Google_Service_Vision extends Google_Service
                 ),
               ),
             ),'purge' => array(
-              'path' => 'v1/{+parent}/products:purge',
+              'path' => 'v1/{+parent}/journals:purge',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(
@@ -547,7 +547,7 @@ class Google_Service_Vision extends Google_Service
           )
         )
     );
-    $this->projects_locations_products_referenceImages = new Google_Service_Vision_Resource_ProjectsLocationsProductsReferenceImages(
+    $this->projects_locations_journals_referenceImages = new Google_Service_Vision_Resource_ProjectsLocationsjournalsReferenceImages(
         $this,
         $this->serviceName,
         'referenceImages',

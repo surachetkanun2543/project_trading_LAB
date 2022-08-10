@@ -15,19 +15,19 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
+class Google_Service_ShoppingContent_journalStatus extends Google_Collection
 {
   protected $collection_key = 'itemLevelIssues';
   public $creationDate;
-  protected $destinationStatusesType = 'Google_Service_ShoppingContent_ProductStatusDestinationStatus';
+  protected $destinationStatusesType = 'Google_Service_ShoppingContent_journalStatusDestinationStatus';
   protected $destinationStatusesDataType = 'array';
   public $googleExpirationDate;
-  protected $itemLevelIssuesType = 'Google_Service_ShoppingContent_ProductStatusItemLevelIssue';
+  protected $itemLevelIssuesType = 'Google_Service_ShoppingContent_journalStatusItemLevelIssue';
   protected $itemLevelIssuesDataType = 'array';
   public $kind;
   public $lastUpdateDate;
   public $link;
-  public $productId;
+  public $journalId;
   public $title;
 
   public function setCreationDate($creationDate)
@@ -39,14 +39,14 @@ class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
     return $this->creationDate;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductStatusDestinationStatus
+   * @param Google_Service_ShoppingContent_journalStatusDestinationStatus
    */
   public function setDestinationStatuses($destinationStatuses)
   {
     $this->destinationStatuses = $destinationStatuses;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductStatusDestinationStatus
+   * @return Google_Service_ShoppingContent_journalStatusDestinationStatus
    */
   public function getDestinationStatuses()
   {
@@ -61,14 +61,14 @@ class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
     return $this->googleExpirationDate;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductStatusItemLevelIssue
+   * @param Google_Service_ShoppingContent_journalStatusItemLevelIssue
    */
   public function setItemLevelIssues($itemLevelIssues)
   {
     $this->itemLevelIssues = $itemLevelIssues;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductStatusItemLevelIssue
+   * @return Google_Service_ShoppingContent_journalStatusItemLevelIssue
    */
   public function getItemLevelIssues()
   {
@@ -98,13 +98,13 @@ class Google_Service_ShoppingContent_ProductStatus extends Google_Collection
   {
     return $this->link;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setTitle($title)
   {

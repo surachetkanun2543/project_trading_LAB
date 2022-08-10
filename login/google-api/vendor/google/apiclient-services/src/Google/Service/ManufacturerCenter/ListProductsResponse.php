@@ -15,12 +15,12 @@
  * the License.
  */
 
-class Google_Service_ManufacturerCenter_ListProductsResponse extends Google_Collection
+class Google_Service_ManufacturerCenter_ListjournalsResponse extends Google_Collection
 {
-  protected $collection_key = 'products';
+  protected $collection_key = 'journals';
   public $nextPageToken;
-  protected $productsType = 'Google_Service_ManufacturerCenter_Product';
-  protected $productsDataType = 'array';
+  protected $journalsType = 'Google_Service_ManufacturerCenter_journal';
+  protected $journalsDataType = 'array';
 
   public function setNextPageToken($nextPageToken)
   {
@@ -31,17 +31,17 @@ class Google_Service_ManufacturerCenter_ListProductsResponse extends Google_Coll
     return $this->nextPageToken;
   }
   /**
-   * @param Google_Service_ManufacturerCenter_Product
+   * @param Google_Service_ManufacturerCenter_journal
    */
-  public function setProducts($products)
+  public function setjournals($journals)
   {
-    $this->products = $products;
+    $this->journals = $journals;
   }
   /**
-   * @return Google_Service_ManufacturerCenter_Product
+   * @return Google_Service_ManufacturerCenter_journal
    */
-  public function getProducts()
+  public function getjournals()
   {
-    return $this->products;
+    return $this->journals;
   }
 }

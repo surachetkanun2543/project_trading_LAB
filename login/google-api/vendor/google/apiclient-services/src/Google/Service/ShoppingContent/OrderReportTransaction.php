@@ -25,8 +25,8 @@ class Google_Service_ShoppingContent_OrderReportTransaction extends Google_Model
   public $merchantId;
   public $merchantOrderId;
   public $orderId;
-  protected $productAmountType = 'Google_Service_ShoppingContent_ProductAmount';
-  protected $productAmountDataType = '';
+  protected $journalAmountType = 'Google_Service_ShoppingContent_journalAmount';
+  protected $journalAmountDataType = '';
   public $transactionDate;
 
   /**
@@ -92,18 +92,18 @@ class Google_Service_ShoppingContent_OrderReportTransaction extends Google_Model
     return $this->orderId;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductAmount
+   * @param Google_Service_ShoppingContent_journalAmount
    */
-  public function setProductAmount(Google_Service_ShoppingContent_ProductAmount $productAmount)
+  public function setjournalAmount(Google_Service_ShoppingContent_journalAmount $journalAmount)
   {
-    $this->productAmount = $productAmount;
+    $this->journalAmount = $journalAmount;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductAmount
+   * @return Google_Service_ShoppingContent_journalAmount
    */
-  public function getProductAmount()
+  public function getjournalAmount()
   {
-    return $this->productAmount;
+    return $this->journalAmount;
   }
   public function setTransactionDate($transactionDate)
   {

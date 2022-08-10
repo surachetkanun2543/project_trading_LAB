@@ -15,13 +15,13 @@
  * the License.
  */
 
-class Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults extends Google_Collection
+class Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResults extends Google_Collection
 {
   protected $collection_key = 'results';
   public $indexTime;
-  protected $productGroupedResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult';
-  protected $productGroupedResultsDataType = 'array';
-  protected $resultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsResult';
+  protected $journalGroupedResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsGroupedResult';
+  protected $journalGroupedResultsDataType = 'array';
+  protected $resultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsResult';
   protected $resultsDataType = 'array';
 
   public function setIndexTime($indexTime)
@@ -33,28 +33,28 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults exten
     return $this->indexTime;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult
+   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsGroupedResult
    */
-  public function setProductGroupedResults($productGroupedResults)
+  public function setjournalGroupedResults($journalGroupedResults)
   {
-    $this->productGroupedResults = $productGroupedResults;
+    $this->journalGroupedResults = $journalGroupedResults;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsGroupedResult
+   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsGroupedResult
    */
-  public function getProductGroupedResults()
+  public function getjournalGroupedResults()
   {
-    return $this->productGroupedResults;
+    return $this->journalGroupedResults;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsResult
+   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsResult
    */
   public function setResults($results)
   {
     $this->results = $results;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsResult
+   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsResult
    */
   public function getResults()
   {

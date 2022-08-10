@@ -15,13 +15,13 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_InAppProduct extends Google_Model
+class Google_Service_AndroidPublisher_InAppjournal extends Google_Model
 {
   public $defaultLanguage;
   protected $defaultPriceType = 'Google_Service_AndroidPublisher_Price';
   protected $defaultPriceDataType = '';
   public $gracePeriod;
-  protected $listingsType = 'Google_Service_AndroidPublisher_InAppProductListing';
+  protected $listingsType = 'Google_Service_AndroidPublisher_InAppjournalListing';
   protected $listingsDataType = 'map';
   public $packageName;
   protected $pricesType = 'Google_Service_AndroidPublisher_Price';
@@ -65,14 +65,14 @@ class Google_Service_AndroidPublisher_InAppProduct extends Google_Model
     return $this->gracePeriod;
   }
   /**
-   * @param Google_Service_AndroidPublisher_InAppProductListing
+   * @param Google_Service_AndroidPublisher_InAppjournalListing
    */
   public function setListings($listings)
   {
     $this->listings = $listings;
   }
   /**
-   * @return Google_Service_AndroidPublisher_InAppProductListing
+   * @return Google_Service_AndroidPublisher_InAppjournalListing
    */
   public function getListings()
   {

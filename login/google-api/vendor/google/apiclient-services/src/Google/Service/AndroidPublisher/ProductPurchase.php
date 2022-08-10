@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_ProductPurchase extends Google_Model
+class Google_Service_AndroidPublisher_journalPurchase extends Google_Model
 {
   public $acknowledgementState;
   public $consumptionState;

@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductShipping extends Google_Model
+class Google_Service_ShoppingContent_journalShipping extends Google_Model
 {
   public $country;
   public $locationGroupName;

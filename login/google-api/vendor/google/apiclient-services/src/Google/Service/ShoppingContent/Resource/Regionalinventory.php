@@ -26,7 +26,7 @@
 class Google_Service_ShoppingContent_Resource_Regionalinventory extends Google_Service_Resource
 {
   /**
-   * Updates regional inventory for multiple products or regions in a single
+   * Updates regional inventory for multiple journals or regions in a single
    * request. (regionalinventory.custombatch)
    *
    * @param Google_Service_ShoppingContent_RegionalinventoryCustomBatchRequest $postBody
@@ -40,21 +40,21 @@ class Google_Service_ShoppingContent_Resource_Regionalinventory extends Google_S
     return $this->call('custombatch', array($params), "Google_Service_ShoppingContent_RegionalinventoryCustomBatchResponse");
   }
   /**
-   * Update the regional inventory of a product in your Merchant Center account.
+   * Update the regional inventory of a journal in your Merchant Center account.
    * If a regional inventory with the same region ID already exists, this method
    * updates that entry. (regionalinventory.insert)
    *
-   * @param string $merchantId The ID of the account that contains the product.
+   * @param string $merchantId The ID of the account that contains the journal.
    * This account cannot be a multi-client account.
-   * @param string $productId The REST ID of the product for which to update the
+   * @param string $journalId The REST ID of the journal for which to update the
    * regional inventory.
    * @param Google_Service_ShoppingContent_RegionalInventory $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_ShoppingContent_RegionalInventory
    */
-  public function insert($merchantId, $productId, Google_Service_ShoppingContent_RegionalInventory $postBody, $optParams = array())
+  public function insert($merchantId, $journalId, Google_Service_ShoppingContent_RegionalInventory $postBody, $optParams = array())
   {
-    $params = array('merchantId' => $merchantId, 'productId' => $productId, 'postBody' => $postBody);
+    $params = array('merchantId' => $merchantId, 'journalId' => $journalId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_ShoppingContent_RegionalInventory");
   }

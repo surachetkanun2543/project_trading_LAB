@@ -42,7 +42,7 @@ You can return to the [Developers Console](https://console.developers.google.com
 
 Take note of the service account's email address and store the service account's private key file in a location accessible to your application. Your application needs them to make authorized API calls.
 
-**Note:** You must store and manage private keys securely in both development and production environments. Google does not keep a copy of your private keys, only your public keys.
+**Note:** You must store and manage private keys securely in both development and journalion environments. Google does not keep a copy of your private keys, only your public keys.
 
 ### Delegating domain-wide authority to the service account
 

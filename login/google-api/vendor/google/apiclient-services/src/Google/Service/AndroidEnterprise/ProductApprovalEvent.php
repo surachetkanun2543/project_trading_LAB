@@ -15,10 +15,10 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductApprovalEvent extends Google_Model
+class Google_Service_AndroidEnterprise_journalApprovalEvent extends Google_Model
 {
   public $approved;
-  public $productId;
+  public $journalId;
 
   public function setApproved($approved)
   {
@@ -28,12 +28,12 @@ class Google_Service_AndroidEnterprise_ProductApprovalEvent extends Google_Model
   {
     return $this->approved;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

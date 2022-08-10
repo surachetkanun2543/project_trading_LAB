@@ -23,7 +23,7 @@ class Google_Service_AndroidEnterprise_ManagedConfiguration extends Google_Colle
   public $kind;
   protected $managedPropertyType = 'Google_Service_AndroidEnterprise_ManagedProperty';
   protected $managedPropertyDataType = 'array';
-  public $productId;
+  public $journalId;
 
   /**
    * @param Google_Service_AndroidEnterprise_ConfigurationVariables
@@ -61,12 +61,12 @@ class Google_Service_AndroidEnterprise_ManagedConfiguration extends Google_Colle
   {
     return $this->managedProperty;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

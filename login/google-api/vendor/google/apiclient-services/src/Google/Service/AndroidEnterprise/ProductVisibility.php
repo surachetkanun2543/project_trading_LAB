@@ -15,20 +15,20 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductVisibility extends Google_Collection
+class Google_Service_AndroidEnterprise_journalVisibility extends Google_Collection
 {
   protected $collection_key = 'tracks';
-  public $productId;
+  public $journalId;
   public $trackIds;
   public $tracks;
 
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setTrackIds($trackIds)
   {

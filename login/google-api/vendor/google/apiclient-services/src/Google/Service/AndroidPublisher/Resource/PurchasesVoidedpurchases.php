@@ -49,7 +49,7 @@ class Google_Service_AndroidPublisher_Resource_PurchasesVoidedpurchases extends 
    * and not the actual voided time returned in the response.
    * @opt_param string token
    * @opt_param int type The type of voided purchases that you want to see in the
-   * response. Possible values are: - 0: Only voided in-app product purchases will
+   * response. Possible values are: - 0: Only voided in-app journal purchases will
    * be returned in the response. This is the default value. - 1: Both voided in-
    * app purchases and voided subscription purchases will be returned in the
    * response.  Note: Before requesting to receive voided subscription purchases,

@@ -44,10 +44,10 @@ class Google_Service_AndroidPublisher extends Google_Service
   public $edits_listings;
   public $edits_testers;
   public $edits_tracks;
-  public $inappproducts;
+  public $inappjournals;
   public $internalappsharingartifacts;
   public $orders;
-  public $purchases_products;
+  public $purchases_journals;
   public $purchases_subscriptions;
   public $purchases_voidedpurchases;
   public $reviews;
@@ -836,14 +836,14 @@ class Google_Service_AndroidPublisher extends Google_Service
           )
         )
     );
-    $this->inappproducts = new Google_Service_AndroidPublisher_Resource_Inappproducts(
+    $this->inappjournals = new Google_Service_AndroidPublisher_Resource_Inappjournals(
         $this,
         $this->serviceName,
-        'inappproducts',
+        'inappjournals',
         array(
           'methods' => array(
             'delete' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => '{packageName}/inappjournals/{sku}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'packageName' => array(
@@ -858,7 +858,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => '{packageName}/inappjournals/{sku}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -873,7 +873,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'insert' => array(
-              'path' => '{packageName}/inappproducts',
+              'path' => '{packageName}/inappjournals',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -887,7 +887,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => '{packageName}/inappproducts',
+              'path' => '{packageName}/inappjournals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -909,7 +909,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => '{packageName}/inappjournals/{sku}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
                 'packageName' => array(
@@ -928,7 +928,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{packageName}/inappproducts/{sku}',
+              'path' => '{packageName}/inappjournals/{sku}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'packageName' => array(
@@ -1009,14 +1009,14 @@ class Google_Service_AndroidPublisher extends Google_Service
           )
         )
     );
-    $this->purchases_products = new Google_Service_AndroidPublisher_Resource_PurchasesProducts(
+    $this->purchases_journals = new Google_Service_AndroidPublisher_Resource_Purchasesjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'acknowledge' => array(
-              'path' => '{packageName}/purchases/products/{productId}/tokens/{token}:acknowledge',
+              'path' => '{packageName}/purchases/journals/{journalId}/tokens/{token}:acknowledge',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'packageName' => array(
@@ -1024,7 +1024,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1036,7 +1036,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{packageName}/purchases/products/{productId}/tokens/{token}',
+              'path' => '{packageName}/purchases/journals/{journalId}/tokens/{token}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'packageName' => array(
@@ -1044,7 +1044,7 @@ class Google_Service_AndroidPublisher extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

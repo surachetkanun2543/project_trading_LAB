@@ -474,7 +474,7 @@ class RSA
                     // some versions of XAMPP have mismatched versions of OpenSSL which causes it not to work
                     $versions = array();
 
-                    // avoid generating errors (even with suppression) when phpinfo() is disabled (common in production systems)
+                    // avoid generating errors (even with suppression) when phpinfo() is disabled (common in journalion systems)
                     if (strpos(ini_get('disable_functions'), 'phpinfo') === false) {
                         ob_start();
                         @phpinfo();
@@ -2117,7 +2117,7 @@ class RSA
     /**
      * Determines which hashing function should be used
      *
-     * Used with signature production / verification and (if the encryption mode is self::ENCRYPTION_OAEP) encryption and
+     * Used with signature journalion / verification and (if the encryption mode is self::ENCRYPTION_OAEP) encryption and
      * decryption.  If $hash isn't supported, sha1 is used.
      *
      * @access public

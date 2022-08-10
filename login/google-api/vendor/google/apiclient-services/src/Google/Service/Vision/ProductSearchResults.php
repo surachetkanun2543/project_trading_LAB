@@ -15,12 +15,12 @@
  * the License.
  */
 
-class Google_Service_Vision_ProductSearchResults extends Google_Collection
+class Google_Service_Vision_journalSearchResults extends Google_Collection
 {
   protected $collection_key = 'results';
   public $indexTime;
-  protected $productGroupedResultsType = 'Google_Service_Vision_GroupedResult';
-  protected $productGroupedResultsDataType = 'array';
+  protected $journalGroupedResultsType = 'Google_Service_Vision_GroupedResult';
+  protected $journalGroupedResultsDataType = 'array';
   protected $resultsType = 'Google_Service_Vision_Result';
   protected $resultsDataType = 'array';
 
@@ -35,16 +35,16 @@ class Google_Service_Vision_ProductSearchResults extends Google_Collection
   /**
    * @param Google_Service_Vision_GroupedResult
    */
-  public function setProductGroupedResults($productGroupedResults)
+  public function setjournalGroupedResults($journalGroupedResults)
   {
-    $this->productGroupedResults = $productGroupedResults;
+    $this->journalGroupedResults = $journalGroupedResults;
   }
   /**
    * @return Google_Service_Vision_GroupedResult
    */
-  public function getProductGroupedResults()
+  public function getjournalGroupedResults()
   {
-    return $this->productGroupedResults;
+    return $this->journalGroupedResults;
   }
   /**
    * @param Google_Service_Vision_Result

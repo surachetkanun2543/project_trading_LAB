@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderLineItemProductFee extends Google_Model
+class Google_Service_ShoppingContent_OrderLineItemjournalFee extends Google_Model
 {
   protected $amountType = 'Google_Service_ShoppingContent_Price';
   protected $amountDataType = '';

@@ -46,7 +46,7 @@ class Google_Service_Licensing extends Google_Service
   {
     parent::__construct($client);
     $this->rootUrl = $rootUrl ?: 'https://www.googleapis.com/';
-    $this->servicePath = 'apps/licensing/v1/product/';
+    $this->servicePath = 'apps/licensing/v1/journal/';
     $this->batchPath = 'batch/licensing/v1';
     $this->version = 'v1';
     $this->serviceName = 'licensing';
@@ -58,10 +58,10 @@ class Google_Service_Licensing extends Google_Service
         array(
           'methods' => array(
             'delete' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => '{journalId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -78,10 +78,10 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => '{journalId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -98,10 +98,10 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'insert' => array(
-              'path' => '{productId}/sku/{skuId}/user',
+              'path' => '{journalId}/sku/{skuId}/user',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -112,11 +112,11 @@ class Google_Service_Licensing extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'listForProduct' => array(
-              'path' => '{productId}/users',
+            ),'listForjournal' => array(
+              'path' => '{journalId}/users',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -135,11 +135,11 @@ class Google_Service_Licensing extends Google_Service
                   'type' => 'string',
                 ),
               ),
-            ),'listForProductAndSku' => array(
-              'path' => '{productId}/sku/{skuId}/users',
+            ),'listForjournalAndSku' => array(
+              'path' => '{journalId}/sku/{skuId}/users',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -164,10 +164,10 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'patch' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => '{journalId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'PATCH',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -184,10 +184,10 @@ class Google_Service_Licensing extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => '{productId}/sku/{skuId}/user/{userId}',
+              'path' => '{journalId}/sku/{skuId}/user/{userId}',
               'httpMethod' => 'PUT',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

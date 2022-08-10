@@ -11,13 +11,13 @@
         
         //ลบข้อมูลออกจาก database ตาม member_id ที่ส่งมา
 
-        $sql = "DELETE FROM tbl_product WHERE p_id='$p_id' ";
+        $sql = "DELETE FROM tbl_journal WHERE p_id='$p_id' ";
         $result = mysqli_query($conn, $sql) or die;
 
 //จาวาสคริปแสดงข้อความเมื่อบันทึกเสร็จและกระโดดกลับไปหน้าฟอร์ม
 
     if ($result) {
-      header('location:product.php');
+      header('location:journal.php');
       // echo "<script>alert('DELETE Succesfuly');window.location ='admin.php';</script>";
     } else {
       

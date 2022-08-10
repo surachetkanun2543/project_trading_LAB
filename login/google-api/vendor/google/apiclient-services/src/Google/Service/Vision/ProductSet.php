@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Vision_ProductSet extends Google_Model
+class Google_Service_Vision_journalSet extends Google_Model
 {
   public $displayName;
   protected $indexErrorType = 'Google_Service_Vision_Status';

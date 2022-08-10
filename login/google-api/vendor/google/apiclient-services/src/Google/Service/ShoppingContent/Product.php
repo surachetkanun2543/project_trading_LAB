@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_Product extends Google_Collection
+class Google_Service_ShoppingContent_journal extends Google_Collection
 {
   protected $collection_key = 'taxes';
   public $additionalImageLinks;
@@ -50,7 +50,7 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public $excludedDestinations;
   public $expirationDate;
   public $gender;
-  public $googleProductCategory;
+  public $googlejournalCategory;
   public $gtin;
   public $id;
   public $identifierExists;
@@ -76,22 +76,22 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public $pattern;
   protected $priceType = 'Google_Service_ShoppingContent_Price';
   protected $priceDataType = '';
-  public $productTypes;
+  public $journalTypes;
   public $promotionIds;
   protected $salePriceType = 'Google_Service_ShoppingContent_Price';
   protected $salePriceDataType = '';
   public $salePriceEffectiveDate;
   public $sellOnGoogleQuantity;
-  protected $shippingType = 'Google_Service_ShoppingContent_ProductShipping';
+  protected $shippingType = 'Google_Service_ShoppingContent_journalShipping';
   protected $shippingDataType = 'array';
-  protected $shippingHeightType = 'Google_Service_ShoppingContent_ProductShippingDimension';
+  protected $shippingHeightType = 'Google_Service_ShoppingContent_journalShippingDimension';
   protected $shippingHeightDataType = '';
   public $shippingLabel;
-  protected $shippingLengthType = 'Google_Service_ShoppingContent_ProductShippingDimension';
+  protected $shippingLengthType = 'Google_Service_ShoppingContent_journalShippingDimension';
   protected $shippingLengthDataType = '';
-  protected $shippingWeightType = 'Google_Service_ShoppingContent_ProductShippingWeight';
+  protected $shippingWeightType = 'Google_Service_ShoppingContent_journalShippingWeight';
   protected $shippingWeightDataType = '';
-  protected $shippingWidthType = 'Google_Service_ShoppingContent_ProductShippingDimension';
+  protected $shippingWidthType = 'Google_Service_ShoppingContent_journalShippingDimension';
   protected $shippingWidthDataType = '';
   public $sizeSystem;
   public $sizeType;
@@ -99,13 +99,13 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   public $source;
   public $targetCountry;
   public $taxCategory;
-  protected $taxesType = 'Google_Service_ShoppingContent_ProductTax';
+  protected $taxesType = 'Google_Service_ShoppingContent_journalTax';
   protected $taxesDataType = 'array';
   public $title;
   public $transitTimeLabel;
-  protected $unitPricingBaseMeasureType = 'Google_Service_ShoppingContent_ProductUnitPricingBaseMeasure';
+  protected $unitPricingBaseMeasureType = 'Google_Service_ShoppingContent_journalUnitPricingBaseMeasure';
   protected $unitPricingBaseMeasureDataType = '';
-  protected $unitPricingMeasureType = 'Google_Service_ShoppingContent_ProductUnitPricingMeasure';
+  protected $unitPricingMeasureType = 'Google_Service_ShoppingContent_journalUnitPricingMeasure';
   protected $unitPricingMeasureDataType = '';
 
   public function setAdditionalImageLinks($additionalImageLinks)
@@ -360,13 +360,13 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   {
     return $this->gender;
   }
-  public function setGoogleProductCategory($googleProductCategory)
+  public function setGooglejournalCategory($googlejournalCategory)
   {
-    $this->googleProductCategory = $googleProductCategory;
+    $this->googlejournalCategory = $googlejournalCategory;
   }
-  public function getGoogleProductCategory()
+  public function getGooglejournalCategory()
   {
-    return $this->googleProductCategory;
+    return $this->googlejournalCategory;
   }
   public function setGtin($gtin)
   {
@@ -562,13 +562,13 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
   {
     return $this->price;
   }
-  public function setProductTypes($productTypes)
+  public function setjournalTypes($journalTypes)
   {
-    $this->productTypes = $productTypes;
+    $this->journalTypes = $journalTypes;
   }
-  public function getProductTypes()
+  public function getjournalTypes()
   {
-    return $this->productTypes;
+    return $this->journalTypes;
   }
   public function setPromotionIds($promotionIds)
   {
@@ -609,28 +609,28 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
     return $this->sellOnGoogleQuantity;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductShipping
+   * @param Google_Service_ShoppingContent_journalShipping
    */
   public function setShipping($shipping)
   {
     $this->shipping = $shipping;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductShipping
+   * @return Google_Service_ShoppingContent_journalShipping
    */
   public function getShipping()
   {
     return $this->shipping;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductShippingDimension
+   * @param Google_Service_ShoppingContent_journalShippingDimension
    */
-  public function setShippingHeight(Google_Service_ShoppingContent_ProductShippingDimension $shippingHeight)
+  public function setShippingHeight(Google_Service_ShoppingContent_journalShippingDimension $shippingHeight)
   {
     $this->shippingHeight = $shippingHeight;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductShippingDimension
+   * @return Google_Service_ShoppingContent_journalShippingDimension
    */
   public function getShippingHeight()
   {
@@ -645,42 +645,42 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
     return $this->shippingLabel;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductShippingDimension
+   * @param Google_Service_ShoppingContent_journalShippingDimension
    */
-  public function setShippingLength(Google_Service_ShoppingContent_ProductShippingDimension $shippingLength)
+  public function setShippingLength(Google_Service_ShoppingContent_journalShippingDimension $shippingLength)
   {
     $this->shippingLength = $shippingLength;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductShippingDimension
+   * @return Google_Service_ShoppingContent_journalShippingDimension
    */
   public function getShippingLength()
   {
     return $this->shippingLength;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductShippingWeight
+   * @param Google_Service_ShoppingContent_journalShippingWeight
    */
-  public function setShippingWeight(Google_Service_ShoppingContent_ProductShippingWeight $shippingWeight)
+  public function setShippingWeight(Google_Service_ShoppingContent_journalShippingWeight $shippingWeight)
   {
     $this->shippingWeight = $shippingWeight;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductShippingWeight
+   * @return Google_Service_ShoppingContent_journalShippingWeight
    */
   public function getShippingWeight()
   {
     return $this->shippingWeight;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductShippingDimension
+   * @param Google_Service_ShoppingContent_journalShippingDimension
    */
-  public function setShippingWidth(Google_Service_ShoppingContent_ProductShippingDimension $shippingWidth)
+  public function setShippingWidth(Google_Service_ShoppingContent_journalShippingDimension $shippingWidth)
   {
     $this->shippingWidth = $shippingWidth;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductShippingDimension
+   * @return Google_Service_ShoppingContent_journalShippingDimension
    */
   public function getShippingWidth()
   {
@@ -735,14 +735,14 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
     return $this->taxCategory;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductTax
+   * @param Google_Service_ShoppingContent_journalTax
    */
   public function setTaxes($taxes)
   {
     $this->taxes = $taxes;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductTax
+   * @return Google_Service_ShoppingContent_journalTax
    */
   public function getTaxes()
   {
@@ -765,28 +765,28 @@ class Google_Service_ShoppingContent_Product extends Google_Collection
     return $this->transitTimeLabel;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductUnitPricingBaseMeasure
+   * @param Google_Service_ShoppingContent_journalUnitPricingBaseMeasure
    */
-  public function setUnitPricingBaseMeasure(Google_Service_ShoppingContent_ProductUnitPricingBaseMeasure $unitPricingBaseMeasure)
+  public function setUnitPricingBaseMeasure(Google_Service_ShoppingContent_journalUnitPricingBaseMeasure $unitPricingBaseMeasure)
   {
     $this->unitPricingBaseMeasure = $unitPricingBaseMeasure;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductUnitPricingBaseMeasure
+   * @return Google_Service_ShoppingContent_journalUnitPricingBaseMeasure
    */
   public function getUnitPricingBaseMeasure()
   {
     return $this->unitPricingBaseMeasure;
   }
   /**
-   * @param Google_Service_ShoppingContent_ProductUnitPricingMeasure
+   * @param Google_Service_ShoppingContent_journalUnitPricingMeasure
    */
-  public function setUnitPricingMeasure(Google_Service_ShoppingContent_ProductUnitPricingMeasure $unitPricingMeasure)
+  public function setUnitPricingMeasure(Google_Service_ShoppingContent_journalUnitPricingMeasure $unitPricingMeasure)
   {
     $this->unitPricingMeasure = $unitPricingMeasure;
   }
   /**
-   * @return Google_Service_ShoppingContent_ProductUnitPricingMeasure
+   * @return Google_Service_ShoppingContent_journalUnitPricingMeasure
    */
   public function getUnitPricingMeasure()
   {

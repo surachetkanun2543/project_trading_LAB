@@ -15,12 +15,12 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductsListResponse extends Google_Collection
+class Google_Service_ShoppingContent_journalsListResponse extends Google_Collection
 {
   protected $collection_key = 'resources';
   public $kind;
   public $nextPageToken;
-  protected $resourcesType = 'Google_Service_ShoppingContent_Product';
+  protected $resourcesType = 'Google_Service_ShoppingContent_journal';
   protected $resourcesDataType = 'array';
 
   public function setKind($kind)
@@ -40,14 +40,14 @@ class Google_Service_ShoppingContent_ProductsListResponse extends Google_Collect
     return $this->nextPageToken;
   }
   /**
-   * @param Google_Service_ShoppingContent_Product
+   * @param Google_Service_ShoppingContent_journal
    */
   public function setResources($resources)
   {
     $this->resources = $resources;
   }
   /**
-   * @return Google_Service_ShoppingContent_Product
+   * @return Google_Service_ShoppingContent_journal
    */
   public function getResources()
   {

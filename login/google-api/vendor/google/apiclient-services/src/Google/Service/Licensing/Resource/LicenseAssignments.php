@@ -28,53 +28,53 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
   /**
    * Revoke License. (licenseAssignments.delete)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $skuId Name for sku
    * @param string $userId email id or unique Id of the user
    * @param array $optParams Optional parameters.
    */
-  public function delete($productId, $skuId, $userId, $optParams = array())
+  public function delete($journalId, $skuId, $userId, $optParams = array())
   {
-    $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId);
+    $params = array('journalId' => $journalId, 'skuId' => $skuId, 'userId' => $userId);
     $params = array_merge($params, $optParams);
     return $this->call('delete', array($params));
   }
   /**
-   * Get license assignment of a particular product and sku for a user
+   * Get license assignment of a particular journal and sku for a user
    * (licenseAssignments.get)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $skuId Name for sku
    * @param string $userId email id or unique Id of the user
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
    */
-  public function get($productId, $skuId, $userId, $optParams = array())
+  public function get($journalId, $skuId, $userId, $optParams = array())
   {
-    $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId);
+    $params = array('journalId' => $journalId, 'skuId' => $skuId, 'userId' => $userId);
     $params = array_merge($params, $optParams);
     return $this->call('get', array($params), "Google_Service_Licensing_LicenseAssignment");
   }
   /**
    * Assign License. (licenseAssignments.insert)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $skuId Name for sku
    * @param Google_Service_Licensing_LicenseAssignmentInsert $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
    */
-  public function insert($productId, $skuId, Google_Service_Licensing_LicenseAssignmentInsert $postBody, $optParams = array())
+  public function insert($journalId, $skuId, Google_Service_Licensing_LicenseAssignmentInsert $postBody, $optParams = array())
   {
-    $params = array('productId' => $productId, 'skuId' => $skuId, 'postBody' => $postBody);
+    $params = array('journalId' => $journalId, 'skuId' => $skuId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('insert', array($params), "Google_Service_Licensing_LicenseAssignment");
   }
   /**
-   * List license assignments for given product of the customer.
-   * (licenseAssignments.listForProduct)
+   * List license assignments for given journal of the customer.
+   * (licenseAssignments.listForjournal)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $customerId CustomerId represents the customer for whom
    * licenseassignments are queried
    * @param array $optParams Optional parameters.
@@ -85,17 +85,17 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
    * server will return first page
    * @return Google_Service_Licensing_LicenseAssignmentList
    */
-  public function listForProduct($productId, $customerId, $optParams = array())
+  public function listForjournal($journalId, $customerId, $optParams = array())
   {
-    $params = array('productId' => $productId, 'customerId' => $customerId);
+    $params = array('journalId' => $journalId, 'customerId' => $customerId);
     $params = array_merge($params, $optParams);
-    return $this->call('listForProduct', array($params), "Google_Service_Licensing_LicenseAssignmentList");
+    return $this->call('listForjournal', array($params), "Google_Service_Licensing_LicenseAssignmentList");
   }
   /**
-   * List license assignments for given product and sku of the customer.
-   * (licenseAssignments.listForProductAndSku)
+   * List license assignments for given journal and sku of the customer.
+   * (licenseAssignments.listForjournalAndSku)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $skuId Name for sku
    * @param string $customerId CustomerId represents the customer for whom
    * licenseassignments are queried
@@ -107,42 +107,42 @@ class Google_Service_Licensing_Resource_LicenseAssignments extends Google_Servic
    * server will return first page
    * @return Google_Service_Licensing_LicenseAssignmentList
    */
-  public function listForProductAndSku($productId, $skuId, $customerId, $optParams = array())
+  public function listForjournalAndSku($journalId, $skuId, $customerId, $optParams = array())
   {
-    $params = array('productId' => $productId, 'skuId' => $skuId, 'customerId' => $customerId);
+    $params = array('journalId' => $journalId, 'skuId' => $skuId, 'customerId' => $customerId);
     $params = array_merge($params, $optParams);
-    return $this->call('listForProductAndSku', array($params), "Google_Service_Licensing_LicenseAssignmentList");
+    return $this->call('listForjournalAndSku', array($params), "Google_Service_Licensing_LicenseAssignmentList");
   }
   /**
    * Assign License. This method supports patch semantics.
    * (licenseAssignments.patch)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $skuId Name for sku for which license would be revoked
    * @param string $userId email id or unique Id of the user
    * @param Google_Service_Licensing_LicenseAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
    */
-  public function patch($productId, $skuId, $userId, Google_Service_Licensing_LicenseAssignment $postBody, $optParams = array())
+  public function patch($journalId, $skuId, $userId, Google_Service_Licensing_LicenseAssignment $postBody, $optParams = array())
   {
-    $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId, 'postBody' => $postBody);
+    $params = array('journalId' => $journalId, 'skuId' => $skuId, 'userId' => $userId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('patch', array($params), "Google_Service_Licensing_LicenseAssignment");
   }
   /**
    * Assign License. (licenseAssignments.update)
    *
-   * @param string $productId Name for product
+   * @param string $journalId Name for journal
    * @param string $skuId Name for sku for which license would be revoked
    * @param string $userId email id or unique Id of the user
    * @param Google_Service_Licensing_LicenseAssignment $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Licensing_LicenseAssignment
    */
-  public function update($productId, $skuId, $userId, Google_Service_Licensing_LicenseAssignment $postBody, $optParams = array())
+  public function update($journalId, $skuId, $userId, Google_Service_Licensing_LicenseAssignment $postBody, $optParams = array())
   {
-    $params = array('productId' => $productId, 'skuId' => $skuId, 'userId' => $userId, 'postBody' => $postBody);
+    $params = array('journalId' => $journalId, 'skuId' => $skuId, 'userId' => $userId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('update', array($params), "Google_Service_Licensing_LicenseAssignment");
   }

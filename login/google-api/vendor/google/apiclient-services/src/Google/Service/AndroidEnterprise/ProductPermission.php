@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductPermission extends Google_Model
+class Google_Service_AndroidEnterprise_journalPermission extends Google_Model
 {
   public $permissionId;
   public $state;

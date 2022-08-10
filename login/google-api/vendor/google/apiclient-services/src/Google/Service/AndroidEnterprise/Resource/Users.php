@@ -92,19 +92,19 @@ class Google_Service_AndroidEnterprise_Resource_Users extends Google_Service_Res
     return $this->call('get', array($params), "Google_Service_AndroidEnterprise_User");
   }
   /**
-   * Retrieves the set of products a user is entitled to access.
-   * (users.getAvailableProductSet)
+   * Retrieves the set of journals a user is entitled to access.
+   * (users.getAvailablejournalSet)
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_ProductSet
+   * @return Google_Service_AndroidEnterprise_journalSet
    */
-  public function getAvailableProductSet($enterpriseId, $userId, $optParams = array())
+  public function getAvailablejournalSet($enterpriseId, $userId, $optParams = array())
   {
     $params = array('enterpriseId' => $enterpriseId, 'userId' => $userId);
     $params = array_merge($params, $optParams);
-    return $this->call('getAvailableProductSet', array($params), "Google_Service_AndroidEnterprise_ProductSet");
+    return $this->call('getAvailablejournalSet', array($params), "Google_Service_AndroidEnterprise_journalSet");
   }
   /**
    * Creates a new EMM-managed user.
@@ -194,22 +194,22 @@ class Google_Service_AndroidEnterprise_Resource_Users extends Google_Service_Res
     return $this->call('revokeToken', array($params));
   }
   /**
-   * Modifies the set of products that a user is entitled to access (referred to
-   * as whitelisted products). Only products that are approved or products that
-   * were previously approved (products with revoked approval) can be whitelisted.
-   * (users.setAvailableProductSet)
+   * Modifies the set of journals that a user is entitled to access (referred to
+   * as whitelisted journals). Only journals that are approved or journals that
+   * were previously approved (journals with revoked approval) can be whitelisted.
+   * (users.setAvailablejournalSet)
    *
    * @param string $enterpriseId The ID of the enterprise.
    * @param string $userId The ID of the user.
-   * @param Google_Service_AndroidEnterprise_ProductSet $postBody
+   * @param Google_Service_AndroidEnterprise_journalSet $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidEnterprise_ProductSet
+   * @return Google_Service_AndroidEnterprise_journalSet
    */
-  public function setAvailableProductSet($enterpriseId, $userId, Google_Service_AndroidEnterprise_ProductSet $postBody, $optParams = array())
+  public function setAvailablejournalSet($enterpriseId, $userId, Google_Service_AndroidEnterprise_journalSet $postBody, $optParams = array())
   {
     $params = array('enterpriseId' => $enterpriseId, 'userId' => $userId, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('setAvailableProductSet', array($params), "Google_Service_AndroidEnterprise_ProductSet");
+    return $this->call('setAvailablejournalSet', array($params), "Google_Service_AndroidEnterprise_journalSet");
   }
   /**
    * Updates the details of an EMM-managed user.

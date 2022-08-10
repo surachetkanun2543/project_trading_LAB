@@ -35,7 +35,7 @@ class Google_Service_Books_Resource_Promooffer extends Google_Service_Resource
    * @opt_param string manufacturer device manufacturer
    * @opt_param string model device model
    * @opt_param string offerId
-   * @opt_param string product device product
+   * @opt_param string journal device journal
    * @opt_param string serial device serial
    * @opt_param string volumeId Volume id to exercise the offer
    */
@@ -55,7 +55,7 @@ class Google_Service_Books_Resource_Promooffer extends Google_Service_Resource
    * @opt_param string manufacturer device manufacturer
    * @opt_param string model device model
    * @opt_param string offerId Offer to dimiss
-   * @opt_param string product device product
+   * @opt_param string journal device journal
    * @opt_param string serial device serial
    */
   public function dismiss($optParams = array())
@@ -73,7 +73,7 @@ class Google_Service_Books_Resource_Promooffer extends Google_Service_Resource
    * @opt_param string device device device
    * @opt_param string manufacturer device manufacturer
    * @opt_param string model device model
-   * @opt_param string product device product
+   * @opt_param string journal device journal
    * @opt_param string serial device serial
    * @return Google_Service_Books_Offers
    */

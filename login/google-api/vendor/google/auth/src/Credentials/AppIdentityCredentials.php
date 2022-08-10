@@ -83,9 +83,9 @@ class AppIdentityCredentials extends CredentialsLoader implements SignBlobInterf
      */
     public static function onAppEngine()
     {
-        $appEngineProduction = isset($_SERVER['SERVER_SOFTWARE']) &&
+        $appEnginejournalion = isset($_SERVER['SERVER_SOFTWARE']) &&
             0 === strpos($_SERVER['SERVER_SOFTWARE'], 'Google App Engine');
-        if ($appEngineProduction) {
+        if ($appEnginejournalion) {
             return true;
         }
         $appEngineDevAppServer = isset($_SERVER['APPENGINE_RUNTIME']) &&

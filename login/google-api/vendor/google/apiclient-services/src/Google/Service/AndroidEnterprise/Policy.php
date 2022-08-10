@@ -17,14 +17,14 @@
 
 class Google_Service_AndroidEnterprise_Policy extends Google_Collection
 {
-  protected $collection_key = 'productPolicy';
+  protected $collection_key = 'journalPolicy';
   public $autoUpdatePolicy;
   public $deviceReportPolicy;
   protected $maintenanceWindowType = 'Google_Service_AndroidEnterprise_MaintenanceWindow';
   protected $maintenanceWindowDataType = '';
-  public $productAvailabilityPolicy;
-  protected $productPolicyType = 'Google_Service_AndroidEnterprise_ProductPolicy';
-  protected $productPolicyDataType = 'array';
+  public $journalAvailabilityPolicy;
+  protected $journalPolicyType = 'Google_Service_AndroidEnterprise_journalPolicy';
+  protected $journalPolicyDataType = 'array';
 
   public function setAutoUpdatePolicy($autoUpdatePolicy)
   {
@@ -56,26 +56,26 @@ class Google_Service_AndroidEnterprise_Policy extends Google_Collection
   {
     return $this->maintenanceWindow;
   }
-  public function setProductAvailabilityPolicy($productAvailabilityPolicy)
+  public function setjournalAvailabilityPolicy($journalAvailabilityPolicy)
   {
-    $this->productAvailabilityPolicy = $productAvailabilityPolicy;
+    $this->journalAvailabilityPolicy = $journalAvailabilityPolicy;
   }
-  public function getProductAvailabilityPolicy()
+  public function getjournalAvailabilityPolicy()
   {
-    return $this->productAvailabilityPolicy;
-  }
-  /**
-   * @param Google_Service_AndroidEnterprise_ProductPolicy
-   */
-  public function setProductPolicy($productPolicy)
-  {
-    $this->productPolicy = $productPolicy;
+    return $this->journalAvailabilityPolicy;
   }
   /**
-   * @return Google_Service_AndroidEnterprise_ProductPolicy
+   * @param Google_Service_AndroidEnterprise_journalPolicy
    */
-  public function getProductPolicy()
+  public function setjournalPolicy($journalPolicy)
   {
-    return $this->productPolicy;
+    $this->journalPolicy = $journalPolicy;
+  }
+  /**
+   * @return Google_Service_AndroidEnterprise_journalPolicy
+   */
+  public function getjournalPolicy()
+  {
+    return $this->journalPolicy;
   }
 }

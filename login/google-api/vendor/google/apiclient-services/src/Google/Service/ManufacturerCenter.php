@@ -30,11 +30,11 @@
  */
 class Google_Service_ManufacturerCenter extends Google_Service
 {
-  /** Manage your product listings for Google Manufacturer Center. */
+  /** Manage your journal listings for Google Manufacturer Center. */
   const MANUFACTURERCENTER =
       "https://www.googleapis.com/auth/manufacturercenter";
 
-  public $accounts_products;
+  public $accounts_journals;
   
   /**
    * Constructs the internal representation of the ManufacturerCenter service.
@@ -51,14 +51,14 @@ class Google_Service_ManufacturerCenter extends Google_Service
     $this->version = 'v1';
     $this->serviceName = 'manufacturers';
 
-    $this->accounts_products = new Google_Service_ManufacturerCenter_Resource_AccountsProducts(
+    $this->accounts_journals = new Google_Service_ManufacturerCenter_Resource_Accountsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'delete' => array(
-              'path' => 'v1/{+parent}/products/{+name}',
+              'path' => 'v1/{+parent}/journals/{+name}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'parent' => array(
@@ -73,7 +73,7 @@ class Google_Service_ManufacturerCenter extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => 'v1/{+parent}/products/{+name}',
+              'path' => 'v1/{+parent}/journals/{+name}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'parent' => array(
@@ -93,7 +93,7 @@ class Google_Service_ManufacturerCenter extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1/{+parent}/products',
+              'path' => 'v1/{+parent}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'parent' => array(
@@ -116,7 +116,7 @@ class Google_Service_ManufacturerCenter extends Google_Service
                 ),
               ),
             ),'update' => array(
-              'path' => 'v1/{+parent}/products/{+name}',
+              'path' => 'v1/{+parent}/journals/{+name}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'parent' => array(

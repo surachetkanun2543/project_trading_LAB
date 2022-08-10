@@ -15,16 +15,16 @@
  * the License.
  */
 
-class Google_Service_Vision_ProductSetPurgeConfig extends Google_Model
+class Google_Service_Vision_journalSetPurgeConfig extends Google_Model
 {
-  public $productSetId;
+  public $journalSetId;
 
-  public function setProductSetId($productSetId)
+  public function setjournalSetId($journalSetId)
   {
-    $this->productSetId = $productSetId;
+    $this->journalSetId = $journalSetId;
   }
-  public function getProductSetId()
+  public function getjournalSetId()
   {
-    return $this->productSetId;
+    return $this->journalSetId;
   }
 }

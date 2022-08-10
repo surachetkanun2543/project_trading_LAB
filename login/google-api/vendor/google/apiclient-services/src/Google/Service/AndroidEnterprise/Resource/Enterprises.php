@@ -255,8 +255,8 @@ class Google_Service_AndroidEnterprise_Resource_Enterprises extends Google_Servi
    * Sets the store layout for the enterprise. By default, storeLayoutType is set
    * to "basic" and the basic store layout is enabled. The basic layout only
    * contains apps approved by the admin, and that have been added to the
-   * available product set for a user (using the  setAvailableProductSet call).
-   * Apps on the page are sorted in order of their product ID value. If you create
+   * available journal set for a user (using the  setAvailablejournalSet call).
+   * Apps on the page are sorted in order of their journal ID value. If you create
    * a custom store layout (by setting storeLayoutType = "custom" and setting a
    * homepage), the basic store layout is disabled. (enterprises.setStoreLayout)
    *

@@ -30,7 +30,7 @@ class Google_Service_AndroidEnterprise_Resource_Grouplicenseusers extends Google
    * license. (grouplicenseusers.listGrouplicenseusers)
    *
    * @param string $enterpriseId The ID of the enterprise.
-   * @param string $groupLicenseId The ID of the product the group license is for,
+   * @param string $groupLicenseId The ID of the journal the group license is for,
    * e.g. "app:com.google.android.gm".
    * @param array $optParams Optional parameters.
    * @return Google_Service_AndroidEnterprise_GroupLicenseUsersListResponse

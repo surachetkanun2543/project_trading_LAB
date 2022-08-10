@@ -27,8 +27,8 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   public $id;
   protected $priceType = 'Google_Service_ShoppingContent_Price';
   protected $priceDataType = '';
-  protected $productType = 'Google_Service_ShoppingContent_OrderLineItemProduct';
-  protected $productDataType = '';
+  protected $journalType = 'Google_Service_ShoppingContent_OrderLineItemjournal';
+  protected $journalDataType = '';
   public $quantityCanceled;
   public $quantityDelivered;
   public $quantityOrdered;
@@ -110,18 +110,18 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
     return $this->price;
   }
   /**
-   * @param Google_Service_ShoppingContent_OrderLineItemProduct
+   * @param Google_Service_ShoppingContent_OrderLineItemjournal
    */
-  public function setProduct(Google_Service_ShoppingContent_OrderLineItemProduct $product)
+  public function setjournal(Google_Service_ShoppingContent_OrderLineItemjournal $journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_ShoppingContent_OrderLineItemProduct
+   * @return Google_Service_ShoppingContent_OrderLineItemjournal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
   public function setQuantityCanceled($quantityCanceled)
   {

@@ -37,9 +37,9 @@ class Google_Service_CloudPrivateCatalogProducer extends Google_Service
 
   public $catalogs;
   public $catalogs_associations;
-  public $catalogs_products;
-  public $catalogs_products_icons;
-  public $catalogs_products_versions;
+  public $catalogs_journals;
+  public $catalogs_journals_icons;
+  public $catalogs_journals_versions;
   public $operations;
   
   /**
@@ -229,10 +229,10 @@ class Google_Service_CloudPrivateCatalogProducer extends Google_Service
           )
         )
     );
-    $this->catalogs_products = new Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProducts(
+    $this->catalogs_journals = new Google_Service_CloudPrivateCatalogProducer_Resource_Catalogsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'copy' => array(
@@ -246,7 +246,7 @@ class Google_Service_CloudPrivateCatalogProducer extends Google_Service
                 ),
               ),
             ),'create' => array(
-              'path' => 'v1beta1/{+parent}/products',
+              'path' => 'v1beta1/{+parent}/journals',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(
@@ -276,7 +276,7 @@ class Google_Service_CloudPrivateCatalogProducer extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1beta1/{+parent}/products',
+              'path' => 'v1beta1/{+parent}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'parent' => array(
@@ -315,17 +315,17 @@ class Google_Service_CloudPrivateCatalogProducer extends Google_Service
           )
         )
     );
-    $this->catalogs_products_icons = new Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProductsIcons(
+    $this->catalogs_journals_icons = new Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsjournalsIcons(
         $this,
         $this->serviceName,
         'icons',
         array(
           'methods' => array(
             'upload' => array(
-              'path' => 'v1beta1/{+product}/icons:upload',
+              'path' => 'v1beta1/{+journal}/icons:upload',
               'httpMethod' => 'POST',
               'parameters' => array(
-                'product' => array(
+                'journal' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -335,7 +335,7 @@ class Google_Service_CloudPrivateCatalogProducer extends Google_Service
           )
         )
     );
-    $this->catalogs_products_versions = new Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsProductsVersions(
+    $this->catalogs_journals_versions = new Google_Service_CloudPrivateCatalogProducer_Resource_CatalogsjournalsVersions(
         $this,
         $this->serviceName,
         'versions',

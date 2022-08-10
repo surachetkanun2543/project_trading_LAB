@@ -27,7 +27,7 @@ class Google_Service_WebSecurityScanner_Finding extends Google_Model
   public $name;
   protected $outdatedLibraryType = 'Google_Service_WebSecurityScanner_OutdatedLibrary';
   protected $outdatedLibraryDataType = '';
-  public $reproductionUrl;
+  public $rejournalionUrl;
   public $trackingId;
   protected $violatingResourceType = 'Google_Service_WebSecurityScanner_ViolatingResource';
   protected $violatingResourceDataType = '';
@@ -116,13 +116,13 @@ class Google_Service_WebSecurityScanner_Finding extends Google_Model
   {
     return $this->outdatedLibrary;
   }
-  public function setReproductionUrl($reproductionUrl)
+  public function setRejournalionUrl($rejournalionUrl)
   {
-    $this->reproductionUrl = $reproductionUrl;
+    $this->rejournalionUrl = $rejournalionUrl;
   }
-  public function getReproductionUrl()
+  public function getRejournalionUrl()
   {
-    return $this->reproductionUrl;
+    return $this->rejournalionUrl;
   }
   public function setTrackingId($trackingId)
   {

@@ -15,11 +15,11 @@
  * the License.
  */
 
-class Google_Service_AndroidPublisher_InappproductsListResponse extends Google_Collection
+class Google_Service_AndroidPublisher_InappjournalsListResponse extends Google_Collection
 {
-  protected $collection_key = 'inappproduct';
-  protected $inappproductType = 'Google_Service_AndroidPublisher_InAppProduct';
-  protected $inappproductDataType = 'array';
+  protected $collection_key = 'inappjournal';
+  protected $inappjournalType = 'Google_Service_AndroidPublisher_InAppjournal';
+  protected $inappjournalDataType = 'array';
   public $kind;
   protected $pageInfoType = 'Google_Service_AndroidPublisher_PageInfo';
   protected $pageInfoDataType = '';
@@ -27,18 +27,18 @@ class Google_Service_AndroidPublisher_InappproductsListResponse extends Google_C
   protected $tokenPaginationDataType = '';
 
   /**
-   * @param Google_Service_AndroidPublisher_InAppProduct
+   * @param Google_Service_AndroidPublisher_InAppjournal
    */
-  public function setInappproduct($inappproduct)
+  public function setInappjournal($inappjournal)
   {
-    $this->inappproduct = $inappproduct;
+    $this->inappjournal = $inappjournal;
   }
   /**
-   * @return Google_Service_AndroidPublisher_InAppProduct
+   * @return Google_Service_AndroidPublisher_InAppjournal
    */
-  public function getInappproduct()
+  public function getInappjournal()
   {
-    return $this->inappproduct;
+    return $this->inappjournal;
   }
   public function setKind($kind)
   {

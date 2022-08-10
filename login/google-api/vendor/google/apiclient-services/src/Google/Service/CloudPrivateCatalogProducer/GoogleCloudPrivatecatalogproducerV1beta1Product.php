@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1Product extends Google_Model
+class Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1journal extends Google_Model
 {
   public $assetType;
   public $createTime;

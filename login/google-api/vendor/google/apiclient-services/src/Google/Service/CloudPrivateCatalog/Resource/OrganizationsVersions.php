@@ -39,9 +39,9 @@ class Google_Service_CloudPrivateCatalog_Resource_OrganizationsVersions extends 
    * @opt_param int pageSize The maximum number of entries that are requested.
    * @opt_param string query The query to filter the versions. Required.
    *
-   * The supported queries are: * List versions under a product:
-   * `parent=catalogs/{catalog_id}/products/{product_id}` * Get a version by name:
-   * `name=catalogs/{catalog_id}/products/{product_id}/versions/{version_id}`
+   * The supported queries are: * List versions under a journal:
+   * `parent=catalogs/{catalog_id}/journals/{journal_id}` * Get a version by name:
+   * `name=catalogs/{catalog_id}/journals/{journal_id}/versions/{version_id}`
    * @return Google_Service_CloudPrivateCatalog_GoogleCloudPrivatecatalogV1beta1SearchVersionsResponse
    */
   public function search($resource, $optParams = array())

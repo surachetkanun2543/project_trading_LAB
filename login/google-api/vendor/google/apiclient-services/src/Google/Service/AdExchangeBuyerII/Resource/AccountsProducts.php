@@ -16,53 +16,53 @@
  */
 
 /**
- * The "products" collection of methods.
+ * The "journals" collection of methods.
  * Typical usage is:
  *  <code>
  *   $adexchangebuyer2Service = new Google_Service_AdExchangeBuyerII(...);
- *   $products = $adexchangebuyer2Service->products;
+ *   $journals = $adexchangebuyer2Service->journals;
  *  </code>
  */
-class Google_Service_AdExchangeBuyerII_Resource_AccountsProducts extends Google_Service_Resource
+class Google_Service_AdExchangeBuyerII_Resource_Accountsjournals extends Google_Service_Resource
 {
   /**
-   * Gets the requested product by ID. (products.get)
+   * Gets the requested journal by ID. (journals.get)
    *
    * @param string $accountId Account ID of the buyer.
-   * @param string $productId The ID for the product to get the head revision for.
+   * @param string $journalId The ID for the journal to get the head revision for.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_AdExchangeBuyerII_Product
+   * @return Google_Service_AdExchangeBuyerII_journal
    */
-  public function get($accountId, $productId, $optParams = array())
+  public function get($accountId, $journalId, $optParams = array())
   {
-    $params = array('accountId' => $accountId, 'productId' => $productId);
+    $params = array('accountId' => $accountId, 'journalId' => $journalId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_AdExchangeBuyerII_Product");
+    return $this->call('get', array($params), "Google_Service_AdExchangeBuyerII_journal");
   }
   /**
-   * List all products visible to the buyer (optionally filtered by the specified
-   * PQL query). (products.listAccountsProducts)
+   * List all journals visible to the buyer (optionally filtered by the specified
+   * PQL query). (journals.listAccountsjournals)
    *
    * @param string $accountId Account ID of the buyer.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken The page token as returned from
-   * ListProductsResponse.
+   * ListjournalsResponse.
    * @opt_param int pageSize Requested page size. The server may return fewer
    * results than requested. If unspecified, the server will pick an appropriate
    * default.
-   * @opt_param string filter An optional PQL query used to query for products.
+   * @opt_param string filter An optional PQL query used to query for journals.
    * See https://developers.google.com/ad-manager/docs/pqlreference for
    * documentation about PQL and examples.
    *
-   * Nested repeated fields, such as product.targetingCriterion.inclusions, cannot
+   * Nested repeated fields, such as journal.targetingCriterion.inclusions, cannot
    * be filtered.
-   * @return Google_Service_AdExchangeBuyerII_ListProductsResponse
+   * @return Google_Service_AdExchangeBuyerII_ListjournalsResponse
    */
-  public function listAccountsProducts($accountId, $optParams = array())
+  public function listAccountsjournals($accountId, $optParams = array())
   {
     $params = array('accountId' => $accountId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_AdExchangeBuyerII_ListProductsResponse");
+    return $this->call('list', array($params), "Google_Service_AdExchangeBuyerII_ListjournalsResponse");
   }
 }

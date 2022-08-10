@@ -23,8 +23,8 @@ class Google_Service_ShoppingContent_MerchantOrderReturnItem extends Google_Coll
   public $itemId;
   protected $merchantReturnReasonType = 'Google_Service_ShoppingContent_RefundReason';
   protected $merchantReturnReasonDataType = '';
-  protected $productType = 'Google_Service_ShoppingContent_OrderLineItemProduct';
-  protected $productDataType = '';
+  protected $journalType = 'Google_Service_ShoppingContent_OrderLineItemjournal';
+  protected $journalDataType = '';
   public $returnShipmentIds;
   public $state;
 
@@ -65,18 +65,18 @@ class Google_Service_ShoppingContent_MerchantOrderReturnItem extends Google_Coll
     return $this->merchantReturnReason;
   }
   /**
-   * @param Google_Service_ShoppingContent_OrderLineItemProduct
+   * @param Google_Service_ShoppingContent_OrderLineItemjournal
    */
-  public function setProduct(Google_Service_ShoppingContent_OrderLineItemProduct $product)
+  public function setjournal(Google_Service_ShoppingContent_OrderLineItemjournal $journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_ShoppingContent_OrderLineItemProduct
+   * @return Google_Service_ShoppingContent_OrderLineItemjournal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
   public function setReturnShipmentIds($returnShipmentIds)
   {

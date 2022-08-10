@@ -28,7 +28,7 @@ AES, Blowfish, Twofish, SSH-1, SSH-2, SFTP, and X.509
 
 * Development Branch
 * Unstable API
-* Do not use in production
+* Do not use in journalion
 
 ### 2.0
 

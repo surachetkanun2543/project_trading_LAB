@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Chromewebstore_InAppProductPrices extends Google_Model
+class Google_Service_Chromewebstore_InAppjournalPrices extends Google_Model
 {
   public $currencyCode;
   public $regionCode;

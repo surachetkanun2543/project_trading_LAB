@@ -17,14 +17,14 @@
 
 class Google_Service_AndroidEnterprise_AppUpdateEvent extends Google_Model
 {
-  public $productId;
+  public $journalId;
 
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

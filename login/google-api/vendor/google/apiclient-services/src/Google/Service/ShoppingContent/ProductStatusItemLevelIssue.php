@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductStatusItemLevelIssue extends Google_Model
+class Google_Service_ShoppingContent_journalStatusItemLevelIssue extends Google_Model
 {
   public $attributeName;
   public $code;

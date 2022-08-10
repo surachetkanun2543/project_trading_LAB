@@ -23,7 +23,7 @@ class Google_Service_AndroidEnterprise_GroupLicense extends Google_Model
   public $numProvisioned;
   public $numPurchased;
   public $permissions;
-  public $productId;
+  public $journalId;
 
   public function setAcquisitionKind($acquisitionKind)
   {
@@ -73,12 +73,12 @@ class Google_Service_AndroidEnterprise_GroupLicense extends Google_Model
   {
     return $this->permissions;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

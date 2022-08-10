@@ -80,7 +80,7 @@ class Google_Service_ShoppingContent_Resource_Accounts extends Google_Service_Re
    * @param string $accountId The ID of the account.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool force Flag to delete sub-accounts with products. The default
+   * @opt_param bool force Flag to delete sub-accounts with journals. The default
    * value is false.
    */
   public function delete($merchantId, $accountId, $optParams = array())

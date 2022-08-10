@@ -20,7 +20,7 @@ class Google_Service_ShoppingContent_RegionalinventoryCustomBatchRequestEntry ex
   public $batchId;
   public $merchantId;
   public $method;
-  public $productId;
+  public $journalId;
   protected $regionalInventoryType = 'Google_Service_ShoppingContent_RegionalInventory';
   protected $regionalInventoryDataType = '';
 
@@ -48,13 +48,13 @@ class Google_Service_ShoppingContent_RegionalinventoryCustomBatchRequestEntry ex
   {
     return $this->method;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   /**
    * @param Google_Service_ShoppingContent_RegionalInventory

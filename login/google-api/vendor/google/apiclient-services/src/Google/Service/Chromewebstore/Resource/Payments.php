@@ -42,10 +42,10 @@ class Google_Service_Chromewebstore_Resource_Payments extends Google_Service_Res
     return $this->call('buy', array($params), "Google_Service_Chromewebstore_Jwt");
   }
   /**
-   * Consumes the in-app product for the user. (payments.delete)
+   * Consumes the in-app journal for the user. (payments.delete)
    *
-   * @param string $itemId The ID of the item to consume the in-app product.
-   * @param string $sku The in-app product ID.
+   * @param string $itemId The ID of the item to consume the in-app journal.
+   * @param string $sku The in-app journal ID.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Chromewebstore_PaymentsDeleteResponse
    */
@@ -56,7 +56,7 @@ class Google_Service_Chromewebstore_Resource_Payments extends Google_Service_Res
     return $this->call('delete', array($params), "Google_Service_Chromewebstore_PaymentsDeleteResponse");
   }
   /**
-   * Lists the in-app products that the user has purchased.
+   * Lists the in-app journals that the user has purchased.
    * (payments.listPayments)
    *
    * @param array $optParams Optional parameters.

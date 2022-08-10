@@ -7,7 +7,7 @@ include('../../service/admin_connect.php');  //ไฟล์เชื่อมต
 $p_id = secureStr($_GET['ID']);
 $p_id = $conn->escape_string($_GET['ID']);
 //2. query ข้อมูลจากตาราง:
-$sql = "SELECT * FROM tbl_product as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id WHERE p.p_id = '$p_id' ORDER BY p.Assettype_id asc";
+$sql = "SELECT * FROM tbl_journal as p INNER JOIN tb_type as t on p.Assettype_id=t.Assettype_id WHERE p.p_id = '$p_id' ORDER BY p.Assettype_id asc";
 $result2 = mysqli_query($conn, $sql) or die;
 $row = mysqli_fetch_array($result2);
 extract($row);
@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $query);
     <strong>เพิ่ม / แก้ไข ข้อมูล</strong>
   </div>
   <div class="card-body col-12">
-    <form name="addproduct" action="product_form_edit_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    <form name="addjournal" action="journal_form_edit_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
       <input type="text" name="p_name" class="form-control" required placeholder="ชื่อสินค้า" value="<?php echo $p_name; ?>"><br>
       <input type="text" name="p_price" class="form-control" required placeholder="ราคาสินค้า" value="<?php echo $p_price; ?>">&ensp;
       <select name="Assettype_id" class="form-control" required>
@@ -60,7 +60,7 @@ $result = mysqli_query($conn, $query);
         <input type="hidden" name="p_id" value="<?php echo $p_id; ?>" />
         <input type="hidden" name="img2" value="<?php echo $p_img; ?>" />
         <button style="width: 60px;height: 40px;" type="submit" class="btn btn-outline-primary shadow p-1"> <span class="fa fa-cloud-upload"></span> </button>
-        <a href="product.php" type="reset" style="width: 60px;height: 40px;" class="btn btn-outline-danger shadow p-1"><span class="fa fa-repeat"></span></a>
+        <a href="journal.php" type="reset" style="width: 60px;height: 40px;" class="btn btn-outline-danger shadow p-1"><span class="fa fa-repeat"></span></a>
       </div>
   </div>
 </div>

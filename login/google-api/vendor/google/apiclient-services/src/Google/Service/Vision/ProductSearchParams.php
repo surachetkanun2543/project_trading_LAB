@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_Vision_ProductSearchParams extends Google_Collection
+class Google_Service_Vision_journalSearchParams extends Google_Collection
 {
-  protected $collection_key = 'productCategories';
+  protected $collection_key = 'journalCategories';
   protected $boundingPolyType = 'Google_Service_Vision_BoundingPoly';
   protected $boundingPolyDataType = '';
   public $filter;
-  public $productCategories;
-  public $productSet;
+  public $journalCategories;
+  public $journalSet;
 
   /**
    * @param Google_Service_Vision_BoundingPoly
@@ -46,20 +46,20 @@ class Google_Service_Vision_ProductSearchParams extends Google_Collection
   {
     return $this->filter;
   }
-  public function setProductCategories($productCategories)
+  public function setjournalCategories($journalCategories)
   {
-    $this->productCategories = $productCategories;
+    $this->journalCategories = $journalCategories;
   }
-  public function getProductCategories()
+  public function getjournalCategories()
   {
-    return $this->productCategories;
+    return $this->journalCategories;
   }
-  public function setProductSet($productSet)
+  public function setjournalSet($journalSet)
   {
-    $this->productSet = $productSet;
+    $this->journalSet = $journalSet;
   }
-  public function getProductSet()
+  public function getjournalSet()
   {
-    return $this->productSet;
+    return $this->journalSet;
   }
 }

@@ -78,12 +78,12 @@ class Google_Service_Fitness extends Google_Service
   /** View and store oxygen saturation data in Google Fit. */
   const FITNESS_OXYGEN_SATURATION_WRITE =
       "https://www.googleapis.com/auth/fitness.oxygen_saturation.write";
-  /** View reproductive health data in Google Fit. */
-  const FITNESS_REPRODUCTIVE_HEALTH_READ =
-      "https://www.googleapis.com/auth/fitness.reproductive_health.read";
-  /** View and store reproductive health data in Google Fit. */
-  const FITNESS_REPRODUCTIVE_HEALTH_WRITE =
-      "https://www.googleapis.com/auth/fitness.reproductive_health.write";
+  /** View rejournalive health data in Google Fit. */
+  const FITNESS_REjournalIVE_HEALTH_READ =
+      "https://www.googleapis.com/auth/fitness.rejournalive_health.read";
+  /** View and store rejournalive health data in Google Fit. */
+  const FITNESS_REjournalIVE_HEALTH_WRITE =
+      "https://www.googleapis.com/auth/fitness.rejournalive_health.write";
 
   public $users_dataSources;
   public $users_dataSources_dataPointChanges;

@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Chromewebstore_InAppProductLocaleData extends Google_Model
+class Google_Service_Chromewebstore_InAppjournalLocaleData extends Google_Model
 {
   public $description;
   public $languageCode;

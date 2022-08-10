@@ -15,14 +15,14 @@
  * the License.
  */
 
-class Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsGroupedResult extends Google_Collection
+class Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsGroupedResult extends Google_Collection
 {
   protected $collection_key = 'results';
   protected $boundingPolyType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1BoundingPoly';
   protected $boundingPolyDataType = '';
-  protected $objectAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation';
+  protected $objectAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsObjectAnnotation';
   protected $objectAnnotationsDataType = 'array';
-  protected $resultsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsResult';
+  protected $resultsType = 'Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsResult';
   protected $resultsDataType = 'array';
 
   /**
@@ -40,28 +40,28 @@ class Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsGroupe
     return $this->boundingPoly;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation
+   * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsObjectAnnotation
    */
   public function setObjectAnnotations($objectAnnotations)
   {
     $this->objectAnnotations = $objectAnnotations;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsObjectAnnotation
+   * @return Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsObjectAnnotation
    */
   public function getObjectAnnotations()
   {
     return $this->objectAnnotations;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsResult
+   * @param Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsResult
    */
   public function setResults($results)
   {
     $this->results = $results;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p1beta1ProductSearchResultsResult
+   * @return Google_Service_Vision_GoogleCloudVisionV1p1beta1journalSearchResultsResult
    */
   public function getResults()
   {

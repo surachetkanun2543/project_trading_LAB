@@ -20,7 +20,7 @@ class Google_Service_AndroidEnterprise_InstallFailureEvent extends Google_Model
   public $deviceId;
   public $failureDetails;
   public $failureReason;
-  public $productId;
+  public $journalId;
   public $userId;
 
   public function setDeviceId($deviceId)
@@ -47,13 +47,13 @@ class Google_Service_AndroidEnterprise_InstallFailureEvent extends Google_Model
   {
     return $this->failureReason;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setUserId($userId)
   {

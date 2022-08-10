@@ -47,7 +47,7 @@ class Google_Service_AdExchangeBuyer_Creative extends Google_Collection
   protected $nativeAdType = 'Google_Service_AdExchangeBuyer_CreativeNativeAd';
   protected $nativeAdDataType = '';
   public $openAuctionStatus;
-  public $productCategories;
+  public $journalCategories;
   public $restrictedCategories;
   public $sensitiveCategories;
   protected $servingRestrictionsType = 'Google_Service_AdExchangeBuyer_CreativeServingRestrictions';
@@ -258,13 +258,13 @@ class Google_Service_AdExchangeBuyer_Creative extends Google_Collection
   {
     return $this->openAuctionStatus;
   }
-  public function setProductCategories($productCategories)
+  public function setjournalCategories($journalCategories)
   {
-    $this->productCategories = $productCategories;
+    $this->journalCategories = $journalCategories;
   }
-  public function getProductCategories()
+  public function getjournalCategories()
   {
-    return $this->productCategories;
+    return $this->journalCategories;
   }
   public function setRestrictedCategories($restrictedCategories)
   {

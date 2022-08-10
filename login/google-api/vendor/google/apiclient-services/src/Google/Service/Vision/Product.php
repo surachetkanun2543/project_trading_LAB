@@ -15,15 +15,15 @@
  * the License.
  */
 
-class Google_Service_Vision_Product extends Google_Collection
+class Google_Service_Vision_journal extends Google_Collection
 {
-  protected $collection_key = 'productLabels';
+  protected $collection_key = 'journalLabels';
   public $description;
   public $displayName;
   public $name;
-  public $productCategory;
-  protected $productLabelsType = 'Google_Service_Vision_KeyValue';
-  protected $productLabelsDataType = 'array';
+  public $journalCategory;
+  protected $journalLabelsType = 'Google_Service_Vision_KeyValue';
+  protected $journalLabelsDataType = 'array';
 
   public function setDescription($description)
   {
@@ -49,26 +49,26 @@ class Google_Service_Vision_Product extends Google_Collection
   {
     return $this->name;
   }
-  public function setProductCategory($productCategory)
+  public function setjournalCategory($journalCategory)
   {
-    $this->productCategory = $productCategory;
+    $this->journalCategory = $journalCategory;
   }
-  public function getProductCategory()
+  public function getjournalCategory()
   {
-    return $this->productCategory;
+    return $this->journalCategory;
   }
   /**
    * @param Google_Service_Vision_KeyValue
    */
-  public function setProductLabels($productLabels)
+  public function setjournalLabels($journalLabels)
   {
-    $this->productLabels = $productLabels;
+    $this->journalLabels = $journalLabels;
   }
   /**
    * @return Google_Service_Vision_KeyValue
    */
-  public function getProductLabels()
+  public function getjournalLabels()
   {
-    return $this->productLabels;
+    return $this->journalLabels;
   }
 }

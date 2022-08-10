@@ -15,20 +15,20 @@
  * the License.
  */
 
-class Google_Service_Chromewebstore_InAppProductList extends Google_Collection
+class Google_Service_Chromewebstore_InAppjournalList extends Google_Collection
 {
-  protected $collection_key = 'inAppProducts';
-  protected $inAppProductsType = 'Google_Service_Chromewebstore_InAppProduct';
-  protected $inAppProductsDataType = 'array';
+  protected $collection_key = 'inAppjournals';
+  protected $inAppjournalsType = 'Google_Service_Chromewebstore_InAppjournal';
+  protected $inAppjournalsDataType = 'array';
   public $kind;
 
-  public function setInAppProducts($inAppProducts)
+  public function setInAppjournals($inAppjournals)
   {
-    $this->inAppProducts = $inAppProducts;
+    $this->inAppjournals = $inAppjournals;
   }
-  public function getInAppProducts()
+  public function getInAppjournals()
   {
-    return $this->inAppProducts;
+    return $this->inAppjournals;
   }
   public function setKind($kind)
   {

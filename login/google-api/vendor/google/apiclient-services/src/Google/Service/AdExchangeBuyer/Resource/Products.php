@@ -16,34 +16,34 @@
  */
 
 /**
- * The "products" collection of methods.
+ * The "journals" collection of methods.
  * Typical usage is:
  *  <code>
  *   $adexchangebuyerService = new Google_Service_AdExchangeBuyer(...);
- *   $products = $adexchangebuyerService->products;
+ *   $journals = $adexchangebuyerService->journals;
  *  </code>
  */
-class Google_Service_AdExchangeBuyer_Resource_Products extends Google_Service_Resource
+class Google_Service_AdExchangeBuyer_Resource_journals extends Google_Service_Resource
 {
   /**
-   * Gets the requested product by id. (products.get)
+   * Gets the requested journal by id. (journals.get)
    *
-   * @param string $productId The id for the product to get the head revision for.
+   * @param string $journalId The id for the journal to get the head revision for.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_AdExchangeBuyer_Product
+   * @return Google_Service_AdExchangeBuyer_journal
    */
-  public function get($productId, $optParams = array())
+  public function get($journalId, $optParams = array())
   {
-    $params = array('productId' => $productId);
+    $params = array('journalId' => $journalId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_AdExchangeBuyer_Product");
+    return $this->call('get', array($params), "Google_Service_AdExchangeBuyer_journal");
   }
   /**
-   * Gets the requested product. (products.search)
+   * Gets the requested journal. (journals.search)
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string pqlQuery The pql query used to query for products.
+   * @opt_param string pqlQuery The pql query used to query for journals.
    * @return Google_Service_AdExchangeBuyer_GetOffersResponse
    */
   public function search($optParams = array())

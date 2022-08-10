@@ -23,8 +23,8 @@ class Google_Service_Vision_ImageContext extends Google_Collection
   public $languageHints;
   protected $latLongRectType = 'Google_Service_Vision_LatLongRect';
   protected $latLongRectDataType = '';
-  protected $productSearchParamsType = 'Google_Service_Vision_ProductSearchParams';
-  protected $productSearchParamsDataType = '';
+  protected $journalSearchParamsType = 'Google_Service_Vision_journalSearchParams';
+  protected $journalSearchParamsDataType = '';
   protected $webDetectionParamsType = 'Google_Service_Vision_WebDetectionParams';
   protected $webDetectionParamsDataType = '';
 
@@ -65,18 +65,18 @@ class Google_Service_Vision_ImageContext extends Google_Collection
     return $this->latLongRect;
   }
   /**
-   * @param Google_Service_Vision_ProductSearchParams
+   * @param Google_Service_Vision_journalSearchParams
    */
-  public function setProductSearchParams(Google_Service_Vision_ProductSearchParams $productSearchParams)
+  public function setjournalSearchParams(Google_Service_Vision_journalSearchParams $journalSearchParams)
   {
-    $this->productSearchParams = $productSearchParams;
+    $this->journalSearchParams = $journalSearchParams;
   }
   /**
-   * @return Google_Service_Vision_ProductSearchParams
+   * @return Google_Service_Vision_journalSearchParams
    */
-  public function getProductSearchParams()
+  public function getjournalSearchParams()
   {
-    return $this->productSearchParams;
+    return $this->journalSearchParams;
   }
   /**
    * @param Google_Service_Vision_WebDetectionParams

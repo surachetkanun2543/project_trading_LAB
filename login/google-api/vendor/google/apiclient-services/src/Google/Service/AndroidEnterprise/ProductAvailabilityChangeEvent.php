@@ -15,10 +15,10 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductAvailabilityChangeEvent extends Google_Model
+class Google_Service_AndroidEnterprise_journalAvailabilityChangeEvent extends Google_Model
 {
   public $availabilityStatus;
-  public $productId;
+  public $journalId;
 
   public function setAvailabilityStatus($availabilityStatus)
   {
@@ -28,12 +28,12 @@ class Google_Service_AndroidEnterprise_ProductAvailabilityChangeEvent extends Go
   {
     return $this->availabilityStatus;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
 }

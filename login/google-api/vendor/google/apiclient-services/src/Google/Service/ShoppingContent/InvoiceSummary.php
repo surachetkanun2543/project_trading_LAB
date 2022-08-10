@@ -20,8 +20,8 @@ class Google_Service_ShoppingContent_InvoiceSummary extends Google_Collection
   protected $collection_key = 'additionalChargeSummaries';
   protected $additionalChargeSummariesType = 'Google_Service_ShoppingContent_InvoiceSummaryAdditionalChargeSummary';
   protected $additionalChargeSummariesDataType = 'array';
-  protected $productTotalType = 'Google_Service_ShoppingContent_Amount';
-  protected $productTotalDataType = '';
+  protected $journalTotalType = 'Google_Service_ShoppingContent_Amount';
+  protected $journalTotalDataType = '';
 
   /**
    * @param Google_Service_ShoppingContent_InvoiceSummaryAdditionalChargeSummary
@@ -40,15 +40,15 @@ class Google_Service_ShoppingContent_InvoiceSummary extends Google_Collection
   /**
    * @param Google_Service_ShoppingContent_Amount
    */
-  public function setProductTotal(Google_Service_ShoppingContent_Amount $productTotal)
+  public function setjournalTotal(Google_Service_ShoppingContent_Amount $journalTotal)
   {
-    $this->productTotal = $productTotal;
+    $this->journalTotal = $journalTotal;
   }
   /**
    * @return Google_Service_ShoppingContent_Amount
    */
-  public function getProductTotal()
+  public function getjournalTotal()
   {
-    return $this->productTotal;
+    return $this->journalTotal;
   }
 }

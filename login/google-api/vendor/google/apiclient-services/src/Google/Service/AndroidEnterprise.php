@@ -44,7 +44,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
   public $managedconfigurationsforuser;
   public $managedconfigurationssettings;
   public $permissions;
-  public $products;
+  public $journals;
   public $serviceaccountkeys;
   public $storelayoutclusters;
   public $storelayoutpages;
@@ -918,7 +918,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
         array(
           'methods' => array(
             'list' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}/managedConfigurationsSettings',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}/managedConfigurationsSettings',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -926,7 +926,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -960,14 +960,14 @@ class Google_Service_AndroidEnterprise extends Google_Service
           )
         )
     );
-    $this->products = new Google_Service_AndroidEnterprise_Resource_Products(
+    $this->journals = new Google_Service_AndroidEnterprise_Resource_journals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'approve' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}/approve',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}/approve',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -975,14 +975,14 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'generateApprovalUrl' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}/generateApprovalUrl',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}/generateApprovalUrl',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -990,7 +990,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1001,7 +1001,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                 ),
               ),
             ),'get' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -1009,7 +1009,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1020,7 +1020,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                 ),
               ),
             ),'getAppRestrictionsSchema' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}/appRestrictionsSchema',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}/appRestrictionsSchema',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -1028,7 +1028,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1039,7 +1039,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                 ),
               ),
             ),'getPermissions' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}/permissions',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}/permissions',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -1047,14 +1047,14 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => 'enterprises/{enterpriseId}/products',
+              'path' => 'enterprises/{enterpriseId}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -1084,7 +1084,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                 ),
               ),
             ),'unapprove' => array(
-              'path' => 'enterprises/{enterpriseId}/products/{productId}/unapprove',
+              'path' => 'enterprises/{enterpriseId}/journals/{journalId}/unapprove',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -1092,7 +1092,7 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -1423,8 +1423,8 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'getAvailableProductSet' => array(
-              'path' => 'enterprises/{enterpriseId}/users/{userId}/availableProductSet',
+            ),'getAvailablejournalSet' => array(
+              'path' => 'enterprises/{enterpriseId}/users/{userId}/availablejournalSet',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'enterpriseId' => array(
@@ -1508,8 +1508,8 @@ class Google_Service_AndroidEnterprise extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),'setAvailableProductSet' => array(
-              'path' => 'enterprises/{enterpriseId}/users/{userId}/availableProductSet',
+            ),'setAvailablejournalSet' => array(
+              'path' => 'enterprises/{enterpriseId}/users/{userId}/availablejournalSet',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'enterpriseId' => array(

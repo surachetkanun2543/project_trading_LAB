@@ -15,20 +15,20 @@
  * the License.
  */
 
-class Google_Service_Vision_ImportProductSetsInputConfig extends Google_Model
+class Google_Service_Vision_ImportjournalSetsInputConfig extends Google_Model
 {
-  protected $gcsSourceType = 'Google_Service_Vision_ImportProductSetsGcsSource';
+  protected $gcsSourceType = 'Google_Service_Vision_ImportjournalSetsGcsSource';
   protected $gcsSourceDataType = '';
 
   /**
-   * @param Google_Service_Vision_ImportProductSetsGcsSource
+   * @param Google_Service_Vision_ImportjournalSetsGcsSource
    */
-  public function setGcsSource(Google_Service_Vision_ImportProductSetsGcsSource $gcsSource)
+  public function setGcsSource(Google_Service_Vision_ImportjournalSetsGcsSource $gcsSource)
   {
     $this->gcsSource = $gcsSource;
   }
   /**
-   * @return Google_Service_Vision_ImportProductSetsGcsSource
+   * @return Google_Service_Vision_ImportjournalSetsGcsSource
    */
   public function getGcsSource()
   {

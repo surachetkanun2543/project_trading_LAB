@@ -18,7 +18,7 @@
 class Google_Service_ShoppingContent_OrderPromotionItem extends Google_Model
 {
   public $lineItemId;
-  public $productId;
+  public $journalId;
   public $quantity;
 
   public function setLineItemId($lineItemId)
@@ -29,13 +29,13 @@ class Google_Service_ShoppingContent_OrderPromotionItem extends Google_Model
   {
     return $this->lineItemId;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
   public function setQuantity($quantity)
   {

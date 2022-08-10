@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Vision_GoogleCloudVisionV1p3beta1ProductKeyValue extends Google_Model
+class Google_Service_Vision_GoogleCloudVisionV1p3beta1journalKeyValue extends Google_Model
 {
   public $key;
   public $value;

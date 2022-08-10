@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AdExchangeBuyerII_Product extends Google_Collection
+class Google_Service_AdExchangeBuyerII_journal extends Google_Collection
 {
   protected $collection_key = 'targetingCriterion';
   public $availableEndTime;
@@ -25,12 +25,12 @@ class Google_Service_AdExchangeBuyerII_Product extends Google_Collection
   protected $creatorContactsDataType = 'array';
   public $displayName;
   public $hasCreatorSignedOff;
-  public $productId;
-  public $productRevision;
+  public $journalId;
+  public $journalRevision;
   public $publisherProfileId;
   protected $sellerType = 'Google_Service_AdExchangeBuyerII_Seller';
   protected $sellerDataType = '';
-  public $syndicationProduct;
+  public $syndicationjournal;
   protected $targetingCriterionType = 'Google_Service_AdExchangeBuyerII_TargetingCriteria';
   protected $targetingCriterionDataType = 'array';
   protected $termsType = 'Google_Service_AdExchangeBuyerII_DealTerms';
@@ -92,21 +92,21 @@ class Google_Service_AdExchangeBuyerII_Product extends Google_Collection
   {
     return $this->hasCreatorSignedOff;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
-  public function setProductRevision($productRevision)
+  public function setjournalRevision($journalRevision)
   {
-    $this->productRevision = $productRevision;
+    $this->journalRevision = $journalRevision;
   }
-  public function getProductRevision()
+  public function getjournalRevision()
   {
-    return $this->productRevision;
+    return $this->journalRevision;
   }
   public function setPublisherProfileId($publisherProfileId)
   {
@@ -130,13 +130,13 @@ class Google_Service_AdExchangeBuyerII_Product extends Google_Collection
   {
     return $this->seller;
   }
-  public function setSyndicationProduct($syndicationProduct)
+  public function setSyndicationjournal($syndicationjournal)
   {
-    $this->syndicationProduct = $syndicationProduct;
+    $this->syndicationjournal = $syndicationjournal;
   }
-  public function getSyndicationProduct()
+  public function getSyndicationjournal()
   {
-    return $this->syndicationProduct;
+    return $this->syndicationjournal;
   }
   /**
    * @param Google_Service_AdExchangeBuyerII_TargetingCriteria

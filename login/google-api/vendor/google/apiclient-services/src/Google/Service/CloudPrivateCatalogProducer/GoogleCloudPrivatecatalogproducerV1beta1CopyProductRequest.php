@@ -15,16 +15,16 @@
  * the License.
  */
 
-class Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1CopyProductRequest extends Google_Model
+class Google_Service_CloudPrivateCatalogProducer_GoogleCloudPrivatecatalogproducerV1beta1CopyjournalRequest extends Google_Model
 {
-  public $destinationProductName;
+  public $destinationjournalName;
 
-  public function setDestinationProductName($destinationProductName)
+  public function setDestinationjournalName($destinationjournalName)
   {
-    $this->destinationProductName = $destinationProductName;
+    $this->destinationjournalName = $destinationjournalName;
   }
-  public function getDestinationProductName()
+  public function getDestinationjournalName()
   {
-    return $this->destinationProductName;
+    return $this->destinationjournalName;
   }
 }

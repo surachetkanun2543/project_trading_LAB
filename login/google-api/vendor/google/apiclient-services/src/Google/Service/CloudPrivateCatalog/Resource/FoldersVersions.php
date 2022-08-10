@@ -35,9 +35,9 @@ class Google_Service_CloudPrivateCatalog_Resource_FoldersVersions extends Google
    *
    * @opt_param string query The query to filter the versions. Required.
    *
-   * The supported queries are: * List versions under a product:
-   * `parent=catalogs/{catalog_id}/products/{product_id}` * Get a version by name:
-   * `name=catalogs/{catalog_id}/products/{product_id}/versions/{version_id}`
+   * The supported queries are: * List versions under a journal:
+   * `parent=catalogs/{catalog_id}/journals/{journal_id}` * Get a version by name:
+   * `name=catalogs/{catalog_id}/journals/{journal_id}/versions/{version_id}`
    * @opt_param string pageToken A pagination token returned from a previous call
    * to SearchVersions that indicates where this listing should continue from.
    * This field is optional.

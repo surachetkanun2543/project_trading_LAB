@@ -391,7 +391,7 @@ class Google_Service_AdSenseHost extends Google_Service
               'path' => 'associationsessions/start',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'productCode' => array(
+                'journalCode' => array(
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,

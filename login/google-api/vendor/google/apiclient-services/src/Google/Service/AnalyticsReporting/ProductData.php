@@ -15,12 +15,12 @@
  * the License.
  */
 
-class Google_Service_AnalyticsReporting_ProductData extends Google_Model
+class Google_Service_AnalyticsReporting_journalData extends Google_Model
 {
   public $itemRevenue;
-  public $productName;
-  public $productQuantity;
-  public $productSku;
+  public $journalName;
+  public $journalQuantity;
+  public $journalSku;
 
   public function setItemRevenue($itemRevenue)
   {
@@ -30,28 +30,28 @@ class Google_Service_AnalyticsReporting_ProductData extends Google_Model
   {
     return $this->itemRevenue;
   }
-  public function setProductName($productName)
+  public function setjournalName($journalName)
   {
-    $this->productName = $productName;
+    $this->journalName = $journalName;
   }
-  public function getProductName()
+  public function getjournalName()
   {
-    return $this->productName;
+    return $this->journalName;
   }
-  public function setProductQuantity($productQuantity)
+  public function setjournalQuantity($journalQuantity)
   {
-    $this->productQuantity = $productQuantity;
+    $this->journalQuantity = $journalQuantity;
   }
-  public function getProductQuantity()
+  public function getjournalQuantity()
   {
-    return $this->productQuantity;
+    return $this->journalQuantity;
   }
-  public function setProductSku($productSku)
+  public function setjournalSku($journalSku)
   {
-    $this->productSku = $productSku;
+    $this->journalSku = $journalSku;
   }
-  public function getProductSku()
+  public function getjournalSku()
   {
-    return $this->productSku;
+    return $this->journalSku;
   }
 }

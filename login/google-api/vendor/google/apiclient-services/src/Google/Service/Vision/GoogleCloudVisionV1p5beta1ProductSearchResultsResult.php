@@ -15,11 +15,11 @@
  * the License.
  */
 
-class Google_Service_Vision_GoogleCloudVisionV1p5beta1ProductSearchResultsResult extends Google_Model
+class Google_Service_Vision_GoogleCloudVisionV1p5beta1journalSearchResultsResult extends Google_Model
 {
   public $image;
-  protected $productType = 'Google_Service_Vision_GoogleCloudVisionV1p5beta1Product';
-  protected $productDataType = '';
+  protected $journalType = 'Google_Service_Vision_GoogleCloudVisionV1p5beta1journal';
+  protected $journalDataType = '';
   public $score;
 
   public function setImage($image)
@@ -31,18 +31,18 @@ class Google_Service_Vision_GoogleCloudVisionV1p5beta1ProductSearchResultsResult
     return $this->image;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p5beta1Product
+   * @param Google_Service_Vision_GoogleCloudVisionV1p5beta1journal
    */
-  public function setProduct(Google_Service_Vision_GoogleCloudVisionV1p5beta1Product $product)
+  public function setjournal(Google_Service_Vision_GoogleCloudVisionV1p5beta1journal $journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p5beta1Product
+   * @return Google_Service_Vision_GoogleCloudVisionV1p5beta1journal
    */
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
   public function setScore($score)
   {

@@ -21,7 +21,7 @@ class Google_Service_Cih_Uaid extends Google_Model
         "accountId" => "account_id",
   );
   public $accountId;
-  public $product;
+  public $journal;
 
   public function setAccountId($accountId)
   {
@@ -31,12 +31,12 @@ class Google_Service_Cih_Uaid extends Google_Model
   {
     return $this->accountId;
   }
-  public function setProduct($product)
+  public function setjournal($journal)
   {
-    $this->product = $product;
+    $this->journal = $journal;
   }
-  public function getProduct()
+  public function getjournal()
   {
-    return $this->product;
+    return $this->journal;
   }
 }

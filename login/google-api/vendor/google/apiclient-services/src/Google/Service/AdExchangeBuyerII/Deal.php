@@ -22,8 +22,8 @@ class Google_Service_AdExchangeBuyerII_Deal extends Google_Collection
   public $availableStartTime;
   protected $buyerPrivateDataType = 'Google_Service_AdExchangeBuyerII_PrivateData';
   protected $buyerPrivateDataDataType = '';
-  public $createProductId;
-  public $createProductRevision;
+  public $createjournalId;
+  public $createjournalRevision;
   public $createTime;
   public $creativePreApprovalPolicy;
   protected $creativeRestrictionsType = 'Google_Service_AdExchangeBuyerII_CreativeRestrictions';
@@ -44,7 +44,7 @@ class Google_Service_AdExchangeBuyerII_Deal extends Google_Collection
   public $proposalId;
   protected $sellerContactsType = 'Google_Service_AdExchangeBuyerII_ContactInformation';
   protected $sellerContactsDataType = 'array';
-  public $syndicationProduct;
+  public $syndicationjournal;
   protected $targetingType = 'Google_Service_AdExchangeBuyerII_MarketplaceTargeting';
   protected $targetingDataType = '';
   protected $targetingCriterionType = 'Google_Service_AdExchangeBuyerII_TargetingCriteria';
@@ -82,21 +82,21 @@ class Google_Service_AdExchangeBuyerII_Deal extends Google_Collection
   {
     return $this->buyerPrivateData;
   }
-  public function setCreateProductId($createProductId)
+  public function setCreatejournalId($createjournalId)
   {
-    $this->createProductId = $createProductId;
+    $this->createjournalId = $createjournalId;
   }
-  public function getCreateProductId()
+  public function getCreatejournalId()
   {
-    return $this->createProductId;
+    return $this->createjournalId;
   }
-  public function setCreateProductRevision($createProductRevision)
+  public function setCreatejournalRevision($createjournalRevision)
   {
-    $this->createProductRevision = $createProductRevision;
+    $this->createjournalRevision = $createjournalRevision;
   }
-  public function getCreateProductRevision()
+  public function getCreatejournalRevision()
   {
-    return $this->createProductRevision;
+    return $this->createjournalRevision;
   }
   public function setCreateTime($createTime)
   {
@@ -248,13 +248,13 @@ class Google_Service_AdExchangeBuyerII_Deal extends Google_Collection
   {
     return $this->sellerContacts;
   }
-  public function setSyndicationProduct($syndicationProduct)
+  public function setSyndicationjournal($syndicationjournal)
   {
-    $this->syndicationProduct = $syndicationProduct;
+    $this->syndicationjournal = $syndicationjournal;
   }
-  public function getSyndicationProduct()
+  public function getSyndicationjournal()
   {
-    return $this->syndicationProduct;
+    return $this->syndicationjournal;
   }
   /**
    * @param Google_Service_AdExchangeBuyerII_MarketplaceTargeting

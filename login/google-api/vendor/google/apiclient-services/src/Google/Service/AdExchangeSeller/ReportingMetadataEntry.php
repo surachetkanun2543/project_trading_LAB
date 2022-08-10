@@ -17,14 +17,14 @@
 
 class Google_Service_AdExchangeSeller_ReportingMetadataEntry extends Google_Collection
 {
-  protected $collection_key = 'supportedProducts';
+  protected $collection_key = 'supportedjournals';
   public $compatibleDimensions;
   public $compatibleMetrics;
   public $id;
   public $kind;
   public $requiredDimensions;
   public $requiredMetrics;
-  public $supportedProducts;
+  public $supportedjournals;
 
   public function setCompatibleDimensions($compatibleDimensions)
   {
@@ -74,12 +74,12 @@ class Google_Service_AdExchangeSeller_ReportingMetadataEntry extends Google_Coll
   {
     return $this->requiredMetrics;
   }
-  public function setSupportedProducts($supportedProducts)
+  public function setSupportedjournals($supportedjournals)
   {
-    $this->supportedProducts = $supportedProducts;
+    $this->supportedjournals = $supportedjournals;
   }
-  public function getSupportedProducts()
+  public function getSupportedjournals()
   {
-    return $this->supportedProducts;
+    return $this->supportedjournals;
   }
 }

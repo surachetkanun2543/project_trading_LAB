@@ -267,7 +267,7 @@ class BigInteger
             // some versions of XAMPP have mismatched versions of OpenSSL which causes it not to work
             $versions = array();
 
-            // avoid generating errors (even with suppression) when phpinfo() is disabled (common in production systems)
+            // avoid generating errors (even with suppression) when phpinfo() is disabled (common in journalion systems)
             if (strpos(ini_get('disable_functions'), 'phpinfo') === false) {
                 ob_start();
                 @phpinfo();
@@ -1150,11 +1150,11 @@ class BigInteger
 
         $temp = $this->_multiply($this->value, $this->is_negative, $x->value, $x->is_negative);
 
-        $product = new static();
-        $product->value = $temp[self::VALUE];
-        $product->is_negative = $temp[self::SIGN];
+        $journal = new static();
+        $journal->value = $temp[self::VALUE];
+        $journal->is_negative = $temp[self::SIGN];
 
-        return $this->_normalize($product);
+        return $this->_normalize($journal);
     }
 
     /**
@@ -1222,23 +1222,23 @@ class BigInteger
             $y_length = count($y_value);
         }
 
-        $product_value = $this->_array_repeat(0, $x_length + $y_length);
+        $journal_value = $this->_array_repeat(0, $x_length + $y_length);
 
         // the following for loop could be removed if the for loop following it
         // (the one with nested for loops) initially set $i to 0, but
         // doing so would also make the result in one set of unnecessary adds,
-        // since on the outermost loops first pass, $product->value[$k] is going
+        // since on the outermost loops first pass, $journal->value[$k] is going
         // to always be 0
 
         $carry = 0;
 
         for ($j = 0; $j < $x_length; ++$j) { // ie. $i = 0
-            $temp = $x_value[$j] * $y_value[0] + $carry; // $product_value[$k] == 0
+            $temp = $x_value[$j] * $y_value[0] + $carry; // $journal_value[$k] == 0
             $carry = self::$base === 26 ? intval($temp / 0x4000000) : ($temp >> 31);
-            $product_value[$j] = (int) ($temp - self::$baseFull * $carry);
+            $journal_value[$j] = (int) ($temp - self::$baseFull * $carry);
         }
 
-        $product_value[$j] = $carry;
+        $journal_value[$j] = $carry;
 
         // the above for loop is what the previous comment was talking about.  the
         // following for loop is the "one with nested for loops"
@@ -1246,15 +1246,15 @@ class BigInteger
             $carry = 0;
 
             for ($j = 0, $k = $i; $j < $x_length; ++$j, ++$k) {
-                $temp = $product_value[$k] + $x_value[$j] * $y_value[$i] + $carry;
+                $temp = $journal_value[$k] + $x_value[$j] * $y_value[$i] + $carry;
                 $carry = self::$base === 26 ? intval($temp / 0x4000000) : ($temp >> 31);
-                $product_value[$k] = (int) ($temp - self::$baseFull * $carry);
+                $journal_value[$k] = (int) ($temp - self::$baseFull * $carry);
             }
 
-            $product_value[$k] = $carry;
+            $journal_value[$k] = $carry;
         }
 
-        return $product_value;
+        return $journal_value;
     }
 
     /**
@@ -1645,8 +1645,8 @@ class BigInteger
      *
      *    The two most commonly used modular reductions are Barrett and Montgomery reduction.  Montgomery reduction,
      *    although faster, only works when the gcd of the modulo and of the base being used is 1.  In RSA, when the
-     *    base is a power of two, the modulo - a product of two primes - is always going to have a gcd of 1 (because
-     *    the product of two odd numbers is odd), but what about when RSA isn't used?
+     *    base is a power of two, the modulo - a journal of two primes - is always going to have a gcd of 1 (because
+     *    the journal of two odd numbers is odd), but what about when RSA isn't used?
      *
      *    In contrast, Barrett reduction has no such constraint.  As such, some bigint implementations perform a
      *    Barrett reduction after every operation in the modpow function.  Others perform Barrett reductions when the
@@ -2187,7 +2187,7 @@ class BigInteger
     /**
      * Performs long multiplication up to $stop digits
      *
-     * If you're going to be doing array_slice($product->value, 0, $stop), some cycles can be saved.
+     * If you're going to be doing array_slice($journal->value, 0, $stop), some cycles can be saved.
      *
      * @see self::_regularBarrett()
      * @param array $x_value
@@ -2219,24 +2219,24 @@ class BigInteger
             $y_length = count($y_value);
         }
 
-        $product_value = $this->_array_repeat(0, $x_length + $y_length);
+        $journal_value = $this->_array_repeat(0, $x_length + $y_length);
 
         // the following for loop could be removed if the for loop following it
         // (the one with nested for loops) initially set $i to 0, but
         // doing so would also make the result in one set of unnecessary adds,
-        // since on the outermost loops first pass, $product->value[$k] is going
+        // since on the outermost loops first pass, $journal->value[$k] is going
         // to always be 0
 
         $carry = 0;
 
         for ($j = 0; $j < $x_length; ++$j) { // ie. $i = 0, $k = $i
-            $temp = $x_value[$j] * $y_value[0] + $carry; // $product_value[$k] == 0
+            $temp = $x_value[$j] * $y_value[0] + $carry; // $journal_value[$k] == 0
             $carry = self::$base === 26 ? intval($temp / 0x4000000) : ($temp >> 31);
-            $product_value[$j] = (int) ($temp - self::$baseFull * $carry);
+            $journal_value[$j] = (int) ($temp - self::$baseFull * $carry);
         }
 
         if ($j < $stop) {
-            $product_value[$j] = $carry;
+            $journal_value[$j] = $carry;
         }
 
         // the above for loop is what the previous comment was talking about.  the
@@ -2246,18 +2246,18 @@ class BigInteger
             $carry = 0;
 
             for ($j = 0, $k = $i; $j < $x_length && $k < $stop; ++$j, ++$k) {
-                $temp = $product_value[$k] + $x_value[$j] * $y_value[$i] + $carry;
+                $temp = $journal_value[$k] + $x_value[$j] * $y_value[$i] + $carry;
                 $carry = self::$base === 26 ? intval($temp / 0x4000000) : ($temp >> 31);
-                $product_value[$k] = (int) ($temp - self::$baseFull * $carry);
+                $journal_value[$k] = (int) ($temp - self::$baseFull * $carry);
             }
 
             if ($k < $stop) {
-                $product_value[$k] = $carry;
+                $journal_value[$k] = $carry;
             }
         }
 
         return array(
-            self::VALUE => $this->_trim($product_value),
+            self::VALUE => $this->_trim($journal_value),
             self::SIGN => $x_negative != $y_negative
         );
     }

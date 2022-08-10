@@ -17,11 +17,11 @@
 
 class Google_Service_AdSenseHost_AssociationSession extends Google_Collection
 {
-  protected $collection_key = 'productCodes';
+  protected $collection_key = 'journalCodes';
   public $accountId;
   public $id;
   public $kind;
-  public $productCodes;
+  public $journalCodes;
   public $redirectUrl;
   public $status;
   public $userLocale;
@@ -52,13 +52,13 @@ class Google_Service_AdSenseHost_AssociationSession extends Google_Collection
   {
     return $this->kind;
   }
-  public function setProductCodes($productCodes)
+  public function setjournalCodes($journalCodes)
   {
-    $this->productCodes = $productCodes;
+    $this->journalCodes = $journalCodes;
   }
-  public function getProductCodes()
+  public function getjournalCodes()
   {
-    return $this->productCodes;
+    return $this->journalCodes;
   }
   public function setRedirectUrl($redirectUrl)
   {

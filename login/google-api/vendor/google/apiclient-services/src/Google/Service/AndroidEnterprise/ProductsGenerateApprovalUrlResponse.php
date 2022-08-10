@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_AndroidEnterprise_ProductsGenerateApprovalUrlResponse extends Google_Model
+class Google_Service_AndroidEnterprise_journalsGenerateApprovalUrlResponse extends Google_Model
 {
   public $url;
 

@@ -17,16 +17,16 @@
 
 class Google_Service_AccessApproval_EnrolledService extends Google_Model
 {
-  public $cloudProduct;
+  public $cloudjournal;
   public $enrollmentLevel;
 
-  public function setCloudProduct($cloudProduct)
+  public function setCloudjournal($cloudjournal)
   {
-    $this->cloudProduct = $cloudProduct;
+    $this->cloudjournal = $cloudjournal;
   }
-  public function getCloudProduct()
+  public function getCloudjournal()
   {
-    return $this->cloudProduct;
+    return $this->cloudjournal;
   }
   public function setEnrollmentLevel($enrollmentLevel)
   {

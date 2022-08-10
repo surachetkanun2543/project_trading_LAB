@@ -37,15 +37,15 @@ class Google_Service_AdExchangeBuyer_MarketplaceDeal extends Google_Collection
   public $kind;
   public $lastUpdateTimeMs;
   public $name;
-  public $productId;
-  public $productRevisionNumber;
+  public $journalId;
+  public $journalRevisionNumber;
   public $programmaticCreativeSource;
   public $proposalId;
   protected $sellerContactsType = 'Google_Service_AdExchangeBuyer_ContactInformation';
   protected $sellerContactsDataType = 'array';
   protected $sharedTargetingsType = 'Google_Service_AdExchangeBuyer_SharedTargeting';
   protected $sharedTargetingsDataType = 'array';
-  public $syndicationProduct;
+  public $syndicationjournal;
   protected $termsType = 'Google_Service_AdExchangeBuyer_DealTerms';
   protected $termsDataType = '';
   public $webPropertyCode;
@@ -196,21 +196,21 @@ class Google_Service_AdExchangeBuyer_MarketplaceDeal extends Google_Collection
   {
     return $this->name;
   }
-  public function setProductId($productId)
+  public function setjournalId($journalId)
   {
-    $this->productId = $productId;
+    $this->journalId = $journalId;
   }
-  public function getProductId()
+  public function getjournalId()
   {
-    return $this->productId;
+    return $this->journalId;
   }
-  public function setProductRevisionNumber($productRevisionNumber)
+  public function setjournalRevisionNumber($journalRevisionNumber)
   {
-    $this->productRevisionNumber = $productRevisionNumber;
+    $this->journalRevisionNumber = $journalRevisionNumber;
   }
-  public function getProductRevisionNumber()
+  public function getjournalRevisionNumber()
   {
-    return $this->productRevisionNumber;
+    return $this->journalRevisionNumber;
   }
   public function setProgrammaticCreativeSource($programmaticCreativeSource)
   {
@@ -256,13 +256,13 @@ class Google_Service_AdExchangeBuyer_MarketplaceDeal extends Google_Collection
   {
     return $this->sharedTargetings;
   }
-  public function setSyndicationProduct($syndicationProduct)
+  public function setSyndicationjournal($syndicationjournal)
   {
-    $this->syndicationProduct = $syndicationProduct;
+    $this->syndicationjournal = $syndicationjournal;
   }
-  public function getSyndicationProduct()
+  public function getSyndicationjournal()
   {
-    return $this->syndicationProduct;
+    return $this->syndicationjournal;
   }
   /**
    * @param Google_Service_AdExchangeBuyer_DealTerms

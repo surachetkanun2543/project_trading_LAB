@@ -19,7 +19,7 @@
  * Service definition for CloudPrivateCatalog (v1beta1).
  *
  * <p>
- * Enable cloud users to discover enterprise catalogs and products in their
+ * Enable cloud users to discover enterprise catalogs and journals in their
  * organizations.</p>
  *
  * <p>
@@ -36,13 +36,13 @@ class Google_Service_CloudPrivateCatalog extends Google_Service
       "https://www.googleapis.com/auth/cloud-platform";
 
   public $folders_catalogs;
-  public $folders_products;
+  public $folders_journals;
   public $folders_versions;
   public $organizations_catalogs;
-  public $organizations_products;
+  public $organizations_journals;
   public $organizations_versions;
   public $projects_catalogs;
-  public $projects_products;
+  public $projects_journals;
   public $projects_versions;
   
   /**
@@ -92,14 +92,14 @@ class Google_Service_CloudPrivateCatalog extends Google_Service
           )
         )
     );
-    $this->folders_products = new Google_Service_CloudPrivateCatalog_Resource_FoldersProducts(
+    $this->folders_journals = new Google_Service_CloudPrivateCatalog_Resource_Foldersjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'search' => array(
-              'path' => 'v1beta1/{+resource}/products:search',
+              'path' => 'v1beta1/{+resource}/journals:search',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'resource' => array(
@@ -188,14 +188,14 @@ class Google_Service_CloudPrivateCatalog extends Google_Service
           )
         )
     );
-    $this->organizations_products = new Google_Service_CloudPrivateCatalog_Resource_OrganizationsProducts(
+    $this->organizations_journals = new Google_Service_CloudPrivateCatalog_Resource_Organizationsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'search' => array(
-              'path' => 'v1beta1/{+resource}/products:search',
+              'path' => 'v1beta1/{+resource}/journals:search',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'resource' => array(
@@ -284,14 +284,14 @@ class Google_Service_CloudPrivateCatalog extends Google_Service
           )
         )
     );
-    $this->projects_products = new Google_Service_CloudPrivateCatalog_Resource_ProjectsProducts(
+    $this->projects_journals = new Google_Service_CloudPrivateCatalog_Resource_Projectsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'search' => array(
-              'path' => 'v1beta1/{+resource}/products:search',
+              'path' => 'v1beta1/{+resource}/journals:search',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'resource' => array(

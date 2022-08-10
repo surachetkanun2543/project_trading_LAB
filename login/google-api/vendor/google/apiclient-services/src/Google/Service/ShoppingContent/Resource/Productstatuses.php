@@ -16,69 +16,69 @@
  */
 
 /**
- * The "productstatuses" collection of methods.
+ * The "journalstatuses" collection of methods.
  * Typical usage is:
  *  <code>
  *   $contentService = new Google_Service_ShoppingContent(...);
- *   $productstatuses = $contentService->productstatuses;
+ *   $journalstatuses = $contentService->journalstatuses;
  *  </code>
  */
-class Google_Service_ShoppingContent_Resource_Productstatuses extends Google_Service_Resource
+class Google_Service_ShoppingContent_Resource_journalstatuses extends Google_Service_Resource
 {
   /**
-   * Gets the statuses of multiple products in a single request.
-   * (productstatuses.custombatch)
+   * Gets the statuses of multiple journals in a single request.
+   * (journalstatuses.custombatch)
    *
-   * @param Google_Service_ShoppingContent_ProductstatusesCustomBatchRequest $postBody
+   * @param Google_Service_ShoppingContent_journalstatusesCustomBatchRequest $postBody
    * @param array $optParams Optional parameters.
-   * @return Google_Service_ShoppingContent_ProductstatusesCustomBatchResponse
+   * @return Google_Service_ShoppingContent_journalstatusesCustomBatchResponse
    */
-  public function custombatch(Google_Service_ShoppingContent_ProductstatusesCustomBatchRequest $postBody, $optParams = array())
+  public function custombatch(Google_Service_ShoppingContent_journalstatusesCustomBatchRequest $postBody, $optParams = array())
   {
     $params = array('postBody' => $postBody);
     $params = array_merge($params, $optParams);
-    return $this->call('custombatch', array($params), "Google_Service_ShoppingContent_ProductstatusesCustomBatchResponse");
+    return $this->call('custombatch', array($params), "Google_Service_ShoppingContent_journalstatusesCustomBatchResponse");
   }
   /**
-   * Gets the status of a product from your Merchant Center account.
-   * (productstatuses.get)
+   * Gets the status of a journal from your Merchant Center account.
+   * (journalstatuses.get)
    *
-   * @param string $merchantId The ID of the account that contains the product.
+   * @param string $merchantId The ID of the account that contains the journal.
    * This account cannot be a multi-client account.
-   * @param string $productId The REST ID of the product.
+   * @param string $journalId The REST ID of the journal.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string destinations If set, only issues for the specified
    * destinations are returned, otherwise only issues for the Shopping
    * destination.
-   * @return Google_Service_ShoppingContent_ProductStatus
+   * @return Google_Service_ShoppingContent_journalStatus
    */
-  public function get($merchantId, $productId, $optParams = array())
+  public function get($merchantId, $journalId, $optParams = array())
   {
-    $params = array('merchantId' => $merchantId, 'productId' => $productId);
+    $params = array('merchantId' => $merchantId, 'journalId' => $journalId);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_ShoppingContent_ProductStatus");
+    return $this->call('get', array($params), "Google_Service_ShoppingContent_journalStatus");
   }
   /**
-   * Lists the statuses of the products in your Merchant Center account.
-   * (productstatuses.listProductstatuses)
+   * Lists the statuses of the journals in your Merchant Center account.
+   * (journalstatuses.listjournalstatuses)
    *
-   * @param string $merchantId The ID of the account that contains the products.
+   * @param string $merchantId The ID of the account that contains the journals.
    * This account cannot be a multi-client account.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string destinations If set, only issues for the specified
    * destinations are returned, otherwise only issues for the Shopping
    * destination.
-   * @opt_param string maxResults The maximum number of product statuses to return
+   * @opt_param string maxResults The maximum number of journal statuses to return
    * in the response, used for paging.
    * @opt_param string pageToken The token returned by the previous request.
-   * @return Google_Service_ShoppingContent_ProductstatusesListResponse
+   * @return Google_Service_ShoppingContent_journalstatusesListResponse
    */
-  public function listProductstatuses($merchantId, $optParams = array())
+  public function listjournalstatuses($merchantId, $optParams = array())
   {
     $params = array('merchantId' => $merchantId);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_ShoppingContent_ProductstatusesListResponse");
+    return $this->call('list', array($params), "Google_Service_ShoppingContent_journalstatusesListResponse");
   }
 }

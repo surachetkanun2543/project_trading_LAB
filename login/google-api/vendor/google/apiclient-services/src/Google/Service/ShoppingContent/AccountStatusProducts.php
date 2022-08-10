@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_AccountStatusProducts extends Google_Collection
+class Google_Service_ShoppingContent_AccountStatusjournals extends Google_Collection
 {
   protected $collection_key = 'itemLevelIssues';
   public $channel;

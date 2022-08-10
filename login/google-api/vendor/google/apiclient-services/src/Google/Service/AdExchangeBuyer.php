@@ -44,7 +44,7 @@ class Google_Service_AdExchangeBuyer extends Google_Service
   public $marketplaceprivateauction;
   public $performanceReport;
   public $pretargetingConfig;
-  public $products;
+  public $journals;
   public $proposals;
   public $pubprofiles;
   
@@ -545,24 +545,24 @@ class Google_Service_AdExchangeBuyer extends Google_Service
           )
         )
     );
-    $this->products = new Google_Service_AdExchangeBuyer_Resource_Products(
+    $this->journals = new Google_Service_AdExchangeBuyer_Resource_journals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'products/{productId}',
+              'path' => 'journals/{journalId}',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'search' => array(
-              'path' => 'products/search',
+              'path' => 'journals/search',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'pqlQuery' => array(

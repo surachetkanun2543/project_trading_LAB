@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Chromewebstore_InAppProduct extends Google_Collection
+class Google_Service_Chromewebstore_InAppjournal extends Google_Collection
 {
   protected $collection_key = 'prices';
   protected $internal_gapi_mappings = array(
@@ -23,9 +23,9 @@ class Google_Service_Chromewebstore_InAppProduct extends Google_Collection
   );
   public $itemId;
   public $kind;
-  protected $localeDataType = 'Google_Service_Chromewebstore_InAppProductLocaleData';
+  protected $localeDataType = 'Google_Service_Chromewebstore_InAppjournalLocaleData';
   protected $localeDataDataType = 'array';
-  protected $pricesType = 'Google_Service_Chromewebstore_InAppProductPrices';
+  protected $pricesType = 'Google_Service_Chromewebstore_InAppjournalPrices';
   protected $pricesDataType = 'array';
   public $sku;
   public $state;

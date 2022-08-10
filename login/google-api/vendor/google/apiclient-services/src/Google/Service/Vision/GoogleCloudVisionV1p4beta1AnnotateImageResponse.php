@@ -40,8 +40,8 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1AnnotateImageResponse exte
   protected $localizedObjectAnnotationsDataType = 'array';
   protected $logoAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1EntityAnnotation';
   protected $logoAnnotationsDataType = 'array';
-  protected $productSearchResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults';
-  protected $productSearchResultsDataType = '';
+  protected $journalSearchResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResults';
+  protected $journalSearchResultsDataType = '';
   protected $qualityOptimizationResultType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1QualityOptimizationResult';
   protected $qualityOptimizationResultDataType = '';
   protected $safeSearchAnnotationType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1SafeSearchAnnotation';
@@ -206,18 +206,18 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1AnnotateImageResponse exte
     return $this->logoAnnotations;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults
+   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResults
    */
-  public function setProductSearchResults(Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults $productSearchResults)
+  public function setjournalSearchResults(Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResults $journalSearchResults)
   {
-    $this->productSearchResults = $productSearchResults;
+    $this->journalSearchResults = $journalSearchResults;
   }
   /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults
+   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResults
    */
-  public function getProductSearchResults()
+  public function getjournalSearchResults()
   {
-    return $this->productSearchResults;
+    return $this->journalSearchResults;
   }
   /**
    * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1QualityOptimizationResult

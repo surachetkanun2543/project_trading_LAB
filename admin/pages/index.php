@@ -16,7 +16,7 @@
   $query = "SELECT COUNT(*) AS SUM FROM tb_type ORDER BY Assettype_id" or die;
   $result3 = mysqli_query($conn, $query);
 
-  // $query = "SELECT COUNT(p_id) AS SUM FROM tbl_product ORDER BY p_id" or die;
+  // $query = "SELECT COUNT(p_id) AS SUM FROM tbl_journal ORDER BY p_id" or die;
   // $result5 = mysqli_query($conn, $query);
 
   ?>

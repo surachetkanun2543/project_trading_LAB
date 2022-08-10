@@ -15,13 +15,13 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_OrderLineItemProduct extends Google_Collection
+class Google_Service_ShoppingContent_OrderLineItemjournal extends Google_Collection
 {
   protected $collection_key = 'variantAttributes';
   public $brand;
   public $condition;
   public $contentLanguage;
-  protected $feesType = 'Google_Service_ShoppingContent_OrderLineItemProductFee';
+  protected $feesType = 'Google_Service_ShoppingContent_OrderLineItemjournalFee';
   protected $feesDataType = 'array';
   public $gtin;
   public $id;
@@ -34,7 +34,7 @@ class Google_Service_ShoppingContent_OrderLineItemProduct extends Google_Collect
   public $shownImage;
   public $targetCountry;
   public $title;
-  protected $variantAttributesType = 'Google_Service_ShoppingContent_OrderLineItemProductVariantAttribute';
+  protected $variantAttributesType = 'Google_Service_ShoppingContent_OrderLineItemjournalVariantAttribute';
   protected $variantAttributesDataType = 'array';
 
   public function setBrand($brand)
@@ -62,14 +62,14 @@ class Google_Service_ShoppingContent_OrderLineItemProduct extends Google_Collect
     return $this->contentLanguage;
   }
   /**
-   * @param Google_Service_ShoppingContent_OrderLineItemProductFee
+   * @param Google_Service_ShoppingContent_OrderLineItemjournalFee
    */
   public function setFees($fees)
   {
     $this->fees = $fees;
   }
   /**
-   * @return Google_Service_ShoppingContent_OrderLineItemProductFee
+   * @return Google_Service_ShoppingContent_OrderLineItemjournalFee
    */
   public function getFees()
   {
@@ -162,14 +162,14 @@ class Google_Service_ShoppingContent_OrderLineItemProduct extends Google_Collect
     return $this->title;
   }
   /**
-   * @param Google_Service_ShoppingContent_OrderLineItemProductVariantAttribute
+   * @param Google_Service_ShoppingContent_OrderLineItemjournalVariantAttribute
    */
   public function setVariantAttributes($variantAttributes)
   {
     $this->variantAttributes = $variantAttributes;
   }
   /**
-   * @return Google_Service_ShoppingContent_OrderLineItemProductVariantAttribute
+   * @return Google_Service_ShoppingContent_OrderLineItemjournalVariantAttribute
    */
   public function getVariantAttributes()
   {

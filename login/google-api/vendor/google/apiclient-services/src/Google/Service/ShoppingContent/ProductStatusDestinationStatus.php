@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_ShoppingContent_ProductStatusDestinationStatus extends Google_Model
+class Google_Service_ShoppingContent_journalStatusDestinationStatus extends Google_Model
 {
   public $destination;
   public $status;

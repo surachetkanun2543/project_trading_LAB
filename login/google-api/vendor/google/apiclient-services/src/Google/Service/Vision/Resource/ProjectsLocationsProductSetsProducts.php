@@ -16,39 +16,39 @@
  */
 
 /**
- * The "products" collection of methods.
+ * The "journals" collection of methods.
  * Typical usage is:
  *  <code>
  *   $visionService = new Google_Service_Vision(...);
- *   $products = $visionService->products;
+ *   $journals = $visionService->journals;
  *  </code>
  */
-class Google_Service_Vision_Resource_ProjectsLocationsProductSetsProducts extends Google_Service_Resource
+class Google_Service_Vision_Resource_ProjectsLocationsjournalSetsjournals extends Google_Service_Resource
 {
   /**
-   * Lists the Products in a ProductSet, in an unspecified order. If the
-   * ProductSet does not exist, the products field of the response will be empty.
+   * Lists the journals in a journalSet, in an unspecified order. If the
+   * journalSet does not exist, the journals field of the response will be empty.
    *
    * Possible errors:
    *
    * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-   * (products.listProjectsLocationsProductSetsProducts)
+   * (journals.listProjectsLocationsjournalSetsjournals)
    *
-   * @param string $name The ProductSet resource for which to retrieve Products.
+   * @param string $name The journalSet resource for which to retrieve journals.
    *
-   * Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`
+   * Format is: `projects/PROJECT_ID/locations/LOC_ID/journalSets/journal_SET_ID`
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken The next_page_token returned from a previous List
    * request, if any.
    * @opt_param int pageSize The maximum number of items to return. Default 10,
    * maximum 100.
-   * @return Google_Service_Vision_ListProductsInProductSetResponse
+   * @return Google_Service_Vision_ListjournalsInjournalSetResponse
    */
-  public function listProjectsLocationsProductSetsProducts($name, $optParams = array())
+  public function listProjectsLocationsjournalSetsjournals($name, $optParams = array())
   {
     $params = array('name' => $name);
     $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Vision_ListProductsInProductSetResponse");
+    return $this->call('list', array($params), "Google_Service_Vision_ListjournalsInjournalSetResponse");
   }
 }

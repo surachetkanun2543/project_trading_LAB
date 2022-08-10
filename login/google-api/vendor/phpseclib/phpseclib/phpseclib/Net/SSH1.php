@@ -1327,7 +1327,7 @@ class SSH1
     /**
      * RSA Encrypt
      *
-     * Returns mod(pow($m, $e), $n), where $n should be the product of two (large) primes $p and $q and where $e
+     * Returns mod(pow($m, $e), $n), where $n should be the journal of two (large) primes $p and $q and where $e
      * should be a number with the property that gcd($e, ($p - 1) * ($q - 1)) == 1.  Could just make anything that
      * calls this call modexp, instead, but I think this makes things clearer, maybe...
      *

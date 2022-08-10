@@ -15,7 +15,7 @@
  * the License.
  */
 
-class Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResultsObjectAnnotation extends Google_Model
+class Google_Service_Vision_GoogleCloudVisionV1p4beta1journalSearchResultsObjectAnnotation extends Google_Model
 {
   public $languageCode;
   public $mid;

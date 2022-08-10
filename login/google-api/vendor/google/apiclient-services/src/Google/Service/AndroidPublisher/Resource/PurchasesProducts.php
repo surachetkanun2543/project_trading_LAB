@@ -16,49 +16,49 @@
  */
 
 /**
- * The "products" collection of methods.
+ * The "journals" collection of methods.
  * Typical usage is:
  *  <code>
  *   $androidpublisherService = new Google_Service_AndroidPublisher(...);
- *   $products = $androidpublisherService->products;
+ *   $journals = $androidpublisherService->journals;
  *  </code>
  */
-class Google_Service_AndroidPublisher_Resource_PurchasesProducts extends Google_Service_Resource
+class Google_Service_AndroidPublisher_Resource_Purchasesjournals extends Google_Service_Resource
 {
   /**
-   * Acknowledges a purchase of an inapp item. (products.acknowledge)
+   * Acknowledges a purchase of an inapp item. (journals.acknowledge)
    *
    * @param string $packageName The package name of the application the inapp
-   * product was sold in (for example, 'com.some.thing').
-   * @param string $productId The inapp product SKU (for example,
+   * journal was sold in (for example, 'com.some.thing').
+   * @param string $journalId The inapp journal SKU (for example,
    * 'com.some.thing.inapp1').
    * @param string $token The token provided to the user's device when the
    * subscription was purchased.
-   * @param Google_Service_AndroidPublisher_ProductPurchasesAcknowledgeRequest $postBody
+   * @param Google_Service_AndroidPublisher_journalPurchasesAcknowledgeRequest $postBody
    * @param array $optParams Optional parameters.
    */
-  public function acknowledge($packageName, $productId, $token, Google_Service_AndroidPublisher_ProductPurchasesAcknowledgeRequest $postBody, $optParams = array())
+  public function acknowledge($packageName, $journalId, $token, Google_Service_AndroidPublisher_journalPurchasesAcknowledgeRequest $postBody, $optParams = array())
   {
-    $params = array('packageName' => $packageName, 'productId' => $productId, 'token' => $token, 'postBody' => $postBody);
+    $params = array('packageName' => $packageName, 'journalId' => $journalId, 'token' => $token, 'postBody' => $postBody);
     $params = array_merge($params, $optParams);
     return $this->call('acknowledge', array($params));
   }
   /**
-   * Checks the purchase and consumption status of an inapp item. (products.get)
+   * Checks the purchase and consumption status of an inapp item. (journals.get)
    *
    * @param string $packageName The package name of the application the inapp
-   * product was sold in (for example, 'com.some.thing').
-   * @param string $productId The inapp product SKU (for example,
+   * journal was sold in (for example, 'com.some.thing').
+   * @param string $journalId The inapp journal SKU (for example,
    * 'com.some.thing.inapp1').
    * @param string $token The token provided to the user's device when the inapp
-   * product was purchased.
+   * journal was purchased.
    * @param array $optParams Optional parameters.
-   * @return Google_Service_AndroidPublisher_ProductPurchase
+   * @return Google_Service_AndroidPublisher_journalPurchase
    */
-  public function get($packageName, $productId, $token, $optParams = array())
+  public function get($packageName, $journalId, $token, $optParams = array())
   {
-    $params = array('packageName' => $packageName, 'productId' => $productId, 'token' => $token);
+    $params = array('packageName' => $packageName, 'journalId' => $journalId, 'token' => $token);
     $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_AndroidPublisher_ProductPurchase");
+    return $this->call('get', array($params), "Google_Service_AndroidPublisher_journalPurchase");
   }
 }

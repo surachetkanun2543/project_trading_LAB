@@ -42,7 +42,7 @@ class Google_Service_AdExchangeBuyerII extends Google_Service
   public $accounts_creatives;
   public $accounts_creatives_dealAssociations;
   public $accounts_finalizedProposals;
-  public $accounts_products;
+  public $accounts_journals;
   public $accounts_proposals;
   public $accounts_publisherProfiles;
   public $bidders_accounts_filterSets;
@@ -505,14 +505,14 @@ class Google_Service_AdExchangeBuyerII extends Google_Service
           )
         )
     );
-    $this->accounts_products = new Google_Service_AdExchangeBuyerII_Resource_AccountsProducts(
+    $this->accounts_journals = new Google_Service_AdExchangeBuyerII_Resource_Accountsjournals(
         $this,
         $this->serviceName,
-        'products',
+        'journals',
         array(
           'methods' => array(
             'get' => array(
-              'path' => 'v2beta1/accounts/{accountId}/products/{productId}',
+              'path' => 'v2beta1/accounts/{accountId}/journals/{journalId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'accountId' => array(
@@ -520,14 +520,14 @@ class Google_Service_AdExchangeBuyerII extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'productId' => array(
+                'journalId' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
                 ),
               ),
             ),'list' => array(
-              'path' => 'v2beta1/accounts/{accountId}/products',
+              'path' => 'v2beta1/accounts/{accountId}/journals',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'accountId' => array(
