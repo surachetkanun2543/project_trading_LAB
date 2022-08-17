@@ -39,7 +39,7 @@ if ($upload != '') {
 
 //ทำการปรับปรุงข้อมูลที่จะแก้ไขลงใน database 
 
-$sql = "UPDATE tbl_journal SET  p_name='$p_name', Assettype_id='$Assettype_id' ,p_detail='$p_detail', p_img='$newname', p_price='$p_price'
+$sql = "UPDATE tb_questions SET  p_name='$p_name', Assettype_id='$Assettype_id' ,p_detail='$p_detail', p_img='$newname', p_price='$p_price'
 		WHERE p_id='$p_id' ";
 
 $result = mysqli_query($conn, $sql) or die;
@@ -50,12 +50,12 @@ mysqli_close($conn); //ปิดการเชื่อมต่อ database
 
 if ($result) {
     echo "<script type='text/javascript'>";
-    echo "alert('แก้ไขข้อมูลสินค้า $p_name สำเร็จ!! ');";
-    echo "window.location = 'journal.php'; ";
+    echo "alert('แก้ไขข้อมูล $p_name สำเร็จ!! ');";
+    echo "window.location = 'questions.php'; ";
     echo "</script>";
 } else {
     echo "<script type='text/javascript'>";
-    echo "alert('แก้ไขข้อมูลสินค้า $p_name ไม่สำเร็จ!! ');";
-    echo "window.location = 'journal.php'; ";
+    echo "alert('แก้ไขข้อมูล $p_name ไม่สำเร็จ!! ');";
+    echo "window.location = 'questions.php'; ";
     echo "</script>";
 }

@@ -28,7 +28,6 @@ $rs = $conn->query("select * from tbl_admin $sql_search limit $startRow,$rowPerP
 <div class="table-responsive shadow mb-3 ">
   <table class="table">
     <!-- //หัวข้อตาราง  -->
-
     <tr>
       <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">ไอดี</td>
       <td bgcolor="linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%)" style="color: white;">บัญชีผู้ใช้</td>

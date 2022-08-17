@@ -161,13 +161,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color:#44437a;color: white;">
-                    <strong class="modal-title">เพิ่ม/แก้ไข หมวดหมู่สินค้า</strong>
+                    <strong class="modal-title">เพิ่ม/แก้ไข หมวดหมู่สินทรัพย์</strong>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
                 <div class="modal-body">
                     <form method="post" id="f" action="javascript:;" class="form-horizontal">
-                        <input name="txt_name" type="text" required class="form-control" id="txt_name" placeholder="ชื่อหมวดหมู่สินค้า">
+                        <input name="txt_name" type="text" required class="form-control" id="txt_name" placeholder="ชื่อหมวดหมู่สินทรัพย์">
                         <input type="hidden" name="Assettype_id" id="Assettype_id">
                         <input type="hidden" name="action" id="action" value="add">
                 </div>

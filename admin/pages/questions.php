@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>จัดการสินค้า</title>
+    <title>จัดการหมวดหมู่สินทรัพย์</title>
 
     <?php
     include('h.php');
@@ -11,10 +11,8 @@
     error_reporting(error_reporting() & ~E_NOTICE);
 
     $query = "SELECT * FROM tb_type ORDER BY Assettype_id asc" or die;
-    //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
+    // เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
     $result = mysqli_query($conn, $query);
-    //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
-    //2. query ข้อมูลจากตาราง 
     ?>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -29,7 +27,7 @@
                 position: 'top-left',
                 buttons: false,
                 title: 'ยินดีต้อนรับเข้าสู่',
-                text: "หน้าจัดการสินค้า",
+                text: "หน้าจัดการแบบประเมินความเสี่ยง",
                 timer: 700
             })
             show(1);
@@ -38,14 +36,14 @@
                 show(1);
             });
 
-            $('.view_data').ready(function(){
+            $('.view_data').ready(function() {
                 $('#dataModal').modal('show');
             })
 
         });
 
         function show(page) {
-            $("#showContain").load("journal_list.php?page=" + page, {
+            $("#showContain").load("questions_list.php?page=" + page, {
                 q_name: $("#q_name").val()
             }, function() {});
         }
@@ -62,16 +60,18 @@
 </nav>
 <div class="container">
     <div class="card-body col-12">
-    <h1 class="h3 font-weight-bold m-3" style="color: black;">หน้าจัดการแบบประเมินความเสี่ยง</h1>
-    <hr/>
+        <h1 class="h3 font-weight-bold m-3" style="color: black;">หน้าจัดการแบบประเมินความเสี่ยง</h1>
+        <hr />
         <div class="container-fluid col-12">
+
+
             <div class="s128">
                 <form action="javascript:;" method="post">
                     <div class="inner-form">
                         <div class="row">
                             <div class="input-field first">
                                 <input style="font-family: 'Athiti', sans-serif;" type="search" name="q_name" id="q_name" placeholder="ค้นหา"><br>&ensp;
-                                <!-- <a class='btn btn-outline btn-lg ' name="dataModal"id="dataModal" style="color:lightgrey;" href="journal.php?act=add"><i class="fa fa-plus"></i> </a> -->
+                                <!-- <a class='btn btn-outline btn-lg ' name="dataModal"id="dataModal" style="color:lightgrey;" href="questions.php?act=add"><i class="fa fa-plus"></i> </a> -->
                                 <button type="button" style="color:lightgrey;" class='btn btn-outline btn-lg view_data' data-toggle="modal" data-target="#dataModal"><i class="fa fa-plus"></i></button>
                                 <button style="display: none;" id="btsearch" type="submit">ค้นหา</button>
                             </div>
@@ -87,7 +87,7 @@
         $act = $_GET['act'];
 
         if ($act == 'edit') {
-            include('journal_form_edit.php');
+            include('questions_form_edit.php');
             echo "<div id='showContain'></div>";
         } else {
             echo "<div id='showContain'></div>";
@@ -99,27 +99,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color:#44437a;color: white;">
-                <strong class="modal-title">เพิ่มรายการสินค้า</strong>
+                <strong class="modal-title">เพิ่มแบบประเมินความเสี่ยง</strong>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 </button>
             </div>
             <div class="modal-body">
-                <form name="addjournal" action="journal_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
-                    <input type="text" name="p_name" class="form-control" required placeholder="ชื่อสินค้า" />&ensp;
-                    <input type="text" name="p_price" class="form-control" required placeholder="ราคาสินค้า" />&ensp;
-                    <select name="Assettype_id" class="form-control" required>
-                        <option value="Assettype_id">ประเภทสินค้า</option>
-                        <?php foreach ($result as $results) { ?>
-                            <option value="<?php echo $results["Assettype_id"]; ?>">
-                                <?php echo $results["Assettype_name"]; ?>
-                            </option>
-                        <?php } ?>
-                    </select>&ensp;
-                    <textarea name="p_detail" class="form-control" required placeholder="รายละเอียดสินค้า"></textarea>&ensp;
-                    <div class="custom-file mb-3">
-                        <input type="file" name="p_img" id="p_img" class="custom-file-input" title="เลือกรูปภาพสินค้า">&ensp;
-                        <label class="custom-file-label" for="customFile">เลือกรูปภาพสินค้า</label>
-                    </div>
+                <form name="addquestions" action="questions_form_add_db.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                    <input type="text" name="p_name" class="form-control" required placeholder="ชื่อแบบประเมิน" />&ensp;
+                    <input type="text" name="p_price" class="form-control" required placeholder="หัวข้อตาราง" />&ensp;
             </div>
             <div class="modal-footer">
                 <button style="width: 60px;height: 40px;" type="submit" id="btn" class="btn btn-outline-primary shadow p-1" glyphicon glyphicon-ok"> <span class="fa fa-cloud-upload"></span> </button>&ensp;

@@ -55,7 +55,7 @@
                 <div class="form-group">
                   <input class="form-control" style=" font-family: 'Roboto Mono', monospace;" type="password" name="txt_pass" id="txt_pass" placeholder="Password">
                 </div>
-                <button class="btn btn-lg btn btn-block" style=" font-family: 'Roboto Mono', monospace; background-color: '#775BC9' "type="submit" id="bt" >เข้าสู่ระบบ</button>
+                <button class="btn btn-lg btn btn-block" style=" font-family: 'Roboto Mono', monospace; background-color: '#775BC9' " type="submit" id="bt">เข้าสู่ระบบ</button>
               </fieldset>
             </form>
           </div>
