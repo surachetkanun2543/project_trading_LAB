@@ -22,32 +22,33 @@ include('check.php');
         <button class="nav__toggle" aria-expanded="false" type="button"><i class="fa fa-align-justify" style="width: 20px; height: 20px;"></i></button>
         <ul class="nav__wrapper">
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary"><i style="color: 	#FFFFFF;" class="fa fa-user-circle-o"> &ensp;</i>ยินดีต้อนรับคุณ : <?php echo $admin_name; ?>   </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary"><i style="color: 	#FFFFFF;" class="fa fa-user-circle-o"> &ensp;</i>ยินดีต้อนรับคุณ : <?php echo $admin_name; ?> </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="index.php" style="text-decoration: none;"><i class="fa fa-home" title="หน้าหลัก">&ensp;</i> หน้าแรก  </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="index.php" style="text-decoration: none;"><i class="fa fa-home" title="หน้าหลัก">&ensp;</i> หน้าแรก </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="admin.php"><i class="fa fa-flag-o" title="หน้าจัดการแอดมิน">&ensp;</i> จัดการแอดมิน  </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="admin.php"><i class="fa fa-flag-o" title="หน้าจัดการแอดมิน">&ensp;</i> จัดการแอดมิน </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="member.php"><i class="fa fa-drupal" title="หน้าจัดการสมาชิก">&ensp;</i> จัดการสมาชิก  </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="member.php"><i class="fa fa-drupal" title="หน้าจัดการสมาชิก">&ensp;</i> จัดการสมาชิก </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="type.php"> <i class="fa fa-file-text-o" title="จัดการหมวดหมู่สินทรัพย์">&ensp;</i> จัดการหมวดหมู่สินทรัพย์  </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="type.php"> <i class="fa fa-file-text-o" title="จัดการหมวดหมู่สินทรัพย์">&ensp;</i> จัดการหมวดหมู่สินทรัพย์ </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="questions.php"> <i class="fa fa-shopping-cart" title="จัดการแบบประเมินความเสี่ยง">&ensp;</i> จัดการแบบประเมินความเสี่ยง  </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href=" result.php"> <i class="fa fa-shopping-cart" title="จัดการแบบประเมินความเสี่ยง">&ensp;</i> แบบประเมินความเสี่ยง </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="#"> <i class="fa fa-gear title="ตั้งค่า">&ensp;</i> ตั้งค่า     </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="#"> <i class="fa fa-gear title=" ตั้งค่า">&ensp;</i> ตั้งค่า </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;"" class=" btn btn-danger" href="../../index.php" onclick="return confirm('ยืนยันออกจากระบบ?')"><i class="fa fa-sign-in" title="ออกจากระบบ"> </i>  ออกจากระบบ </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;"" class=" btn btn-danger" href="../../index.php" onclick="return confirm('ยืนยันออกจากระบบ?')"><i class="fa fa-sign-in" title="ออกจากระบบ"> </i> ออกจากระบบ </a>
           </li>
         </ul>
       </nav>
     </div>
   </header>
 </body>
+
 </html>

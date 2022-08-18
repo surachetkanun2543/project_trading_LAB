@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>จัดการหมวดหมู่สินทรัพย์</title>
+    <title>จัดการแบบประเมินความเสี่ยง</title>
 
     <?php
     include('h.php');
