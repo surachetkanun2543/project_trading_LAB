@@ -45,7 +45,7 @@ if (mysqli_num_rows($get_user) > 0) {
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link text-light" href="dashboard.php">DASHBOARD<span class="sr-only">(current)</span></a>
@@ -63,17 +63,19 @@ if (mysqli_num_rows($get_user) > 0) {
             <div class="col-8 col-md-5 col-lg-9 d-flex align-items-center  justify-content-md-end mt-3 mt-md-0">
                 <div class="dropdown text-light">
                     <button class="btn   text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                       สวัสดีตอนเที่ยงคุณ : <?php echo $user['name']; ?>
+                        สวัสดีตอนเที่ยงคุณ : <?php echo $user['name']; ?>
                         <img class="btn  dropdown-toggle" src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" alt="img_user" width="60" height="45">
                     </button>
 
                     <ul class="dropdown-menu text-light" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="riskprofile.php">Risk Profile</a></li>
+                        <li><a class="dropdown-item" href="survey.php">Risk Profile</a></li>
+                        <li><a class="dropdown-item" href="profilesettings.php">Profile Settings</a></li>
                         <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
     </nav>
     <div class="container-fluid ">
         <div class="row">
@@ -88,13 +90,13 @@ if (mysqli_num_rows($get_user) > 0) {
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
                         <div class="card">
                             <h5 class="card-header">TRADING LOG</h5>
-                          
+
                             <div class="card-body text-right">
-                            <button type="button" class='  btn btn-success view_data mb-3'><i class="fa fa-plus " > </i> เพิ่มบันทึกใหม่ </button>
+                                <button type="button" class='  btn btn-success view_data mb-3'><i class="fa fa-plus "> </i> เพิ่มบันทึกใหม่ </button>
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-hover" id="myTable" style="width: 100%;">
                                         <thead class="thead-dark mb-3">
-                                        
+
                                             <th>
                                                 หมวดหมู่
                                             </th>
@@ -141,13 +143,11 @@ if (mysqli_num_rows($get_user) > 0) {
                                         <tbody>
                                             <?php
 
-                                            // $query = "SELECT * FROM tb_journal";
 
-                                            $sql = ("SELECT * FROM tb_journal as j INNER JOIN tb_type as t on j.tb_type=t.Assettype_id  "); // limit เริ่มที่ , จำนวนที่ต้องการแสดง
+                                            $id = $_SESSION['login_id'];
+                                            $get_user =  "SELECT * FROM tb_journal as j INNER JOIN tb_type as t on j.tb_type=t.Assettype_id WHERE `ur_id`='$id'";
 
-
-
-                                            $result = mysqli_query($conn, $sql);
+                                            $result = mysqli_query($conn, $get_user);
 
                                             foreach ($result as $user) {
                                             ?>
@@ -187,6 +187,7 @@ if (mysqli_num_rows($get_user) > 0) {
                                                     <td>
                                                         <?php echo $user['assettotalcost']  ?>
                                                     </td>
+                                                   
                                                     <td>
                                                         <a href="#" onclick="edit(<?php echo $row['id']; ?>);" data-toggle="modal" data-target="#dataModal" class='btn btn-warning btn-lg font1  p-1' style="width: 50px;height: 38px;"><i class='fas fa-cog'></i> </a>
                                                     </td>

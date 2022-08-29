@@ -152,7 +152,7 @@
                             <div class="row">
                                 <div class="input-field first">
                                     <input style="font-family: 'Athiti', sans-serif;" type="search" name="q_name" id="q_name" placeholder="ค้นหา">
-                                    <button type="button" style="color:lightgrey;" class='btn btn-outline btn-lg view_data' data-toggle="modal" data-target="#dataModal"><i class="fa fa-plus"></i></button>
+                                    <!-- <button type="button" style="color:lightgrey;" class='btn btn-outline btn-lg view_data' data-toggle="modal" data-target="#dataModal"><i class="fa fa-plus"></i></button> -->
                                     <button style="display: none;" id="btsearch" type="submit">ค้นหา</button>
                                 </div>
                             </div>
@@ -175,11 +175,7 @@
                 <div class="modal-body">
                     <form method="post" id="f" action="javascript:;" class="form-horizontal">
                         <input name="txt_user" type="text" required class="form-control" id="txt_user" placeholder="Username" title="ภาษาอังกฤษหรือตัวเลขเท่านั้น"><br>
-                        <input name="txt_pass" type="password" required class="form-control" id="txt_pass" placeholder="Password"><br>
-                        <input name="txt_name" type="text" required class="form-control" id="txt_name" placeholder="ชื่อ-สกุล "><br>
                         <input name="txt_email" type="email" class="form-control" id="txt_email" placeholder=" อีเมล์ name@hotmail.com"><br>
-                        <input name="txt_tel" type="text" class="form-control" id="txt_tel" placeholder="เบอร์โทร ตัวเลขเท่านั้น"><br>
-                        <textarea name="txt_address" class="form-control" id="txt_address" required></textarea><br>
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="id" id="id">

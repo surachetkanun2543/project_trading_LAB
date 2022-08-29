@@ -37,10 +37,9 @@ include('check.php');
             <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href="type.php"> <i class="fa fa-file-text-o" title="จัดการหมวดหมู่สินทรัพย์">&ensp;</i> จัดการหมวดหมู่สินทรัพย์ </a>
           </li>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href=" result.php"> <i class="fa fa-shopping-cart" title="จัดการแบบประเมินความเสี่ยง">&ensp;</i> แบบประเมินความเสี่ยง </a>
-          </li>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" href=" survey.php"> <i class="fa fa-sticky-note" title="จัดการแบบประเมินความเสี่ยง">&ensp;</i> แบบประเมินความเสี่ยง </a>
           <li class="nav__item">
-            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="#"> <i class="fa fa-gear title=" ตั้งค่า">&ensp;</i> ตั้งค่า </a>
+            <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;" class="text-primary" href="#"> <i class="fa fa-gear " title=" ตั้งค่า">&ensp;</i> ตั้งค่า </a>
           </li>
           <li class="nav__item">
             <a class="text-decoration-none" style="font-family: 'Roboto Mono', monospace; color: #F1F1F1;"" class=" btn btn-danger" href="../../index.php" onclick="return confirm('ยืนยันออกจากระบบ?')"><i class="fa fa-sign-in" title="ออกจากระบบ"> </i> ออกจากระบบ </a>

@@ -30,10 +30,6 @@ include('../../service/admin_connect.php');
             })
             show(1);
             // search
-            $('#btsearch').click(function() {
-                show(1);
-            });
-
             $('.view_data').ready(function() {
                 $('#dataModal').modal('show');
             })
@@ -47,36 +43,24 @@ include('../../service/admin_connect.php');
 
 <body>
     <div class="container">
-        <div class="card-body col-12">
+        <div class="card-body col-8">
             <h1 class="h3 font-weight-bold m-3" style="color: black;">หน้าจัดการแบบประเมินความเสี่ยง</h1>
             <hr />
             <div class="container-fluid col-12">
-
-
                 <div class="s128">
-                    <form action="javascript:;" method="post">
-                        <div class="inner-form">
                             <div class="row">
-                                <div class="input-field first">
-                                    <!-- <input style="font-family: 'Athiti', sans-serif;" type="search" name="q_name" id="q_name" placeholder="ค้นหา"><br>&ensp; -->
-                                    <!-- <a class='btn btn-outline btn-lg ' name="dataModal"id="dataModal" style="color:lightgrey;" href="questions.php?act=add"><i class="fa fa-plus"></i> </a> -->
-                                    <!-- <button type="button" style="color:lightgrey;" class='btn btn-outline btn-lg view_data' data-toggle="modal" data-target="#dataModal"><i class="fa fa-plus"></i></button> -->
-                                    <!-- <button style="display: none;" id="btsearch" type="submit">ค้นหา</button> -->
-                                </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
     <table class="table table-striped shadow mb-3 ">
         <table class="table">
-
             <tr>
-                <td colspan="6" bgcolor="#000000" align="center" style='color: white;'>สรุปผลแบบประเมินความเสี่ยง</td>
+                <td colspan="8" bgcolor="#000000" align="center" style='color: white;'>สรุปผลแบบประเมินความเสี่ยง</td>
                 </td>
             </tr>
             <tr>
-                <td colspan="6" align="center" bgcolor="#CCCCCC">ตอนที่ 1 ข้อมูลพื้นฐาน</td>
+                <td colspan="8" align="center" bgcolor="#CCCCCC"></td>
             </tr>
             <tr>
                 <td width="104">&nbsp;</td>
@@ -97,14 +81,10 @@ include('../../service/admin_connect.php');
             </tr>
             <tr>
                 <?php
-                // Make a MySQL Connection
 
-
-                $query = "SELECT gender, COUNT(id_person) as qty FROM tb_person GROUP BY gender";
+                $query = "SELECT gender, COUNT(id_info) as qty FROM tb_info GROUP BY gender";
                 $result = mysqli_query($conn, $query);
 
-
-                // Print out result
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
                     <td>&nbsp;</td>
@@ -117,13 +97,10 @@ include('../../service/admin_connect.php');
         <? } ?>
         <tr>
             <?php
-            // Make a MySQL Connection
 
-            $query = "SELECT COUNT(id_person) as qty FROM tb_person ";
+            $query = "SELECT COUNT(id_info) as qty FROM tb_info ";
             $result = mysqli_query($conn, $query);
 
-
-            // Print out result
             while ($row = mysqli_fetch_array($result)) {
             ?>
                 <td>&nbsp;</td>
@@ -147,19 +124,17 @@ include('../../service/admin_connect.php');
             <td align="center" bgcolor="#FFCC99">อายุ</td>
             <td align="center" bgcolor="#FFCC99">จำนวน(คน)</td>
             <td align="center" bgcolor="#FFCC99" style="color: black ;"></td>
-            <td>&nbsp;</td>
+            
+            <td> &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <?php
-            // Make a MySQL Connection
 
-            include("conn.php");
-            $query = "SELECT age, COUNT(id_person) as qtyage FROM tb_person GROUP BY age";
+            $query = "SELECT age, COUNT(id_info) as qtyage FROM tb_info GROUP BY age";
             $result = mysqli_query($conn, $query);
 
-            // Print out result
             while ($row = mysqli_fetch_array($result)) {
             ?>
                 <td>&nbsp;</td>
@@ -174,13 +149,10 @@ include('../../service/admin_connect.php');
     <tr>
 
         <?php
-        // Make a MySQL Connection
 
-        $query = "SELECT COUNT(id_person) as qty FROM tb_person ";
+        $query = "SELECT COUNT(id_info) as qty FROM tb_info ";
         $result = mysqli_query($conn, $query);
 
-
-        // Print out result
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <td>&nbsp;</td>
@@ -211,15 +183,10 @@ include('../../service/admin_connect.php');
     </tr>
     <tr>
         <?php
-        // Make a MySQL Connection
-
-
-
-        $query = "SELECT status, COUNT(id_person) as qtystatus FROM tb_person GROUP BY status";
+     
+        $query = "SELECT status, COUNT(id_info) as qtystatus FROM tb_info GROUP BY status";
         $result = mysqli_query($conn, $query);
 
-
-        // Print out result
         while ($row = mysqli_fetch_array($result)) {
         ?>
             <td>&nbsp;</td>
@@ -238,81 +205,7 @@ include('../../service/admin_connect.php');
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
-<tr>
-</tr>
-<tr>
-    <td>&nbsp;</td>
-    <td align="center" bgcolor="#343A40" style="color: white ;">รายการ</td>
-    <td align="center" bgcolor="#343A40" style="color: white ;">คะแนนเฉลี่ย</td>
-    <td align="center" bgcolor="#343A40" style="color: white ;">ระดับ</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <?php
-    // Make a MySQL Connection
-    include("conn.php");
-    $query =
-        "SELECT tb_question.*,tb_answer.id_question, sum(tb_answer.score) 
-      as qtyscore ,count(tb_answer.id_person) as qtyperson  
-      FROM tb_answer 
-      LEFT JOIN tb_question 
-      ON tb_answer.id_question = tb_question.id_question 
-      GROUP BY tb_answer.id_question";
 
-    $result = mysqli_query($conn, $query);
-
-
-    // Print out result
-    while ($row = mysqli_fetch_array($result)) {
-
-    ?>
-        <td>&nbsp;</td>
-        <td><?= $row['question']; ?></td>
-        <td align="center"><?= number_format(($row['qtyscore'] / $row['qtyperson']), 2); ?></td>
-        <td align="center"><?
-                            $answer = (number_format(($row['qtyscore'] / $row['qtyperson']), 2));
-
-                            if ($answer >= 3.60) {
-                                //   echo "<script> window.location.href = 'up.php';</script>";
-                                echo  "มาก";
-                            } else if ($answer >= 3.30) {
-                                //  echo "<script> window.location.href = 'st.php';</script>";
-                                echo "กลาง";
-                            } else if ($answer >= 2.10) {
-                                //  echo "<script> window.location.href = 'low.php';</script>";
-                                echo "น้อย";
-                            }
-                            ?></td>
-        <td></td>
-        <td></td>
-
-</tr>
-<? } ?>
-<tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-</tr>
-<tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-</tr>
         </table>
 </body>
 

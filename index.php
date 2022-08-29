@@ -36,7 +36,7 @@ $client->setClientId('758617657839-8pedi5amvm36dngulp9i0v5q0pcfiudn.apps.googleu
 // Enter your Client Secrect
 $client->setClientSecret('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');
 // Enter the Redirect URL
-$client->setRedirectUri('http://localhost/project_trading_LAB/index.php');
+$client->setRedirectUri('http://127.0.0.1/project_trading_LAB/index.php');
 
 // Adding those scopes which we want to get (email & profile Information)
 $client->addScope("email");

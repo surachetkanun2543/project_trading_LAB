@@ -37,7 +37,7 @@ if (mysqli_num_rows($get_user) > 0) {
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light  bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-light  bg-dark ">
         <a class="navbar-brand ml-3 text-light" href="#">
             <img src="../assets/img/logo.png" width="30" height="30" alt="">
             <span>จดบันทึกและวิเคราะห์การลงทุน | </span>
@@ -68,7 +68,8 @@ if (mysqli_num_rows($get_user) > 0) {
                     </button>
 
                     <ul class="dropdown-menu text-light" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="riskprofile.php">Risk Profile</a></li>
+                        <li><a class="dropdown-item" href="survey.php">Risk Profile</a></li>
+                        <li><a class="dropdown-item" href="profilesettings.php">Profile Settings</a></li>
                         <li><a class="dropdown-item" href="logout.php">Sign out</a></li>
                     </ul>
                 </div>
