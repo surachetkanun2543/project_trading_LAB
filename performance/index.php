@@ -33,14 +33,16 @@ if (mysqli_num_rows($get_user) > 0) {
  <link rel="icon" href="../assets/img/logo.png" type="image/icon type">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="../assetsuser/img/favicons/browserconfig.xml">
-    <link href="../css/dashboard.css" rel="stylesheet">
+
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
     <link rel="stylesheet" href="../plugins/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
     <link rel="stylesheet" href="../assetsuser/css/adminlte.min.css">
-    <link rel="stylesheet" href="../assetsuser/css/style.css">
+    <link rel="stylesheet" href="../assetsuser/css/style.css">   
+     <link href="../css/dashboard.css" rel="stylesheet">
+     
     <!-- Datatables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">

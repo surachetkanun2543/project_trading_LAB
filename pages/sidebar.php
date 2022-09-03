@@ -109,8 +109,8 @@ function isActive($data)
 
                 <li class="nav-item ">
                     <a href="logout.php" id="logout" class="nav-link">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <p class="text-danger" href="logout.php">LOGOUT</p>
+                        <i class="text-danger fas fa-sign-out-alt"></i>
+                        <p class="text-danger " href="logout.php" onclick="return confirm('ยืนยันออกจากระบบ ?');">LOGOUT</p>
                     </a>
                 </li>
             </ul>

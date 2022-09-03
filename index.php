@@ -22,7 +22,7 @@ require './service/user_connect.php';
 
 
 if (isset($_SESSION['login_id'])) {
-    header('Location: ./pages/dashboard.php');
+    header('Location: ./dashboard/index.php');
     exit;
 }
 
@@ -65,7 +65,7 @@ if (isset($_GET['code'])) :
         if (mysqli_num_rows($get_user) > 0) {
 
             $_SESSION['login_id'] = $id;
-            header('Location: ./pages/dashboard.php');
+            header('Location: ./dashboard/index.php');
             exit;
         } else {
 
@@ -74,7 +74,7 @@ if (isset($_GET['code'])) :
 
             if ($insert) {
                 $_SESSION['login_id'] = $id;
-                header('Location: ./pages/dashboard.php');
+                header('Location: ./dashboard/index.php');
                 exit;
             } else {
                 echo "Sign up failed!(Something went wrong).";
