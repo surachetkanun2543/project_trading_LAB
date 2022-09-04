@@ -193,7 +193,8 @@ if (isset($_GET['delete'])) {
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
                         <div class="card">
                             <div class="card-body text-right">
-                                <button type="button" class=" btn btn-success view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-plus "> </i>เพิ่มบันทึกใหม่</button>
+                                <button type="button" class=" btn btn-success view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button>
+                                <button type="button" class=" btn btn-danger view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
                                         <thead class="table-dark mb-1">
@@ -256,15 +257,15 @@ if (isset($_GET['delete'])) {
                                             foreach ($result as $user) {
                                             ?>
                                                 <tr>
-                                                    <td><?php echo $user['options']; ?></td>
+                                                    <td><?php echo  $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo $user['assetprice']; ?></td>
-                                                    <td><?php echo $user['assetvolume']; ?></td>
+                                                    <td><?php echo number_format ( $user ['assetprice'],'2') ; ?></td>
+                                                    <td><?php echo number_format ( $user ['assetvolume'],'2') ; ?></td>  
                                                     <td><?php echo $user['assetdate']; ?></td>
                                                     <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo $user['assetsl']; ?></td>
-                                                    <td><?php echo $user['assettg']; ?></td>
+                                                    <td><?php echo number_format ( $user ['assetsl'],'2') ; ?></td>
+                                                    <td><?php echo number_format ( $user ['assettg'],'2') ; ?></td>
 
                                                     <td width="250px"><img class="rounded" width="100%" src="uploads/<?php echo $user['assetimge']; ?>"></td>
 

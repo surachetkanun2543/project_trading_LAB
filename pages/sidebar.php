@@ -87,7 +87,7 @@ function isActive($data)
                     <hr>
                 </li>
                 <li class="nav-item">
-                    <a href="../riskproflie/index.php" class="nav-link <?php echo isActive('riskproflie') ?>">
+                    <a href="../report/index.php" class="nav-link <?php echo isActive('report') ?>">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p> REPORT </p>
                     </a>
