@@ -1,5 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php
 
 require '../service/user_connect.php';
@@ -170,34 +169,17 @@ if (isset($_GET['delete'])) {
                     </div>
                 </div>
             </div>
-            <?php if (isset($_SESSION['success'])) { ?>
-                <div class="alert alert-success">
-                    <?php
-                    echo $_SESSION['success'];
-                    unset($_SESSION['success']);
-                    ?>
-                </div>
-            <?php } ?>
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger">
-                    <?php
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                </div>
-            <?php } ?>
-
             <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
                 <div class="row">
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
                         <div class="card">
                             <div class="card-body text-center">
                                 <hr>
-                                <a href="PDF_JOUNAL_PEPORT.php" class="btn btn-danger ">
+                                <a href="report-pdf.php" class="btn btn-danger ">
                                     <h5><i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
                                     <h5>รายงาน PDF</h5>
                                 </a>
-                                <a href="PDF_JOUNAL_PEPORT.php" class="btn btn-success">
+                                <a href="report-pdf.php" class="btn btn-success">
                                     <h5><i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
                                     <h5>รายงาน CSV</h5>
                                 </a>
@@ -215,11 +197,11 @@ if (isset($_GET['delete'])) {
                                                 สินทรัพย์
                                             </th>
                                             <th>
-                                                ราคาสินทรัพย์ที่ซื้อ
+                                                ราคาสินทรัพย์ที่ซื้อ (บาท)
                                             </th>
 
                                             <th>
-                                                จำนวนสินทรัพย์
+                                                จำนวนสินทรัพย์ (หน่วย)
                                             </th>
                                             <th>
                                                 วันที่ซื้อ
@@ -229,10 +211,10 @@ if (isset($_GET['delete'])) {
                                             </th>
 
                                             <th>
-                                                ราคาตัดขาดทุน
+                                                ราคาตัดขาดทุน (บาท)
                                             </th>
                                             <th>
-                                                ราคาขายทำกำไร
+                                                ราคาขายทำกำไร (บาท)
                                             </th>
 
 
@@ -259,12 +241,12 @@ if (isset($_GET['delete'])) {
                                                     <td><?php echo  $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo number_format($user['assetprice'], '2'); ?></td>
-                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?></td>
+                                                    <td><?php echo number_format($user['assetprice'], '2'); ?> บาท</td>
+                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?> หน่วย</td>
                                                     <td><?php echo $user['assetdate']; ?></td>
                                                     <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo number_format($user['assetsl'], '2'); ?></td>
-                                                    <td><?php echo number_format($user['assettg'], '2'); ?></td>
+                                                    <td><?php echo number_format($user['assetsl'], '2'); ?> บาท</td>
+                                                    <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
 
 
 
@@ -292,49 +274,6 @@ if (isset($_GET['delete'])) {
                                     if (file) {
                                         previewImg.src = URL.createObjectURL(file)
                                     }
-                                }
-                                $(".delete-btn").click(function(e) {
-                                    var userId = $(this).data('id');
-                                    e.preventDefault();
-                                    deleteConfirm(userId);
-                                })
-
-
-                                function deleteConfirm(userId) {
-                                    Swal.fire({
-                                        title: 'ลบรายการ !',
-                                        text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
-                                        icon: 'warning',
-                                        dangerMode: true,
-                                        showCancelButton: true,
-                                        confirmButtonColor: '#3085d6',
-                                        cancelButtonColor: '#d33',
-                                        confirmButtonText: 'ใช่แน่ใจ!',
-                                        showLoaderOnConfirm: true,
-                                        preConfirm: function() {
-                                            return new Promise(function(resolve) {
-                                                $.ajax({
-                                                        url: 'index.php',
-                                                        type: 'GET',
-                                                        data: 'delete=' + userId,
-                                                    })
-                                                    .done(function() {
-                                                        Swal.fire({
-                                                            title: 'สำเร็จ',
-                                                            text: 'ลบรายการเรียบร้อย !',
-                                                            icon: 'success',
-                                                            timer: '2000'
-                                                        }).then(() => {
-                                                            document.location.href = 'index.php';
-                                                        })
-                                                    })
-                                                    .fail(function() {
-                                                        Swal.fire('Oops...', 'Something went wrong with ajax !', 'error')
-                                                        window.location.reload();
-                                                    });
-                                            });
-                                        },
-                                    });
                                 }
                             </script>
 </body>

@@ -145,7 +145,7 @@ if (mysqli_num_rows($get_user) > 0) {
                                 </div>
                                 <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
                                     <div class="card text-center shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header  bg-info text-info">ค่าเฉลี่ยวันที่ถือครองสินทรัพย์</h3>
+                                        <h3 class="text-center card-header  bg-info text-info">วันที่ถือครองสินทรัพย์</h3>
                                         <div class="card-body">
                                             <br>
                                             <br>

@@ -27,8 +27,6 @@ if (isset($_GET['delete'])) {
 
     $$delete_id = $_GET['delete'];
     $deletestmt = mysqli_query($db_connection, "DELETE FROM tb_journal WHERE id = $delete_id");
-
-    
 }
 
 
@@ -198,10 +196,10 @@ if (isset($_GET['delete'])) {
                                     <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
                                         <thead class="table-dark mb-1">
                                             <hr>
-                                            <th >
+                                            <th>
                                                 สถานะ
                                             </th>
-                                            <th >
+                                            <th>
                                                 สินทรัพย์
                                             </th>
                                             <th>
@@ -216,7 +214,7 @@ if (isset($_GET['delete'])) {
                                             <th>
                                                 วันที่ขาย
                                             </th>
-                                           
+
                                             <th>
                                                 จำนวนวันที่ถือครอง
                                             </th>
@@ -256,11 +254,6 @@ if (isset($_GET['delete'])) {
                                                     <td><?php echo $user['assetsl']; ?></td>
                                                     <td><?php echo $user['assettg']; ?></td>
 
-                                                    <td width="250px"><img class="rounded" width="100%" src="uploads/<?php echo $user['assetimge']; ?>"></td>
-
-                                                    <td><a type="button" class="btn btn-warning " href="edit.php?id=<?php echo $user['id']; ?>" class="">แก้ไข</a></td>
-
-                                                    <td><a data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="btn btn-danger delete-btn">ลบ</a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>

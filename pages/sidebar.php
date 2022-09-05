@@ -94,13 +94,13 @@ function isActive($data)
                     <hr>
                 </li>
                 <li class="nav-item">
-                    <a href="../riskproflie/survey.php" id="logout" class="nav-link">
+                    <a href="../riskproflie/survey.php" id="" class="nav-link">
                         <i class="fas fa-sign"></i>
                         <p>RISK PROFILE</p>
                     </a>
                     <hr>
                 <li class="nav-item">
-                    <a href="#" id="logout" class="nav-link">
+                    <a href="../profliesetting/index.php" id="" class="nav-link" <?php echo isActive('profilesetting') ?>>
                         <i class="fas fa-sign-out-alt"></i>
                         <p>PROFILE SETTINGS</p>
                     </a>
