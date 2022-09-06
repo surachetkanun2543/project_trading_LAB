@@ -15,7 +15,8 @@ if (mysqli_num_rows($get_user) > 0) {
     header('Location: logout.php');
     exit;
 }
-
+$query = "SELECT COUNT(*) AS SUM FROM tb_journal  WHERE `ur_id`='$id' ORDER BY id" or die;
+$result = mysqli_query($db_connection, $query);
 
 ?>
 <!DOCTYPE html>
@@ -59,9 +60,9 @@ if (mysqli_num_rows($get_user) > 0) {
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row my-4 ml-4 mb-4 ">
+                <div class="row my-4 ml-4 mb-4 ">
                         <div class="col-sm-6">
-                            <h5 class=" mt-3 m-0 text-dark">User Dashboard - รายงานภาพรวม </h5>
+                            <h4 class=" mt-3 m-0 text-dark">User Dashboard - รายงานภาพรวม </h4>
                             <hr>
                         </div>
                     </div>
@@ -72,22 +73,8 @@ if (mysqli_num_rows($get_user) > 0) {
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="row  mb-6 ml-5 ">
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
-                                    <div class="card  shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header bg-info text-white">จำนวนครั้งที่เทรด</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <h1 class="text-center text-info">69 </h1>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-info"> ครั้ง</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
+                            <div class="row  mb-6 ml-1 ">
+                                <div class="col-12 col-md-4 col-lg-4 mb-3 ml-1 ">
                                     <div class="card text-center shadow-lg  mb-5 bg-white rounded">
                                         <h3 class="text-center card-header bg-success text-white">จำนวนครั้งที่ชนะ</h3>
                                         <div class="card-body">
@@ -101,7 +88,27 @@ if (mysqli_num_rows($get_user) > 0) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
+                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-2 ">
+                                    <div class="card  shadow-lg  mb-5 bg-white rounded">
+                                        <h3 class="text-center card-header bg-info text-white">จำนวนครั้งที่บันทึก</h3>
+                                        <div class="card-body">
+                                            <br>
+                                            <br>
+                                            <?php
+                                            foreach ($result as $results) { ?>
+                                                <h1 value="<?php echo $results["admin_id"]; ?>"> </h1>
+                                                <h1 class="text-center text-info"><?php echo $results["SUM"]; ?></h1>
+                                            <?php }
+                                            ?>
+                                            <hr>
+                                            <h5 class=" card-text text-center text-info"> ครั้ง</h5>
+                                            <br>
+                                            <br>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4 mb-3 ml-2 ">
                                     <div class="card text-center shadow-lg  mb-5 bg-white rounded">
                                         <h3 class="text-center card-header  bg-danger text-danger">จำนวนครั้งที่แพ้</h3>
                                         <div class="card-body">
@@ -115,7 +122,7 @@ if (mysqli_num_rows($get_user) > 0) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
+                                <div class="col-12 col-md-4 col-lg-5 mb-3 ml-5 ">
                                     <div class="card text-center shadow-lg  mb-5 bg-white rounded">
                                         <h3 class="text-center card-header  bg-success text-success">กำไร</h3>
                                         <div class="card-body">
@@ -129,7 +136,7 @@ if (mysqli_num_rows($get_user) > 0) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
+                                <div class="col-12 col-md-4 col-lg-5 mb-3 ml-5 ">
                                     <div class="card text-center shadow-lg  mb-5 bg-white rounded">
                                         <h3 class="text-center card-header  bg-danger text-danger">ขาดทุน</h3>
                                         <div class="card-body">
@@ -138,20 +145,6 @@ if (mysqli_num_rows($get_user) > 0) {
                                             <h1 class="text-center text-danger">69 </h1>
                                             <hr>
                                             <h5 class=" card-text text-center text-danger"> THB</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-5 ">
-                                    <div class="card text-center shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header  bg-info text-info">ค่าเฉลี่ยวันที่ถือครองสินทรัพย์</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <h1 class="text-center text-info"> 9 </h1>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-info"> วัน</h5>
                                             <br>
                                             <br>
                                         </div>

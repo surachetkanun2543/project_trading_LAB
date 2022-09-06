@@ -165,7 +165,8 @@ if (isset($_GET['delete'])) {
                     <div class="row">
                         <div class="col-sm-6">
                             <br>
-                            <h4 class="ml-5 text-dark"> บันทึกรายการซื้อขาย</h4>
+                            <h3 class="ml-5 text-dark"> บันทึกรายการซื้อขาย </h3>
+                            <p class="ml-5 text-dark"> (trading journal) </ย>
                             <hr>
                         </div>
                     </div>
@@ -197,7 +198,7 @@ if (isset($_GET['delete'])) {
                                 <button type="button" class=" btn btn-danger view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                        <thead class="table-dark mb-1">
+                                    <thead class=" text-center table-dark mb-1">
                                             <hr>
                                             <th scope="col">
                                                 สถานะ
@@ -209,11 +210,11 @@ if (isset($_GET['delete'])) {
                                                 สินทรัพย์
                                             </th>
                                             <th>
-                                                ราคาสินทรัพย์ที่ซื้อ
+                                                ราคาสินทรัพย์ที่ซื้อ (บาท)
                                             </th>
 
                                             <th>
-                                                จำนวนสินทรัพย์
+                                                จำนวนสินทรัพย์ (หน่วย)
                                             </th>
                                             <th>
                                                 วันที่ซื้อ
@@ -223,10 +224,10 @@ if (isset($_GET['delete'])) {
                                             </th>
 
                                             <th>
-                                                ราคาตัดขาดทุน
+                                                ราคาตัดขาดทุน (บาท)
                                             </th>
                                             <th>
-                                                ราคาขายทำกำไร
+                                                ราคาขายทำกำไร (บาท)
                                             </th>
                                             <th>
                                                 รูปภาพ
@@ -237,8 +238,11 @@ if (isset($_GET['delete'])) {
                                             <th>
                                                 ลบ
                                             </th>
+                                            <th>
+                                                แจ้งเตือน Line
+                                            </th>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="text-center">
                                             <?php
                                             $id = $_SESSION['login_id'];
                                             $get_user =
@@ -256,22 +260,24 @@ if (isset($_GET['delete'])) {
 
                                             foreach ($result as $user) {
                                             ?>
-                                                <tr>
+                                                <tr class="text-center">
                                                     <td><?php echo  $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo number_format ( $user ['assetprice'],'2') ; ?></td>
-                                                    <td><?php echo number_format ( $user ['assetvolume'],'2') ; ?></td>  
+                                                    <td><?php echo number_format ( $user ['assetprice'],'2') ; ?> (บาท) </td>
+                                                    <td><?php echo number_format ( $user ['assetvolume'],'2') ; ?> (หน่วย) </td>  
                                                     <td><?php echo $user['assetdate']; ?></td>
                                                     <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo number_format ( $user ['assetsl'],'2') ; ?></td>
-                                                    <td><?php echo number_format ( $user ['assettg'],'2') ; ?></td>
+                                                    <td><?php echo number_format ( $user ['assetsl'],'2') ; ?> (บาท) </td>
+                                                    <td><?php echo number_format ( $user ['assettg'],'2') ; ?> (บาท) </td>
 
-                                                    <td width="250px"><img class="rounded" width="100%" src="uploads/<?php echo $user['assetimge']; ?>"></td>
+                                                    <td ><img class="rounded" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
 
-                                                    <td><a type="button" class="btn btn-warning " href="edit.php?id=<?php echo $user['id']; ?>" class="">แก้ไข</a></td>
+                                                    <td><a type="button" class="btn btn-warning " href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
 
-                                                    <td><a data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="btn btn-danger delete-btn">ลบ</a></td>
+                                                    <td><a data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i> ลบ</a></td>
+                                              
+                                                    <td><a data-id="<?= $user['id']; ?>" class="btn btn-success text-center text-white"><i class="fa-brands fa-line"> </i> ส่งแจ้งเตือน</a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>

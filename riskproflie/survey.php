@@ -26,7 +26,7 @@ if (mysqli_num_rows($get_user) > 0) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>JOURNAL | <?php echo $user['name']; ?> </title>
+  <title>risk assessment | <?php echo $user['name']; ?> </title>
   <link href="../css/dashboard.css" rel="stylesheet">
 
   <!-- Favicons -->
@@ -61,7 +61,14 @@ if (mysqli_num_rows($get_user) > 0) {
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-
+            <div class="row">
+                        <div class="col-sm-6">
+                            <br>
+                            <h3 class="ml-5 text-dark"> แบบประเมินความเสี่ยง </h3>
+                            <p class="ml-5 text-dark"> (risk assessment form) </ย>
+                            <hr>
+                        </div>
+                    </div>
             </div>
           </div>
         </div>
@@ -113,7 +120,7 @@ if (mysqli_num_rows($get_user) > 0) {
             <td>&nbsp;</td>
             <br>
             <td colspan="8" align="center">
-              <h3>แบบประเมินความเสี่ยง การลงทุน</h3>
+              <h3>แบบประเมินความเสี่ยงการลงทุน</h3>
               <p>(ใช้เพื่อประเมินความเสี่ยงในการลงทุนของตนเอง)</p>
             </td>
           </tr>
@@ -276,7 +283,7 @@ if (mysqli_num_rows($get_user) > 0) {
           </tr>
           <tr bgcolor="#343A40">
             <td>&nbsp;</td>
-            <td colspan="7" class="text-light mb-3 mt-3">แบบประเมิน ส่วนที่ 2 </td>
+            <td colspan="7" class="text-light mb-3 mt-3 ">แบบประเมิน ส่วนที่ 2 </td>
           </tr>
           <tr>
 
@@ -324,7 +331,7 @@ if (mysqli_num_rows($get_user) > 0) {
           ?>
 
             <tr>
-              <td width="574"><?= $name ?> </td>
+              <td  width="574"><?= $name ?> </td>
               <td>&nbsp;</td>
               <td width="70" align="center"><input name="radionNo<?= $i; ?>" id="radionNo<?= $i; ?>_5" type="radio" value="5"></td>
               <td>&nbsp;</td>

@@ -135,7 +135,7 @@ else :
                         <a href="" class="active"></a>
                         <a class="btn" href="<?php echo $client->createAuthUrl(); ?>"><i class="fa-brands fa-google-plus-g"></i> SIGN IN WITH GOOGLE</a>
                     <?php endif; ?>
-                    <a class="btn" href="./admin/pages/index.php">ADMIN</a>
+                    <a class="btn" href="./admin/pages/index.php">ADMIN (DEV)</a>
                     </div>
                 </div>
             </div>

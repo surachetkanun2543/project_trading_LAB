@@ -40,7 +40,7 @@ if (isset($_GET['delete'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>JOURNAL | <?php echo $user['name']; ?> </title>
+    <title>performance | <?php echo $user['name']; ?> </title>
     <link href="../css/dashboard.css" rel="stylesheet">
 
     <!-- Favicons -->
@@ -163,7 +163,8 @@ if (isset($_GET['delete'])) {
                     <div class="row">
                         <div class="col-sm-6">
                             <br>
-                            <h4 class="ml-5 text-dark"> สรุปวิเคราะห์ รายการซื้อขาย </h4>
+                            <h3 class="ml-5 text-dark"> สรุปรายการซื้อขาย </h3>
+                            <p class="ml-5 text-dark"> (Transaction Summaryl) </p>
                             <hr>
                         </div>
                     </div>
@@ -194,7 +195,7 @@ if (isset($_GET['delete'])) {
                                 <!-- <button type="button" class=" btn btn-success view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-plus "> </i>เพิ่มบันทึกใหม่</button> -->
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                        <thead class="table-dark mb-1">
+                                    <thead class=" text-center table-dark mb-1">
                                             <hr>
                                             <th>
                                                 สถานะ
@@ -243,7 +244,7 @@ if (isset($_GET['delete'])) {
 
                                             foreach ($result as $user) {
                                             ?>
-                                                <tr>
+                                                <tr class=" text-center">
                                                     <td><?php echo $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>

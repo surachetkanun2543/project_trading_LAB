@@ -179,7 +179,7 @@ if (isset($_GET['delete'])) {
                                     <h5><i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
                                     <h5>รายงาน PDF</h5>
                                 </a>
-                                <a href="report-pdf.php" class="btn btn-success">
+                                <a href="report-csv.php" class="btn btn-success">
                                     <h5><i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
                                     <h5>รายงาน CSV</h5>
                                 </a>

@@ -119,7 +119,8 @@ if (mysqli_num_rows($get_user) > 0) {
                     <div class="row">
                         <div class="col-sm-6">
                             <br>
-                            <h4 class="ml-5 text-dark"> ตั้งค่าโปรไฟล์ </h4>
+                            <h3 class="ml-5 text-dark"> ตั้งค่าโปรไฟล์ข้อมูลส่วนตัว </h3>
+                            <p class="ml-5 text-dark"> (Set up personal profile) </p>
                             <hr>
                         </div>
                     </div>
@@ -151,7 +152,7 @@ if (mysqli_num_rows($get_user) > 0) {
                                 <!-- <button type="button" class=" btn btn-danger view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button> -->
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                        <thead class="table-dark mb-1">
+                                        <thead class=" text-center table-dark mb-1">
                                             <hr>
                                             <th>
                                                 บัญชี Goolge
@@ -186,7 +187,7 @@ if (mysqli_num_rows($get_user) > 0) {
 
                                             foreach ($result as $user) {
                                             ?>
-                                                <tr>
+                                                <tr class="text-center">
                                                     <td><?php echo  $user['google_id']; ?></td>
                                                     <td><?php echo $user['name']; ?></td>
                                                     <td><?php echo $user['email']; ?></td>
@@ -194,7 +195,7 @@ if (mysqli_num_rows($get_user) > 0) {
                                                     <td width="250px"><img class="rounded" width="150px" src="uploads/<?php echo $user['profile_image']; ?>"></td>
 
                                                     <td><a type="button" href="edit.php?id=<?php echo $user['id']; ?>" class=" btn btn-warning ">
-                                                            แก้ไข</a></td>
+                                                    <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>
