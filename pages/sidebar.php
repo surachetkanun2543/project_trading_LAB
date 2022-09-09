@@ -27,16 +27,7 @@ function isActive($data)
 
 
 ?>
-<style>
-    .dot {
 
-        height: 10px;
-        width: 10px;
-        background-color: green;
-        border-radius: 50%;
-        display: inline-block;
-    }
-</style>
 
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -50,7 +41,7 @@ function isActive($data)
 
 </nav>
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar bg-transparent elevation-3 ">
+<aside class="main-sidebar bg-white elevation-3 ">
 
     <div class="sidebar">
         <div class="user-panel mt-5 pb-3 mb-3 d-flex">
@@ -58,7 +49,8 @@ function isActive($data)
                 <img src="../assets/img/logo.png" alt="Admin Logo" class="brand-image img-circle elevation-3">
                 <span class="font-weight-bold" center>จดบันทึกและวิเคราะห์ </span>
                 <hr> <span class="dot"></span> <span class="font-weight-bold align=" center>ยินดีต้อนรับคุณ : </span><img src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" class=" img-circle elevation-2 alt=" User Image">
-                <a href="index.php" class="d-block"> คุณ <?php echo $user['name']; ?></a>
+                <br>
+                <br><a href="index.php" class="d-block"> คุณ <?php echo $user['name']; ?></a>
 
             </div>
         </div>
@@ -94,23 +86,23 @@ function isActive($data)
                     <hr>
                 </li>
                 <li class="nav-item">
-                    <a href="../riskproflie/survey.php" id="" class="nav-link">
+                    <a href="../riskproflie/survey.php" id="" class="nav-link <?php echo isActive('report') ?>">
                         <i class="fas fa-sign"></i>
                         <p>RISK PROFILE</p>
                     </a>
                     <hr>
                 <li class="nav-item">
-                    <a href="../profliesetting/index.php" id="" class="nav-link" <?php echo isActive('profilesetting') ?>>
+                    <a href="../profliesetting/index.php" id="" class="nav-link <?php echo isActive('profilesetting') ?>">
                         <i class="fas fa-sign-out-alt"></i>
-                        <p>PROFILE SETTINGS</p>
+                        <p>PROFILE SETTING</p>
                     </a>
                     <hr>
                 </li>
 
-                <li class="nav-item ">
-                    <a href="logout.php" id="logout" class="nav-link">
-                        <i class="text-danger fas fa-sign-out-alt"></i>
-                        <p class="text-danger " href="logout.php" onclick="return confirm('ยืนยันออกจากระบบ ?');">LOGOUT</p>
+                <li class="nav-item btn btn-outline-danger">
+                    <a href="logout.php" id="logout" class="nav-link" onclick="return confirm('ยืนยันออกจากระบบ ?');">
+                        <i class=" text-danger fas fa-sign-out-alt"></i>
+                        <p class=" text-danger " href="logout.php" onclick="return confirm('ยืนยันออกจากระบบ ?');">LOGOUT</p>
                     </a>
                 </li>
             </ul>

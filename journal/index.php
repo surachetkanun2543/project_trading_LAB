@@ -142,20 +142,7 @@ if (isset($_GET['delete'])) {
         </div>
     </div>
 
-    <!-- SCRIPTS -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../../plugins/sweetalert2/dist/sweetalert2.min.js"></script>
-    <script src="../../assets/js/adminlte.min.js"></script>
 
-
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
-    <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-    <script src="../../plugins/toastr/toastr.min.js"></script>
 
     <div class="wrapper">
         <?php include_once('../pages/sidebar.php') ?>
@@ -277,7 +264,7 @@ if (isset($_GET['delete'])) {
 
                                                     <td><a data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i> ลบ</a></td>
                                               
-                                                    <td><a data-id="<?= $user['id']; ?>" class="btn btn-success text-center text-white"><i class="fa-brands fa-line"> </i> ส่งแจ้งเตือน</a></td>
+                                                    <td><a href="line.php?options=<?php echo $user['assetname'];?> || สถานะ : <?php echo $user['options'] ;?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice'] ;?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate'] ;?>" class="btn btn-success text-center text-white"><i class="fa-brands fa-line"> </i> ส่งแจ้งเตือน</a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>
@@ -346,6 +333,22 @@ if (isset($_GET['delete'])) {
                                     });
                                 }
                             </script>
+                            
+    <!-- SCRIPTS -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="../../assets/js/adminlte.min.js"></script>
+
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+    <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+    <script src="../../plugins/toastr/toastr.min.js"></script>
+
 </body>
 
 </html>

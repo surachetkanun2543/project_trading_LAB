@@ -18,6 +18,11 @@ if (mysqli_num_rows($get_user) > 0) {
 $query = "SELECT COUNT(*) AS SUM FROM tb_journal  WHERE `ur_id`='$id' ORDER BY id" or die;
 $result = mysqli_query($db_connection, $query);
 
+
+$query2 = "SELECT  SUM(assetprice*assetvolume) AS SUM1 FROM tb_journal WHERE `ur_id`='$id' ORDER BY id" or die;
+$result2 = mysqli_query($db_connection, $query2);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,121 +51,275 @@ $result = mysqli_query($db_connection, $query);
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
+
+<body>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <style>
+            .swal-wide {
+                font-size: 20px;
+                width: 850px !important;
+                height: 400px !important;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    title: 'สำเร็จ!',
+                    text: 'ยินดีต้อนรับเข้าสู่จดบันทึกและวิเคราะห์การลงทุน',
+                    imageUrl: 'good.png',
+                    customClass: 'swal-wide',
+                    timer: 1000,
+                    showConfirmButton: false
+                });
+            });
+        </script>
 
         <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                <div class="row my-4 ml-4 mb-4 ">
-                        <div class="col-sm-6">
-                            <h4 class=" mt-3 m-0 text-dark">User Dashboard - รายงานภาพรวม </h4>
-                            <hr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Main content -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="row  mb-6 ml-1 ">
-                                <div class="col-12 col-md-4 col-lg-4 mb-3 ml-1 ">
-                                    <div class="card text-center shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header bg-success text-white">จำนวนครั้งที่ชนะ</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <h1 class="text-center text-success">69 </h1>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-success"> ครั้ง</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-3 mb-3 ml-2 ">
-                                    <div class="card  shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header bg-info text-white">จำนวนครั้งที่บันทึก</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <?php
-                                            foreach ($result as $results) { ?>
-                                                <h1 value="<?php echo $results["admin_id"]; ?>"> </h1>
-                                                <h1 class="text-center text-info"><?php echo $results["SUM"]; ?></h1>
-                                            <?php }
-                                            ?>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-info"> ครั้ง</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4 mb-3 ml-2 ">
-                                    <div class="card text-center shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header  bg-danger text-danger">จำนวนครั้งที่แพ้</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <h1 class="text-center text-danger">69 </h1>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-danger"> ครั้ง</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-4 col-lg-5 mb-3 ml-5 ">
-                                    <div class="card text-center shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header  bg-success text-success">กำไร</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <h1 class="text-center text-success">69 </h1>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-success"> THB</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-4 col-lg-5 mb-3 ml-5 ">
-                                    <div class="card text-center shadow-lg  mb-5 bg-white rounded">
-                                        <h3 class="text-center card-header  bg-danger text-danger">ขาดทุน</h3>
-                                        <div class="card-body">
-                                            <br>
-                                            <br>
-                                            <h1 class="text-center text-danger">69 </h1>
-                                            <hr>
-                                            <h5 class=" card-text text-center text-danger"> THB</h5>
-                                            <br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="page-wrapper">
+            <div class="container-fluid bg-white">
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3 class="ml-5 text-dark"> Dashboard </h3>
+                                <p class="ml-5 text-dark"> (User Dashboard) </p>
+                                <hr>
                             </div>
                         </div>
                     </div>
-
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card text-center  mb-5 border-primary rounded">
+                            <h2 class="text-center card-header bg-primary ">จำนวนเงินที่ลงทุนอยู่</h2>
+                            <div class="card-body text-primary">
+                                <br>
+                                <br>
+                                <?php
+                                foreach ($result2 as $results) { ?>
+                                    <h1 value="<?php echo $results["admin_id"]; ?>"> </h1>
+                                    <h1 class="text-center text-primary"><?php echo number_format($results["SUM1"]); ?></h1>
+                                <?php }
+                                ?>
+                                <hr>
+                                <h3 class=" card-text "> บาท </h3>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center   mb-5 bg-success rounded">
+                            <h2 class="text-center card-header ">จำนวนครั้งที่ชนะ</h2>
+                            <div class="card-body">
+                                <br>
+                                <br>
+                                <h1 class="text-center ">69 </h1>
+                                <hr>
+                                <h3 class=" card-text text-center "> ครั้ง</h3>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center   mb-5 bg-danger rounded">
+                            <h2 class="text-center card-header text-white">จำนวนครั้งที่แพ้</h2>
+                            <div class="card-body">
+                                <br>
+                                <br>
+                                <h1 class="text-center text-white">8 </h1>
+                                <hr>
+                                <h3 class=" card-text text-center text-white"> ครั้ง</h3>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mr-6">
+                        <div class="card text-center  mb-5 border-info rounded">
+                            <h2 class="text-center card-header bg-info ">จำนวนสินทรัพย์ที่บันทึกอยู่</h2>
+                            <div class="card-body text-info">
+                                <br>
+                                <br>
+                                <?php
+                                foreach ($result as $results) { ?>
+                                    <h1 value="<?php echo $results["admin_id"]; ?>"> </h1>
+                                    <h1 class="text-center text-info"><?php echo $results["SUM"]; ?></h1>
+                                <?php }
+                                ?>
+                                <hr>
+                                <h3 class=" card-text "> รายการ </h3>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center   mb-5 bg-success rounded">
+                            <h2 class="text-center card-header text-white">จำนวนเงินกำไร</h2>
+                            <div class="card-body">
+                                <br>
+                                <br>
+                                <h1 class="text-center text-white">4000 </h1>
+                                <hr>
+                                <h3 class=" card-text text-center text-white"> บาท </h3>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center   mb-5 bg-danger rounded">
+                            <h2 class="text-center card-header text-white">จำเงินที่ขาดทุน</h2>
+                            <div class="card-body">
+                                <br>
+                                <br>
+                                <h1 class="text-center text-white">6000 </h1>
+                                <hr>
+                                <h3 class=" card-text text-center text-white"> บาท</h3>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- title -->
+                                <div class="d-md-flex">
+                                    <div>
+                                        <h2 class="card-title">รายการจดบันทึก</h2>
 
+                                    </div>
+                                    <div class="ms-auto">
+
+                                    </div>
+                                </div>
+                                <!-- title -->
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table v-middle">
+                                    <thead>
+                                        <tr class="bg-light">
+                                            <th class="border-top-0">Products</th>
+                                            <th class="border-top-0">License</th>
+                                            <th class="border-top-0">Support Agent</th>
+                                            <th class="border-top-0">Technology</th>
+                                            <th class="border-top-0">Tickets</th>
+                                            <th class="border-top-0">Sales</th>
+                                            <th class="border-top-0">Earnings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16"> Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Single Use</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <label class="label label-danger">Angular</label>
+                                            </td>
+                                            <td>46</td>
+                                            <td>356</td>
+                                            <td>
+                                                <h5 class="m-b-0">$2850.06</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Monster Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Single Use</td>
+                                            <td>Venessa Fern</td>
+                                            <td>
+                                                <label class="label label-info">Vue Js</label>
+                                            </td>
+                                            <td>46</td>
+                                            <td>356</td>
+                                            <td>
+                                                <h5 class="m-b-0">$2850.06</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Material Pro Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Single Use</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <label class="label label-success">Bootstrap</label>
+                                            </td>
+                                            <td>46</td>
+                                            <td>356</td>
+                                            <td>
+                                                <h5 class="m-b-0">$2850.06</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Ample Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Single Use</td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <label class="label label-purple">React</label>
+                                            </td>
+                                            <td>46</td>
+                                            <td>356</td>
+                                            <td>
+                                                <h5 class="m-b-0">$2850.06</h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- SCRIPTS -->
     <script src="../plugins/jquery/jquery.min.js"></script>

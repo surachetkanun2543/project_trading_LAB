@@ -276,6 +276,15 @@ if (isset($_GET['delete'])) {
                                     }
                                 }
                             </script>
+                                <!-- SCRIPTS -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assetsuser/js/adminlte.min.js"></script>
+
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="../plugins/chart.js/Chart.min.js"></script>
+    <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>

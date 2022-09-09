@@ -67,33 +67,33 @@ if (mysqli_num_rows($get_user) > 0) {
                 </div>
                 <hr>
                 <div class="modal-body">
-                        <div class="row">
+                    <div class="row">
 
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assetprice">ชื่อ-สกุล<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetprice" name="assetprice" type="text" placeholder="" required="">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="assetvolume">อีเมล์<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetvolume" name="assetvolume" type="text" placeholder="" required="" />
-                            </div>
-
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assetsl">โทเคน ไลน์<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetsl" name="assetsl" type="number" placeholder="" required="" />
-                            </div>
-
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="assetimge">รูปภาพโปรไฟล์<span class="text-danger ml-1">*</span></label>
-                                <input type="file" required class="form-control" id="imgInput" name="assetimge">
-                                <img loading="lazy" width="100%" id="previewImg" alt="">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="ur_id" id="ur_id">
-                                <button type="submit" name="submit" class="btn btn-success">ยืนยัน</button>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
-                            </div>
+                        <div class="form-group col-lg-6">
+                            <label class="font-weight-bold text-small" for="assetprice">ชื่อ-สกุล<span class="text-danger ml-1">*</span></label>
+                            <input class="form-control" id="assetprice" name="assetprice" type="text" placeholder="" required="">
                         </div>
+                        <div class="form-group col-lg-12">
+                            <label class="font-weight-bold text-small" for="assetvolume">อีเมล์<span class="text-danger ml-1">*</span></label>
+                            <input class="form-control" id="assetvolume" name="assetvolume" type="text" placeholder="" required="" />
+                        </div>
+
+                        <div class="form-group col-lg-6">
+                            <label class="font-weight-bold text-small" for="assetsl">โทเคน ไลน์<span class="text-danger ml-1">*</span></label>
+                            <input class="form-control" id="assetsl" name="assetsl" type="number" placeholder="" required="" />
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <label class="font-weight-bold text-small" for="assetimge">รูปภาพโปรไฟล์<span class="text-danger ml-1">*</span></label>
+                            <input type="file" required class="form-control" id="imgInput" name="assetimge">
+                            <img loading="lazy" width="100%" id="previewImg" alt="">
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <input type="hidden" name="ur_id" id="ur_id">
+                            <button type="submit" name="submit" class="btn btn-success">ยืนยัน</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>
@@ -192,10 +192,10 @@ if (mysqli_num_rows($get_user) > 0) {
                                                     <td><?php echo $user['name']; ?></td>
                                                     <td><?php echo $user['email']; ?></td>
                                                     <td><?php echo $user['Line_token']; ?></td>
-                                                    <td width="250px"><img class="rounded" width="150px" src="uploads/<?php echo $user['profile_image']; ?>"></td>
+                                                    <td width="250px"><img class="rounded" width="150px" src="<?php echo $user['profile_image']; ?>"></td>
 
                                                     <td><a type="button" href="edit.php?id=<?php echo $user['id']; ?>" class=" btn btn-warning ">
-                                                    <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
+                                                            <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>
@@ -264,6 +264,15 @@ if (mysqli_num_rows($get_user) > 0) {
                                     });
                                 }
                             </script>
+                            <!-- SCRIPTS -->
+                            <script src="../plugins/jquery/jquery.min.js"></script>
+                            <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                            <script src="../assetsuser/js/adminlte.min.js"></script>
+
+
+                            <!-- OPTIONAL SCRIPTS -->
+                            <script src="../plugins/chart.js/Chart.min.js"></script>
+                            <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>
