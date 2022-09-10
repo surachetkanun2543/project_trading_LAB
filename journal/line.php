@@ -18,17 +18,21 @@ if (!isset($_SESSION['login_id'])) {
     exit;
 }
 
+$id = $_SESSION['login_id'];
+$deletestmt = $conn->query("SELECT * FROM `tb_user` WHERE `google_id`='$id'");
+$deletestmt->execute();
+$data1 = $deletestmt->fetch();
 
 if ($_GET['options']) {
 
-    $get_user = mysqli_query($db_connection, "SELECT * FROM `tb_user` WHERE `google_id`='$id'");
-    $user = mysqli_fetch_assoc($get_user);
+
 
     $options = $_GET['options'];
     $assetname = $_GET['assetname'];
 
 
-    $sToken = "7FSKNu2uFaw20IQxwYQnnMpFQ4gC4d0Xm3gYjIS0qj8";
+    $sToken = $data1['Line_token'];
+    $sMessage = "รายละเอียดการบันทึก\n";
     $sMessage = " $user " . 'ผู้ใช้งานทั่วไป' . " \n";
     $sMessage .= "\n __________________ \n";
     $sMessage .= "\nรายละเอียดการบันทึก \n";

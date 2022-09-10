@@ -39,33 +39,33 @@ if (isset($_POST['submit'])) {
 
     // line noti
 
+    $sToken = $data1['Line_token'];
+    $sMessage = "รายละเอียดการบันทึก\n";
+    $sMessage .= "สถานะ : " . $options . " \n";
+    $sMessage .= "สินทรัพย์ : " . $assetname . " \n";
+    $sMessage .= "ราคา : " . $assetprice . " \n";
+    $sMessage .= "จำนวน: " . $assetvolume . " \n";
+    $imageFile = new CURLFILE('noti.jpeg');
+    //	$sticker_package_id = '2';  // Package ID sticker
+    //	$sticker_id = '34'; 
 
-    // $sToken = "7FSKNu2uFaw20IQxwYQnnMpFQ4gC4d0Xm3gYjIS0qj8";
-    // $sMessage = "รายละเอียดการบันทึก\n";
-    // $sMessage .= "สถานะ : " . $options . " \n";
-    // $sMessage .= "สินทรัพย์ : " . $assetname . " \n";
-    // $sMessage .= "ราคา : " . $assetprice . " \n";
-    // $sMessage .= "จำนวน: " . $assetvolume . " \n";
+    $data  = array(
+        'message' => $sMessage,
+        'imageFile' => $imageFile
+        //	'stickerPackageId' => $sticker_package_id,
+        //	'stickerId' => $sticker_id
+    );
 
-    // //	$sticker_package_id = '2';  // Package ID sticker
-    // //	$sticker_id = '34'; 
-
-    // $data  = array(
-    //     'message' => $sMessage,
-    //     //	'stickerPackageId' => $sticker_package_id,
-    //     //	'stickerId' => $sticker_id
-    // );
-
-    // $chOne = curl_init();
-    // curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
-    // curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
-    // curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
-    // curl_setopt($chOne, CURLOPT_POST, 1);
-    // curl_setopt($chOne, CURLOPT_POSTFIELDS, $data);
-    // $headers = array('Content-type: multipart/form-data', 'Authorization: Bearer ' . $sToken . '',);
-    // curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
-    // curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
-    // $result = curl_exec($chOne);
+    $chOne = curl_init();
+    curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+    curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($chOne, CURLOPT_POST, 1);
+    curl_setopt($chOne, CURLOPT_POSTFIELDS, $data);
+    $headers = array('Content-type: multipart/form-data', 'Authorization: Bearer ' . $sToken . '',);
+    curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
+    $result = curl_exec($chOne);
 
 
     if (in_array($fileActExt, $allow)) {

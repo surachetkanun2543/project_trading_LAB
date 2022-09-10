@@ -27,8 +27,6 @@ if (isset($_GET['delete'])) {
 
     $$delete_id = $_GET['delete'];
     $deletestmt = mysqli_query($db_connection, "DELETE FROM tb_journal WHERE id = $delete_id");
-
-    
 }
 
 
@@ -154,7 +152,7 @@ if (isset($_GET['delete'])) {
                             <br>
                             <h3 class="ml-5 text-dark"> บันทึกรายการซื้อขาย </h3>
                             <p class="ml-5 text-dark"> (trading journal) </ย>
-                            <hr>
+                                <hr>
                         </div>
                     </div>
                 </div>
@@ -185,7 +183,7 @@ if (isset($_GET['delete'])) {
                                 <button type="button" class=" btn btn-danger view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                    <thead class=" text-center table-dark mb-1">
+                                        <thead class=" text-center table-dark mb-1">
                                             <hr>
                                             <th scope="col">
                                                 สถานะ
@@ -251,20 +249,20 @@ if (isset($_GET['delete'])) {
                                                     <td><?php echo  $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo number_format ( $user ['assetprice'],'2') ; ?> (บาท) </td>
-                                                    <td><?php echo number_format ( $user ['assetvolume'],'2') ; ?> (หน่วย) </td>  
+                                                    <td><?php echo number_format($user['assetprice'], '2'); ?> (บาท) </td>
+                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?> (หน่วย) </td>
                                                     <td><?php echo $user['assetdate']; ?></td>
                                                     <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo number_format ( $user ['assetsl'],'2') ; ?> (บาท) </td>
-                                                    <td><?php echo number_format ( $user ['assettg'],'2') ; ?> (บาท) </td>
+                                                    <td><?php echo number_format($user['assetsl'], '2'); ?> (บาท) </td>
+                                                    <td><?php echo number_format($user['assettg'], '2'); ?> (บาท) </td>
 
-                                                    <td ><img class="rounded" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
+                                                    <td><img class="rounded" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
 
                                                     <td><a type="button" class="btn btn-warning " href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
 
                                                     <td><a data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i> ลบ</a></td>
-                                              
-                                                    <td><a href="line.php?options=<?php echo $user['assetname'];?> || สถานะ : <?php echo $user['options'] ;?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice'] ;?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate'] ;?>" class="btn btn-success text-center text-white"><i class="fa-brands fa-line"> </i> ส่งแจ้งเตือน</a></td>
+
+                                                    <td><a href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white"><i class="fa-brands fa-line"> </i> ส่งแจ้งเตือน</a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>
@@ -333,21 +331,25 @@ if (isset($_GET['delete'])) {
                                     });
                                 }
                             </script>
-                            
-    <!-- SCRIPTS -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../../plugins/sweetalert2/dist/sweetalert2.min.js"></script>
-    <script src="../../assets/js/adminlte.min.js"></script>
+
+                            <!-- SCRIPTS -->
+                            <script src="../plugins/jquery/jquery.min.js"></script>
+                            <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                            <script src="../../plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+                            <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
-    <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-    <script src="../../plugins/toastr/toastr.min.js"></script>
+                            <!-- OPTIONAL SCRIPTS -->
+                            <script src="../plugins/chart.js/Chart.min.js"></script>
+                            <script src="../assetsuser/js/pages/dashboard.js"></script>
+
+
+                            <!-- OPTIONAL SCRIPTS -->
+                            <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+                            <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+                            <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+                            <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
+                       
 
 </body>
 

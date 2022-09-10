@@ -204,10 +204,10 @@ if (isset($_GET['delete'])) {
                                                 สินทรัพย์
                                             </th>
                                             <th>
-                                                ราคาเข้าซื้อสินทรัพย์
+                                                ราคาเข้าซื้อสินทรัพย์  (บาท)
                                             </th>
                                             <th>
-                                                ราคาขายสินทรัพย์
+                                                ราคาขายสินทรัพย์  (บาท)
                                             </th>
                                             <th>
                                                 วันที่ซื้อ
@@ -220,7 +220,7 @@ if (isset($_GET['delete'])) {
                                                 จำนวนวันที่ถือครอง
                                             </th>
                                             <th>
-                                                กำไร/ขาดทุน
+                                                กำไร/ขาดทุน (บาท)
                                             </th>
                                             <th>
                                                 เปอร์เซ็น กำไร/ขาดทุน
@@ -248,12 +248,12 @@ if (isset($_GET['delete'])) {
                                                     <td><?php echo $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo $user['assetprice']; ?></td>
+                                                    <td><?php echo number_format($user['assetprice']); ?></td>
                                                     <td><?php echo $user['assetvolume']; ?></td>
                                                     <td><?php echo $user['assetdate']; ?></td>
                                                     <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo $user['assetsl']; ?></td>
-                                                    <td><?php echo $user['assettg']; ?></td>
+                                                    <td><?php echo number_format($user['assetsl']); ?></td>
+                                                    <td><?php echo number_format($user['assettg']); ?></td>
 
                                                 </tr>
                                             <?php }  ?>
@@ -323,6 +323,15 @@ if (isset($_GET['delete'])) {
                                     });
                                 }
                             </script>
+                                    <!-- SCRIPTS -->
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assetsuser/js/adminlte.min.js"></script>
+
+
+        <!-- OPTIONAL SCRIPTS -->
+        <script src="../plugins/chart.js/Chart.min.js"></script>
+        <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>

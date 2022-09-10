@@ -1,8 +1,12 @@
 {
     "files.exclude": {
+        ".vscode": true,
         "assetsuser": true,
+        "dist": true,
         "login": true,
         "plugins": true,
-        "serviceuser": true
+        "portal.css": true,
+        "serviceuser": true,
+        "vscode": true
     }
 }

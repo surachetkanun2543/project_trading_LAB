@@ -8,8 +8,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/index.css" />
     <!-- font -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -106,32 +105,54 @@ else :
                     </div>
 
                     <p>
-                        เว็บไซต์สำหรับการจดบันทึกและการวิเคราะห์การลงทุน รองรับหลากหลายสินทรัพย์
-                        ไม่ว่าจะเป็น หุ้นอเมริกา คริปโตเคอเรนซี่ และระบบแจ้งเตือน
+                        เว็บไซต์สำหรับการจดบันทึกและการวิเคราะห์การลงทุนอาทิ หุ้น คริปโต
+                        มาพร้อม ระบบแจ้งเตือนผ่าน
+                    <p style="color:green;"> LINE </p>
+                    <p> ระบบส่งออกรายงาน PDF ระบบตรวจสอบสถานะความเสี่ยง</p>
+                    <br>
+
+                    <?php
+                    $curl = curl_init();
+
+                    curl_setopt_array($curl,  array(
+                        CURLOPT_URL => 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => '',
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_FOLLOWLOCATION => true,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => 'GET',
+                    ));
+
+                    //$response = curl_exec($curl);
+                    curl_close($curl);
+                    echo "<p class='showData'>" . " 1 BITCOIN = . "  . "</p>";
+
+                    ?>
+
+                    <script>
+                         let showData = document.querySelector('.showData');
+                        var settings = {
+                            "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
+                            "method": "GET",
+                            "timeout": 0,
+                        };
+
+                        $.ajax(settings).done(function(response) {
+                           
+                            showData.innerHTML =  JSON.stringify(response);
+                            JSON.stringify(response)
+                            console.log(response);
+                        });
+                    </script>
 
 
-                        <?php
-                        $curl = curl_init();
+                    <br>
+                    <br>
 
-                        curl_setopt_array($curl,  array(
-                            CURLOPT_URL => 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
-                            CURLOPT_RETURNTRANSFER => true,
-                            CURLOPT_ENCODING => '',
-                            CURLOPT_MAXREDIRS => 10,
-                            CURLOPT_TIMEOUT => 0,
-                            CURLOPT_FOLLOWLOCATION => true,
-                            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                            CURLOPT_CUSTOMREQUEST => 'GET',
-                        ));
-
-                        $response = curl_exec($curl);
-                        curl_close($curl);
-                        echo "<p>" . ($response) . "</p>";
-
-                        ?>
-                        <br>
-                        <br>
                     <div class="btnbtn">
+
                         <a href="" class="active"></a>
                         <a class="btn" href="<?php echo $client->createAuthUrl(); ?>"><i class="fa-brands fa-google-plus-g"></i> SIGN IN WITH GOOGLE</a>
                     <?php endif; ?>

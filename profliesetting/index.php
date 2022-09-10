@@ -162,10 +162,10 @@ if (mysqli_num_rows($get_user) > 0) {
                                                 ชื่อ-สกุล
                                             </th>
                                             <th>
-                                                อีมเมล์
+                                                อีเมล์
                                             </th>
                                             <th>
-                                                โทเคน ไลน์
+                                                LINE TOKEN
                                             </th>
 
                                             <th>

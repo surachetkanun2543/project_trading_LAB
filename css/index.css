@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&family=Thasadith&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +9,7 @@ body {
   background-image: url("../assets/img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'IBM Plex Sans Thai', sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;

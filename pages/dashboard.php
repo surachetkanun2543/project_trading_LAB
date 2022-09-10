@@ -65,36 +65,39 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
 <body>
-    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        <style>
-            .swal-wide {
-                font-size: 20px;
-                width: 850px !important;
-                height: 400px !important;
-            }
-        </style>
-        <script>
-            $(document).ready(function() {
-                Swal.fire({
-                    title: 'สำเร็จ!',
-                    text: 'ยินดีต้อนรับเข้าสู่จดบันทึกและวิเคราะห์การลงทุน',
-                    imageUrl: 'good.png',
-                    customClass: 'swal-wide',
-                    timer: 1000,
-                    showConfirmButton: false
-                });
-            });
-        </script>
 
-        <?php include_once('../pages/sidebar.php') ?>
+    <!-- <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> -->
+    <style>
+        .swal-wide {
+            font-size: 20px;
+            width: 850px !important;
+            height: 400px !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            Swal.fire({
+                title: 'สำเร็จ!',
+                text: 'ยินดีต้อนรับเข้าสู่จดบันทึกและวิเคราะห์การลงทุน',
+                imageUrl: 'good.png',
+                customClass: 'swal-wide',
+                timer: 1000,
+                showConfirmButton: false
+            });
+        });
+    </script>
+
+    <?php include_once('../pages/sidebar.php') ?>
+    <main class="col-md-8 ml-sm-auto col-lg-10 px-md-3 py-4">
         <div class="page-wrapper">
+
             <div class="container-fluid bg-white">
                 <div class="content-header">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-6">
-                                <h3 class="ml-5 text-dark"> Dashboard </h3>
-                                <p class="ml-5 text-dark"> (User Dashboard) </p>
+                            <div class="col-sm-5">
+                                <h3 class="ml-4 text-dark"> Dashboard </h3>
+                                <p class="ml-4 text-dark"> (User Dashboard) </p>
                                 <hr>
                             </div>
                         </div>
@@ -319,19 +322,20 @@ $result2 = mysqli_query($db_connection, $query2);
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- SCRIPTS -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assetsuser/js/adminlte.min.js"></script>
+        </div>
 
-
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="../plugins/chart.js/Chart.min.js"></script>
-    <script src="../assetsuser/js/pages/dashboard.js"></script>
+        <!-- SCRIPTS -->
+        <script src="../plugins/jquery/jquery.min.js"></script>
+        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
+        <!-- OPTIONAL SCRIPTS -->
+        <script src="../plugins/chart.js/Chart.min.js"></script>
+        <script src="../assetsuser/js/pages/dashboard.js"></script>
+
+    </main>
 </body>
 
 </html>
