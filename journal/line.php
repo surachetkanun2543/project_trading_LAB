@@ -57,6 +57,11 @@ if ($_GET['options']) {
     curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
     $result = curl_exec($chOne);
+    if ($result) {
+        $_SESSION['success'] = "ส่งข้อมูลแจ้งเตือน Line Notify เรียบร้อยแล้ว!";
+    } else {
+        $_SESSION['error'] = "ส่งข้อมูลแจ้งเตือนผิดพลาด!";
+    }
 
     if ($result) {
         echo "

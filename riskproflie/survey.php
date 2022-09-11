@@ -61,14 +61,14 @@ if (mysqli_num_rows($get_user) > 0) {
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-            <div class="row">
-                        <div class="col-sm-6">
-                            <br>
-                            <h3 class="ml-5 text-dark"> แบบประเมินความเสี่ยง </h3>
-                            <p class="ml-5 text-dark"> (risk assessment form) </ย>
-                            <hr>
-                        </div>
-                    </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <br>
+                  <h3 class="ml-5 text-dark"> แบบประเมินความเสี่ยง </h3>
+                  <p class="ml-5 text-dark"> (risk assessment form) </ย>
+                    <hr>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ if (mysqli_num_rows($get_user) > 0) {
           <tr>
             <td>&nbsp;</td>
             <td width="157">เพศ</td>
-            <td width="387">
+            <td width="387"><br>
               <label>
                 <input type="radio" name="rdo_gender" value="ชาย" id="rdo_gender_0" />
                 ชาย</label>
@@ -331,7 +331,7 @@ if (mysqli_num_rows($get_user) > 0) {
           ?>
 
             <tr>
-              <td  width="574"><?= $name ?> </td>
+              <td width="574"><?= $name ?> </td>
               <td>&nbsp;</td>
               <td width="70" align="center"><input name="radionNo<?= $i; ?>" id="radionNo<?= $i; ?>_5" type="radio" value="5"></td>
               <td>&nbsp;</td>
@@ -355,32 +355,35 @@ if (mysqli_num_rows($get_user) > 0) {
           <div class="row">
             <div class="col text-center mt-3 mb-4">
               <input type="hidden" name="hdnRows" value="<?= $i - 1; ?>">
-              <hr>
+              <hr> <br>
               <!-- <center><br /><input type="submit" name="Submit" value="ตอบแบบสอบถาม"></center> -->
-              <br /><button type="submit" name="Submit" value="ตอบแบบสอบถาม" class="btn btn-success">
+              <button type="submit" name="Submit" value="ตอบแบบสอบถาม" class="btn btn-success">
                 <h5>ยืนยันส่งแบบประเมินความเสี่ยง</h5>
               </button>
+              <a href="../index.php" value="ยกเลิก" class="btn btn-danger">
+                <h5 class="text-light">ยกเลิก</h5>
+              </a>
             </div>
           </div>
         </div>
     </div>
   </div>
-</form>
+  </form>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
 
-    <!-- SCRIPTS -->
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assetsuser/js/adminlte.min.js"></script>
+  <!-- SCRIPTS -->
+  <script src="../plugins/jquery/jquery.min.js"></script>
+  <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="../plugins/chart.js/Chart.min.js"></script>
-    <script src="../assetsuser/js/pages/dashboard.js"></script>
+  <!-- OPTIONAL SCRIPTS -->
+  <script src="../plugins/chart.js/Chart.min.js"></script>
+  <script src="../assetsuser/js/pages/dashboard.js"></script>
 
 </body>
 

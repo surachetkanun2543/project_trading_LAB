@@ -158,11 +158,17 @@ if (isset($_GET['delete'])) {
                 </div>
             </div>
             <?php if (isset($_SESSION['success'])) { ?>
-                <div class="alert alert-success">
-                    <?php
-                    echo $_SESSION['success'];
-                    unset($_SESSION['success']);
-                    ?>
+                <div classs="container p-5 text-center">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 col-md-12 m-auto">
+                            <div class="alert alert-success fade show" role="alert">
+                                <h4> <?php
+                                        echo $_SESSION['success'];
+                                        unset($_SESSION['success']);
+                                        ?></h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             <?php } ?>
             <?php if (isset($_SESSION['error'])) { ?>
@@ -349,7 +355,7 @@ if (isset($_GET['delete'])) {
                             <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
                             <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
                             <script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap4.min.js"></script>
-                       
+
 
 </body>
 

@@ -28,7 +28,11 @@ function isActive($data)
 
 ?>
 
-
+<style>
+    .logged-in {
+        color: green;
+    }
+</style>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <ul class="navbar-nav">
@@ -46,12 +50,11 @@ function isActive($data)
     <div class="sidebar">
         <div class="user-panel mt-5 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="../assets/img/logo.png" alt="Admin Logo" class="brand-image img-circle elevation-3">
-                <span class="font-weight-bold" center>จดบันทึกและวิเคราะห์ </span>
-                <hr> <span class="dot"></span> <span class="font-weight-bold align=" center>ยินดีต้อนรับคุณ : </span><img src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" class=" img-circle elevation-2 alt=" User Image">
+                <img src="../assets/img/logo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"> &nbsp;
+                <span class="font-weight-bold" center>&nbsp; จดบันทึกและวิเคราะห์ </span>
+                <hr> <span class="logged-in"> ●&nbsp; </span> : <span class="font-weight-bold align=" center>ยินดีต้อนรับ : &nbsp;</span>&nbsp;&nbsp; &nbsp;<img src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" class=" img-circle elevation-3 alt=" User Image">
                 <br>
-                <br><a href="index.php" class="d-block"> คุณ <?php echo $user['name']; ?></a>
-
+                <br><h4 class="text-success" href="index.php" class="d-block"> คุณ <?php echo $user['name']; ?></h4>
             </div>
         </div>
         <hr>
