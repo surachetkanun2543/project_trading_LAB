@@ -1,58 +1,52 @@
 <?php
- 
-$dataPoints = array();
-//Best practice is to create a separate file for handling connection to database
-try{
-     // Creating a new connection.
-    // Replace your-hostname, your-db, your-username, your-password according to your database
-    $link = new \PDO(   'mysql:host=202.28.34.205;dbname=62011211078;charset=utf8mb4', //'mysql:host=localhost;dbname=canvasjs_db;charset=utf8mb4',
-                        '62011211078', //'root',
-                        '62011211078', //'',
-                        array(
-                            \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                            \PDO::ATTR_PERSISTENT => false
-                        )
-                    );
-	
-    $handle = $link->prepare('select id,google_id from tb_user'); 
-    $handle->execute(); 
-    $result = $handle->fetchAll(\PDO::FETCH_OBJ);
-		
-    foreach($result as $row){
-        array_push($dataPoints, array("id"=> $row->id, "google_id"=> $row->google_id));
-    }
-	$link = null;
-}
-catch(\PDOException $ex){
-    print($ex->getMessage());
-}
-	
-?>
-<!DOCTYPE HTML>
-<html>
-<head>  
-<script>
-window.onload = function () {
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	exportEnabled: true,
-	theme: "light1", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "PHP Column Chart from Database"
-	},
-	data: [{
-		type: "column", //change type to bar, line, area, pie, etc  
-		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chart.render();
- 
-}
-</script>
-</head>
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</body>
-</html>   
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+
+require './service/user_connect.php';
+
+$get_user = mysqli_query($db_connection, "SELECT * FROM `tb_user` ORDER BY id ASC ");
+$user = mysqli_fetch_assoc($get_user);
+
+//Server settings
+$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+$mail->Username   = 'noti@journaltrading.tech';                     //SMTP username
+$mail->Password   = 'Book-15571';                               //SMTP password
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+$mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+//Recipients
+$mail->setFrom('noti@journaltrading.tech', 'BOOK CEO OF THEWEB');
+$mail->addAddress($user['email'], 'Joe User');     //Add a recipient            //Name is optional
+$mail->addReplyTo('noti@journaltrading.tech', 'BOOK CEO OF THEWEB');
+// $mail->addCC('62011211078@msu.ac.th');
+// $mail->addBCC('62011211078@msu.ac.th');
+
+//Attachments
+//$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+$mail->addAttachment('./assets/img/logo.png', 'logo.jpg');    //Optional name
+
+//Content
+$mail->isHTML(true);                                  //Set email format to HTML
+$mail->Subject = 'Here is the subject';
+$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+$mail->send();
+echo 'Message has been sent';

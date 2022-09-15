@@ -137,7 +137,7 @@ $result2 = mysqli_query($db_connection, $query2);
                             </div>
                             <div class="ownername">
                                 <h4><?php echo $user["name"]; ?></h4>
-                                <img class=" img-circle elevation-1" src="<?php echo $user['profile_image']; ?>" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                             </div>
                             <br><br>
                         </div>
@@ -175,12 +175,12 @@ $result2 = mysqli_query($db_connection, $query2);
                             </div>
                             <div class="ownername">
                                 <h4><?php echo $user["name"]; ?></h4>
-                                <img class=" img-circle elevation-1" src="<?php echo $user['profile_image']; ?>" />
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                             </div>
                             <br><br>
                         </div> <br>
                     </div>
-                    <div class="col-md-6 sm-3">
+                    <div class="col-md-3 sm-3">
                         <div class="card bg-success  elevation-2" style="border-radius:10px;">
                             <span class="circle"></span><br>
                             <div class="top-div">
@@ -217,7 +217,7 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
 
-                    <div class="col-md-6 sm-4">
+                    <div class="col-md-3 sm-4">
                         <div class="card bg-danger  elevation-2" style="border-radius:10px;">
                             <span class="circle"></span><br>
                             <div class="top-div">
@@ -251,7 +251,85 @@ $result2 = mysqli_query($db_connection, $query2);
                             <br><br>
                         </div>
                     </div>
+
+
+                    <div class="col-md-3 sm-3">
+                        <div class="card bg-success  elevation-2" style="border-radius:10px;">
+                            <span class="circle"></span><br>
+                            <div class="top-div">
+                                <div class="chip-image">
+                                    <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                    <br>
+                                </div>
+                                <div class="plus-sign">
+                                    <h4> </h4>
+                                    <h4></h4>
+                                </div>
+                            </div>
+                            <div class="card-details">
+                                <div class="card-number">
+                                    <h2>จำนวนครั้งที่กำไร </h2>
+                                    <?php
+                                    foreach ($result2 as $results) { ?>
+                                        <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
+                                        <h2 class=" text-primary">3</h2>
+                                        </h2>
+                                    <?php }
+                                    ?>
+                                </div>
+                                <div class="date">
+                                    <h4> ครั้ง </h4>
+                                </div>
+                            </div>
+                            <div class="ownername">
+                                <h4><?php echo $user["name"]; ?></h4>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 sm-4">
+                        <div class="card bg-danger  elevation-2" style="border-radius:10px;">
+                            <span class="circle"></span><br>
+                            <div class="top-div">
+                                <div class="chip-image">
+                                    <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                    <br>
+                                </div>
+                                <div class="plus-sign">
+                                    <h4> </h4>
+                                    <h4></h4>
+                                </div>
+                            </div>
+                            <div class="card-details">
+                                <div class="card-number">
+                                    <h2>จำนวนครั้งที่ขาดทุน </h2>
+                                    <?php
+                                    foreach ($result2 as $results) { ?>
+                                        <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
+                                        <h2 class=" text-primary">78</h2>
+                                        </h2>
+                                    <?php }
+                                    ?>
+                                </div>
+                                <div class="date">
+                                    <h4> ครั้ง </h4>
+                                </div>
+                            </div>
+                            <div class="ownername">
+                                <h4><?php echo $user["name"]; ?></h4>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
             <div class="row ">
                 <!-- column -->
