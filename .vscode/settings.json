@@ -3,10 +3,16 @@
         ".vscode": true,
         "assetsuser": true,
         "dist": true,
+        "formmail.php": true,
         "login": true,
+        "noti.php": true,
+        "PHPMailer": true,
         "plugins": true,
         "portal.css": true,
+        "sendmail.php": true,
         "serviceuser": true,
+        "test.php": true,
+        "vendor": true,
         "vscode": true
     }
 }

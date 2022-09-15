@@ -18,8 +18,40 @@
 </head>
 
 <?php
+
 require './service/user_connect.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+//Server settings
+$mail->SMTPDebug = 0;                //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+$mail->Username   = 'noti@journaltrading.tech';                     //SMTP username
+$mail->Password   = 'Book-15571';                               //SMTP password
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+$mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+$mail->addAttachment('./assets/img/notiemail.png', 'notiemail.jpg');    //Optional name
+
+//Content
+$mail->isHTML(true);                                  //Set email format to HTML
+$mail->Subject = 'Login notification alert ! ';
+$mail->Body = 'ตรวจพบการเข้าสู่ระบบ (journaltrading.tech) </b> หากไม่ใช้คุณโปรดติดต่อเจ้าหน้าที่ โทร 08638263547 หรือ อีเมล์ noti@journaltrading.tech เพื่อนำเดินการต่อไป';
+$mail->msgHTML(file_get_contents("noti.php"), dirname(__FILE__));
 
 if (isset($_SESSION['login_id'])) {
     header('Location: ./dashboard/index.php');
@@ -36,7 +68,7 @@ $client->setClientId('758617657839-8pedi5amvm36dngulp9i0v5q0pcfiudn.apps.googleu
 // Enter your Client Secrect
 $client->setClientSecret('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');
 // Enter the Redirect URL
-$client->setRedirectUri('http://127.0.0.1/project_trading_LAB/index.php');
+$client->setRedirectUri('https://journaltrading.tech/index.php');
 
 // Adding those scopes which we want to get (email & profile Information)
 $client->addScope("email");
@@ -62,10 +94,25 @@ if (isset($_GET['code'])) :
 
         // checking user already exists or not
         $get_user = mysqli_query($db_connection, "SELECT `google_id` FROM `tb_user` WHERE `google_id`='$id'");
-        if (mysqli_num_rows($get_user) > 0) {
+       
+        $users = mysqli_query($db_connection, "SELECT `email` FROM `tb_user` WHERE `google_id`='$id'");
+        $user = mysqli_fetch_assoc($users);
 
+        $mail->setFrom('noti@journaltrading.tech', 'BOOK SURACHET ceo and cofounder journaltrading.tech');
+        $mail->addAddress($user['email'], 'Joe User');     //Add a recipient            //Name is optional
+        $mail->addReplyTo('noti@journaltrading.tech', 'BOOK SURACHET ceo and cofounder journaltrading.tech');
+       
+       
+        if (mysqli_num_rows($get_user) > 0) {
             $_SESSION['login_id'] = $id;
-            header('Location: ./dashboard/index.php');
+            if (!$mail->Send()) {
+                echo 'Message was not sent.';
+                echo 'ยังไม่สามารถส่งเมลล์ได้ในขณะนี้ ' . $mail->ErrorInfo;
+            } else {
+                header('Location: ./dashboard/index.php');
+                exit;
+            }
+
             exit;
         } else {
 
@@ -133,7 +180,7 @@ else :
                     ?>
 
                     <script>
-                         let showData = document.querySelector('.showData');
+                        let showData = document.querySelector('.showData');
                         var settings = {
                             "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
                             "method": "GET",
@@ -141,8 +188,8 @@ else :
                         };
 
                         $.ajax(settings).done(function(response) {
-                           
-                            showData.innerHTML =  JSON.stringify(response);
+
+                            showData.innerHTML = JSON.stringify(response);
                             JSON.stringify(response)
                             console.log(response);
                         });

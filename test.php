@@ -18,7 +18,7 @@ $mail = new PHPMailer(true);
 
 require './service/user_connect.php';
 
-$get_user = mysqli_query($db_connection, "SELECT * FROM `tb_user` ORDER BY id ASC ");
+$get_user = mysqli_query($db_connection, "SELECT * FROM `tb_user` ORDER BY id=3");
 $user = mysqli_fetch_assoc($get_user);
 
 //Server settings
@@ -40,7 +40,7 @@ $mail->addReplyTo('noti@journaltrading.tech', 'BOOK CEO OF THEWEB');
 
 //Attachments
 //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-$mail->addAttachment('./assets/img/logo.png', 'logo.jpg');    //Optional name
+$mail->addAttachment('./assets/img/notiemail.png', 'notiemail.jpg');    //Optional name
 
 //Content
 $mail->isHTML(true);                                  //Set email format to HTML
@@ -49,4 +49,6 @@ $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 $mail->send();
-echo 'Message has been sent';
+header('Location: index.php');
+//echo 'Message has been sent';
+
