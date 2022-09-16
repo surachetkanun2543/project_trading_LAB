@@ -298,9 +298,10 @@ if (isset($_GET['delete'])) {
                                     e.preventDefault();
                                     deleteConfirm(userId);
                                 })
-
+                                
 
                                 function deleteConfirm(userId) {
+                                   
                                     Swal.fire({
                                         title: 'ลบรายการ !',
                                         text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
@@ -319,11 +320,12 @@ if (isset($_GET['delete'])) {
                                                         data: 'delete=' + userId,
                                                     })
                                                     .done(function() {
+                                                       
                                                         Swal.fire({
                                                             title: 'สำเร็จ',
                                                             text: 'ลบรายการเรียบร้อย !',
                                                             icon: 'success',
-                                                            timer: '2000'
+                                                            timer: '1000'
                                                         }).then(() => {
                                                             document.location.href = 'index.php';
                                                         })

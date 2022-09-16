@@ -552,12 +552,12 @@
 
 <body>
     <div class='nav'>
-        <h2> แจ้งเตือนการเข้าสู่ระบบ ! </h2>
+        <h2> บันทึกรายการสำเร็จ ! </h2>
         <br>
     </div>
-    <h4>ตรวจพบการเข้าสู่ระบบ (journaltrading.tech) <br>
-        หากไม่ใช้คุณโปรดติดต่อเจ้าหน้าที่ โทร 08638263547 หรือ <br>
-        อีเมล์ noti@journaltrading.tech เพื่อนำเดินการต่อไป</h4>
+    <h4> บันทึกรายการเรียบร้อย! (journaltrading.tech) <br>
+        ยินดีด้วย คุณบันทึกรายการซื้อขายสำเร็จ <br>
+    </h4>
     <ul>
         <a href='#sctr1'>
             <li id='eyes'></li>
@@ -593,7 +593,7 @@
     <section class="special" data-scrollax-parent="true" id='ntr'>
         <div class="cover" id='hero' data-scrollax="properties: { translateY: '30%', 'opacity': 1.5 }">
             <br>
-            <img src='./assets/img/notiemail.png'>
+            <img src='noti.png'>
         </div>
         <div class="content">
             <div class="text centralize">

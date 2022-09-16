@@ -113,7 +113,8 @@ $result2 = mysqli_query($db_connection, $query2);
                             <span class="circle"></span><br>
                             <div class="top-div">
                                 <div class="chip-image ">
-                                    <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" />
+                                    <!-- <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" /> -->
+                                    <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
                                     <br>
                                 </div>
                                 <div class="plus-sign">
@@ -144,14 +145,13 @@ $result2 = mysqli_query($db_connection, $query2);
                     </div>
 
 
-
-
                     <div class="col-md-6 sm-4">
                         <div class="card bg-light text-dark elevation-2 " style="border-radius:10px;">
                             <span class="circle"></span><br>
                             <div class="top-div">
                                 <div class="chip-image ">
-                                    <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" />
+                                    <!-- <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" /> -->
+                                    <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
                                     <br>
                                 </div>
                                 <div class="plus-sign">

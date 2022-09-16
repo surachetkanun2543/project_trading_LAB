@@ -5,6 +5,21 @@
 session_start();
 include "../service/user_connect_PDO.php";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+
+//Load Composer's autoloader
+require '../vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+
 if (!isset($_SESSION['login_id'])) {
     header('Location: ./index.php');
     exit;
@@ -14,6 +29,29 @@ $id = $_SESSION['login_id'];
 $deletestmt = $conn->query("SELECT * FROM `tb_user` WHERE `google_id`='$id'");
 $deletestmt->execute();
 $data1 = $deletestmt->fetch();
+
+// PHPMailer////////////////////////////////////////////////////////////////
+
+$mail->SMTPDebug = 0;                //Enable verbose debug output
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+$mail->Username   = 'noti@journaltrading.tech';                     //SMTP username
+$mail->Password   = 'Book-15571';                               //SMTP password
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+$mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+//Content
+$mail->isHTML(true);                                  //Set email format to HTML
+$mail->Subject = 'Journal Success ! ';
+$mail->Body = ' New announcement |  บันทึกรายการเรียบร้อย!  (journaltrading.tech) </b> ยินดีด้วยคุณบันทึกรายการซื้อขายสำเร็จ';
+$mail->msgHTML(file_get_contents("noti.php"), dirname(__FILE__));
+
+$mail->setFrom('noti@journaltrading.tech', 'journaltrading.tech');
+$mail->addAddress($data1['email'], 'Joe User');     //Add a recipient            //Name is optional
+$mail->addReplyTo('noti@journaltrading.tech', 'journaltrading.tech');
+
+
 
 if (isset($_POST['update'])) {
 
@@ -75,20 +113,20 @@ if (isset($_POST['update'])) {
 
 
     if ($sql) {
-        
+        $mail->Send();
+        // header("refresh:1 url=index.php");
         echo "<script> 
+        document.location.href = 'index.php';
         $(document).ready(function(){
             Swal.fire({ 
                 title: 'สำเร็จ!',
                 text: 'แก้ไขรายการเรียบร้อย !',
                 icon: 'success',
-                timer: 2000,
+                timer: 1000,
                 showConfirmButton : false
             });
         });
-    
-    </script>";
-    header("refresh:1 url=index.php");
+        </script>";
     } else {
         $_SESSION['error'] = "ผิดพลาด";
         header("location: index.php");

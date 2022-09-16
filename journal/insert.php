@@ -6,6 +6,21 @@
 session_start();
 include "../service/user_connect_PDO.php";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+
+//Load Composer's autoloader
+require '../vendor/autoload.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+
 if (!isset($_SESSION['login_id'])) {
     header('Location: ./index.php');
     exit;
@@ -37,35 +52,26 @@ if (isset($_POST['submit'])) {
     $fileNew = rand() . "." . $fileActExt;  // rand function create the rand number 
     $filePath = 'uploads/' . $fileNew;
 
-    // line noti
+    // PHPMailer////////////////////////////////////////////////////////////////
 
-    $sToken = $data1['Line_token'];
-    $sMessage = "รายละเอียดการบันทึก\n";
-    $sMessage .= "สถานะ : " . $options . " \n";
-    $sMessage .= "สินทรัพย์ : " . $assetname . " \n";
-    $sMessage .= "ราคา : " . $assetprice . " \n";
-    $sMessage .= "จำนวน: " . $assetvolume . " \n";
-    $imageFile = new CURLFILE('noti.jpeg');
-    //	$sticker_package_id = '2';  // Package ID sticker
-    //	$sticker_id = '34'; 
+    $mail->SMTPDebug = 0;                //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.hostinger.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'noti@journaltrading.tech';                     //SMTP username
+    $mail->Password   = 'Book-15571';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    $data  = array(
-        'message' => $sMessage,
-        'imageFile' => $imageFile
-        //	'stickerPackageId' => $sticker_package_id,
-        //	'stickerId' => $sticker_id
-    );
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Journal Success ! ';
+    $mail->Body = ' New announcement |  บันทึกรายการเรียบร้อย!  (journaltrading.tech) </b> ยินดีด้วยคุณบันทึกรายการซื้อขายสำเร็จ';
+    $mail->msgHTML(file_get_contents("noti.php"), dirname(__FILE__));
 
-    $chOne = curl_init();
-    curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
-    curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
-    curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($chOne, CURLOPT_POST, 1);
-    curl_setopt($chOne, CURLOPT_POSTFIELDS, $data);
-    $headers = array('Content-type: multipart/form-data', 'Authorization: Bearer ' . $sToken . '',);
-    curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
-    $result = curl_exec($chOne);
+    $mail->setFrom('noti@journaltrading.tech', 'journaltrading.tech');
+    $mail->addAddress($data1['email'], 'Joe User');     //Add a recipient            //Name is optional
+    $mail->addReplyTo('noti@journaltrading.tech', 'journaltrading.tech');
 
 
     if (in_array($fileActExt, $allow)) {
@@ -93,17 +99,17 @@ if (isset($_POST['submit'])) {
                 $sql->execute();
 
                 if ($sql) {
+                    $mail->Send();
                     echo "<script> 
                         $(document).ready(function(){
                             Swal.fire({ 
                                 title: 'สำเร็จ!',
                                 text: 'บันทึกรายการเรียบร้อย !',
                                 icon: 'success',
-                                timer: 2000,
+                                timer: 1000,
                                 showConfirmButton : false
                             });
                         });
-                    
                     </script>";
                     header("refresh:1 url=index.php");
                 } else {

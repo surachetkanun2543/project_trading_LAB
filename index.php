@@ -45,7 +45,7 @@ $mail->Password   = 'Book-15571';                               //SMTP password
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-$mail->addAttachment('./assets/img/notiemail.png', 'notiemail.jpg');    //Optional name
+// $mail->addAttachment('./assets/img/notiemail.png', 'notiemail.jpg');    //Optional name
 
 //Content
 $mail->isHTML(true);                                  //Set email format to HTML
@@ -68,7 +68,7 @@ $client->setClientId('758617657839-8pedi5amvm36dngulp9i0v5q0pcfiudn.apps.googleu
 // Enter your Client Secrect
 $client->setClientSecret('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');
 // Enter the Redirect URL
-$client->setRedirectUri('https://journaltrading.tech/index.php');
+$client->setRedirectUri('http://127.0.0.1/project_trading_LAB/index.php');
 
 // Adding those scopes which we want to get (email & profile Information)
 $client->addScope("email");
@@ -98,9 +98,9 @@ if (isset($_GET['code'])) :
         $users = mysqli_query($db_connection, "SELECT `email` FROM `tb_user` WHERE `google_id`='$id'");
         $user = mysqli_fetch_assoc($users);
 
-        $mail->setFrom('noti@journaltrading.tech', 'BOOK SURACHET ceo and cofounder journaltrading.tech');
+        $mail->setFrom('noti@journaltrading.tech', 'journaltrading.tech');
         $mail->addAddress($user['email'], 'Joe User');     //Add a recipient            //Name is optional
-        $mail->addReplyTo('noti@journaltrading.tech', 'BOOK SURACHET ceo and cofounder journaltrading.tech');
+        $mail->addReplyTo('noti@journaltrading.tech', 'journaltrading.tech');
        
        
         if (mysqli_num_rows($get_user) > 0) {
@@ -204,7 +204,7 @@ else :
                         <a href="" class="active"></a>
                         <a class="btn" href="<?php echo $client->createAuthUrl(); ?>"><i class="fa-brands fa-google-plus-g"></i> SIGN IN WITH GOOGLE</a>
                     <?php endif; ?>
-                    <a class="btn" href="./admin/pages/index.php">ADMIN (DEV)</a>
+                    <!-- <a class="btn" href="./admin/pages/index.php">ADMIN (DEV)</a> -->
                     </div>
                 </div>
             </div>
