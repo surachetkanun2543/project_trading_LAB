@@ -31,19 +31,36 @@ if (mysqli_num_rows($get_user) > 0) {
 
   <!-- Favicons -->
   <link rel="manifest" href="../assetsuser/img/favicons/site.webmanifest">
-  <link rel="shortcut icon" href="../assets/img/logo.png">
+  <link rel="icon" href="../assets/img/logo.png" type="image/icon type">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="../assetsuser/img/favicons/browserconfig.xml">
 
   <!-- stylesheet -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
   <link rel="stylesheet" href="../plugins/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
   <link rel="stylesheet" href="../assetsuser/css/adminlte.min.css">
   <link rel="stylesheet" href="../assetsuser/css/style.css">
   <!-- Datatables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
+
+
+  <!-- Favicon icon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+  <!-- Custom CSS -->
+  <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+  <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Charts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
@@ -53,27 +70,26 @@ if (mysqli_num_rows($get_user) > 0) {
 
 </head>
 
-<body class="hold-transition sidebar-mini">
-  <div class="wrapper">
+<body class="  hold-transition sidebar-mini">
+  <div class="wrapper bg-dark">
     <?php include_once('../pages/sidebar.php') ?>
-    <div class="content-wrapper">
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <div class="row">
-                <div class="col-sm-6">
-                  <br>
-                  <h3 class="ml-5 text-dark"> แบบประเมินความเสี่ยง </h3>
-                  <p class="ml-5 text-dark"> (risk assessment form) </ย>
-                    <hr>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="content-wrapper  bg-dark">
+        <br>
+        <div class="content-header ml-4 " >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="page-wrapper  col-lg-3 elevation-3" style="border-radius:10px;">
+                        <div class=" col-lg-10 ">
+                            <br>
+                            <h4 class="ml-4 text-dark"> แบบประเมินความเสี่ยง </h4>
+                            <p class="ml-4 text-dark"> (risk assessment form) </ย>
 
+                        </div>
+                    </div>
+                    <br> <br>
+                </div>
+            </div>
+        </div>
       <script language="JavaScript">
         function fncSubmit() {
 
@@ -115,7 +131,7 @@ if (mysqli_num_rows($get_user) > 0) {
 
 
       <form name="frmMain" method="post" action="save.php" OnSubmit="return fncSubmit();">
-        <table width="950" border="0" align="center" cellpadding="2" cellspacing="2">
+        <table class=" bg-dark" width="950" border="0" align="center" cellpadding="2" cellspacing="2">
           <tr>
             <td>&nbsp;</td>
             <br>
@@ -130,7 +146,7 @@ if (mysqli_num_rows($get_user) > 0) {
           </tr>
           <tr bgcolor="#343A40">
             <td>&nbsp;</td>
-            <td colspan="7" class="text-light">ข้อมูลเบื้องต้น ส่วนที่ 1</td>
+            <td colspan="7" class="text-light"><hr>ข้อมูลเบื้องต้น ส่วนที่ 1<hr></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
@@ -283,7 +299,8 @@ if (mysqli_num_rows($get_user) > 0) {
           </tr>
           <tr bgcolor="#343A40">
             <td>&nbsp;</td>
-            <td colspan="7" class="text-light mb-3 mt-3 ">แบบประเมิน ส่วนที่ 2 </td>
+            
+            <td colspan="7" class="text-light mb-3 mt-3 "><hr>แบบประเมิน ส่วนที่ 2 <hr></td>
           </tr>
           <tr>
 
@@ -357,11 +374,13 @@ if (mysqli_num_rows($get_user) > 0) {
               <input type="hidden" name="hdnRows" value="<?= $i - 1; ?>">
               <hr> <br>
               <!-- <center><br /><input type="submit" name="Submit" value="ตอบแบบสอบถาม"></center> -->
-              <button type="submit" name="Submit" value="ตอบแบบสอบถาม" class="btn btn-success">
-                <h5>ยืนยันส่งแบบประเมินความเสี่ยง</h5>
+              <button type="submit" name="Submit" value="ตอบแบบสอบถาม" class="btn btn-success elevation-3 mr-4" style="border-radius:10px;">
+                <i class=" text-light fa-solid fa-pen-to-square"></i>
+                <h5 class="text-light">ยืนยันส่งแบบประเมินความเสี่ยง</h5>
               </button>
-              <a href="../index.php" value="ยกเลิก" class="btn btn-danger">
-                <h5 class="text-light">ยกเลิก</h5>
+              <a href="../index.php" value="ยกเลิก" class="btn btn-danger elevation-3" style="border-radius:10px;">
+                <i class="  text-light  fa-solid fa-trash"></i>
+                <h5 class="text-light  ">ยกเลิก</h5>
               </a>
             </div>
           </div>

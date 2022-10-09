@@ -51,14 +51,21 @@ if (isset($_GET['delete'])) {
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
     <link rel="stylesheet" href="../plugins/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
     <link rel="stylesheet" href="../assetsuser/css/adminlte.min.css">
     <link rel="stylesheet" href="../assetsuser/css/style.css">
-    <!-- Datatables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
 
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Charts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -142,18 +149,22 @@ if (isset($_GET['delete'])) {
 
 
 
-    <div class="wrapper">
+    <div class="wrapper ">
         <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper">
-            <div class="content-header">
+        <div class="content-wrapper  bg-dark">
+            <br>
+            <div class="content-header ml-4">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <br>
-                            <h3 class="ml-5 text-dark"> บันทึกรายการซื้อขาย </h3>
-                            <p class="ml-5 text-dark"> (trading journal) </ย>
-                                <hr>
+                    <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                            <div class=" col-lg-10 ">
+                                <br>
+                                <h4 class="ml-4 text-dark"> บันทึกรายการซื้อขาย </h4>
+                                <p class="ml-4 text-dark"> (trading journal) </p>
+
+                            </div>
                         </div>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -161,7 +172,7 @@ if (isset($_GET['delete'])) {
                 <div classs="container p-5 text-center">
                     <div class="row no-gutters">
                         <div class="col-lg-6 col-md-12 m-auto">
-                            <div class="alert alert-success fade show" role="alert">
+                            <div class="alert alert-success elevation-3  fade show" role="alert" style="border-radius:10px;">
                                 <h4> <?php
                                         echo $_SESSION['success'];
                                         unset($_SESSION['success']);
@@ -172,7 +183,7 @@ if (isset($_GET['delete'])) {
                 </div>
             <?php } ?>
             <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger elevation-3 fade show" role="alert" style="border-radius:10px;">
                     <?php
                     echo $_SESSION['error'];
                     unset($_SESSION['error']);
@@ -180,56 +191,56 @@ if (isset($_GET['delete'])) {
                 </div>
             <?php } ?>
 
-            <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
+            <main class=" col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4 ">
                 <div class="row">
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
                         <div class="card">
-                            <div class="card-body text-right">
-                                <button type="button" class=" btn btn-success view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button>
-                                <button type="button" class=" btn btn-danger view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                        <thead class=" text-center table-dark mb-1">
+                            <div class="card-body text-right  bg-dark elevation-3" >
+                                <button type="button" class="text-light btn btn-success view_data mb-2 mr-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button>
+                                <button type="button" class="text-light btn btn-danger view_data mb-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
+                                <div  class="table-responsive" >
+                                    <table class="table table-striped" id="myTable" style="width: 100%;">
+                                        <thead class=" text-center table-secondary mb-1">
                                             <hr>
-                                            <th scope="col">
+                                            <th class=" text-dark ">
                                                 สถานะ
                                             </th>
-                                            <th scope="col">
+                                            <th class=" text-dark ">
                                                 หมวดหมู่
                                             </th>
-                                            <th scope="col">
+                                            <th class=" text-dark ">
                                                 สินทรัพย์
                                             </th>
-                                            <th>
+                                            <th class=" text-dark ">
                                                 ราคาสินทรัพย์ที่ซื้อ (บาท)
                                             </th>
 
-                                            <th>
+                                            <th class=" text-dark ">
                                                 จำนวนสินทรัพย์ (หน่วย)
                                             </th>
-                                            <th>
+                                            <th class=" text-dark ">
                                                 วันที่ซื้อ
                                             </th>
-                                            <th>
+                                            <th class=" text-dark ">
                                                 บันทึก
                                             </th>
 
-                                            <th>
+                                            <th class=" text-dark ">
                                                 ราคาตัดขาดทุน (บาท)
                                             </th>
-                                            <th>
+                                            <th class=" text-dark ">
                                                 ราคาขายทำกำไร (บาท)
                                             </th>
-                                            <th>
+                                            <th class=" text-dark ">
                                                 รูปภาพ
                                             </th>
-                                            <th>
+                                            <th class=" text-warning ">
                                                 แก้ไข
                                             </th>
-                                            <th>
+                                            <th class=" text-danger ">
                                                 ลบ
                                             </th>
-                                            <th>
+                                            <th class=" text-success ">
                                                 แจ้งเตือน Line
                                             </th>
                                         </thead>
@@ -251,24 +262,24 @@ if (isset($_GET['delete'])) {
 
                                             foreach ($result as $user) {
                                             ?>
-                                                <tr class="text-center">
+                                                <tr class="text-center text-light">
                                                     <td><?php echo  $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo number_format($user['assetprice'], '2'); ?> (บาท) </td>
-                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?> (หน่วย) </td>
+                                                    <td><?php echo number_format($user['assetprice'], '2'); ?> บาท </td>
+                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?> หน่วย </td>
                                                     <td><?php echo $user['assetdate']; ?></td>
                                                     <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo number_format($user['assetsl'], '2'); ?> (บาท) </td>
-                                                    <td><?php echo number_format($user['assettg'], '2'); ?> (บาท) </td>
+                                                    <td><?php echo number_format($user['assetsl'], '2'); ?> บาท </td>
+                                                    <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
 
-                                                    <td><img class="rounded" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
+                                                    <td><img class="rounded elevation-2" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
 
-                                                    <td><a type="button" class="btn btn-warning " href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
+                                                    <td><a type="button" class="btn btn-warning elevation-3" style="border-radius:8px;" href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i><br><h1></h1></a>
 
-                                                    <td><a data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="btn btn-danger delete-btn"><i class="fa-solid fa-trash"></i> ลบ</a></td>
+                                                    <td><a style="border-radius:8px;" data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="text-light btn btn-danger delete-btn elevation-3"><i class="text-light fa-solid fa-trash"></i><h1></h1></a></td>
 
-                                                    <td><a href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white"><i class="fa-brands fa-line"> </i> ส่งแจ้งเตือน</a></td>
+                                                    <td><a style="border-radius:8px;" href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white elevation-3"><i class="fa-brands fa-line"> </i><h1></h1></a></td>
                                                 </tr>
                                             <?php }  ?>
                                         </tbody>
@@ -298,10 +309,10 @@ if (isset($_GET['delete'])) {
                                     e.preventDefault();
                                     deleteConfirm(userId);
                                 })
-                                
+
 
                                 function deleteConfirm(userId) {
-                                   
+
                                     Swal.fire({
                                         title: 'ลบรายการ !',
                                         text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
@@ -320,7 +331,7 @@ if (isset($_GET['delete'])) {
                                                         data: 'delete=' + userId,
                                                     })
                                                     .done(function() {
-                                                       
+
                                                         Swal.fire({
                                                             title: 'สำเร็จ',
                                                             text: 'ลบรายการเรียบร้อย !',

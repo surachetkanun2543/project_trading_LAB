@@ -51,7 +51,6 @@ if (isset($_GET['delete'])) {
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
     <link rel="stylesheet" href="../plugins/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
     <link rel="stylesheet" href="../assetsuser/css/adminlte.min.css">
     <link rel="stylesheet" href="../assetsuser/css/style.css">
@@ -59,12 +58,22 @@ if (isset($_GET['delete'])) {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
 
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Charts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
 
 
@@ -157,21 +166,25 @@ if (isset($_GET['delete'])) {
 
     <div class="wrapper">
         <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper">
-            <div class="content-header">
+        <div class="content-wrapper bg-dark">
+        <br>
+            <div class="content-header ml-4">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <br>
-                            <h3 class="ml-5 text-dark"> สรุปรายการซื้อขาย </h3>
-                            <p class="ml-5 text-dark"> (Transaction Summaryl) </p>
-                            <hr>
+                        <div class="page-wrapper col-lg-3" style="border-radius:10px;">
+                            <div class=" col-lg-10 ">
+                                <br>
+                                <h4 class="ml-4 text-dark"> บันทึกรายการซื้อขาย </h4>
+                                <p class="ml-4 text-dark"> (trading journal) </p>
+
+                            </div>
                         </div>
+                        <br>
                     </div>
                 </div>
             </div>
             <?php if (isset($_SESSION['success'])) { ?>
-                <div class="alert alert-success">
+                <div class="alert alert-success elevation-3" style="border-radius:10px;">
                     <?php
                     echo $_SESSION['success'];
                     unset($_SESSION['success']);
@@ -179,7 +192,7 @@ if (isset($_GET['delete'])) {
                 </div>
             <?php } ?>
             <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger elevation-3" style="border-radius:10px;">
                     <?php
                     echo $_SESSION['error'];
                     unset($_SESSION['error']);
@@ -191,38 +204,37 @@ if (isset($_GET['delete'])) {
                 <div class="row">
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
                         <div class="card">
-                            <div class="card-body text-right">
-                                <!-- <button type="button" class=" btn btn-success view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-plus "> </i>เพิ่มบันทึกใหม่</button> -->
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                    <thead class=" text-center table-dark mb-1">
+                        <div class="card-body text-right  bg-dark elevation-3" >
+                            <div  class="table-responsive" >
+                                    <table class="table table-striped" id="myTable" style="width: 100%;">
+                                        <thead class=" text-center table-secondary mb-1">
                                             <hr>
-                                            <th>
+                                            <th class=" text-dark">
                                                 สถานะ
                                             </th>
-                                            <th>
+                                            <th class=" text-dark">
                                                 สินทรัพย์
                                             </th>
-                                            <th>
+                                            <th class=" text-dark">
                                                 ราคาเข้าซื้อสินทรัพย์  (บาท)
                                             </th>
-                                            <th>
+                                            <th class=" text-dark">
                                                 ราคาขายสินทรัพย์  (บาท)
                                             </th>
-                                            <th>
-                                                วันที่ซื้อ
+                                              <th class=" text-dark">
+                                              จำนวนสินทรัพย์
                                             </th>
-                                            <th>
+                                            <th class=" text-dark">
                                                 วันที่ขาย
                                             </th>
 
-                                            <th>
+                                            <th class=" text-dark">
                                                 จำนวนวันที่ถือครอง
                                             </th>
-                                            <th>
+                                            <th class=" text-dark">
                                                 กำไร/ขาดทุน (บาท)
                                             </th>
-                                            <th>
+                                            <th class=" text-dark">
                                                 เปอร์เซ็น กำไร/ขาดทุน
                                             </th>
                                         </thead>
@@ -244,7 +256,7 @@ if (isset($_GET['delete'])) {
 
                                             foreach ($result as $user) {
                                             ?>
-                                                <tr class=" text-center">
+                                                   <tr class="text-center text-light">
                                                     <td><?php echo $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>

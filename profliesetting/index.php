@@ -41,7 +41,6 @@ if (mysqli_num_rows($get_user) > 0) {
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
     <link rel="stylesheet" href="../plugins/@sweetalert2/theme-bootstrap-4/bootstrap-4.css">
     <link rel="stylesheet" href="../assetsuser/css/adminlte.min.css">
     <link rel="stylesheet" href="../assetsuser/css/style.css">
@@ -49,12 +48,22 @@ if (mysqli_num_rows($get_user) > 0) {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css">
 
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png" />
+    <!-- Custom CSS -->
+    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Charts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
 
 
@@ -111,18 +120,24 @@ if (mysqli_num_rows($get_user) > 0) {
     <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
     <script src="../../plugins/toastr/toastr.min.js"></script>
 
-    <div class="wrapper">
+
+
+    <div class="wrapper ">
         <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper">
-            <div class="content-header">
+        <div class="content-wrapper  bg-dark">
+            <br>
+            <div class="content-header ml-4">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <br>
-                            <h3 class="ml-5 text-dark"> ตั้งค่าโปรไฟล์ข้อมูลส่วนตัว </h3>
-                            <p class="ml-5 text-dark"> (Set up personal profile) </p>
-                            <hr>
+                    <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                            <div class=" col-lg-10 ">
+                                <br>
+                                <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
+                                <p class="ml-4 text-dark"> ( Profile setting ) </p>
+
+                            </div>
                         </div>
+                        <br> <br>
                     </div>
                 </div>
             </div>
@@ -143,136 +158,72 @@ if (mysqli_num_rows($get_user) > 0) {
                 </div>
             <?php } ?>
 
-            <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
+            <main class="col-md-8 lg-ml-sm-auto ">
                 <div class="row">
-                    <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                        <div class="card text-center">
-                            <div class="card-body text-center">
-                                <!-- <button type="button" class=" btn btn-success view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button> -->
-                                <!-- <button type="button" class=" btn btn-danger view_data mb-2" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button> -->
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered" id="myTable" style="width: 100%;">
-                                        <thead class=" text-center table-dark mb-1">
-                                            <hr>
-                                            <th>
-                                                บัญชี Goolge
-                                            </th>
+                    <div class="col">
+                        <div class="ml-4">
+                            <div class="card text-center bg-secondary elevation-3 ">
 
-                                            <th>
-                                                ชื่อ-สกุล
-                                            </th>
-                                            <th>
-                                                อีเมล์
-                                            </th>
-                                            <th>
-                                                LINE TOKEN
-                                            </th>
+                                <div class="card-body bg-dark text-left col-md-12 col-sm-12 ml-5">
+                                    <br>
+                                    <div class="form-group col-lg-8">
+                                        <label class="font-weight-bold text-small" for="google_id">บัญชี Goolge</label>
+                                        <input class="form-control" readonly value="<?php echo $user['google_id']; ?>" id="google_id" name="google_id" type="text" placeholder="crypto 2, stock 1" required="" />
+                                    </div>
 
-                                            <th>
-                                                รูปภาพโปรไฟล์
-                                            </th>
+                                    <div class="form-group col-lg-8">
+                                        <label class="font-weight-bold text-small" for="name">ชื่อ-สกุล</label>
+                                        <input class="form-control" readonly value="<?php echo $user['name']; ?>" id="name" name="name" type="text" placeholder="buy - sell" required="" />
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label class="font-weight-bold text-small" for="email">อีเมล์</label>
+                                        <input class="form-control" readonly value="<?php echo $user['email']; ?>" id="email" name="email" type="text" placeholder="" required="">
+                                    </div>
+                                    <div class="form-group col-lg-8">
+                                        <label class="font-weight-bold text-small" for="Line_token">LINE TOKEN</label>
+                                        <input class="form-control" readonly value="<?php echo $user['Line_token']; ?>" id="Line_token" name="Line_token" type="text" placeholder="" required="" />
+                                    </div>
 
-                                            <th>
-                                                แก้ไข
-                                            </th>
-
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $id = $_SESSION['login_id'];
-                                            $get_user =
-                                                "SELECT * FROM `tb_user` WHERE `google_id`='$id'";
-
-                                            $result = mysqli_query($conn, $get_user);
-
-                                            foreach ($result as $user) {
-                                            ?>
-                                                <tr class="text-center">
-                                                    <td><?php echo  $user['google_id']; ?></td>
-                                                    <td><?php echo $user['name']; ?></td>
-                                                    <td><?php echo $user['email']; ?></td>
-                                                    <td><?php echo $user['Line_token']; ?></td>
-                                                    <td width="250px"><img class="rounded" width="150px" src="<?php echo $user['profile_image']; ?>"></td>
-
-                                                    <td><a type="button" href="edit.php?id=<?php echo $user['id']; ?>" class=" btn btn-warning ">
-                                                            <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a></td>
-                                                </tr>
-                                            <?php }  ?>
-                                        </tbody>
-                                    </table>
+                                    <div class="form-group col-lg-8">
+                                        <label class="font-weight-bold text-small" for="Line_token"></label>
+                                        <img width="200px" src="<?php echo $user['profile_image']; ?>">
+                                        <br> <br>
+                                        <a style="border-radius:10px;" type="button" href="edit.php?id=<?php echo $user['id']; ?>" class=" elevation-3  btn btn-warning ">
+                                            <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- JavaScript Bundle with Popper -->
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                            <script>
-                                $(document).ready(function() {
-                                    $('#').DataTable();
-                                });
-                            </script>
+                        </div>
+                    </div>
+                    <!-- JavaScript Bundle with Popper -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $('#').DataTable();
+                        });
+                    </script>
 
-                            <script>
-                                let imgInput = document.getElementById('imgInput');
-                                let previewImg = document.getElementById('previewImg');
+                    <script>
+                        let imgInput = document.getElementById('imgInput');
+                        let previewImg = document.getElementById('previewImg');
 
-                                imgInput.onchange = evt => {
-                                    const [file] = imgInput.files;
-                                    if (file) {
-                                        previewImg.src = URL.createObjectURL(file)
-                                    }
-                                }
-                                $(".delete-btn").click(function(e) {
-                                    var userId = $(this).data('id');
-                                    e.preventDefault();
-                                    deleteConfirm(userId);
-                                })
+                        imgInput.onchange = evt => {
+                            const [file] = imgInput.files;
+                            if (file) {
+                                previewImg.src = URL.createObjectURL(file)
+                            }
+                        }
 
-
-                                function deleteConfirm(userId) {
-                                    Swal.fire({
-                                        title: 'ลบรายการ !',
-                                        text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
-                                        icon: 'warning',
-                                        dangerMode: true,
-                                        showCancelButton: true,
-                                        confirmButtonColor: '#3085d6',
-                                        cancelButtonColor: '#d33',
-                                        confirmButtonText: 'ใช่แน่ใจ!',
-                                        showLoaderOnConfirm: true,
-                                        preConfirm: function() {
-                                            return new Promise(function(resolve) {
-                                                $.ajax({
-                                                        url: 'index.php',
-                                                        type: 'GET',
-                                                        data: 'delete=' + userId,
-                                                    })
-                                                    .done(function() {
-                                                        Swal.fire({
-                                                            title: 'สำเร็จ',
-                                                            text: 'ลบรายการเรียบร้อย !',
-                                                            icon: 'success',
-                                                            timer: '2000'
-                                                        }).then(() => {
-                                                            document.location.href = 'index.php';
-                                                        })
-                                                    })
-                                                    .fail(function() {
-                                                        Swal.fire('Oops...', 'Something went wrong with ajax !', 'error')
-                                                        window.location.reload();
-                                                    });
-                                            });
-                                        },
-                                    });
-                                }
-                            </script>
-                            <!-- SCRIPTS -->
-                            <script src="../plugins/jquery/jquery.min.js"></script>
-                            <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                            <script src="../assetsuser/js/adminlte.min.js"></script>
+                    </script>
+                    <!-- SCRIPTS -->
+                    <script src="../plugins/jquery/jquery.min.js"></script>
+                    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-                            <!-- OPTIONAL SCRIPTS -->
-                            <script src="../plugins/chart.js/Chart.min.js"></script>
-                            <script src="../assetsuser/js/pages/dashboard.js"></script>
+                    <!-- OPTIONAL SCRIPTS -->
+                    <script src="../plugins/chart.js/Chart.min.js"></script>
+                    <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>
