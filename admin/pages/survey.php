@@ -88,13 +88,13 @@ include('../../service/admin_connect.php');
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
                     <td>&nbsp;</td>
-                    <td><?= $row['gender']; ?></td>
-                    <td><?= $row['qty']; ?></td>
+                    <td><?php $row['gender']; ?></td>
+                    <td><?php $row['qty']; ?></td>
                     <td></td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
             </tr>
-        <? } ?>
+        <?php } ?>
         <tr>
             <?php
 
@@ -105,11 +105,11 @@ include('../../service/admin_connect.php');
             ?>
                 <td>&nbsp;</td>
                 <td align="center">รวม</td>
-                <td><?= $row['qty']; ?></td>
+                <td><?php $row['qty']; ?></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-            <? } ?>
+            <?php } ?>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -138,13 +138,13 @@ include('../../service/admin_connect.php');
             while ($row = mysqli_fetch_array($result)) {
             ?>
                 <td>&nbsp;</td>
-                <td><?= $row['age']; ?></td>
-                <td><?= $row['qtyage']; ?></td>
+                <td><?php $row['age']; ?></td>
+                <td><?php $row['qtyage']; ?></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
         </tr>
-    <? } ?>
+    <?php } ?>
 
     <tr>
 
@@ -157,11 +157,11 @@ include('../../service/admin_connect.php');
         ?>
             <td>&nbsp;</td>
             <td align="center">รวม</td>
-            <td><?= $row['qty']; ?></td>
+            <td><?php $row['qty']; ?></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-        <? } ?>
+        <?php } ?>
     </tr>
 
     <tr>
@@ -196,7 +196,7 @@ include('../../service/admin_connect.php');
             <td>&nbsp;</td>
             <td>&nbsp;</td>
     </tr>
-<? } ?>
+<?php } ?>
 <tr>
     <td>&nbsp;</td>
     <td>&nbsp;</td>

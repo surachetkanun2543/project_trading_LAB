@@ -148,107 +148,106 @@ if (isset($_GET['delete'])) {
     </div>
 
 
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+        <div class="wrapper bg-transparent">
+            <?php include_once('../pages/sidebar.php') ?>
+            <div class="content-wrapper  bg-transparent">
+                <br>
+                <div class="content-header ml-4">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                                <div class=" col-lg-10 ">
+                                    <br>
+                                    <h4 class="ml-4 text-dark"> บันทึกรายการซื้อขาย </h4>
+                                    <p class="ml-4 text-dark"> (trading journal) </p>
 
-    <div class="wrapper ">
-        <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper  bg-dark">
-            <br>
-            <div class="content-header ml-4">
-                <div class="container-fluid">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <?php if (isset($_SESSION['success'])) { ?>
+                    <div classs="container p-5 text-center">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 col-md-12 m-auto">
+                                <div class="alert alert-success elevation-3  fade show" role="alert" style="border-radius:10px;">
+                                    <h4> <?php
+                                            echo $_SESSION['success'];
+                                            unset($_SESSION['success']);
+                                            ?></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <div class="alert alert-danger elevation-3 fade show" role="alert" style="border-radius:10px;">
+                        <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        ?>
+                    </div>
+                <?php } ?>
+
+                <main class=" col-md-7 ml-sm-auto col-lg-12 px-md-4 py-4 ">
                     <div class="row">
-                    <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
-                            <div class=" col-lg-10 ">
-                                <br>
-                                <h4 class="ml-4 text-dark"> บันทึกรายการซื้อขาย </h4>
-                                <p class="ml-4 text-dark"> (trading journal) </p>
+                        <div class="col-lg-12  mb-4 mb-lg-0">
+                            <div class="card" style="border-radius:10px;">
+                                <div class="card-body text-right  bg-light elevation-3" style="border-radius:10px;">
+                                    <button type="button" class="text-light btn btn-success view_data mb-2 mr-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button>
+                                    <button type="button" class="text-light btn btn-danger view_data mb-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
+                                    <div class="table-responsive" style="border-radius:10px;">
+                                        <table class=" table table-striped" id="myTable" style="width: 100%;">
+                                            <thead class=" text-center bg-light mb-1">
+                                                <th class=" text-dark ">
+                                                    สถานะ
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    หมวดหมู่
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    สินทรัพย์
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    ราคาสินทรัพย์ที่ซื้อ (บาท)
+                                                </th>
 
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-            </div>
-            <?php if (isset($_SESSION['success'])) { ?>
-                <div classs="container p-5 text-center">
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 col-md-12 m-auto">
-                            <div class="alert alert-success elevation-3  fade show" role="alert" style="border-radius:10px;">
-                                <h4> <?php
-                                        echo $_SESSION['success'];
-                                        unset($_SESSION['success']);
-                                        ?></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger elevation-3 fade show" role="alert" style="border-radius:10px;">
-                    <?php
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                </div>
-            <?php } ?>
+                                                <th class=" text-dark ">
+                                                    จำนวนสินทรัพย์ (หน่วย)
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    วันที่ซื้อ
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    บันทึก
+                                                </th>
 
-            <main class=" col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4 ">
-                <div class="row">
-                    <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                        <div class="card">
-                            <div class="card-body text-right  bg-dark elevation-3" >
-                                <button type="button" class="text-light btn btn-success view_data mb-2 mr-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button>
-                                <button type="button" class="text-light btn btn-danger view_data mb-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
-                                <div  class="table-responsive" >
-                                    <table class="table table-striped" id="myTable" style="width: 100%;">
-                                        <thead class=" text-center table-secondary mb-1">
-                                            <hr>
-                                            <th class=" text-dark ">
-                                                สถานะ
-                                            </th>
-                                            <th class=" text-dark ">
-                                                หมวดหมู่
-                                            </th>
-                                            <th class=" text-dark ">
-                                                สินทรัพย์
-                                            </th>
-                                            <th class=" text-dark ">
-                                                ราคาสินทรัพย์ที่ซื้อ (บาท)
-                                            </th>
-
-                                            <th class=" text-dark ">
-                                                จำนวนสินทรัพย์ (หน่วย)
-                                            </th>
-                                            <th class=" text-dark ">
-                                                วันที่ซื้อ
-                                            </th>
-                                            <th class=" text-dark ">
-                                                บันทึก
-                                            </th>
-
-                                            <th class=" text-dark ">
-                                                ราคาตัดขาดทุน (บาท)
-                                            </th>
-                                            <th class=" text-dark ">
-                                                ราคาขายทำกำไร (บาท)
-                                            </th>
-                                            <th class=" text-dark ">
-                                                รูปภาพ
-                                            </th>
-                                            <th class=" text-warning ">
-                                                แก้ไข
-                                            </th>
-                                            <th class=" text-danger ">
-                                                ลบ
-                                            </th>
-                                            <th class=" text-success ">
-                                                แจ้งเตือน Line
-                                            </th>
-                                        </thead>
-                                        <tbody class="text-center">
-                                            <?php
-                                            $id = $_SESSION['login_id'];
-                                            $get_user =
-                                                "SELECT 
+                                                <th class=" text-dark ">
+                                                    ราคาตัดขาดทุน (บาท)
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    ราคาขายทำกำไร (บาท)
+                                                </th>
+                                                <th class=" text-dark ">
+                                                    รูปภาพ
+                                                </th>
+                                                <th class=" text-warning ">
+                                                    แก้ไข
+                                                </th>
+                                                <th class=" text-danger ">
+                                                    ลบ
+                                                </th>
+                                                <th class=" text-success ">
+                                                    แจ้งเตือน Line
+                                                </th>
+                                            </thead>
+                                            <tbody class="text-center">
+                                                <?php
+                                                $id = $_SESSION['login_id'];
+                                                $get_user =
+                                                    "SELECT 
                                             *
                                             FROM tb_journal 
                                             as j 
@@ -258,32 +257,39 @@ if (isset($_GET['delete'])) {
                                             WHERE `ur_id`='$id' 
                                             ORDER BY `t`.`Assettype_name` ASC";
 
-                                            $result = mysqli_query($conn, $get_user);
+                                                $result = mysqli_query($conn, $get_user);
 
-                                            foreach ($result as $user) {
-                                            ?>
-                                                <tr class="text-center text-light">
-                                                    <td><?php echo  $user['options']; ?></td>
-                                                    <td><?php echo $user['Assettype_name']; ?></td>
-                                                    <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo number_format($user['assetprice'], '2'); ?> บาท </td>
-                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?> หน่วย </td>
-                                                    <td><?php echo $user['assetdate']; ?></td>
-                                                    <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo number_format($user['assetsl'], '2'); ?> บาท </td>
-                                                    <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
+                                                foreach ($result as $user) {
+                                                ?>
+                                                    <tr class="text-center text-dark">
+                                                        <td><?php echo  $user['options']; ?></td>
+                                                        <td><?php echo $user['Assettype_name']; ?></td>
+                                                        <td><?php echo $user['assetname']; ?></td>
+                                                        <td><?php echo number_format($user['assetprice'], '2'); ?> บาท </td>
+                                                        <td><?php echo number_format($user['assetvolume'], '2'); ?> หน่วย </td>
+                                                        <td><?php echo $user['assetdate']; ?></td>
+                                                        <td><?php echo $user['assetnote']; ?></td>
+                                                        <td><?php echo number_format($user['assetsl'], '2'); ?> บาท </td>
+                                                        <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
 
-                                                    <td><img class="rounded elevation-2" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
+                                                        <td><img class="rounded elevation-2" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
 
-                                                    <td><a type="button" class="btn btn-warning elevation-3" style="border-radius:8px;" href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i><br><h1></h1></a>
+                                                        <td><a type="button" class="btn btn-warning elevation-3" style="border-radius:8px;" href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i><br>
+                                                                <h1></h1>
+                                                            </a>
 
-                                                    <td><a style="border-radius:8px;" data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="text-light btn btn-danger delete-btn elevation-3"><i class="text-light fa-solid fa-trash"></i><h1></h1></a></td>
+                                                        <td><a style="border-radius:8px;" data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="text-light btn btn-danger delete-btn elevation-3"><i class="text-light fa-solid fa-trash"></i>
+                                                                <h1></h1>
+                                                            </a></td>
 
-                                                    <td><a style="border-radius:8px;" href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white elevation-3"><i class="fa-brands fa-line"> </i><h1></h1></a></td>
-                                                </tr>
-                                            <?php }  ?>
-                                        </tbody>
-                                    </table>
+                                                        <td><a style="border-radius:8px;" href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white elevation-3"><i class="fa-brands fa-line"> </i>
+                                                                <h1></h1>
+                                                            </a></td>
+                                                    </tr>
+                                                <?php }  ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                             <!-- JavaScript Bundle with Popper -->
@@ -356,13 +362,9 @@ if (isset($_GET['delete'])) {
                             <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
                             <script src="../../plugins/sweetalert2/dist/sweetalert2.min.js"></script>
                             <script src="../assetsuser/js/adminlte.min.js"></script>
-
-
                             <!-- OPTIONAL SCRIPTS -->
                             <script src="../plugins/chart.js/Chart.min.js"></script>
                             <script src="../assetsuser/js/pages/dashboard.js"></script>
-
-
                             <!-- OPTIONAL SCRIPTS -->
                             <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
                             <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>

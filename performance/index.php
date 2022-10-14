@@ -164,85 +164,84 @@ if (isset($_GET['delete'])) {
     <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
     <script src="../../plugins/toastr/toastr.min.js"></script>
 
-    <div class="wrapper">
-        <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper bg-dark">
-        <br>
-            <div class="content-header ml-4">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="page-wrapper col-lg-3" style="border-radius:10px;">
-                            <div class=" col-lg-10 ">
-                                <br>
-                                <h4 class="ml-4 text-dark"> บันทึกรายการซื้อขาย </h4>
-                                <p class="ml-4 text-dark"> (trading journal) </p>
-
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+        <div class="wrapper bg-transparent">
+            <?php include_once('../pages/sidebar.php') ?>
+            <div class="content-wrapper bg-transparent">
+                <br>
+                <div class="content-header ml-4">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="page-wrapper col-lg-3" style="border-radius:10px;">
+                                <div class=" col-lg-10 ">
+                                    <br>
+                                    <h4 class="ml-4 text-dark">สรุปรายการซื้อขาย </h4>
+                                    <p class="ml-4 text-dark"> (summary journal) </p>
+                                </div>
                             </div>
+                            <br>
                         </div>
-                        <br>
                     </div>
                 </div>
-            </div>
-            <?php if (isset($_SESSION['success'])) { ?>
-                <div class="alert alert-success elevation-3" style="border-radius:10px;">
-                    <?php
-                    echo $_SESSION['success'];
-                    unset($_SESSION['success']);
-                    ?>
-                </div>
-            <?php } ?>
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger elevation-3" style="border-radius:10px;">
-                    <?php
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                </div>
-            <?php } ?>
+                <?php if (isset($_SESSION['success'])) { ?>
+                    <div class="alert alert-success elevation-3" style="border-radius:10px;">
+                        <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                        ?>
+                    </div>
+                <?php } ?>
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <div class="alert alert-danger elevation-3" style="border-radius:10px;">
+                        <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        ?>
+                    </div>
+                <?php } ?>
 
-            <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
-                <div class="row">
-                    <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                        <div class="card">
-                        <div class="card-body text-right  bg-dark elevation-3" >
-                            <div  class="table-responsive" >
-                                    <table class="table table-striped" id="myTable" style="width: 100%;">
-                                        <thead class=" text-center table-secondary mb-1">
-                                            <hr>
-                                            <th class=" text-dark">
-                                                สถานะ
-                                            </th>
-                                            <th class=" text-dark">
-                                                สินทรัพย์
-                                            </th>
-                                            <th class=" text-dark">
-                                                ราคาเข้าซื้อสินทรัพย์  (บาท)
-                                            </th>
-                                            <th class=" text-dark">
-                                                ราคาขายสินทรัพย์  (บาท)
-                                            </th>
-                                              <th class=" text-dark">
-                                              จำนวนสินทรัพย์
-                                            </th>
-                                            <th class=" text-dark">
-                                                วันที่ขาย
-                                            </th>
+                <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
+                    <div class="row">
+                        <div class="col-12 col-xl-12 mb-4 mb-lg-0">
+                            <div class="card ml-4" style="border-radius:10px;">
+                                <div class="card-body text-right  bg-light elevation-3" style="border-radius:10px;">
+                                    <div class="table-responsive">
+                                        <table class="bg-light table table-striped" id="myTable" style="width: 100%; border-radius:10px;">
+                                            <thead class=" text-center bg-light mb-1">
+                                                <th class=" text-dark">
+                                                    สถานะ
+                                                </th>
+                                                <th class=" text-dark">
+                                                    สินทรัพย์
+                                                </th>
+                                                <th class=" text-dark">
+                                                    ราคาเข้าซื้อสินทรัพย์ (บาท)
+                                                </th>
+                                                <th class=" text-dark">
+                                                    ราคาขายสินทรัพย์ (บาท)
+                                                </th>
+                                                <th class=" text-dark">
+                                                    จำนวนสินทรัพย์
+                                                </th>
+                                                <th class=" text-dark">
+                                                    วันที่ขาย
+                                                </th>
 
-                                            <th class=" text-dark">
-                                                จำนวนวันที่ถือครอง
-                                            </th>
-                                            <th class=" text-dark">
-                                                กำไร/ขาดทุน (บาท)
-                                            </th>
-                                            <th class=" text-dark">
-                                                เปอร์เซ็น กำไร/ขาดทุน
-                                            </th>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $id = $_SESSION['login_id'];
-                                            $get_user =
-                                                "SELECT 
+                                                <th class=" text-dark">
+                                                    จำนวนวันที่ถือครอง
+                                                </th>
+                                                <th class=" text-dark">
+                                                    กำไร/ขาดทุน (บาท)
+                                                </th>
+                                                <th class=" text-dark">
+                                                    เปอร์เซ็น กำไร/ขาดทุน
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $id = $_SESSION['login_id'];
+                                                $get_user =
+                                                    "SELECT 
                                             *
                                             FROM tb_journal 
                                             as j 
@@ -252,98 +251,100 @@ if (isset($_GET['delete'])) {
                                             WHERE `ur_id`='$id' 
                                             ORDER BY `t`.`Assettype_name` ASC";
 
-                                            $result = mysqli_query($conn, $get_user);
+                                                $result = mysqli_query($conn, $get_user);
 
-                                            foreach ($result as $user) {
-                                            ?>
-                                                   <tr class="text-center text-light">
-                                                    <td><?php echo $user['options']; ?></td>
-                                                    <td><?php echo $user['Assettype_name']; ?></td>
-                                                    <td><?php echo $user['assetname']; ?></td>
-                                                    <td><?php echo number_format($user['assetprice']); ?></td>
-                                                    <td><?php echo $user['assetvolume']; ?></td>
-                                                    <td><?php echo $user['assetdate']; ?></td>
-                                                    <td><?php echo $user['assetnote']; ?></td>
-                                                    <td><?php echo number_format($user['assetsl']); ?></td>
-                                                    <td><?php echo number_format($user['assettg']); ?></td>
+                                                foreach ($result as $user) {
+                                                ?>
+                                                    <tr class="text-center text-dark">
+                                                        <td><?php echo $user['options']; ?></td>
+                                                        <td><?php echo $user['Assettype_name']; ?></td>
+                                                        <td><?php echo $user['assetname']; ?></td>
+                                                        <td><?php echo number_format($user['assetprice']); ?></td>
+                                                        <td><?php echo $user['assetvolume']; ?></td>
+                                                        <td><?php echo $user['assetdate']; ?></td>
+                                                        <td><?php echo $user['assetnote']; ?></td>
+                                                        <td><?php echo number_format($user['assetsl']); ?></td>
+                                                        <td><?php echo number_format($user['assettg']); ?></td>
 
-                                                </tr>
-                                            <?php }  ?>
-                                        </tbody>
-                                    </table>
+                                                    </tr>
+                                                <?php }  ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- JavaScript Bundle with Popper -->
-                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                            <script>
-                                $(document).ready(function() {
-                                    $('#myTable').DataTable();
+                        </div>
+                        <!-- JavaScript Bundle with Popper -->
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                        <script>
+                            $(document).ready(function() {
+                                $('#myTable').DataTable();
+                            });
+                        </script>
+
+                        <script>
+                            let imgInput = document.getElementById('imgInput');
+                            let previewImg = document.getElementById('previewImg');
+
+                            imgInput.onchange = evt => {
+                                const [file] = imgInput.files;
+                                if (file) {
+                                    previewImg.src = URL.createObjectURL(file)
+                                }
+                            }
+                            $(".delete-btn").click(function(e) {
+                                var userId = $(this).data('id');
+                                e.preventDefault();
+                                deleteConfirm(userId);
+                            })
+
+
+                            function deleteConfirm(userId) {
+                                Swal.fire({
+                                    title: 'ลบรายการ !',
+                                    text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
+                                    icon: 'warning',
+                                    dangerMode: true,
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'ใช่แน่ใจ!',
+                                    showLoaderOnConfirm: true,
+                                    preConfirm: function() {
+                                        return new Promise(function(resolve) {
+                                            $.ajax({
+                                                    url: 'index.php',
+                                                    type: 'GET',
+                                                    data: 'delete=' + userId,
+                                                })
+                                                .done(function() {
+                                                    Swal.fire({
+                                                        title: 'สำเร็จ',
+                                                        text: 'ลบรายการเรียบร้อย !',
+                                                        icon: 'success',
+                                                        timer: '2000'
+                                                    }).then(() => {
+                                                        document.location.href = 'index.php';
+                                                    })
+                                                })
+                                                .fail(function() {
+                                                    Swal.fire('Oops...', 'Something went wrong with ajax !', 'error')
+                                                    window.location.reload();
+                                                });
+                                        });
+                                    },
                                 });
-                            </script>
-
-                            <script>
-                                let imgInput = document.getElementById('imgInput');
-                                let previewImg = document.getElementById('previewImg');
-
-                                imgInput.onchange = evt => {
-                                    const [file] = imgInput.files;
-                                    if (file) {
-                                        previewImg.src = URL.createObjectURL(file)
-                                    }
-                                }
-                                $(".delete-btn").click(function(e) {
-                                    var userId = $(this).data('id');
-                                    e.preventDefault();
-                                    deleteConfirm(userId);
-                                })
+                            }
+                        </script>
+                        <!-- SCRIPTS -->
+                        <script src="../plugins/jquery/jquery.min.js"></script>
+                        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                        <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-                                function deleteConfirm(userId) {
-                                    Swal.fire({
-                                        title: 'ลบรายการ !',
-                                        text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
-                                        icon: 'warning',
-                                        dangerMode: true,
-                                        showCancelButton: true,
-                                        confirmButtonColor: '#3085d6',
-                                        cancelButtonColor: '#d33',
-                                        confirmButtonText: 'ใช่แน่ใจ!',
-                                        showLoaderOnConfirm: true,
-                                        preConfirm: function() {
-                                            return new Promise(function(resolve) {
-                                                $.ajax({
-                                                        url: 'index.php',
-                                                        type: 'GET',
-                                                        data: 'delete=' + userId,
-                                                    })
-                                                    .done(function() {
-                                                        Swal.fire({
-                                                            title: 'สำเร็จ',
-                                                            text: 'ลบรายการเรียบร้อย !',
-                                                            icon: 'success',
-                                                            timer: '2000'
-                                                        }).then(() => {
-                                                            document.location.href = 'index.php';
-                                                        })
-                                                    })
-                                                    .fail(function() {
-                                                        Swal.fire('Oops...', 'Something went wrong with ajax !', 'error')
-                                                        window.location.reload();
-                                                    });
-                                            });
-                                        },
-                                    });
-                                }
-                            </script>
-                                    <!-- SCRIPTS -->
-        <script src="../plugins/jquery/jquery.min.js"></script>
-        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="../assetsuser/js/adminlte.min.js"></script>
-
-
-        <!-- OPTIONAL SCRIPTS -->
-        <script src="../plugins/chart.js/Chart.min.js"></script>
-        <script src="../assetsuser/js/pages/dashboard.js"></script>
+                        <!-- OPTIONAL SCRIPTS -->
+                        <script src="../plugins/chart.js/Chart.min.js"></script>
+                        <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>

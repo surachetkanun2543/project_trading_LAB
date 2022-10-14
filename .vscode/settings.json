@@ -4,6 +4,7 @@
         "assetsuser": true,
         "dist": true,
         "formmail.php": true,
+        "js": true,
         "login": true,
         "noti.php": true,
         "PHPMailer": true,

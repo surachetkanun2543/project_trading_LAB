@@ -49,7 +49,7 @@ if (mysqli_num_rows($get_user) > 0) {
     while ($row = mysqli_fetch_array($result)) {
 
     ?>
-        <?
+        <?php
         $answer = (number_format(($row['qtyscore'] / $row['qtyperson']), 2));
 
         if ($answer >= 3.30) {
@@ -65,7 +65,10 @@ if (mysqli_num_rows($get_user) > 0) {
             echo "<script> window.location.href = 'risklevel1.php';</script>";
         ?>
 
-    <? } ?>
+    <?php
+    } 
+    
+    ?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

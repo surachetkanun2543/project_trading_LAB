@@ -121,109 +121,107 @@ if (mysqli_num_rows($get_user) > 0) {
     <script src="../../plugins/toastr/toastr.min.js"></script>
 
 
-
-    <div class="wrapper ">
-        <?php include_once('../pages/sidebar.php') ?>
-        <div class="content-wrapper  bg-dark">
-            <br>
-            <div class="content-header ml-4">
-                <div class="container-fluid">
-                    <div class="row">
-                    <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
-                            <div class=" col-lg-10 ">
-                                <br>
-                                <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
-                                <p class="ml-4 text-dark"> ( Profile setting ) </p>
-
-                            </div>
-                        </div>
-                        <br> <br>
-                    </div>
-                </div>
-            </div>
-            <?php if (isset($_SESSION['success'])) { ?>
-                <div class="alert alert-success">
-                    <?php
-                    echo $_SESSION['success'];
-                    unset($_SESSION['success']);
-                    ?>
-                </div>
-            <?php } ?>
-            <?php if (isset($_SESSION['error'])) { ?>
-                <div class="alert alert-danger">
-                    <?php
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    ?>
-                </div>
-            <?php } ?>
-
-            <main class="col-md-8 lg-ml-sm-auto ">
-                <div class="row">
-                    <div class="col">
-                        <div class="ml-4">
-                            <div class="card text-center bg-secondary elevation-3 ">
-
-                                <div class="card-body bg-dark text-left col-md-12 col-sm-12 ml-5">
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+    <!-- <div class=" bg-transparent" style="background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-108740.jpg?w=1380&t=st=1665642113~exp=1665642713~hmac=295ceedd5a8378dda40b0dfdbd53c266b9f1580eddc0fdba2ca7fb81d545495d'); background-repeat: no-repeat; background-size: cover;"> -->
+        <div class="wrapper bg-transparent">
+            <?php include_once('../pages/sidebar.php') ?>
+            <div class="content-wrapper  bg-transparent">
+                <br>
+                <div class="content-header ml-4">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                                <div class=" col-lg-10 ">
                                     <br>
-                                    <div class="form-group col-lg-8">
-                                        <label class="font-weight-bold text-small" for="google_id">บัญชี Goolge</label>
-                                        <input class="form-control" readonly value="<?php echo $user['google_id']; ?>" id="google_id" name="google_id" type="text" placeholder="crypto 2, stock 1" required="" />
-                                    </div>
+                                    <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
+                                    <p class="ml-4 text-dark"> ( Profile setting ) </p>
 
-                                    <div class="form-group col-lg-8">
-                                        <label class="font-weight-bold text-small" for="name">ชื่อ-สกุล</label>
-                                        <input class="form-control" readonly value="<?php echo $user['name']; ?>" id="name" name="name" type="text" placeholder="buy - sell" required="" />
-                                    </div>
-                                    <div class="form-group col-lg-8">
-                                        <label class="font-weight-bold text-small" for="email">อีเมล์</label>
-                                        <input class="form-control" readonly value="<?php echo $user['email']; ?>" id="email" name="email" type="text" placeholder="" required="">
-                                    </div>
-                                    <div class="form-group col-lg-8">
-                                        <label class="font-weight-bold text-small" for="Line_token">LINE TOKEN</label>
-                                        <input class="form-control" readonly value="<?php echo $user['Line_token']; ?>" id="Line_token" name="Line_token" type="text" placeholder="" required="" />
-                                    </div>
-
-                                    <div class="form-group col-lg-8">
-                                        <label class="font-weight-bold text-small" for="Line_token"></label>
-                                        <img width="200px" src="<?php echo $user['profile_image']; ?>">
-                                        <br> <br>
-                                        <a style="border-radius:10px;" type="button" href="edit.php?id=<?php echo $user['id']; ?>" class=" elevation-3  btn btn-warning ">
-                                            <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a>
-                                    </div>
                                 </div>
                             </div>
+                            <br> <br>
                         </div>
                     </div>
-                    <!-- JavaScript Bundle with Popper -->
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                    <script>
-                        $(document).ready(function() {
-                            $('#').DataTable();
-                        });
-                    </script>
+                </div>
+                <?php if (isset($_SESSION['success'])) { ?>
+                    <div class="alert alert-success">
+                        <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                        ?>
+                    </div>
+                <?php } ?>
+                <?php if (isset($_SESSION['error'])) { ?>
+                    <div class="alert alert-danger">
+                        <?php
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                        ?>
+                    </div>
+                <?php } ?>
 
-                    <script>
-                        let imgInput = document.getElementById('imgInput');
-                        let previewImg = document.getElementById('previewImg');
+                
+                <main class="md-ml-sm-auto col-lg-8 py-2 ml-4"style="border-radius:10px;">
+                    <div class="row">
+                        <div class="col">
+                                <div class="card text-center bg-light elevation-3 " style="border-radius:10px;">
+                                    <div class="card-body bg-light text-left col-md-6 col-sm-6 ">
+                                        <br>
+                                        <div class="form-group col-lg-12">
+                                            <label class="font-weight-bold text-small" for="google_id">บัญชี Goolge</label>
+                                            <input class="form-control" readonly value="<?php echo $user['google_id']; ?>" id="google_id" name="google_id" type="text" placeholder="crypto 2, stock 1" required="" />
+                                        </div>
 
-                        imgInput.onchange = evt => {
-                            const [file] = imgInput.files;
-                            if (file) {
-                                previewImg.src = URL.createObjectURL(file)
+                                        <div class="form-group col-lg-12">
+                                            <label class="font-weight-bold text-small" for="name">ชื่อ-สกุล</label>
+                                            <input class="form-control" readonly value="<?php echo $user['name']; ?>" id="name" name="name" type="text" placeholder="buy - sell" required="" />
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label class="font-weight-bold text-small" for="email">อีเมล์</label>
+                                            <input class="form-control" readonly value="<?php echo $user['email']; ?>" id="email" name="email" type="text" placeholder="" required="">
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label class="font-weight-bold text-small" for="Line_token">LINE TOKEN</label>
+                                            <input class="form-control" readonly value="<?php echo $user['Line_token']; ?>" id="Line_token" name="Line_token" type="text" placeholder="" required="" />
+                                        </div>
+
+                                        <div class="form-group col-lg-12">
+                                            <label class="font-weight-bold text-small" for="Line_token"></label>
+                                            <img width="200px" style="border-radius:5px;" src="<?php echo $user['profile_image']; ?>">
+                                            <br> <br>
+                                            <a style="border-radius:5px;" type="button" href="edit.php?id=<?php echo $user['id']; ?>" class=" elevation-3  btn btn-warning ">
+                                                <i class="fa-solid fa-pen-to-square"></i> แก้ไข</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <!-- JavaScript Bundle with Popper -->
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                        <script>
+                            $(document).ready(function() {
+                                $('#').DataTable();
+                            });
+                        </script>
+
+                        <script>
+                            let imgInput = document.getElementById('imgInput');
+                            let previewImg = document.getElementById('previewImg');
+
+                            imgInput.onchange = evt => {
+                                const [file] = imgInput.files;
+                                if (file) {
+                                    previewImg.src = URL.createObjectURL(file)
+                                }
                             }
-                        }
-
-                    </script>
-                    <!-- SCRIPTS -->
-                    <script src="../plugins/jquery/jquery.min.js"></script>
-                    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <script src="../assetsuser/js/adminlte.min.js"></script>
+                        </script>
+                        <!-- SCRIPTS -->
+                        <script src="../plugins/jquery/jquery.min.js"></script>
+                        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                        <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-                    <!-- OPTIONAL SCRIPTS -->
-                    <script src="../plugins/chart.js/Chart.min.js"></script>
-                    <script src="../assetsuser/js/pages/dashboard.js"></script>
+                        <!-- OPTIONAL SCRIPTS -->
+                        <script src="../plugins/chart.js/Chart.min.js"></script>
+                        <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>

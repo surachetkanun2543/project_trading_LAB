@@ -72,28 +72,30 @@ $result2 = mysqli_query($db_connection, $query2);
     <!-- <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> -->
     <style>
         .swal-wide {
+
             font-size: 20px;
-            width: 850px !important;
+            width: 350px !important;
             height: 400px !important;
         }
     </style>
     <script>
         $(document).ready(function() {
             Swal.fire({
+                position: 'top-right',
                 title: 'สำเร็จ!',
                 text: 'ยินดีต้อนรับเข้าสู่จดบันทึกและวิเคราะห์การลงทุน',
                 imageUrl: 'good.png',
                 customClass: 'swal-wide',
-                timer: 1000,
+                timer: 2000,
                 showConfirmButton: false
             });
         });
     </script>
-    <div class=" bg-dark">
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
         <?php include_once('../pages/sidebar.php') ?>
-        <main class="bg-dark col-md-3 ml-sm-auto col-lg-10 ">
-        <br>
-        <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+        <main class="bg-transparent col-md-3 ml-sm-auto col-lg-10 ">
+            <br>
+            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
                 <div class="row">
                     <div class=" col-lg-10 ">
                         <br>
@@ -326,43 +328,12 @@ $result2 = mysqli_query($db_connection, $query2);
             <br>
             <br>
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
     </div>
 
-    <script>
-        new Chart(document.getElementById("doughnut-chart"), {
-            type: 'doughnut',
-            data: {
-                // labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-                datasets: [{
-                    label: "Population (millions)",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                    data: [2478, 5267, 734, 784, 433]
-                }]
-            },
-        });
-
-
-        new Chart(document.getElementById("bar-chart-horizontal"), {
-            type: 'horizontalBar',
-            data: {
-                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-                datasets: [{
-                    label: "Population (millions)",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                    data: [2478, 5267, 734, 784, 433]
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Predicted world population (millions) in 2050'
-                }
-            }
-        });
-    </script>
     <!-- SCRIPTS -->
     <script src="../plugins/jquery/jquery.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -25,16 +25,12 @@ function isActive($data)
 }
 
 
-
-
-# print the JSON response from SerpWow
-//  echo $api_result;
 ?>
 
 <script>
     $(document).ready(function() {
         let url =
-            "https://newsapi.org/v2/everything?q=bitcoin&apiKey=b8f05f1231a04c0d922fc7b795116047";
+            "https://gnews.io/api/v4/search?q=bitcoin&token=86e39ef62737799b02baba7d418b3486&lang=en";
 
         $.ajax({
             url: url,
@@ -49,12 +45,12 @@ function isActive($data)
                 while (output <= i) {
 
                     output += `
-ื
-            <span class="text-light"  style="font-size:16px"  title="${latestNews[i].title}"> เว็บไซต์จดบันทึกและวิเคราะห์การลงทุน : ข่าวที่น่าสนใจวันนี้ :  ${latestNews[i].title} : เว็บไซต์พัฒนาโดย สุรเชษฐ์ กันอุ่น © © 2022 Copyright: journaltrading.tech.  </span>
+            <span class="text-success"  style="font-size:16px">ข่าวที่น่าสนใจวันนี้ :  ${latestNews[i].title}  ${latestNews[i].publishedAt}   </span>
         `;
                     i++;
                 }
                 console.log('lastnews : ', output);
+
 
                 if (output !== "") {
                     $("#newsResults").html(output);
@@ -62,8 +58,9 @@ function isActive($data)
             },
 
             error: function() {
-                let errorMsg = `<div class="errorMsg center">Some error occured</div>`;
+                let errorMsg = `<div class="errorMsg text-danger">gnews api Requests = 100 per day</div>`;
                 $("#newsResults").html(errorMsg);
+                console.log('errorMsg : ', errorMsg);
             },
         });
     });
@@ -90,13 +87,13 @@ function isActive($data)
     /* (A) FIXED WRAPPER */
     .hwrap {
         overflow: hidden;
-        /* HIDE SCROLL BAR */
-        background: #eee;
+        background: transparent;
     }
 
     /* (B) MOVING TICKER WRAPPER */
     .hmove {
         display: flex;
+        background: transparent;
     }
 
     /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
@@ -106,6 +103,7 @@ function isActive($data)
         box-sizing: border-box;
         padding: 5px;
         text-align: center;
+        background: transparent;
     }
 
     /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
@@ -121,7 +119,8 @@ function isActive($data)
     }
 
     .hmove {
-        animation: tickerh linear 70s infinite;
+        animation: tickerh linear 90s infinite;
+        background: transparent;
 
     }
 
@@ -129,84 +128,119 @@ function isActive($data)
         animation-play-state: paused;
     }
 </style>
-<!-- Navbar -->
-<nav class="main-header  navbar-secondary  ">
-    <a class="nav-link bg-dark" data-widget="pushmenu" href="index.php"><i class="fas fa-bars"></i></a>
-    <div class="hwrap bg-secondary">
-        <div class="hmove bg-secondary">
-            <div class="text-light bg-secondary hitem" id="newsResults"></div>
-        </div>
-    </div>
-</nav>
 
-<div class="main-sidebar bg-gradient-dark elevation-5">
-    <div class="user-panel mt-5 pb-2 mb-3 d-flex">
-        <div class="image">
-            &nbsp; &nbsp;<img src="../assets/img/logo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"> &nbsp;
-            <span class="font-weight-bold" center>&nbsp; journaltrading.tech</span>
-            <hr>
-            <span class="font-weight-bold align=" center> &nbsp; &nbsp; &nbsp; ยินดีต้อนรับ &nbsp;</span>&nbsp;&nbsp; &nbsp; <img src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" class=" img-circle elevation-3 alt=" User Image">
-            <br>
-            <br>
-            <h4 class="logged-in text-success"> ● &nbsp; &nbsp;<?php echo $user['name']; ?> </h4>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="main-header ">
+        <a class="nav-link bg-dark" data-widget="pushmenu" href="index.php"><i class="fas fa-bars"></i></a>
+        <div class="hwrap bg-dark">
+            <div class="hmove bg-dark">
+                <div class=" bg-dark hitem" id="newsResults"></div>
+            </div>
         </div>
-    </div>
-    <hr>
-    <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item">
-                <a href="../dashboard/index.php" class="nav-link <?php echo isActive('dashboard') ?>">
-                    <i class="text-success nav-icon fas fa-tachometer-alt"></i>&nbsp;&nbsp;
-                    <p class="text-white "> DASHBOARD </p>
-                </a>
-                <hr>
-            </li>
-            <li class="nav-item">
-                <a href="../journal/index.php" class="nav-link <?php echo isActive('journal') ?>">
-                    <i class="text-success nav-icon fas fa-user-cog"></i>&nbsp;&nbsp;
-                    <p class="text-white ">JOURNAL</p>
-                </a>
-                <hr>
-            </li>
-            <li class="nav-item">
-                <a href="../performance/index.php" class="nav-link <?php echo isActive('performance') ?>">
-                    <i class="text-success fas fa-store"></i> &nbsp;&nbsp;&nbsp;
-                    <p class="text-white "> PERFORMANCE </p>
-                </a>
-                <hr>
-            </li>
-            <li class="nav-item">
-                <a href="../report/index.php" class="nav-link <?php echo isActive('report') ?>">
-                    <i class="text-success nav-icon fas fa-newspaper"></i>
-                    <p class="text-white ">REPORT </p>
-                </a>
-                <hr>
-            </li>
-            <li class="nav-item">
-                <a href="../riskproflie/survey.php" id="" class="nav-link <?php echo isActive('riskproflie') ?>">
-                    <i class="text-success fas fa-sign"></i> &nbsp;&nbsp;
-                    <p class="text-white ">RISK PROFILE</p>
-                </a>
-                <hr>
-            <li class="nav-item ">
-                <a href="../profliesetting/index.php" id="" class="nav-link  <?php echo isActive('profilesetting') ?>">
-                    <i class="text-success nav-icon fas fa-user-cog"></i>
-                    <p class="text-white ">PROFILE SETTING</p>
-                </a>
-                <hr>
-            <li class="nav-item ">
-                <a href="../news/index.php" id="" class="nav-link  <?php echo isActive('news') ?>">
-                    <i class="text-success fas fa-sign"></i>&nbsp;&nbsp;
-                    <p class="text-white ">NEWS</p>
-                </a>
-                <hr>
-            </li><br>
-            <li class="nav-item btn btn-outline-danger bg-dark">
-                <a href="logout.php" id="logout" class="nav-link "></a>
-                <i class=" text-danger fas fa-sign-out-alt"></i>
-                <p class=" text-danger " href="logout.php" onclick="return confirm('ยืนยันออกจากระบบ ?');">LOGOUT</p>
-            </li>
-        </ul>
     </nav>
-</div>
-</aside>
+    <br>
+
+
+    <div class="main-sidebar bg-transparent  elevation-5">
+        <div class="user-panel mt-5 pb-2 mb-3 d-flex">
+            <div class="image">
+                &nbsp; &nbsp;<img src="../assets/img/logo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"> &nbsp;
+                <span class="font-weight-bold text-light" center>&nbsp; journaltrading.tech</span>
+                <hr>
+                <span class="font-weight-bold  text-light align=" center> &nbsp; &nbsp; &nbsp; ยินดีต้อนรับ &nbsp;</span>&nbsp;&nbsp; &nbsp; <img src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" class=" img-circle elevation-3 alt=" User Image">
+                <br>
+                <br>
+                <h4 class="logged-in text-success"> ● &nbsp; &nbsp;<?php echo $user['name']; ?> </h4>
+            </div>
+        </div>
+        <hr>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="../dashboard/index.php" class="nav-link <?php echo isActive('dashboard') ?>">
+                        <i class="text-success nav-icon fas fa-tachometer-alt"></i>&nbsp;&nbsp;
+                        <p class="text-white "> DASHBOARD </p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item">
+                    <a href="../journal/index.php" class="nav-link <?php echo isActive('journal') ?>">
+                        <i class="text-success nav-icon fas fa-user-cog"></i>&nbsp;&nbsp;
+                        <p class="text-white ">JOURNAL</p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item">
+                    <a href="../performance/index.php" class="nav-link <?php echo isActive('performance') ?>">
+                        <i class="text-success fas fa-store"></i> &nbsp;&nbsp;&nbsp;
+                        <p class="text-white "> PERFORMANCE </p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item">
+                    <a href="../report/index.php" class="nav-link <?php echo isActive('report') ?>">
+                        <i class="text-success nav-icon fas fa-user-cog"></i>&nbsp;&nbsp;
+                        <p class="text-white ">REPORT </p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item">
+                    <a href="../riskproflie/survey.php" id="" class="nav-link <?php echo isActive('riskproflie') ?>">
+                        <i class="text-success fas fa-sign"></i> &nbsp;&nbsp;
+                        <p class="text-white ">RISK PROFILE</p>
+                    </a>
+                    <hr>
+                <li class="nav-item ">
+                    <a href="../news/news.php" id="" class="nav-link  <?php echo isActive('news') ?>">
+                        <i class="text-success fas fa-newspaper"></i> &nbsp;&nbsp;&nbsp;
+                        <p class="text-white ">NEWS</p>
+                    </a>
+                    <hr>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="../chartbtc/index.php" id="" class="nav-link  <?php echo isActive('chart') ?>">
+                        <i class="text-warning fab fa-btc"></i>&nbsp;&nbsp;
+                        <p class="text-warning ">CHART BTC</p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item ">
+                    <a href="../chartxau/index.php" id="" class="nav-link  <?php echo isActive('chart') ?>">
+                        <i class="text-warning fa-solid fa-barcode"></i>&nbsp;&nbsp;
+                        <p class="text-warning ">CHART GOLD</p>
+                    </a>
+                    <hr>
+                </li>
+                <li class="nav-item ">
+                    <a href="../profliesetting/index.php" id="" class="nav-link  <?php echo isActive('profilesetting') ?>">
+                        <i class="text-success nav-icon fas fa-user-cog"></i>
+                        <p class="text-white ">PROFILE SETTING</p>
+                    </a>
+                    <hr>
+                </li>
+                <br>
+                <li class="nav-item  btn btn-outline-danger bg-dark">
+                    <a href="logout.php" id="" class="nav-link " onclick="return confirm('ยืนยันออกจากระบบ ?')">
+                        <i class=" text-danger fas fa-sign-out-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

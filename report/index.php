@@ -89,79 +89,82 @@ if (isset($_GET['delete'])) {
 
 </head>
 
-<div class="wrapper">
-    <?php include_once('../pages/sidebar.php') ?>
-    <div class="content-wrapper  bg-dark">
-        <br>
-        <div class="content-header ml-4 " >
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
-                        <div class=" col-lg-10 ">
-                            <br>
-                            <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
-                            <p class="ml-4 text-dark"> ( Profile setting ) </p>
 
+<div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+<!-- <div class=" bg-transparent" style="background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-108740.jpg?w=1380&t=st=1665642113~exp=1665642713~hmac=295ceedd5a8378dda40b0dfdbd53c266b9f1580eddc0fdba2ca7fb81d545495d'); background-repeat: no-repeat; background-size: cover;"> -->
+    <div class="wrapper bg-transparent">
+        <?php include_once('../pages/sidebar.php') ?>
+        <div class="content-wrapper  bg-transparent">
+            <br>
+            <div class="content-header ml-4 ">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                            <div class=" col-lg-10 ">
+                                <br>
+                                <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
+                                <p class="ml-4 text-dark"> ( Profile setting ) </p>
+
+                            </div>
                         </div>
+                        <br> <br>
                     </div>
-                    <br> <br>
                 </div>
             </div>
-        </div>
-        <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
-            <div class="row">
-                <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                    <div class="card  bg-dark elevation-3">
-                        <div class="card-body text-center ">
-                            <a  href="report-pdf.php" class="text-light btn btn-danger elevation-3 mr-4" style="border-radius:8px;">
-                                <h5><i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
-                                <h5 >รายงาน PDF</h5>
-                            </a>
-                            <a href="report-csv.php" class="text-light btn btn-success elevation-3" style="border-radius:8px;">
-                                <h5><i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
-                                <h5>รายงาน CSV</h5>
-                            </a>
-                            <div  class="table-responsive" >
-                                    <table class="table table-striped" id="myTable" style="width: 100%;">
-                                        <thead class=" text-center table-secondary mb-1">
-                                        <p></p>
-                                        <th class=" text-dark ">
-                                            สถานะ
-                                        </th>
-                                        <th class=" text-dark ">
-                                            หมวดหมู่
-                                        </th>
-                                        <th class=" text-dark ">
-                                            สินทรัพย์
-                                        </th>
-                                        <th class=" text-dark ">
-                                            ราคาสินทรัพย์ที่ซื้อ (บาท)
-                                        </th>
+            <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
+                <div class="row">
+                    <div class="col-12 col-xl-12 mb-4 mb-lg-0">
+                        <div class="card  bg-light elevation-3" style="border-radius:10px;">
+                            <div class="card-body text-center ">
+                                <a href="report-pdf.php" class="text-light btn btn-danger elevation-3 mr-4" style="border-radius:8px;">
+                                    <h5><i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
+                                    <h5>รายงาน PDF</h5>
+                                </a>
+                                <a href="report-csv.php" class="text-light btn btn-success elevation-3" style="border-radius:8px;">
+                                    <h5><i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
+                                    <h5>รายงาน CSV</h5>
+                                </a>
+                                <div class="table-responsive">
+                                    <table class="bg-light table table-striped" id="myTable" style="width: 100%;">
+                                        <thead class=" text-center table-light mb-1">
+                                            <p></p>
+                                            <th class=" text-dark ">
+                                                สถานะ
+                                            </th>
+                                            <th class=" text-dark ">
+                                                หมวดหมู่
+                                            </th>
+                                            <th class=" text-dark ">
+                                                สินทรัพย์
+                                            </th>
+                                            <th class=" text-dark ">
+                                                ราคาสินทรัพย์ที่ซื้อ (บาท)
+                                            </th>
 
-                                        <th class=" text-dark ">
-                                            จำนวนสินทรัพย์ (หน่วย)
-                                        </th>
-                                        <th class=" text-dark ">
-                                            วันที่ซื้อ
-                                        </th>
-                                        <th class=" text-dark ">
-                                            บันทึก
-                                        </th>
+                                            <th class=" text-dark ">
+                                                จำนวนสินทรัพย์ (หน่วย)
+                                            </th>
+                                            <th class=" text-dark ">
+                                                วันที่ซื้อ
+                                            </th>
+                                            <th class=" text-dark ">
+                                                บันทึก
+                                            </th>
 
-                                        <th class=" text-dark ">
-                                            ราคาตัดขาดทุน (บาท)
-                                        </th>
-                                        <th class=" text-dark ">
-                                            ราคาขายทำกำไร (บาท)
-                                        </th>
+                                            <th class=" text-dark ">
+                                                ราคาตัดขาดทุน (บาท)
+                                            </th>
+                                            <th class=" text-dark ">
+                                                ราคาขายทำกำไร (บาท)
+                                            </th>
 
 
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $id = $_SESSION['login_id'];
-                                        $get_user =
-                                            "SELECT 
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            $id = $_SESSION['login_id'];
+                                            $get_user =
+                                                "SELECT 
                                             *
                                             FROM tb_journal 
                                             as j 
@@ -171,58 +174,61 @@ if (isset($_GET['delete'])) {
                                             WHERE `ur_id`='$id' 
                                             ORDER BY `t`.`Assettype_name` ASC";
 
-                                        $result = mysqli_query($conn, $get_user);
+                                            $result = mysqli_query($conn, $get_user);
 
-                                        foreach ($result as $user) {
-                                        ?>
-                                           <tr class="text-center text-light">
-                                                <td><?php echo  $user['options']; ?></td>
-                                                <td><?php echo $user['Assettype_name']; ?></td>
-                                                <td><?php echo $user['assetname']; ?></td>
-                                                <td><?php echo number_format($user['assetprice'], '2'); ?> บาท</td>
-                                                <td><?php echo number_format($user['assetvolume'], '2'); ?> หน่วย</td>
-                                                <td><?php echo $user['assetdate']; ?></td>
-                                                <td><?php echo $user['assetnote']; ?></td>
-                                                <td><?php echo number_format($user['assetsl'], '2'); ?> บาท</td>
-                                                <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
+                                            foreach ($result as $user) {
+                                            ?>
+                                                <tr class="text-center text-dark">
+                                                    <td><?php echo  $user['options']; ?></td>
+                                                    <td><?php echo $user['Assettype_name']; ?></td>
+                                                    <td><?php echo $user['assetname']; ?></td>
+                                                    <td><?php echo number_format($user['assetprice'], '2'); ?> บาท</td>
+                                                    <td><?php echo number_format($user['assetvolume'], '2'); ?> หน่วย</td>
+                                                    <td><?php echo $user['assetdate']; ?></td>
+                                                    <td><?php echo $user['assetnote']; ?></td>
+                                                    <td><?php echo number_format($user['assetsl'], '2'); ?> บาท</td>
+                                                    <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
 
 
 
-                                            </tr>
-                                        <?php }  ?>
-                                    </tbody>
-                                </table>
+                                                </tr>
+                                            <?php }  ?>
+                                        </tbody>
+                                    </table>
 
+                                </div>
                             </div>
                         </div>
-                        <!-- JavaScript Bundle with Popper -->
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                        <script>
-                            $(document).ready(function() {
-                                $('#').DataTable();
-                            });
-                        </script>
+                    </div>
+                </div>
+                <!-- JavaScript Bundle with Popper -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('#').DataTable();
+                    });
+                </script>
 
-                        <script>
-                            let imgInput = document.getElementById('imgInput');
-                            let previewImg = document.getElementById('previewImg');
+                <script>
+                    let imgInput = document.getElementById('imgInput');
+                    let previewImg = document.getElementById('previewImg');
 
-                            imgInput.onchange = evt => {
-                                const [file] = imgInput.files;
-                                if (file) {
-                                    previewImg.src = URL.createObjectURL(file)
-                                }
-                            }
-                        </script>
-                        <!-- SCRIPTS -->
-                        <script src="../plugins/jquery/jquery.min.js"></script>
-                        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                        <script src="../assetsuser/js/adminlte.min.js"></script>
+                    imgInput.onchange = evt => {
+                        const [file] = imgInput.files;
+                        if (file) {
+                            previewImg.src = URL.createObjectURL(file)
+                        }
+                    }
+                </script>
+                <!-- SCRIPTS -->
+                <script src="../plugins/jquery/jquery.min.js"></script>
+                <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-                        <!-- OPTIONAL SCRIPTS -->
-                        <script src="../plugins/chart.js/Chart.min.js"></script>
-                        <script src="../assetsuser/js/pages/dashboard.js"></script>
-                        </body>
+                <!-- OPTIONAL SCRIPTS -->
+                <script src="../plugins/chart.js/Chart.min.js"></script>
+                <script src="../assetsuser/js/pages/dashboard.js"></script>
+                </body>
 
 </html>

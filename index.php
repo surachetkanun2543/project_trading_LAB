@@ -94,15 +94,15 @@ if (isset($_GET['code'])) :
 
         // checking user already exists or not
         $get_user = mysqli_query($db_connection, "SELECT `google_id` FROM `tb_user` WHERE `google_id`='$id'");
-       
+
         $users = mysqli_query($db_connection, "SELECT `email` FROM `tb_user` WHERE `google_id`='$id'");
         $user = mysqli_fetch_assoc($users);
 
         $mail->setFrom('noti@journaltrading.tech', 'journaltrading.tech');
         $mail->addAddress($user['email'], 'Joe User');     //Add a recipient            //Name is optional
         $mail->addReplyTo('noti@journaltrading.tech', 'journaltrading.tech');
-       
-       
+
+
         if (mysqli_num_rows($get_user) > 0) {
             $_SESSION['login_id'] = $id;
             if (!$mail->Send()) {
@@ -147,62 +147,40 @@ else :
                 </a>
                 <div class="content">
 
-                    <img class="responsive" src="./assets/img/logo.png" alt="" />
+                    <img class="responsive  " src="./assets/img/logo.png" alt="" />
                     <div class="container">
                         <span class="text"></span>
                     </div>
 
                     <p>
                         เว็บไซต์สำหรับการจดบันทึกและการวิเคราะห์การลงทุนอาทิ หุ้น คริปโต
-                        มาพร้อม ระบบแจ้งเตือนผ่าน
-                    <p style="color:green;"> LINE </p>
-                    <p> ระบบส่งออกรายงาน PDF ระบบตรวจสอบสถานะความเสี่ยง</p>
+                        มาพร้อม ระบบแจ้งเตือนผ่าน LINE
+                     ระบบส่งออกรายงาน PDF ระบบตรวจสอบสถานะความเสี่ยง</p>
                     <br>
 
-                    <?php
-                    $curl = curl_init();
+                    <?PHP
+                    $url = 'https://bitpay.com/api/rates';
+                    $json = json_decode(file_get_contents($url));
+                    $THB = $btc = 0;
 
-                    curl_setopt_array($curl,  array(
-                        CURLOPT_URL => 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_ENCODING => '',
-                        CURLOPT_MAXREDIRS => 10,
-                        CURLOPT_TIMEOUT => 0,
-                        CURLOPT_FOLLOWLOCATION => true,
-                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                        CURLOPT_CUSTOMREQUEST => 'GET',
-                    ));
+                    foreach ($json as $obj) {
+                        if ($obj->code == 'THB') $btc = $obj->rate;
+                    }
 
-                    //$response = curl_exec($curl);
-                    curl_close($curl);
-                    echo "<p class='showData'>" . " 1 BITCOIN = . "  . "</p>";
 
+                    echo "<p class='showData'> 1 Bitcoin = " .
+                        $btc . " THB <br /> </p>";
+                    $THB = 1 / $btc;
+
+                    // echo "10 THB = " . round($THB * 10, 8) . "BTC";
                     ?>
 
-                    <script>
-                        let showData = document.querySelector('.showData');
-                        var settings = {
-                            "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
-                            "method": "GET",
-                            "timeout": 0,
-                        };
-
-                        $.ajax(settings).done(function(response) {
-
-                            showData.innerHTML = JSON.stringify(response);
-                            JSON.stringify(response)
-                            console.log(response);
-                        });
-                    </script>
-
-
                     <br>
                     <br>
-
+                    <div class=" bg-dark hitem" id="newsResults"></div>
                     <div class="btnbtn">
-
                         <a href="" class="active"></a>
-                        <a class="btn" href="<?php echo $client->createAuthUrl(); ?>"><i class="fa-brands fa-google-plus-g"></i> SIGN IN WITH GOOGLE</a>
+                        <a class="btn " href="<?php echo $client->createAuthUrl(); ?>"><i class="fa-brands fa-google-plus-g"></i> SIGN IN WITH GOOGLE</a>
                     <?php endif; ?>
                     <!-- <a class="btn" href="./admin/pages/index.php">ADMIN (DEV)</a> -->
                     </div>
