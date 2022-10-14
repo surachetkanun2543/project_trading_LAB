@@ -100,7 +100,7 @@ if (isset($_GET['delete'])) {
                             </div>
                             <div class="form-group col-lg-12">
                                 <label class="font-weight-bold text-small" for="options">สถานะ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="options" name="options" type="text" placeholder="buy  , sell" required="" />
+                                <input class="form-control" id="options" name="options" type="text" placeholder="buy" required="buy" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assetname">ชื่อสินทรัพย์<span class="text-danger ml-1">*</span></label>
@@ -146,6 +146,80 @@ if (isset($_GET['delete'])) {
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="userModal2" tabindex="-1" role="dialog" aria-labelledby="userModal2" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content p-md-3">
+                <div class="modal-header">
+                    <h4 class="modal-title">กรุณากรอกข้อมูล </h4>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <form action="insert.php" method="post" enctype="multipart/form-data">
+                        <div class="row">
+
+                            <div class="form-group col-lg-12">
+                                <label class="font-weight-bold text-small" for="Assettype_name">ประเภทสินทรัพย์<span class="text-danger ml-1">*</span></label>
+                                <select name="Assettype_name" class="form-control" required>
+                                    <option value="Assettype_id">เลือก</option>
+                                    <?php foreach ($result as $results) { ?>
+                                        <option value="<?php echo $results["Assettype_id"]; ?>">
+                                            <?php echo $results["Assettype_name"]; ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label class="font-weight-bold text-small" for="options">สถานะ<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="options" name="options" type="text" placeholder="sell" required="sell" />
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="font-weight-bold text-small" for="assetname">ชื่อสินทรัพย์<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="assetname" name="assetname" type="text" placeholder="" required="" />
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="font-weight-bold text-small" for="assetprice">ราคาสินทรัพย์<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="assetprice" name="assetprice" type="number" placeholder="" required="">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label class="font-weight-bold text-small" for="assetvolume">จำนวนที่ซื้อ<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="assetvolume" name="assetvolume" type="text" placeholder="" required="" />
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="font-weight-bold text-small" for="assetsl">วันเดือนปีที่ซื้อ<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="assetdate" name="assetdate" type="date" placeholder="2022-08-31" />
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="font-weight-bold text-small" for="assetsl">ราคาตัดขาดทุน<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="assetsl" name="assetsl" type="number" placeholder="" required="" />
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="font-weight-bold text-small" for="assettg">ราคาทำกำไร<span class="text-danger ml-1">*</span></label>
+                                <input class="form-control" id="assettg" name="assettg" type="number" placeholder="" required="" /><small class="form-text text-muted"></small>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label class="font-weight-bold text-small" for="assetnote">บันทึกเพิ่มเติม<span class="text-danger ml-1">*</span></label>
+                                <textarea class="form-control" id="assetnote" name="assetnote" rows="5" placeholder="" required=""></textarea>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label class="font-weight-bold text-small" for="assetimge">บันทึกรูปภาพเพิ่มเติม<span class="text-danger ml-1">*</span></label>
+                                <input type="file" required class="form-control" id="imgInput" name="assetimge">
+                                <img loading="lazy" width="100%" id="previewImg" alt="">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="ur_id" id="ur_id">
+                                <button type="submit" name="submit" class="btn btn-success">ยืนยัน</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
@@ -197,7 +271,7 @@ if (isset($_GET['delete'])) {
                             <div class="card" style="border-radius:10px;">
                                 <div class="card-body text-right  bg-light elevation-3" style="border-radius:10px;">
                                     <button type="button" class="text-light btn btn-success view_data mb-2 mr-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการซื้อ</button>
-                                    <button type="button" class="text-light btn btn-danger view_data mb-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
+                                    <button type="button" class="text-light btn btn-danger view_data mb-2 elevation-3" style="border-radius:8px;" data-bs-toggle="modal" data-bs-target="#userModal2" data-bs-whatever="@mdo"><i class="fa fa-usd "> </i> เพิ่มบันทึกการขาย</button>
                                     <div class="table-responsive" style="border-radius:10px;">
                                         <table class=" table table-striped" id="myTable" style="width: 100%;">
                                             <thead class=" text-center bg-light mb-1">
