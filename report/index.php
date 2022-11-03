@@ -90,8 +90,8 @@ if (isset($_GET['delete'])) {
 </head>
 
 
-<div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
-<!-- <div class=" bg-transparent" style="background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-108740.jpg?w=1380&t=st=1665642113~exp=1665642713~hmac=295ceedd5a8378dda40b0dfdbd53c266b9f1580eddc0fdba2ca7fb81d545495d'); background-repeat: no-repeat; background-size: cover;"> -->
+<div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
+    <!-- <div class=" bg-transparent" style="background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-108740.jpg?w=1380&t=st=1665642113~exp=1665642713~hmac=295ceedd5a8378dda40b0dfdbd53c266b9f1580eddc0fdba2ca7fb81d545495d'); background-repeat: no-repeat; background-size: cover;"> -->
     <div class="wrapper bg-transparent">
         <?php include_once('../pages/sidebar.php') ?>
         <div class="content-wrapper  bg-transparent">
@@ -99,12 +99,11 @@ if (isset($_GET['delete'])) {
             <div class="content-header ml-4 ">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                        <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:35px;">
                             <div class=" col-lg-10 ">
                                 <br>
-                                <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
-                                <p class="ml-4 text-dark"> ( Profile setting ) </p>
-
+                                <h4 class="ml-4 text-dark"> ส่งออกรายงาน </h4>
+                                <p class="ml-4 text-dark"> ( Report (PDF, CSV) ) </p>
                             </div>
                         </div>
                         <br> <br>
@@ -114,47 +113,48 @@ if (isset($_GET['delete'])) {
             <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
                 <div class="row">
                     <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                        <div class="card  bg-light elevation-3" style="border-radius:10px;">
+                        <div class="card  bg-light elevation-3" style="border-radius:45px;">
                             <div class="card-body text-center ">
-                                <a href="report-pdf.php" class="text-light btn btn-danger elevation-3 mr-4" style="border-radius:8px;">
+                                <a href="report-pdf.php" class="text-light btn btn-info elevation-3 mr-4" style="border-radius:35px;">
                                     <h5><i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
                                     <h5>รายงาน PDF</h5>
                                 </a>
-                                <a href="report-csv.php" class="text-light btn btn-success elevation-3" style="border-radius:8px;">
+                                <a href="report-csv.php" class="text-light btn btn-success elevation-3" style="border-radius:35px;">
                                     <h5><i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
                                     <h5>รายงาน CSV</h5>
                                 </a>
+                                <br>
                                 <div class="table-responsive">
-                                    <table class="bg-light table table-striped" id="myTable" style="width: 100%;">
-                                        <thead class=" text-center table-light mb-1">
+                                    <table class=" table table-striped" id="myTable" style="width: 100%;">
+                                        <thead class=" text-center thead-dark text-light mb-1">
                                             <p></p>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 สถานะ
                                             </th>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 หมวดหมู่
                                             </th>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 สินทรัพย์
                                             </th>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 ราคาสินทรัพย์ที่ซื้อ (บาท)
                                             </th>
 
-                                            <th class=" text-dark ">
+                                            <th>
                                                 จำนวนสินทรัพย์ (หน่วย)
                                             </th>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 วันที่ซื้อ
                                             </th>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 บันทึก
                                             </th>
 
-                                            <th class=" text-dark ">
+                                            <th>
                                                 ราคาตัดขาดทุน (บาท)
                                             </th>
-                                            <th class=" text-dark ">
+                                            <th>
                                                 ราคาขายทำกำไร (บาท)
                                             </th>
 

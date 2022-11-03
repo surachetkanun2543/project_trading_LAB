@@ -71,7 +71,7 @@ if (mysqli_num_rows($get_user) > 0) {
 </head>
 
 <body class="  hold-transition sidebar-mini">
-<div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+  <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
     <div class="wrapper bg-transparent text-light">
       <?php include_once('../pages/sidebar.php') ?>
       <div class="content-wrapper  bg-transparent">
@@ -79,7 +79,7 @@ if (mysqli_num_rows($get_user) > 0) {
         <div class="content-header ml-4 ">
           <div class="container-fluid">
             <div class="row">
-              <div class="page-wrapper  col-lg-3 elevation-3" style="border-radius:10px;">
+              <div class="page-wrapper  col-lg-3 elevation-3" style="border-radius:35px;">
                 <div class=" col-lg-10 ">
                   <br>
                   <h4 class="ml-4 text-dark"> แบบประเมินความเสี่ยง </h4>
@@ -381,17 +381,18 @@ if (mysqli_num_rows($get_user) > 0) {
                 <input type="hidden" name="hdnRows" value="<?= $i - 1; ?>">
                 <hr> <br>
                 <!-- <center><br /><input type="submit" name="Submit" value="ตอบแบบสอบถาม"></center> -->
-                <button type="submit" name="Submit" value="ตอบแบบสอบถาม" class="btn btn-success elevation-3 mr-4" style="border-radius:10px;">
+                <button type="submit" name="Submit" value="ตอบแบบสอบถาม" class="btn btn-success elevation-4 mr-4" style="border-radius:35px;">
                   <i class=" text-light fa-solid fa-pen-to-square"></i>
                   <h5 class="text-light">ยืนยันส่งแบบประเมินความเสี่ยง</h5>
                 </button>
-                <a href="../index.php" value="ยกเลิก" class="btn btn-danger elevation-3" style="border-radius:10px;">
+                <a href="../index.php" value="ยกเลิก" class="btn btn-danger elevation-4" style="border-radius:35px;">
                   <i class="  text-light  fa-solid fa-trash"></i>
                   <h5 class="text-light  ">ยกเลิก</h5>
                 </a>
               </div>
             </div>
           </div>
+          <br>
       </div>
     </div>
     </form>

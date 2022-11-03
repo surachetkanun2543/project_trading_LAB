@@ -45,7 +45,7 @@ $mail->Password   = 'Book-15571';                               //SMTP password
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-//$mail->addAttachment('./assets/img/notiemail.png', 'notiemail.jpg');    //Optional name
+ $mail->addAttachment('./assets/img/notiemail.png', 'notiemail.jpg');    //Optional name
 
 //Content
 $mail->isHTML(true);                                  //Set email format to HTML
@@ -99,7 +99,7 @@ if (isset($_GET['code'])) :
         $user = mysqli_fetch_assoc($users);
 
         $mail->setFrom('noti@journaltrading.tech', 'journaltrading.tech');
-        $mail->addAddress($user['email'], 'Joe User');     //Add a recipient            //Name is optional
+        $mail->addAddress($user['email'], 'User');     //Add a recipient            //Name is optional
         $mail->addReplyTo('noti@journaltrading.tech', 'journaltrading.tech');
 
 
@@ -119,11 +119,8 @@ if (isset($_GET['code'])) :
             // if user not exists we will insert the user
             $insert = mysqli_query($db_connection, "INSERT INTO `tb_user`(`google_id`,`name`,`email`,`profile_image`) VALUES('$id','$full_name','$email','$profile_pic')");
 
-
-
             if ($insert) {
                 $_SESSION['login_id'] = $id;
-
                 header('Location: ./dashboard/index.php');
                 exit;
             } else {
@@ -137,8 +134,6 @@ if (isset($_GET['code'])) :
 
 else :
     // Google Login Url = $client->createAuthUrl(); 
-
-
 ?>
 
 
@@ -160,7 +155,7 @@ else :
                     <p>
                         เว็บไซต์สำหรับการจดบันทึกและการวิเคราะห์การลงทุนอาทิ หุ้น คริปโต
                         มาพร้อม ระบบแจ้งเตือนผ่าน LINE
-                        ระบบส่งออกรายงาน PDF ระบบตรวจสอบสถานะความเสี่ยง</p>
+                     ระบบส่งออกรายงาน PDF ระบบตรวจสอบสถานะความเสี่ยง</p>
                     <br>
 
                     <?PHP

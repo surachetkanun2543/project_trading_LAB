@@ -38,7 +38,7 @@ if ($_GET['options']) {
     $sMessage .= "\nรายละเอียดการบันทึก \n";
     $sMessage .= " __________________ \n";
     $sMessage .= "\nขื่อสินทรัพย์ : " . $options . " \n";
-    $imageFile = new CURLFILE('noti.jpeg');
+    $imageFile = new CURLFILE('img/noti.jpeg');
 
 
     $data  = array(

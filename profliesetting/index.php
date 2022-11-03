@@ -65,7 +65,7 @@ if (mysqli_num_rows($get_user) > 0) {
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+</head>
 
 <body class="hold-transition sidebar-mini">
     <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
@@ -121,7 +121,7 @@ if (mysqli_num_rows($get_user) > 0) {
     <script src="../../plugins/toastr/toastr.min.js"></script>
 
 
-    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
     <!-- <div class=" bg-transparent" style="background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-108740.jpg?w=1380&t=st=1665642113~exp=1665642713~hmac=295ceedd5a8378dda40b0dfdbd53c266b9f1580eddc0fdba2ca7fb81d545495d'); background-repeat: no-repeat; background-size: cover;"> -->
         <div class="wrapper bg-transparent">
             <?php include_once('../pages/sidebar.php') ?>
@@ -130,7 +130,7 @@ if (mysqli_num_rows($get_user) > 0) {
                 <div class="content-header ml-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:45px;">
                                 <div class=" col-lg-10 ">
                                     <br>
                                     <h4 class="ml-4 text-dark"> ตั้งค่าโปรไฟล์ </h4>
@@ -160,10 +160,10 @@ if (mysqli_num_rows($get_user) > 0) {
                 <?php } ?>
 
                 
-                <main class="md-ml-sm-auto col-lg-8 py-2 ml-4"style="border-radius:10px;">
+                <main class="md-ml-sm-auto col-lg-6 py-2 "style="border-radius:35px;">
                     <div class="row">
                         <div class="col">
-                                <div class="card text-center bg-light elevation-3 " style="border-radius:10px;">
+                                <div class="card text-center bg-light elevation-3 ml-4" style="border-radius:35px;">
                                     <div class="card-body bg-light text-left col-md-6 col-sm-6 ">
                                         <br>
                                         <div class="form-group col-lg-12">

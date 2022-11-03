@@ -5,13 +5,6 @@
 require '../service/user_connect.php';
 
 
-$query = "SELECT * FROM `tb_type` ORDER BY `tb_type`.`Assettype_id` ASC";
-$result = mysqli_query($conn, $query);
-
-if (!isset($_SESSION['login_id'])) {
-    header('Location: ./index.php');
-    exit;
-}
 $id = $_SESSION['login_id'];
 $get_user = mysqli_query($db_connection, "SELECT * FROM `tb_user` WHERE `google_id`='$id'");
 if (mysqli_num_rows($get_user) > 0) {
@@ -20,6 +13,16 @@ if (mysqli_num_rows($get_user) > 0) {
     header('Location: logout.php');
     exit;
 }
+
+
+$query = "SELECT * FROM `tb_type` ORDER BY `tb_type`.`Assettype_id` ASC";
+$result = mysqli_query($conn, $query);
+
+if (!isset($_SESSION['login_id'])) {
+    header('Location: ./index.php');
+    exit;
+}
+
 
 
 if (isset($_GET['delete'])) {
@@ -74,6 +77,9 @@ if (isset($_GET['delete'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
 
 
 
@@ -164,7 +170,7 @@ if (isset($_GET['delete'])) {
     <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
     <script src="../../plugins/toastr/toastr.min.js"></script>
 
-    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
         <div class="wrapper bg-transparent">
             <?php include_once('../pages/sidebar.php') ?>
             <div class="content-wrapper bg-transparent">
@@ -172,7 +178,7 @@ if (isset($_GET['delete'])) {
                 <div class="content-header ml-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="page-wrapper col-lg-3" style="border-radius:10px;">
+                            <div class="page-wrapper col-lg-3" style="border-radius:35px;">
                                 <div class=" col-lg-10 ">
                                     <br>
                                     <h4 class="ml-4 text-dark">สรุปรายการซื้อขาย </h4>
@@ -203,68 +209,100 @@ if (isset($_GET['delete'])) {
                 <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
                     <div class="row">
                         <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                            <div class="card ml-4" style="border-radius:10px;">
-                                <div class="card-body text-right  bg-light elevation-3" style="border-radius:10px;">
-                                    <div class="table-responsive">
-                                        <table class="bg-light table table-striped" id="myTable" style="width: 100%; border-radius:10px;">
-                                            <thead class=" text-center bg-light mb-1">
-                                                <th class=" text-dark">
-                                                    สถานะ
-                                                </th>
-                                                <th class=" text-dark">
+                            <div class="card ml-4" style="border-radius:35px;">
+                                <div class="card-body text-center  bg-light elevation-3" style="border-radius:35px;">
+                                    <div class="table-responsive" style="border-radius:35px;">
+                                        <button type="button" class="btn btn-dark mb-3 pt-3 elevation-3" style="border-radius:35px;">
+                                            <h4> รายการวิเคราะห์
+                                            </h4>
+                                        </button>
+                                        <table class=" table table-striped" id="myTable" style="width: 100%;" style="border-radius:35px;">
+                                            <thead class=" text-center thead-dark text-light mb-1">
+
+                                                <th>
                                                     สินทรัพย์
                                                 </th>
-                                                <th class=" text-dark">
+                                                <th>
                                                     ราคาเข้าซื้อสินทรัพย์ (บาท)
                                                 </th>
-                                                <th class=" text-dark">
+                                                <th>
                                                     ราคาขายสินทรัพย์ (บาท)
                                                 </th>
-                                                <th class=" text-dark">
-                                                    จำนวนสินทรัพย์
+                                                <th>
+                                                    จำนวนสินทรัพย์ (หน่วย)
                                                 </th>
-                                                <th class=" text-dark">
+                                                <th>
                                                     วันที่ขาย
                                                 </th>
 
-                                                <th class=" text-dark">
-                                                    จำนวนวันที่ถือครอง
+                                                <th>
+                                                    จำนวนวันที่ถือครอง (วัน)
                                                 </th>
-                                                <th class=" text-dark">
-                                                    กำไร/ขาดทุน (บาท)
+                                                <th>
+                                                    <h5>กำไร/ขาดทุน (บาท)</h5>
                                                 </th>
-                                                <th class=" text-dark">
-                                                    เปอร์เซ็น กำไร/ขาดทุน
+                                                <th>
+                                                    <h5> เปอร์เซ็น กำไร/ขาดทุน</h5>
                                                 </th>
                                             </thead>
                                             <tbody>
                                                 <?php
+
                                                 $id = $_SESSION['login_id'];
-                                                $get_user =
-                                                    "SELECT 
-                                            *
-                                            FROM tb_journal 
-                                            as j 
-                                            INNER JOIN tb_type 
-                                            as t 
-                                            on j.Assettype_name=t.Assettype_id   
-                                            WHERE `ur_id`='$id' 
-                                            ORDER BY `t`.`Assettype_name` ASC";
+
+                                                //buy
+                                                $get_user = "SELECT * FROM tb_journal as j 
+                                                INNER JOIN tb_sell 
+                                                as t 
+                                                on j.id = t.id
+                                                WHERE `ur_id`='$id' 
+                                                ORDER BY `t`.`j_id` ASC;";
 
                                                 $result = mysqli_query($conn, $get_user);
+
+                                                //sell
+                                                //     $get_sell =  "SELECT 
+                                                // *
+                                                // FROM tb_sell 
+                                                // as s 
+                                                // INNER JOIN tb_journal 
+                                                // as j 
+                                                // on s.Assettype_name=j.Assettype_id   
+                                                // WHERE `ur_id`='$id' 
+                                                // ORDER BY `j`.`Assettype_name` ASC";
+
+                                                //$result = mysqli_query($conn, $get_sell);
 
                                                 foreach ($result as $user) {
                                                 ?>
                                                     <tr class="text-center text-dark">
-                                                        <td><?php echo $user['options']; ?></td>
-                                                        <td><?php echo $user['Assettype_name']; ?></td>
+
+                                                        <!-- ชื่อสินทรัพย์ -->
                                                         <td><?php echo $user['assetname']; ?></td>
+                                                        <!-- ราคาซื้อสินทรัพย์ -->
                                                         <td><?php echo number_format($user['assetprice']); ?></td>
-                                                        <td><?php echo $user['assetvolume']; ?></td>
+                                                        <!-- ราคาขายสินทรัพย์ -->
+                                                        <td><?php echo number_format($user['assetpricesell']); ?></td>
+                                                        <!-- จำนวนสินทรัพย์ -->
+                                                        <td><?php echo $user['assetvolumesell']; ?></td>
+                                                        <!-- จำนวนที่ซื้อสินทรัพย์ -->
+                                                        <td><?php echo $user['assetdatesell']; ?></td>
+
+                                                        <!-- จำนวนที่ถือครองสินทรัพย์ -->
                                                         <td><?php echo $user['assetdate']; ?></td>
-                                                        <td><?php echo $user['assetnote']; ?></td>
+                                                        <!-- จำนวนเงินกำไร/ขาดทุน -->
                                                         <td><?php echo number_format($user['assetsl']); ?></td>
-                                                        <td><?php echo number_format($user['assettg']); ?></td>
+                                                        <!-- จำนวนเปอร์เซ็นกำไร/ขาดทุน -->
+                                                        <td><?php echo $user['assettg']; ?></td>
+
+                                                        <!-- <td>btc</td>
+                                                        <td>500,000</td>
+                                                        <td>600,000</td>
+                                                        <td>5</td>
+                                                        <td>26/10/2022</td>
+                                                        <td>7</td>
+                                                        <td>100,000</td>
+                                                        <td>10%</td> -->
 
                                                     </tr>
                                                 <?php }  ?>

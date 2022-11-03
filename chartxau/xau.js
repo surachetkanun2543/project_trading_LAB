@@ -10,7 +10,7 @@
 // const log = console.log;
 
 const chartProperties = {
-  width:1500,
+  width:1000,
   height:600,
   timeScale:{
     timeVisible:true,
@@ -36,7 +36,7 @@ const chartProperties = {
   },
   watermark: {
     text: "GOLD/USDT 4H",
-    fontSize: 80,
+    fontSize: 40,
     color: "rgba(256, 256, 256, 0.1)",
     visible: true
   }

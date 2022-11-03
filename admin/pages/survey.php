@@ -48,68 +48,74 @@ include('../../service/admin_connect.php');
             <hr />
             <div class="container-fluid col-12">
                 <div class="s128">
-                            <div class="row">
+                    <div class="row">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <table class="table table-striped shadow mb-3 ">
-        <table class="table">
-            <tr>
-                <td colspan="8" bgcolor="#000000" align="center" style='color: white;'>สรุปผลแบบประเมินความเสี่ยง</td>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="8" align="center" bgcolor="#CCCCCC"></td>
-            </tr>
-            <tr>
-                <td width="104">&nbsp;</td>
-                <td width="326">&nbsp;</td>
-                <td width="263">&nbsp;</td>
-                <td width="72">&nbsp;</td>
-                <td width="72">&nbsp;</td>
-                <td width="75">&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center" bgcolor="#33CCFF">เพศ</td>
-                <td align="center" bgcolor="#33CCFF">จำนวน(คน)</td>
-                <td align="center" bgcolor="#33CCFF" style="color: black ;"></td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
+        <table class="table table-striped shadow mb-3 ">
+            <table class="table">
+                <tr>
+                    <td colspan="8" bgcolor="#000000" align="center" style='color: white;'>สรุปผลแบบประเมินความเสี่ยง</td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" align="center" bgcolor="#CCCCCC"></td>
+                </tr>
+                <tr>
+                    <td width="104">&nbsp;</td>
+                    <td width="326">&nbsp;</td>
+                    <td width="263">&nbsp;</td>
+                    <td width="72">&nbsp;</td>
+                    <td width="72">&nbsp;</td>
+                    <td width="75">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="center" bgcolor="#33CCFF">เพศ</td>
+                    <td align="center" bgcolor="#33CCFF">จำนวน(คน)</td>
+                    <td align="center" bgcolor="#33CCFF" style="color: black ;"></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <?php
+
+                    $query = "SELECT gender, COUNT(id_info) as qtys FROM tb_info GROUP BY gender";
+                    $result = mysqli_query($conn, $query);
+
+
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <td>&nbsp;</td>
+                        <td><?= $row['gender']; ?></td>
+                        <td><?= $row['qtys']; ?>  : คน </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                </tr>
+
+
+
+
+            <?php } ?>
             <tr>
                 <?php
 
-                $query = "SELECT gender, COUNT(id_info) as qty FROM tb_info GROUP BY gender";
+                $query = "SELECT COUNT(id_info) as qty FROM tb_info ";
                 $result = mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_array($result)) {
                 ?>
                     <td>&nbsp;</td>
-                    <td><?php $row['gender']; ?></td>
-                    <td><?php $row['qty']; ?></td>
-                    <td></td>
+                    <td>รวม</td>
+                    <td><?= $row['qty']; ?>  : คน</td>
+                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
             </tr>
         <?php } ?>
-        <tr>
-            <?php
-
-            $query = "SELECT COUNT(id_info) as qty FROM tb_info ";
-            $result = mysqli_query($conn, $query);
-
-            while ($row = mysqli_fetch_array($result)) {
-            ?>
-                <td>&nbsp;</td>
-                <td align="center">รวม</td>
-                <td><?php $row['qty']; ?></td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            <?php } ?>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -124,7 +130,7 @@ include('../../service/admin_connect.php');
             <td align="center" bgcolor="#FFCC99">อายุ</td>
             <td align="center" bgcolor="#FFCC99">จำนวน(คน)</td>
             <td align="center" bgcolor="#FFCC99" style="color: black ;"></td>
-            
+
             <td> &nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -137,12 +143,12 @@ include('../../service/admin_connect.php');
 
             while ($row = mysqli_fetch_array($result)) {
             ?>
-                <td>&nbsp;</td>
-                <td><?php $row['age']; ?></td>
-                <td><?php $row['qtyage']; ?></td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                        <td><?= $row['age']; ?></td>
+                        <td><?= $row['qtyage']; ?>  : คน</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
         </tr>
     <?php } ?>
 
@@ -155,12 +161,12 @@ include('../../service/admin_connect.php');
 
         while ($row = mysqli_fetch_array($result)) {
         ?>
-            <td>&nbsp;</td>
-            <td align="center">รวม</td>
-            <td><?php $row['qty']; ?></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+           <td>&nbsp;</td>
+                    <!-- <td>รวม</td> -->
+                    <!-- <td><?= $row['qty']; ?></td> -->
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
         <?php } ?>
     </tr>
 
@@ -183,7 +189,7 @@ include('../../service/admin_connect.php');
     </tr>
     <tr>
         <?php
-     
+
         $query = "SELECT status, COUNT(id_info) as qtystatus FROM tb_info GROUP BY status";
         $result = mysqli_query($conn, $query);
 
@@ -191,7 +197,7 @@ include('../../service/admin_connect.php');
         ?>
             <td>&nbsp;</td>
             <td><?= $row['status']; ?></td>
-            <td><?= $row['qtystatus']; ?></td>
+            <td><?= $row['qtystatus']; ?>  : คน</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -206,7 +212,7 @@ include('../../service/admin_connect.php');
     <td>&nbsp;</td>
 </tr>
 
-        </table>
+            </table>
 </body>
 
 </html>

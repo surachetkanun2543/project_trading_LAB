@@ -44,7 +44,7 @@
 </head>
 
 <body>
-  <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+  <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
     <div class="wrapper bg-transparent">
       <?php include_once('../pages/sidebar.php') ?>
       <div class="content-wrapper bg-transparent">
@@ -52,7 +52,7 @@
         <div class="content-header ml-4">
           <div class="container-fluid">
             <div class="row">
-              <div class="page-wrapper col-lg-3" style="border-radius:10px;">
+              <div class="page-wrapper col-lg-3" style="border-radius:45px;">
                 <div class=" col-lg-10 ">
                   <br>
                   <h4 class="ml-4 text-dark"> กราฟสินทรัพย์หลักทั่วโลก </h4>
@@ -65,9 +65,10 @@
         </div>
         <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
           <div class="row">
-            <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-              <div class="card ml-4" style="border-radius:10px;">
-                <div class="card-body text-right  bg-light elevation-3" style="border-radius:10px;">
+            <div class="col-8 col-xl-8 mb-4 mb-lg-0">
+              <div class="card ml-4" style="border-radius:50px;">
+                <div class="card-body text-right  bg-light elevation-3" style="border-radius:50px;">
+                <br>
                   <h5 class="ml-4 text-dark text-left">GOLD/USDT TF 4H </h5>
                   <p class="ml-4 text-dark text-left"> ( update before refresh page | api by binance )</p>
                   <div class="card-body" id="tvchartxau"></div>

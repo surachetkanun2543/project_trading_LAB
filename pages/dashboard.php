@@ -72,28 +72,30 @@ $result2 = mysqli_query($db_connection, $query2);
     <!-- <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> -->
     <style>
         .swal-wide {
+
             font-size: 20px;
-            width: 850px !important;
+            width: 350px !important;
             height: 400px !important;
         }
     </style>
     <script>
         $(document).ready(function() {
             Swal.fire({
+                position: 'top-right',
                 title: 'สำเร็จ!',
                 text: 'ยินดีต้อนรับเข้าสู่จดบันทึกและวิเคราะห์การลงทุน',
                 imageUrl: 'good.png',
                 customClass: 'swal-wide',
-                timer: 1000,
+                timer: 2000,
                 showConfirmButton: false
             });
         });
     </script>
-    <div class=" bg-dark">
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
         <?php include_once('../pages/sidebar.php') ?>
-        <main class="bg-dark col-md-3 ml-sm-auto col-lg-10 ">
-        <br>
-        <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+        <main class="bg-transparent col-md-3 ml-sm-auto col-lg-10 ">
+            <br>
+            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:25px;">
                 <div class="row">
                     <div class=" col-lg-10 ">
                         <br>
@@ -105,7 +107,7 @@ $result2 = mysqli_query($db_connection, $query2);
             <br>
             <div class="row mt-3 mr-5">
                 <div class="col-md-6 sm-6  ">
-                    <div class="card bg-light  text-dark elevation-4" style="border-radius:10px;">
+                    <div class="card bg-light  text-dark elevation-4" style="border-radius:25px;">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
@@ -142,7 +144,7 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
                 <div class="col-md-6 sm-3 col-lg-6">
-                    <div class="card bg-light text-dark elevation-4 " style="border-radius:10px; background-color: #256D85;">
+                    <div class="card bg-light text-dark elevation-4 " style="border-radius:25px; background-color: #256D85;">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
@@ -177,7 +179,7 @@ $result2 = mysqli_query($db_connection, $query2);
                     </div> <br>
                 </div>
                 <div class="col-md-3 sm-3">
-                    <div class="card bg-success  elevation-4" style="border-radius:10px;">
+                    <div class="card bg-success  elevation-4" style="border-radius:25px;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -214,7 +216,7 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
                 <div class="col-md-3 sm-4">
-                    <div class="card   elevation-4" style="border-radius:10px; background-color: #E94560;">
+                    <div class="card   elevation-4" style="border-radius:25px; background-color: #E94560;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -250,7 +252,7 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
                 <div class="col-md-3 sm-3">
-                    <div class="card bg-success elevation-4" style="border-radius:10px; background-color: #256D85;">
+                    <div class="card bg-success elevation-4" style="border-radius:25px; background-color: #256D85;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -287,7 +289,7 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
                 <div class="col-md-3 sm-4">
-                    <div class="card   elevation-4" style="border-radius:10px; background-color: #E94560;">
+                    <div class="card   elevation-4" style="border-radius:25px; background-color: #E94560;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -326,43 +328,12 @@ $result2 = mysqli_query($db_connection, $query2);
             <br>
             <br>
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
     </div>
 
-    <script>
-        new Chart(document.getElementById("doughnut-chart"), {
-            type: 'doughnut',
-            data: {
-                // labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-                datasets: [{
-                    label: "Population (millions)",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                    data: [2478, 5267, 734, 784, 433]
-                }]
-            },
-        });
-
-
-        new Chart(document.getElementById("bar-chart-horizontal"), {
-            type: 'horizontalBar',
-            data: {
-                labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-                datasets: [{
-                    label: "Population (millions)",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                    data: [2478, 5267, 734, 784, 433]
-                }]
-            },
-            options: {
-                legend: {
-                    display: false
-                },
-                title: {
-                    display: true,
-                    text: 'Predicted world population (millions) in 2050'
-                }
-            }
-        });
-    </script>
     <!-- SCRIPTS -->
     <script src="../plugins/jquery/jquery.min.js"></script>
     <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

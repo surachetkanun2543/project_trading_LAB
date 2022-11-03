@@ -593,7 +593,7 @@
     <section class="special" data-scrollax-parent="true" id='ntr'>
         <div class="cover" id='hero' data-scrollax="properties: { translateY: '30%', 'opacity': 1.5 }">
             <br>
-            <img src='noti.png'>
+            <img src='img/noti.png'>
         </div>
         <div class="content">
             <div class="text centralize">

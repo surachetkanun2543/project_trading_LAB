@@ -15,12 +15,17 @@ if (mysqli_num_rows($get_user) > 0) {
     header('Location: logout.php');
     exit;
 }
+//รวมแค่การซื้อ
 $query = "SELECT COUNT(*) AS SUM FROM tb_journal  WHERE `ur_id`='$id' ORDER BY id" or die;
 $result = mysqli_query($db_connection, $query);
 
 
 $query2 = "SELECT  SUM(assetprice*assetvolume) AS SUM1 FROM tb_journal WHERE `ur_id`='$id' ORDER BY id" or die;
 $result2 = mysqli_query($db_connection, $query2);
+
+//รวมแค่การขาย
+$query3 = "SELECT COUNT(*) AS SUM2 FROM tb_sell  WHERE `ur_id`='$id' ORDER BY id" or die;
+$result3 = mysqli_query($db_connection, $query3);
 
 
 ?>
@@ -91,11 +96,10 @@ $result2 = mysqli_query($db_connection, $query2);
             });
         });
     </script>
-    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+    <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
         <?php include_once('../pages/sidebar.php') ?>
         <main class="bg-transparent col-md-3 ml-sm-auto col-lg-10 ">
-            <br>
-            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:35px;">
                 <div class="row">
                     <div class=" col-lg-10 ">
                         <br>
@@ -106,8 +110,8 @@ $result2 = mysqli_query($db_connection, $query2);
             </div>
             <br>
             <div class="row mt-3 mr-5">
-                <div class="col-md-6 sm-6  ">
-                    <div class="card bg-light  text-dark elevation-4" style="border-radius:10px;">
+                <div class="col-md-5 sm-3  ">
+                    <div class="card bg-light  text-dark elevation-4" style="border-radius:40px;">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
@@ -122,7 +126,7 @@ $result2 = mysqli_query($db_connection, $query2);
                         </div>
                         <div class="card-details text-dark">
                             <div class="card-number text-dark">
-                                <h1>จำนวนเงินที่ลงทุน </h1>
+                                <h1>จำนวนเงินที่ลงทุน (รวมทั้งหมด)</h1>
                                 <?php
                                 foreach ($result2 as $results) { ?>
                                     <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
@@ -143,8 +147,8 @@ $result2 = mysqli_query($db_connection, $query2);
                 </div>
 
 
-                <div class="col-md-6 sm-3 col-lg-6">
-                    <div class="card bg-light text-dark elevation-4 " style="border-radius:10px; background-color: #256D85;">
+                <div class="col-md-3 sm-3 col-lg-3">
+                    <div class="card bg-light text-dark elevation-4 " style="border-radius:40px;" background-color: #256D85;">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
@@ -159,10 +163,9 @@ $result2 = mysqli_query($db_connection, $query2);
                         </div>
                         <div class="card-details text-dark">
                             <div class="card-number text-dark">
-                                <h1>จำนวนครั้งที่บันทึก (เทรด) </h1>
+                                <h1>จำนวนครั้งที่ซื้อ (เทรดซื้อ) </h1>
                                 <?php
                                 foreach ($result as $results) { ?>
-                                    <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
                                     <h1 class=" text-primary"><?php echo number_format($results["SUM"]); ?></h1>
                                 <?php }
                                 ?>
@@ -178,8 +181,46 @@ $result2 = mysqli_query($db_connection, $query2);
                         <br><br>
                     </div> <br>
                 </div>
-                <div class="col-md-3 sm-3">
-                    <div class="card bg-success  elevation-4" style="border-radius:10px;">
+
+
+                <div class="col-md-4 sm-3 col-lg-4">
+                    <div class="card bg-light text-dark elevation-4 " style="border-radius:40px; background-color: #256D85;">
+                        <span class="bg-dark circle"></span><br>
+                        <div class="top-div">
+                            <div class="chip-image ">
+                                <!-- <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" /> -->
+                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <br>
+                            </div>
+                            <div class="plus-sign">
+                                <h4> </h4>
+                                <h4></h4>
+                            </div>
+                        </div>
+                        <div class="card-details text-dark">
+                            <div class="card-number text-dark">
+                                <h1>จำนวนครั้งที่ขาย (เทรดขาย) </h1>
+                                <?php
+                                foreach ($result3 as $results) { ?>
+                                    <h1 class=" text-primary"><?php echo number_format($results["SUM2"]); ?></h1>
+                                <?php }
+                                ?>
+                            </div>
+                            <div class="date text-dark">
+                                <h4> รายการ </h4>
+                            </div>
+                        </div>
+                        <div class="ownername">
+                            <h4><?php echo $user["name"]; ?></h4>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
+                        </div>
+                        <br><br>
+                    </div> <br>
+                </div>
+
+
+                <div class="col-md-3 sm-3 mt-3">
+                    <div class="card bg-success  elevation-4" style="border-radius:40px;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -215,8 +256,8 @@ $result2 = mysqli_query($db_connection, $query2);
 
 
 
-                <div class="col-md-3 sm-4">
-                    <div class="card   elevation-4" style="border-radius:10px; background-color: #E94560;">
+                <div class="col-md-3 sm-4 mt-3">
+                    <div class="card   elevation-4" style="border-radius:40px; background-color: #E94560;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -251,8 +292,8 @@ $result2 = mysqli_query($db_connection, $query2);
                 </div>
 
 
-                <div class="col-md-3 sm-3">
-                    <div class="card bg-success elevation-4" style="border-radius:10px; background-color: #256D85;">
+                <div class="col-md-3 sm-3 mt-3">
+                    <div class="card bg-success elevation-4" style="border-radius:40px; background-color: #256D85;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -288,8 +329,8 @@ $result2 = mysqli_query($db_connection, $query2);
                 </div>
 
 
-                <div class="col-md-3 sm-4">
-                    <div class="card   elevation-4" style="border-radius:10px; background-color: #E94560;">
+                <div class="col-md-3 sm-4 mt-3">
+                    <div class="card   elevation-4" style="border-radius:40px; background-color: #E94560;">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
@@ -324,7 +365,6 @@ $result2 = mysqli_query($db_connection, $query2);
                     </div>
                 </div>
             </div>
-            <br>
             <br>
             <br>
             <br>

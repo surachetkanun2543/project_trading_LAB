@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
     $sMessage .= "สินทรัพย์ : " . $assetname . " \n";
     $sMessage .= "ราคา : " . $assetprice . " \n";
     $sMessage .= "จำนวน: " . $assetvolume . " \n";
-    $imageFile = new CURLFILE('noti.jpeg');
+    $imageFile = new CURLFILE('img/noti.jpeg');
     //	$sticker_package_id = '2';  // Package ID sticker
     //	$sticker_id = '34'; 
 

@@ -45,7 +45,10 @@ if (isset($_POST['update'])) {
         $fileNew = $img2;
     }
 
-    $sql = $conn->prepare("UPDATE tb_journal SET assetname = :assetname, options = :options, assetprice = :assetprice, 
+    $sql = $conn->prepare("UPDATE tb_journal SET 
+    assetname = :assetname, 
+    options = :options, 
+    assetprice = :assetprice, 
     assetvolume = :assetvolume,
     assetdate = :assetdate,
     assetnote = :assetnote,
@@ -135,16 +138,14 @@ if (isset($_POST['update'])) {
         <form action="edit.php" method="post" enctype="multipart/form-data">
             <?php
             if (isset($_GET['id'])) {
-                $id = $_SESSION['login_id'];
-                $stmt = $conn->query(
-                "SELECT 
-                *
-                FROM tb_journal 
-                as j 
-                INNER JOIN tb_type 
-                as t 
-                on j.Assettype_name=t.Assettype_id
-                WHERE `ur_id`=$id ");
+
+                $stmt = $conn->query("SELECT * FROM tb_journal 
+                 as j 
+                 INNER JOIN tb_type
+                 as t
+                 on j.Assettype_name=t.Assettype_id
+                 WHERE id = '{$_GET['id']}'");
+
 
                 $stmt->execute();
                 $data = $stmt->fetch();
@@ -199,11 +200,11 @@ if (isset($_POST['update'])) {
                     <img loading="lazy" src="uploads/<?php echo $data['assetimge']; ?>" width="100%" id="previewImg" alt="">
 
 
-
                     <hr>
                 </div>
                 <div class="form-group col-lg-12">
                     <input type="hidden" name="ur_id" id="ur_id">
+                    <input type="hidden" name="id" id="id">
                     <a href="index.php" class="btn btn-danger">ยกเลิก</a>
                     <button type="submit" name="update" class="btn btn-success">ยืนยัน</button>
         </form>

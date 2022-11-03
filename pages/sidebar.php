@@ -28,9 +28,10 @@ function isActive($data)
 ?>
 
 <script>
+
     $(document).ready(function() {
         let url =
-            "https://gnews.io/api/v4/search?q=bitcoin&token=86e39ef62737799b02baba7d418b3486&lang=en";
+            "https://gnews.io/api/v4/search?q=crypto&token=c16e7f3f6c19ab1d2fdbfdb9693d57e3&lang=en";
 
         $.ajax({
             url: url,
@@ -45,7 +46,7 @@ function isActive($data)
                 while (output <= i) {
 
                     output += `
-            <span class="text-success"  style="font-size:16px">ข่าวที่น่าสนใจวันนี้ :  ${latestNews[i].title}  ${latestNews[i].publishedAt}   </span>
+            <h4 class="text-dark btn btn-lg btn-warning"  style="border-radius:40px; ">ข่าวที่น่าสนใจวันนี้ : ${latestNews[i].description} : ข่าวเมื่อวันที่ :  ${latestNews[i].publishedAt}  </h4>
         `;
                     i++;
                 }
@@ -119,7 +120,7 @@ function isActive($data)
     }
 
     .hmove {
-        animation: tickerh linear 90s infinite;
+        animation: tickerh linear 150s infinite;
         background: transparent;
 
     }
@@ -127,6 +128,22 @@ function isActive($data)
     .hmove:hover {
         animation-play-state: paused;
     }
+
+    .nav-link {
+        border: none;
+        outline: none;
+        padding: 8px 13px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .active,
+    .nav-link:hover {
+        background-color: green;
+        color: black;
+        border-radius:40px;
+    }
+  
 </style>
 
 <!DOCTYPE html>
@@ -144,15 +161,14 @@ function isActive($data)
 
     <!-- Navbar -->
     <nav class="main-header ">
-        <a class="nav-link bg-dark" data-widget="pushmenu" href="index.php"><i class="fas fa-bars"></i></a>
-        <div class="hwrap bg-dark">
-            <div class="hmove bg-dark">
-                <div class=" bg-dark hitem" id="newsResults"></div>
+        <a style="border-radius:40px;" class="nav-link " style="color:light;" data-widget="pushmenu" href="index.php"><i class="fas fa-bars"></i></a>
+        <div class="hwrap ">
+            <div class="hmove">
+                <h4><div class=" hitem" id="newsResults"></div> </h4>
             </div>
         </div>
     </nav>
     <br>
-
 
     <div class="main-sidebar bg-transparent  elevation-5">
         <div class="user-panel mt-5 pb-2 mb-3 d-flex">
@@ -167,80 +183,84 @@ function isActive($data)
             </div>
         </div>
         <hr>
+
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="../dashboard/index.php" class="nav-link <?php echo isActive('dashboard') ?>">
-                        <i class="text-success nav-icon fas fa-tachometer-alt"></i>&nbsp;&nbsp;
-                        <p class="text-white "> DASHBOARD </p>
-                    </a>
-                    <hr>
-                </li>
-                <li class="nav-item">
+                <div id="myDIV">
+                    <li class="nav-item">
+                        <a href="../dashboard/index.php" class="nav-link <?php echo isActive('dashboard') ?>">
+                            <i class="text-success  fas fa-tachometer-alt"></i>&nbsp;&nbsp;
+                            <p class="text-white "> | หน้าแรก </p>
+                        </a>
+                        <hr>
+                    </li>
+                </div>
+                <li class="nav-item ">
                     <a href="../journal/index.php" class="nav-link <?php echo isActive('journal') ?>">
-                        <i class="text-success nav-icon fas fa-user-cog"></i>&nbsp;&nbsp;
-                        <p class="text-white ">JOURNAL</p>
+                        <i class="text-success  	fas fa-box-open"></i>&nbsp;&nbsp;
+                        <p class="text-white "> | บันทึก</p>
                     </a>
                     <hr>
                 </li>
                 <li class="nav-item">
                     <a href="../performance/index.php" class="nav-link <?php echo isActive('performance') ?>">
-                        <i class="text-success fas fa-store"></i> &nbsp;&nbsp;&nbsp;
-                        <p class="text-white "> PERFORMANCE </p>
+                        <i class="text-success fas fa-chart-line"></i> &nbsp;&nbsp;
+                        <p class="text-white "> | วิเคราะห์ </p>
                     </a>
                     <hr>
                 </li>
                 <li class="nav-item">
                     <a href="../report/index.php" class="nav-link <?php echo isActive('report') ?>">
-                        <i class="text-success nav-icon fas fa-user-cog"></i>&nbsp;&nbsp;
-                        <p class="text-white ">REPORT </p>
+                        <i class="text-success  fas fa-book-reader"></i>&nbsp;&nbsp;
+                        <p class="text-white "> | รายงาน </p>
                     </a>
                     <hr>
                 </li>
                 <li class="nav-item">
                     <a href="../riskproflie/survey.php" id="" class="nav-link <?php echo isActive('riskproflie') ?>">
-                        <i class="text-success fas fa-sign"></i> &nbsp;&nbsp;
-                        <p class="text-white ">RISK PROFILE</p>
+                        <i class="text-success 	far fa-address-card"></i> &nbsp;&nbsp;
+                        <p class="text-white "> | ความเสี่ยง</p>
                     </a>
                     <hr>
                 <li class="nav-item ">
                     <a href="../news/news.php" id="" class="nav-link  <?php echo isActive('news') ?>">
-                        <i class="text-success fas fa-newspaper"></i> &nbsp;&nbsp;&nbsp;
-                        <p class="text-white ">NEWS</p>
+                        <i class="text-success	fas fa-comment-dots"></i> &nbsp;&nbsp;
+                        <p class="text-white "> | ข่าว</p>
                     </a>
                     <hr>
                 </li>
 
                 <li class="nav-item ">
-                    <a href="../chartbtc/index.php" id="" class="nav-link  <?php echo isActive('chart') ?>">
+                    <a href="../chartbtc/index.php" id="" class="nav-link  <?php echo isActive('chartbtc') ?>">
                         <i class="text-warning fab fa-btc"></i>&nbsp;&nbsp;
-                        <p class="text-warning ">CHART BTC</p>
+                        <p class="text-warning "> | กราฟบิตคอย์น</p>
                     </a>
                     <hr>
                 </li>
                 <li class="nav-item ">
-                    <a href="../chartxau/index.php" id="" class="nav-link  <?php echo isActive('chart') ?>">
-                        <i class="text-warning fa-solid fa-barcode"></i>&nbsp;&nbsp;
-                        <p class="text-warning ">CHART GOLD</p>
+                    <a href="../chartxau/index.php" id="" class="nav-link  <?php echo isActive('chartxau') ?>">
+                        <i class="text-warning 	fas fa-database"></i>&nbsp;&nbsp;
+                        <p class="text-warning "> | กราฟทองคำ</p>
                     </a>
                     <hr>
                 </li>
                 <li class="nav-item ">
                     <a href="../profliesetting/index.php" id="" class="nav-link  <?php echo isActive('profilesetting') ?>">
-                        <i class="text-success nav-icon fas fa-user-cog"></i>
-                        <p class="text-white ">PROFILE SETTING</p>
+                        <i class="text-success 	fab fa-creative-commons-by"></i>&nbsp;&nbsp;
+                        <p class="text-white "> | ตั้งค่าโปรไฟล์</p>
                     </a>
                     <hr>
                 </li>
                 <br>
-                <li class="nav-item  btn btn-outline-danger bg-dark">
-                    <a href="logout.php" id="" class="nav-link " onclick="return confirm('ยืนยันออกจากระบบ ?')">
-                        <i class=" text-danger fas fa-sign-out-alt"></i>
+                <li class="nav-item  bg-dark" style="border-radius:40px;">
+                    <a href="logout.php" id="" class="btn btn " onclick="return confirm('ยืนยันออกจากระบบ ?')">
+                        <i class=" text-danger fas fa-sign-out-alt"></i> &nbsp; | ออกจากระบบ
                     </a>
                 </li>
             </ul>
         </nav>
     </div>
+    <br><br>
 </body>
 
 </html>

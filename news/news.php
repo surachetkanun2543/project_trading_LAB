@@ -96,12 +96,12 @@ if (mysqli_num_rows($get_user) > 0) {
                         // console.log(latestNews[i].media[0]);
                         output += `
 <center>
-     <div class="col-lg-12" >
-<div class="card elevation-3 col-lg-12 bg-light" style="border-radius:10px;">
+     <div class="col-lg-10" >
+<div class="card elevation-3 col-lg-12 bg-light" style="border-radius:25px;">
 
 <br>
 <div class="card-image">
-       <img style="600px; width:500px; border-radius:10px;" src= "${latestNews[i].image}" class = "responsive-img"
+       <img style="600px; width:500px; border-radius:25px;" src= "${latestNews[i].image}" class = "responsive-img"
 alt = "${latestNews[i].source}" >
      </div>
     <div class="card-content">
@@ -138,7 +138,7 @@ alt = "${latestNews[i].source}" >
 
 <body class="hold-transition sidebar-mini">
 
-<div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1618853606785-bae61817cc7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60'); background-repeat: no-repeat; background-size: cover;">
+<div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
     <!-- <div class=" bg-transparent" style="background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-108740.jpg?w=1380&t=st=1665642113~exp=1665642713~hmac=295ceedd5a8378dda40b0dfdbd53c266b9f1580eddc0fdba2ca7fb81d545495d'); background-repeat: no-repeat; background-size: cover;"> -->
         <div class="wrapper bg-transparent">
             <?php include_once('../pages/sidebar.php') ?>
@@ -147,7 +147,7 @@ alt = "${latestNews[i].source}" >
                 <div class="content-header ml-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:10px;">
+                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:25px;">
                                 <div class=" col-lg-10 ">
                                     <br>
                                     <h4 class="ml-4 text-dark"> ข่าวธุรกิจทั่วโลก </h4>
