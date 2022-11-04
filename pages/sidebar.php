@@ -31,7 +31,9 @@ function isActive($data)
 
     $(document).ready(function() {
         let url =
-            "https://gnews.io/api/v4/search?q=crypto&token=c16e7f3f6c19ab1d2fdbfdb9693d57e3&lang=en";
+        //86e39ef62737799b02baba7d418b3486
+        //c16e7f3f6c19ab1d2fdbfdb9693d57e3
+            "https://gnews.io/api/v4/search?q=crypto&token=86e39ef62737799b02baba7d418b3486&lang=en";
 
         $.ajax({
             url: url,
@@ -46,7 +48,7 @@ function isActive($data)
                 while (output <= i) {
 
                     output += `
-            <h4 class="text-dark btn btn-lg btn-warning"  style="border-radius:40px; ">ข่าวที่น่าสนใจวันนี้ : ${latestNews[i].description} : ข่าวเมื่อวันที่ :  ${latestNews[i].publishedAt}  </h4>
+            <h4 class="text-dark btn btn-lg btn-warning"  style="border-radius:40px; ">ข่าวธุรกิจที่น่าสนใจวันนี้ : ${latestNews[i].description} : ข่าวเมื่อวันที่ :  ${latestNews[i].publishedAt}  </h4>
         `;
                     i++;
                 }
@@ -120,7 +122,7 @@ function isActive($data)
     }
 
     .hmove {
-        animation: tickerh linear 150s infinite;
+        animation: tickerh linear 190s infinite;
         background: transparent;
 
     }
@@ -179,7 +181,7 @@ function isActive($data)
                 <span class="font-weight-bold  text-light align=" center> &nbsp; &nbsp; &nbsp; ยินดีต้อนรับ &nbsp;</span>&nbsp;&nbsp; &nbsp; <img src="<?php echo $user['profile_image']; ?>" alt="<?php echo $user['name']; ?>" class=" img-circle elevation-3 alt=" User Image">
                 <br>
                 <br>
-                <h4 class="logged-in text-success"> ● &nbsp; &nbsp;<?php echo $user['name']; ?> </h4>
+                <h4 class="logged-in text-success btn btn-outline-success " style="border-radius:40px;"> ● &nbsp;&nbsp;คุณ  &nbsp;<?php echo $user['name']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h4>
             </div>
         </div>
         <hr>
@@ -252,9 +254,9 @@ function isActive($data)
                     <hr>
                 </li>
                 <br>
-                <li class="nav-item  bg-dark" style="border-radius:40px;">
-                    <a href="logout.php" id="" class="btn btn " onclick="return confirm('ยืนยันออกจากระบบ ?')">
-                        <i class=" text-danger fas fa-sign-out-alt"></i> &nbsp; | ออกจากระบบ
+                <li class="nav-item  btn btn-outline-dark text-danger" style="border-radius:40px;">
+                    <a href="logout.php" id="" class=" btn btn "  onclick="return confirm('ยืนยันออกจากระบบ ?')">
+                        <i class=" text-danger fas fa-sign-out-alt "></i> &nbsp; | ออกจากระบบ
                     </a>
                 </li>
             </ul>

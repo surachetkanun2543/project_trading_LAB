@@ -112,23 +112,22 @@ if (isset($_GET['delete'])) {
 </script>
 
 <body class="hold-transition sidebar-mini">
-    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content p-md-3">
-                <div class="modal-header bg-dark">
-                    <h4 class="modal-title  text-light">กรุณากรอกข้อมูลการซื้อ </h4>
+    <div class="modal fade " id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
+            <div class="modal-content p-md-3  text-light" style="border-radius:40px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 40%, rgba(40,38,38,0.6713060224089635) 100%);">
+                <div class="modal-header bg-success mt-3" style="border-radius:40px;">
+                    <h3 class="modal-title  text-dark text-center">กรุณากรอกข้อมูลการซื้อ </h3>
                 </div>
-                <hr>
                 <div class="modal-body">
                     <form action="insert.php" method="post" enctype="multipart/form-data">
                         <div class="row">
 
                             <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="Assettype_name">ประเภทสินทรัพย์<span class="text-danger ml-1">*</span></label>
-                                <select name="Assettype_name" class="form-control" required>
-                                    <option value="Assettype_id">เลือก</option>
+                                <label class="font-weight-bold text-small" style="border-radius:40px;" for="Assettype_name">ประเภทสินทรัพย์<span class="text-danger ml-1">*</span></label>
+                                <select style="border-radius:40px;" name="Assettype_name" class="form-control" required>
+                                    <option style="border-radius:40px;" value="Assettype_id">เลือก</option>
                                     <?php foreach ($result as $results) { ?>
-                                        <option value="<?php echo $results["Assettype_id"]; ?>">
+                                        <option style="border-radius:40px;" value="<?php echo $results["Assettype_id"]; ?>">
                                             <?php echo $results["Assettype_name"]; ?>
                                         </option>
                                     <?php } ?>
@@ -136,45 +135,45 @@ if (isset($_GET['delete'])) {
                             </div>
                             <div class="form-group col-lg-12">
                                 <label class="font-weight-bold text-small" for="options">สถานะ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="options" name="options" type="text" placeholder="buy" required="buy" />
+                                <input class="form-control" style="border-radius:40px;" id="options" name="options" type="text" placeholder="buy" required="buy" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assetname">ชื่อสินทรัพย์<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetname" name="assetname" type="text" placeholder="" required="" />
+                                <input class="form-control" style="border-radius:40px;" id="assetname" name="assetname" type="text" placeholder="" required="" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assetprice">ราคาสินทรัพย์<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetprice" name="assetprice" type="number" placeholder="" required="">
+                                <input class="form-control" style="border-radius:40px;" id="assetprice" name="assetprice" type="number" placeholder="" required="">
                             </div>
                             <div class="form-group col-lg-12">
                                 <label class="font-weight-bold text-small" for="assetvolume">จำนวนที่ซื้อ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetvolume" name="assetvolume" type="text" placeholder="" required="" />
+                                <input class="form-control" style="border-radius:40px;" id="assetvolume" name="assetvolume" type="text" placeholder="" required="" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assetsl">วันเดือนปีที่ซื้อ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetdate" name="assetdate" type="date" placeholder="2022-08-31" />
+                                <input class="form-control" style="border-radius:40px;" id="assetdate" name="assetdate" type="date" placeholder="2022-08-31" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assetsl">ราคาตัดขาดทุน<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetsl" name="assetsl" type="number" placeholder="" required="" />
+                                <input class="form-control" style="border-radius:40px;" id="assetsl" name="assetsl" type="number" placeholder="" required="" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assettg">ราคาทำกำไร<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assettg" name="assettg" type="number" placeholder="" required="" /><small class="form-text text-muted"></small>
+                                <input class="form-control" style="border-radius:40px;" id="assettg" name="assettg" type="number" placeholder="" required="" /><small class="form-text text-muted"></small>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label class="font-weight-bold text-small" for="assetnote">บันทึกเพิ่มเติม<span class="text-danger ml-1">*</span></label>
-                                <textarea class="form-control" id="assetnote" name="assetnote" rows="5" placeholder="" required=""></textarea>
+                                <textarea class="form-control" style="border-radius:40px;" id="assetnote" name="assetnote" rows="5" placeholder="" required=""></textarea>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label class="font-weight-bold text-small" for="assetimge">บันทึกรูปภาพเพิ่มเติม<span class="text-danger ml-1">*</span></label>
-                                <input type="file" required class="form-control" id="imgInput" name="assetimge">
+                                <input type="file" style="border-radius:40px;" required class="form-control" id="imgInput" name="assetimge">
                                 <img loading="lazy" width="100%" id="previewImg" alt="">
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="ur_id" id="ur_id">
-                                <button type="submit" name="submit" class="btn btn-success">ยืนยัน</button>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
+                                <button type="submit" style="border-radius:40px;" name="submit" class="btn btn-success text-light">ยืนยัน</button>
+                                <button type="button" style="border-radius:40px;" class="btn btn-danger text-light" data-bs-dismiss="modal">ยกเลิก</button>
                             </div>
                         </div>
                     </form>
@@ -191,11 +190,11 @@ if (isset($_GET['delete'])) {
                 <div class="content-header ml-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:35px;">
+                            <div class=" elevation-3 bg-dark col-lg-3" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                                 <div class=" col-lg-10 ">
                                     <br>
-                                    <h4 class="ml-4 text-dark"> บันทึกรายการซื้อขาย </h4>
-                                    <p class="ml-4 text-dark"> (trading journal) </p>
+                                    <h4 class="ml-4 text-light"> บันทึกรายการซื้อขาย </h4>
+                                    <p class="ml-4 text-light"> (trading journal) </p>
                                 </div>
                             </div>
                             <br>
@@ -228,16 +227,19 @@ if (isset($_GET['delete'])) {
                 <main class=" col-md-7 ml-sm-auto col-lg-12 px-md-4 py-4 ">
                     <div class="row">
                         <div class="col-lg-12  mb-4 mb-lg-0">
-                            <div class="card" style="border-radius:50px;">
-                                <div class="card-body   bg-light elevation-4" style="border-radius:50px;">
 
-                                    <button type="button" class="text-light btn btn-success mb-3 pt-3 text-right  mr-4" style="border-radius:80px;">
-                                        <h4> รายการซื้อ  
-                                        </h4>
+                            <button type="button" class="text-light btn btn-success mb-3 ml-3 pt-3 text-center elevation-3" style="border-radius:30px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo">
+
+                                <h4> เพิ่มรายการซื้อ <i class="fa-solid fa-pen-to-square"> </i></h4>
+                            </button> <br>
+                            <div class="card" style="border-radius:50px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
+                                <div class="card-body  elevation-4" style="border-radius:50px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
+
+                                    <button type="button" class="elevation-4  bg-transparent text-light btn btn-success mb-3 pt-3 text-right  mr-4" style="border-radius:40px;">
+                                        <h5> รายการซื้อ
+                                        </h5>
                                     </button>
-                                    <button type="button" class="text-light btn btn-success mb-3 pt-3 text-center elevation-3" style="border-radius:25px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo">
-                                        <i class="fa-solid fa-pen-to-square"></i><h4> เพิ่มรายการซื้อ </h4>
-                                    </button>
+
                                     <div class="table" style="border-radius:50px;">
                                         <table class=" table" style="border-radius:50px;" id="myTable" style="width: 100%;">
                                             <thead class=" text-center thead-dark text-light mb-1" style="border-radius:35px;">
@@ -273,17 +275,18 @@ if (isset($_GET['delete'])) {
                                                 <th>
                                                     รูปภาพ
                                                 </th>
-                                                <th class=" text-warning ">
-                                                    <h3>แก้ไข</h3>
+                                                <th>
+                                                    <h4>ขาย</h4>
                                                 </th>
-                                                <th class=" text-danger ">
-                                                    <h3>ลบ</h3>
+
+                                                <th>
+                                                    <h4>แก้ไข</h4>
                                                 </th>
-                                                <th class=" text-success ">
-                                                    <h3>Line</h3>
+                                                <th>
+                                                    <h4>ลบ</h4>
                                                 </th>
-                                                <th class=" text-info ">
-                                                    <h3>ขาย</h3>
+                                                <th>
+                                                    <h4>ไลน์</h4>
                                                 </th>
                                             </thead>
                                             <tbody class="text-center">
@@ -304,8 +307,8 @@ if (isset($_GET['delete'])) {
 
                                                 foreach ($result as $user) {
                                                 ?>
-                                                    <tr class="text-center text-dark">
-                                                        <td type="button" class="elevation-2  bg-success btn btn-success btn-sm mt-1" style="border-radius:50px;"><?php echo  $user['options']; ?></td>
+                                                    <tr class="text-center text-light">
+                                                        <td> <button type="button" class=" btn btn-success btn-sm  text-light" style="border-radius:35px;"><?php echo  $user['options']; ?></button></td>
                                                         <td><?php echo $user['Assettype_name']; ?></td>
                                                         <td><?php echo $user['assetname']; ?></td>
                                                         <td><?php echo number_format($user['assetprice'], '2'); ?> บาท </td>
@@ -316,22 +319,24 @@ if (isset($_GET['delete'])) {
                                                         <td><?php echo number_format($user['assettg'], '2'); ?> บาท </td>
 
 
-                                                        <td><img class="rounded elevation-2" width="150px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
+                                                        <td><img class="rounded elevation-2" style="border-radius:20px;" width="130px" src="uploads/<?php echo $user['assetimge']; ?>"></td>
 
-                                                        <td><a type="button" class="btn btn-warning elevation-3" style="border-radius:8px;" href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i><br>
+                                                        <td><a class="text-light btn btn-info elevation-3" style="border-radius:25px;" href="sell2.php?id=<?php echo $user['id']; ?>" value="Send" onclick="this.style.display='none';"><i class="fa-brands fa-paypal"></i><br>
+                                                                <h1></h1>
+                                                            </a></td>
+
+                                                        <td><a type="button" class="btn btn-warning elevation-3" style="border-radius:25px;" href="edit.php?id=<?php echo $user['id']; ?>" class=""><i class="fa-solid fa-pen-to-square"></i><br>
                                                                 <h1></h1>
                                                             </a>
 
-                                                        <td><a style="border-radius:8px;" data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="text-light btn btn-danger delete-btn elevation-3"><i class="text-light fa-solid fa-trash"></i>
+                                                        <td><a style="border-radius:25px;" data-id="<?= $user['id']; ?>" href="?delete=<?= $user['id']; ?>" href="?delete=<?php echo $user['id']; ?>" class="text-light btn btn-danger delete-btn elevation-3"><i class="text-light fa-solid fa-trash"></i>
                                                                 <h1></h1>
                                                             </a></td>
 
-                                                        <td><a style="border-radius:8px;" href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white elevation-3"><i class="fa-brands fa-line"> </i>
+                                                        <td><a style="border-radius:25px;" href="line.php?options=<?php echo $user['assetname']; ?> || สถานะ : <?php echo $user['options']; ?> || ราคาซื้อสินทรัพย์ : <?php echo $user['assetprice']; ?>  ||  วันที่ซื้อสินทรัพย์ : <?php echo $user['assetdate']; ?>" class="btn btn-success text-center text-white elevation-3"><i class="fa-brands fa-line"> </i>
                                                                 <h1></h1>
                                                             </a></td>
-                                                        <td><a class="text-light btn btn-info elevation-3" style="border-radius:8px;" href="sell2.php?id=<?php echo $user['id']; ?>" value="Send" onclick="this.style.display='none';" ><i class="fas fa-university"></i><br>
-                                                                <h1></h1>
-                                                            </a></td>
+
                                                     </tr>
 
                                                 <?php }  ?>
@@ -341,13 +346,13 @@ if (isset($_GET['delete'])) {
                                 </div>
                             </div><br>
 
-                            <div class=" col-lg-12  mb-4 mt-4 ">
-                                <div class="card" style="border-radius:50px;">
-                                    <div class="card-body text-left  bg-light elevation-3" style="border-radius:50px;">
+                            <div class=" col-lg-12  mb-4 mt-4 mr-4 ">
+                                <div class="card " style="border-radius:50px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
+                                    <div class="card-body  elevation-4" style="border-radius:50px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                                         <div class="table" style="border-radius:50px;">
-                                            <button type="button" class="btn btn-danger mb-3 pt-3 text-light" style="border-radius:25px;">
-                                                <h4> รายการขาย
-                                                </h4>
+                                            <button type="button" class="elevation-4  bg-transparent text-light btn btn-danger mb-3 pt-3 text-right  mr-4" style="border-radius:20px;">
+                                                <h5> รายการขาย
+                                                </h5>
                                             </button>
                                             <table class=" table " id="myTable" style="width: 100%;" style="border-radius:50px;">
                                                 <thead class=" text-center thead-dark text-light mb-1">
@@ -387,9 +392,9 @@ if (isset($_GET['delete'])) {
 
                                                     foreach ($result as $user) {
                                                     ?>
-                                                        <tr class="text-center text-dark">
+                                                        <tr class="text-center text-light">
 
-                                                            <td type="button" class="elevation-2  bg-danger btn btn-danger btn-sm mt-2" style="border-radius:50px;"><?php echo  $user['options']; ?></td>
+                                                            <td> <button type="button" class=" btn btn-danger btn-sm  text-light" style="border-radius:35px;"><?php echo  $user['options']; ?></button></td>
                                                             <td><?php echo  $user['assetname']; ?></td>
                                                             <td><?php echo $user['assetpricesell']; ?> บาท</td>
                                                             <td><?php echo number_format($user['assetvolumesell'], '2'); ?> หน่วย </td>
@@ -412,11 +417,11 @@ if (isset($_GET['delete'])) {
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
-    </script>
+    </script> -->
 
     <script>
         let imgInput = document.getElementById('imgInput');

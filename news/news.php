@@ -71,7 +71,7 @@ if (mysqli_num_rows($get_user) > 0) {
     <script>
         $(document).ready(function() {
             let url =
-                "https://gnews.io/api/v4/search?q=bitcoin&token=86e39ef62737799b02baba7d418b3486&lang=en";
+                "https://gnews.io/api/v4/search?q=crypto&token=86e39ef62737799b02baba7d418b3486&lang=en";
 
             $.ajax({
                 url: url,
@@ -96,23 +96,24 @@ if (mysqli_num_rows($get_user) > 0) {
                         // console.log(latestNews[i].media[0]);
                         output += `
 <center>
-     <div class="col-lg-10" >
-<div class="card elevation-3 col-lg-12 bg-light" style="border-radius:25px;">
+     <div class="col-lg-11" >
+<div   class="card" style="border-radius:50px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
 
 <br>
-<div class="card-image">
+<button type="button" class=" bg-transparent text-light btn btn-success mb-3  text-left  " style="border-radius:40px;"> สำนักข่าว :  ${latestNews[i].source.name} </button>
+
+<div class="card-image mt-3">
        <img style="600px; width:500px; border-radius:25px;" src= "${latestNews[i].image}" class = "responsive-img"
 alt = "${latestNews[i].source}" >
      </div>
     <div class="card-content">
-    <h3 class="card-body text-success">  ${latestNews[i].title} </h3>
-    <h5 class="text-warning"  href="${latestNews[i].url}" title="${latestNews[i].description}">${latestNews[i].description}</h5>
+    <h3 class="card-body text-light" >  ${latestNews[i].title} </h3>
     </h5>
     <p> 
-    <a style="color:black;" href="${latestNews[i].url}" title="${latestNews[i].content}">${latestNews[i].content}</a>
+    <a class="card-body text-light"  href="${latestNews[i].url}" title="${latestNews[i].content}">${latestNews[i].content}</a>
     </p>
     </div>
-    <p style="color:gray;" href="${latestNews[i].url}" title="${latestNews[i].publishedAt}">${latestNews[i].publishedAt}</p>
+    <p style="color:gray; border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);" href="${latestNews[i].url}" title="${latestNews[i].publishedAt}">${latestNews[i].publishedAt}</p>
    </div>
   </div>
   </center>
@@ -147,11 +148,11 @@ alt = "${latestNews[i].source}" >
                 <div class="content-header ml-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:25px;">
+                        <div class=" elevation-3 bg-dark col-lg-3" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                                 <div class=" col-lg-10 ">
                                     <br>
-                                    <h4 class="ml-4 text-dark"> ข่าวธุรกิจทั่วโลก </h4>
-                                    <p class="ml-4 text-dark"> (world business news ) </p>
+                                    <h4 class="ml-4 text-light"> ข่าวธุรกิจทั่วโลก </h4>
+                                    <p class="ml-4 text-light"> (world business news ) </p>
 
                                 </div>
                             </div>

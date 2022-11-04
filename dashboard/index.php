@@ -99,24 +99,24 @@ $result3 = mysqli_query($db_connection, $query3);
     <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
         <?php include_once('../pages/sidebar.php') ?>
         <main class="bg-transparent col-md-3 ml-sm-auto col-lg-10 ">
-            <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:35px;">
+            <div class=" elevation-3 bg-dark col-lg-3" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                 <div class="row">
                     <div class=" col-lg-10 ">
                         <br>
-                        <h4 class="ml-4 text-dark"> Dashboard </h4>
-                        <p class="ml-4 text-dark"> (User Dashboard) </p>
+                        <h4 class="ml-4 text-light"> Dashboard </h4>
+                        <p class="ml-4 text-light"> (User Dashboard) </p>
                     </div>
                 </div>
             </div>
             <br>
             <div class="row mt-3 mr-5">
                 <div class="col-md-5 sm-3  ">
-                    <div class="card bg-light  text-dark elevation-4" style="border-radius:40px;">
+                    <div class="card text-dark elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(14,10,10,0.8421743697478992) 0%, rgba(7,48,68,1) 71%);">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
                                 <!-- <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" /> -->
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -124,8 +124,8 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <h4></h4>
                             </div>
                         </div>
-                        <div class="card-details text-dark">
-                            <div class="card-number text-dark">
+                        <div class="card-details text-light">
+                            <div class="card-number text-light">
                                 <h1>จำนวนเงินที่ลงทุน (รวมทั้งหมด)</h1>
                                 <?php
                                 foreach ($result2 as $results) { ?>
@@ -134,7 +134,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date text-dark">
+                            <div class="date text-secondary">
                                 <h4> THB </h4>
                             </div>
                         </div>
@@ -148,12 +148,12 @@ $result3 = mysqli_query($db_connection, $query3);
 
 
                 <div class="col-md-3 sm-3 col-lg-3">
-                    <div class="card bg-light text-dark elevation-4 " style="border-radius:40px;" background-color: #256D85;">
+                    <div class="card text-dark elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(14,10,10,0.8421743697478992) 0%, rgba(7,48,68,1) 71%);">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
                                 <!-- <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" /> -->
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -161,8 +161,8 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <h4></h4>
                             </div>
                         </div>
-                        <div class="card-details text-dark">
-                            <div class="card-number text-dark">
+                        <div class="card-details text-light">
+                            <div class="card-number text-light">
                                 <h1>จำนวนครั้งที่ซื้อ (เทรดซื้อ) </h1>
                                 <?php
                                 foreach ($result as $results) { ?>
@@ -170,7 +170,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date text-dark">
+                            <div class="date text-secondary">
                                 <h4> รายการ </h4>
                             </div>
                         </div>
@@ -184,12 +184,13 @@ $result3 = mysqli_query($db_connection, $query3);
 
 
                 <div class="col-md-4 sm-3 col-lg-4">
-                    <div class="card bg-light text-dark elevation-4 " style="border-radius:40px; background-color: #256D85;">
+                    <div class="card text-dark elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(14,10,10,0.8421743697478992) 0%, rgba(7,48,68,1) 71%);">
                         <span class="bg-dark circle"></span><br>
                         <div class="top-div">
                             <div class="chip-image ">
                                 <!-- <img class=" img-circle elevation-1" src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/303344041_2232491563577148_6468077402251889375_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFmVST8cBKGrzSBcEneu72kdPOow65PdlB086jDrk92UOl6Td2A5eXOtNN8aA3wpe8joY-hYVdJZYIGIDFicDhh&_nc_ohc=Ul-muM9Ve_gAX9FFuzy&tn=Ys56LaKpN2RcL9EF&_nc_ht=scontent.fbkk10-1.fna&oh=00_AT-7alSwnzBrIu8b7gNbNCQ5ju5x8i6WnIb5QzKXEG86jQ&oe=6323BE50" /> -->
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <!-- <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" /> -->
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -197,8 +198,8 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <h4></h4>
                             </div>
                         </div>
-                        <div class="card-details text-dark">
-                            <div class="card-number text-dark">
+                        <div class="card-details text-light">
+                            <div class="card-number text-light">
                                 <h1>จำนวนครั้งที่ขาย (เทรดขาย) </h1>
                                 <?php
                                 foreach ($result3 as $results) { ?>
@@ -206,7 +207,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date text-dark">
+                            <div class="date text-secondary">
                                 <h4> รายการ </h4>
                             </div>
                         </div>
@@ -220,11 +221,12 @@ $result3 = mysqli_query($db_connection, $query3);
 
 
                 <div class="col-md-3 sm-3 mt-3">
-                    <div class="card bg-success  elevation-4" style="border-radius:40px;">
+                    <div class="card  elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(3,1,36,0.8589810924369747) 11%, rgba(5,61,18,1) 90%);">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <!-- <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" /> -->
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -242,7 +244,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date">
+                            <div class="date text-secondary">
                                 <h4> THB </h4>
                             </div>
                         </div>
@@ -257,11 +259,12 @@ $result3 = mysqli_query($db_connection, $query3);
 
 
                 <div class="col-md-3 sm-4 mt-3">
-                    <div class="card   elevation-4" style="border-radius:40px; background-color: #E94560;">
+                    <div class="card   elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(0,0,0,0.7721463585434174) 11%, rgba(68,7,60,1) 71%);">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <!-- <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" /> -->
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -279,7 +282,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date">
+                            <div class="date text-secondary">
                                 <h4> THB </h4>
                             </div>
                         </div>
@@ -293,11 +296,12 @@ $result3 = mysqli_query($db_connection, $query3);
 
 
                 <div class="col-md-3 sm-3 mt-3">
-                    <div class="card bg-success elevation-4" style="border-radius:40px; background-color: #256D85;">
+                    <div class="card  elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(3,1,36,0.8589810924369747) 11%, rgba(5,61,18,1) 90%);">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <!-- <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" /> -->
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -316,7 +320,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date">
+                            <div class="date text-secondary">
                                 <h4> ครั้ง </h4>
                             </div>
                         </div>
@@ -328,13 +332,13 @@ $result3 = mysqli_query($db_connection, $query3);
                     </div>
                 </div>
 
-
                 <div class="col-md-3 sm-4 mt-3">
-                    <div class="card   elevation-4" style="border-radius:40px; background-color: #E94560;">
+                    <div class="card   elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(0,0,0,0.7721463585434174) 11%, rgba(68,7,60,1) 71%);">
                         <span class="bg-dark circle"></span>
                         <div class="top-div">
                             <div class="chip-image">
-                                <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" />
+                                <!-- <img src="https://seeklogo.com/images/C/Chip-logo-3C162A3B9B-seeklogo.com.png" /> -->
+                                <img src="" />
                                 <br>
                             </div>
                             <div class="plus-sign">
@@ -353,7 +357,7 @@ $result3 = mysqli_query($db_connection, $query3);
                                 <?php }
                                 ?>
                             </div>
-                            <div class="date">
+                            <div class="date text-secondary">
                                 <h4> ครั้ง </h4>
                             </div>
                         </div>

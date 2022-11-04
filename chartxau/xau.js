@@ -10,8 +10,8 @@
 // const log = console.log;
 
 const chartProperties = {
-  width:1000,
-  height:600,
+  width:1300,
+  height:900,
   timeScale:{
     timeVisible:true,
     secondsVisible:false,
@@ -35,7 +35,7 @@ const chartProperties = {
     borderColor: "#F8F9FA"
   },
   watermark: {
-    text: "GOLD/USDT 4H",
+    text: "GOLD/USD 1H",
     fontSize: 40,
     color: "rgba(256, 256, 256, 0.1)",
     visible: true
@@ -48,14 +48,14 @@ const candleSeries = chart.addCandlestickSeries();
 const volumeSeries = chart.addHistogramSeries();
 
 
-fetch(`https://api.binance.com/api/v3/klines?symbol=PAXGUSDT&interval=4h&limit=500`)
+// fetch(`https://api.binance.com/api/v3/klines?symbol=PAXGUSDT&interval=30m&limit=1000`)
+fetch(`https://api.binance.com/api/v3/klines?symbol=PAXGUSDT&interval=2h&limit=1000`)
   .then(res => res.json())
   .then(data => {
     const cdata = data.map(d => {
-      return {time:d[0]/500,open:parseFloat(d[1]),high:parseFloat(d[2]),low:parseFloat(d[3]),close:parseFloat(d[4])}
+      return {time:d[0]/1000,open:parseFloat(d[1]),high:parseFloat(d[2]),low:parseFloat(d[3]),close:parseFloat(d[4])}
     });
     candleSeries.setData(cdata);
     // volumeSeries.setData(cdata);
   })
   .catch(err => log(err))
-

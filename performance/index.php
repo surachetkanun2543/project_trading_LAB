@@ -4,7 +4,6 @@
 
 require '../service/user_connect.php';
 
-
 $id = $_SESSION['login_id'];
 $get_user = mysqli_query($db_connection, "SELECT * FROM `tb_user` WHERE `google_id`='$id'");
 if (mysqli_num_rows($get_user) > 0) {
@@ -13,25 +12,6 @@ if (mysqli_num_rows($get_user) > 0) {
     header('Location: logout.php');
     exit;
 }
-
-
-$query = "SELECT * FROM `tb_type` ORDER BY `tb_type`.`Assettype_id` ASC";
-$result = mysqli_query($conn, $query);
-
-if (!isset($_SESSION['login_id'])) {
-    header('Location: ./index.php');
-    exit;
-}
-
-
-
-if (isset($_GET['delete'])) {
-    $delete_id = $_GET['delete'];
-
-    $$delete_id = $_GET['delete'];
-    $deletestmt = mysqli_query($db_connection, "DELETE FROM tb_journal WHERE id = $delete_id");
-}
-
 
 
 ?>
@@ -77,84 +57,6 @@ if (isset($_GET['delete'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-</head>
-
-
-
-<body class="hold-transition sidebar-mini">
-    <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content p-md-3">
-                <div class="modal-header">
-                    <h4 class="modal-title">กรุณากรอกข้อมูล </h4>
-                </div>
-                <hr>
-                <div class="modal-body">
-                    <form action="insert.php" method="post" enctype="multipart/form-data">
-                        <div class="row">
-
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="Assettype_name">ประเภทสินทรัพย์<span class="text-danger ml-1">*</span></label>
-                                <select name="Assettype_name" class="form-control" required>
-                                    <option value="Assettype_id">เลือก</option>
-                                    <?php foreach ($result as $results) { ?>
-                                        <option value="<?php echo $results["Assettype_id"]; ?>">
-                                            <?php echo $results["Assettype_name"]; ?>
-                                        </option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="options">สถานะ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="options" name="options" type="text" placeholder="buy  , sell" required="" />
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assetname">ชื่อสินทรัพย์<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetname" name="assetname" type="text" placeholder="" required="" />
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assetprice">ราคาสินทรัพย์<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetprice" name="assetprice" type="number" placeholder="" required="">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="assetvolume">จำนวนที่ซื้อ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetvolume" name="assetvolume" type="text" placeholder="" required="" />
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assetsl">วันเดือนปีที่ซื้อ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetdate" name="assetdate" type="date" placeholder="2022-08-31" />
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assetsl">ราคาตัดขาดทุน<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assetsl" name="assetsl" type="number" placeholder="" required="" />
-                            </div>
-                            <div class="form-group col-lg-6">
-                                <label class="font-weight-bold text-small" for="assettg">ราคาทำกำไร<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" id="assettg" name="assettg" type="number" placeholder="" required="" /><small class="form-text text-muted"></small>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="assetnote">บันทึกเพิ่มเติม<span class="text-danger ml-1">*</span></label>
-                                <textarea class="form-control" id="assetnote" name="assetnote" rows="5" placeholder="" required=""></textarea>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <label class="font-weight-bold text-small" for="assetimge">บันทึกรูปภาพเพิ่มเติม<span class="text-danger ml-1">*</span></label>
-                                <input type="file" required class="form-control" id="imgInput" name="assetimge">
-                                <img loading="lazy" width="100%" id="previewImg" alt="">
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="ur_id" id="ur_id">
-                                <button type="submit" name="submit" class="btn btn-success">ยืนยัน</button>
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">ยกเลิก</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- SCRIPTS -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -170,6 +72,11 @@ if (isset($_GET['delete'])) {
     <script src="../../plugins/bootstrap-toggle/bootstrap-toggle.min.js"></script>
     <script src="../../plugins/toastr/toastr.min.js"></script>
 
+</head>
+
+
+
+<body class="hold-transition sidebar-mini">
     <div class=" bg-transparent" style="background-image: url('https://images.unsplash.com/photo-1617224908579-c92008fc08bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat: no-repeat; background-size: cover;">
         <div class="wrapper bg-transparent">
             <?php include_once('../pages/sidebar.php') ?>
@@ -178,211 +85,176 @@ if (isset($_GET['delete'])) {
                 <div class="content-header ml-4">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="page-wrapper col-lg-3" style="border-radius:35px;">
+                            <div class=" elevation-3 bg-dark col-lg-3" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                                 <div class=" col-lg-10 ">
                                     <br>
-                                    <h4 class="ml-4 text-dark">สรุปรายการซื้อขาย </h4>
-                                    <p class="ml-4 text-dark"> (summary journal) </p>
+                                    <h4 class="ml-4 text-light">สรุปรายการซื้อขาย </h4>
+                                    <p class="ml-4 text-light"> (summary journal) </p>
                                 </div>
                             </div>
                             <br>
                         </div>
                     </div>
                 </div>
-                <?php if (isset($_SESSION['success'])) { ?>
-                    <div class="alert alert-success elevation-3" style="border-radius:10px;">
-                        <?php
-                        echo $_SESSION['success'];
-                        unset($_SESSION['success']);
-                        ?>
-                    </div>
-                <?php } ?>
-                <?php if (isset($_SESSION['error'])) { ?>
-                    <div class="alert alert-danger elevation-3" style="border-radius:10px;">
-                        <?php
-                        echo $_SESSION['error'];
-                        unset($_SESSION['error']);
-                        ?>
-                    </div>
-                <?php } ?>
-
-                <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
+                <main class=" col-md-7 ml-sm-auto col-lg-12 px-md-4 py-4 ">
                     <div class="row">
-                        <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                            <div class="card ml-4" style="border-radius:35px;">
-                                <div class="card-body text-center  bg-light elevation-3" style="border-radius:35px;">
-                                    <div class="table-responsive" style="border-radius:35px;">
-                                        <button type="button" class="btn btn-dark mb-3 pt-3 elevation-3" style="border-radius:35px;">
-                                            <h4> รายการวิเคราะห์
-                                            </h4>
-                                        </button>
-                                        <table class=" table table-striped" id="myTable" style="width: 100%;" style="border-radius:35px;">
-                                            <thead class=" text-center thead-dark text-light mb-1">
+                        <div class="col-lg-12  mb-4 mb-lg-0">
+                            <div class="card" style="border-radius:45px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
+                                <div class="card-body  elevation-4" style="border-radius:45px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
 
-                                                <th>
-                                                    สินทรัพย์
-                                                </th>
-                                                <th>
-                                                    ราคาเข้าซื้อสินทรัพย์ (บาท)
-                                                </th>
-                                                <th>
-                                                    ราคาขายสินทรัพย์ (บาท)
-                                                </th>
-                                                <th>
-                                                    จำนวนสินทรัพย์ (หน่วย)
-                                                </th>
-                                                <th>
-                                                    วันที่ขาย
-                                                </th>
+                                    <button type="button" class="elevation-4  bg-transparent text-light btn btn-info mb-3 pt-3 text-right  mr-4" style="border-radius:40px;">
+                                        <h5> รายการวิเคราะห์
+                                        </h5>
+                                    </button>
+                                    <table class=" table table-striped" id="myTable" style="width: 100%;" style="border-radius:45px;">
+                                        <thead class=" text-center thead-dark text-light mb-1">
 
-                                                <th>
-                                                    จำนวนวันที่ถือครอง (วัน)
-                                                </th>
-                                                <th>
-                                                    <h5>กำไร/ขาดทุน (บาท)</h5>
-                                                </th>
-                                                <th>
-                                                    <h5> เปอร์เซ็น กำไร/ขาดทุน</h5>
-                                                </th>
-                                            </thead>
-                                            <tbody>
-                                                <?php
+                                            <th>
+                                                สินทรัพย์
+                                            </th>
+                                            <th>
+                                                ราคาเข้าซื้อสินทรัพย์ (บาท)
+                                            </th>
+                                            <th>
+                                                ราคาขายสินทรัพย์ (บาท)
+                                            </th>
+                                            <th>
+                                                จำนวนสินทรัพย์ (หน่วย)
+                                            </th>
+                                            <th>
+                                                วันที่ซื้อ
+                                            </th>
+                                            <th>
+                                                วันที่ขาย
+                                            </th>
+                                            <th>
+                                                จำนวนวันที่ถือครอง (วัน)
+                                            </th>
+                                            <th>
+                                                <h5>กำไร/ขาดทุน (บาท)</h5>
+                                            </th>
+                                            <th>
+                                                <h5> เปอร์เซ็น กำไร/ขาดทุน</h5>
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <?php
 
-                                                $id = $_SESSION['login_id'];
-
-                                                //buy
-                                                $get_user = "SELECT * FROM tb_journal as j 
-                                                INNER JOIN tb_sell 
+                                            $get_tablesell = ("SELECT * FROM tb_sell 
+                                                as j 
+                                                INNER JOIN tb_journal 
                                                 as t 
-                                                on j.id = t.id
-                                                WHERE `ur_id`='$id' 
-                                                ORDER BY `t`.`j_id` ASC;";
+                                                on j.j_id=t.id 
+                                                ORDER BY `t`.`id`"
+                                            );
 
-                                                $result = mysqli_query($conn, $get_user);
+                                            $result_tablesell = mysqli_query($conn, $get_tablesell);
 
-                                                //sell
-                                                //     $get_sell =  "SELECT 
-                                                // *
-                                                // FROM tb_sell 
-                                                // as s 
-                                                // INNER JOIN tb_journal 
-                                                // as j 
-                                                // on s.Assettype_name=j.Assettype_id   
-                                                // WHERE `ur_id`='$id' 
-                                                // ORDER BY `j`.`Assettype_name` ASC";
+                                            foreach ($result_tablesell as $results) {
 
-                                                //$result = mysqli_query($conn, $get_sell);
 
-                                                foreach ($result as $user) {
-                                                ?>
-                                                    <tr class="text-center text-dark">
+                                                $earlier = new DateTime($results['assetdate']);
+                                                $later = new DateTime($results['assetdatesell']);
 
-                                                        <!-- ชื่อสินทรัพย์ -->
-                                                        <td><?php echo $user['assetname']; ?></td>
-                                                        <!-- ราคาซื้อสินทรัพย์ -->
-                                                        <td><?php echo number_format($user['assetprice']); ?></td>
-                                                        <!-- ราคาขายสินทรัพย์ -->
-                                                        <td><?php echo number_format($user['assetpricesell']); ?></td>
-                                                        <!-- จำนวนสินทรัพย์ -->
-                                                        <td><?php echo $user['assetvolumesell']; ?></td>
-                                                        <!-- จำนวนที่ซื้อสินทรัพย์ -->
-                                                        <td><?php echo $user['assetdatesell']; ?></td>
+                                                $assetdate =  $results['assetdate']; // $_POST['startdate'] 
+                                                $assetdatesell = $results['assetdatesell']; // $_POST['enddate']
 
-                                                        <!-- จำนวนที่ถือครองสินทรัพย์ -->
-                                                        <td><?php echo $user['assetdate']; ?></td>
-                                                        <!-- จำนวนเงินกำไร/ขาดทุน -->
-                                                        <td><?php echo number_format($user['assetsl']); ?></td>
-                                                        <!-- จำนวนเปอร์เซ็นกำไร/ขาดทุน -->
-                                                        <td><?php echo $user['assettg']; ?></td>
+                                                // n1 จำนวนที่ซื้อ n2 ราคาซื้อ
+                                                //ซื้อ
+                                                $N = $results['assetvolume'] * $results['assetprice'];
+                                                //ขาย
+                                                $Y = $results['assetvolumesell'] * $results['assetpricesell'];
 
-                                                        <!-- <td>btc</td>
-                                                        <td>500,000</td>
-                                                        <td>600,000</td>
-                                                        <td>5</td>
-                                                        <td>26/10/2022</td>
-                                                        <td>7</td>
-                                                        <td>100,000</td>
-                                                        <td>10%</td> -->
 
-                                                    </tr>
-                                                <?php }  ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                if ($Y > $N) {
+
+                                                    $p = $Y - $N;
+
+                                                    $pp = ($p * 100) / $N;
+
+                                                    //แสดงเงินกำไร
+                                                    $res .= " <h4 class='text-light btn btn-outline-success pt-2 pb-2' style='border-radius:30px' ;>  " . " กำไร  " . number_format($p) . " บาท" . "</h4>";
+
+                                                    //แสดงเปอร์เซ้นกำไร
+                                                    $ress .= "<h4 class='text-light btn btn-outline-success pt-2 pb-2' style='border-radius:30px' ;>  " . "   " .  $pp .  " %" .  "</h5>";
+
+
+                                                    //ถ้าราคาซื้อมากกว่าราคาขาย ขาดทุน
+                                                } else {
+                                                    //ราคาต้นทุนลบราคาขาย
+                                                    $l = $N - $Y;
+
+                                                    $lp = ($l * 100) / $N;
+
+                                                    //แสดงเงินขาดทุน
+                                                    $res .= " <h4 class='text-light btn btn-outline-danger pt-2 pb-2' style='border-radius:30px' ;>  " . " ขาดทุน  " . number_format($l) . " บาท" . "</p>";
+
+                                                    //แสดงเปอร์เซ้นกำไร
+                                                    $ress .= "<h4 class='text-light btn btn-outline-danger  pt-2 pb-2' style='border-radius:30px' ;>   " . "   " .  $lp .  " %" .  "<p>";
+                                                }
+
+
+                                            ?>
+                                                <tr class="text-center text-light">
+
+                                                    <!-- ชื่อสินทรัพย์ -->
+                                                    <td><?php echo $results['assetname']; ?></td>
+
+                                                    <!-- ราคาซื้อสินทรัพย์ -->
+                                                    <td><?php echo number_format($results['assetprice']); ?></td>
+
+                                                    <!-- ราคาขายสินทรัพย์ -->
+                                                    <td><?php echo number_format($results['assetpricesell']); ?></td>
+
+                                                    <!-- จำนวนสินทรัพย์ -->
+                                                    <td><?php echo $results['assetvolumesell']; ?></td>
+
+                                                    <!-- จำนวนที่ซื้อสินทรัพย์ -->
+                                                    <td><?php echo $results['assetdate']; ?></td>
+
+                                                    <!-- จำนวนที่ขายสินทรัพย์ -->
+                                                    <td><?php echo $results['assetdatesell']; ?></td>
+
+                                                    <!-- จำนวนที่ถือครองสินทรัพย์ -->
+
+                                                    <td>
+                                                        <?php echo $pos_diff = $earlier->diff($later)->format("%r%a"); ?>
+                                                    </td>
+
+                                                    <!-- จำนวนเงินกำไร/ขาดทุน -->
+                                                    <td>
+                                                        <?php echo $res; ?>
+                                                    </td>
+
+                                                    <!-- จำนวนเปอร์เซ็นกำไร/ขาดทุน -->
+                                                    <td><?php echo $ress; ?></td>
+
+
+                                                </tr>
+                                            <?php }
+                                            ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <!-- JavaScript Bundle with Popper -->
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                        <script>
-                            $(document).ready(function() {
-                                $('#myTable').DataTable();
-                            });
-                        </script>
-
-                        <script>
-                            let imgInput = document.getElementById('imgInput');
-                            let previewImg = document.getElementById('previewImg');
-
-                            imgInput.onchange = evt => {
-                                const [file] = imgInput.files;
-                                if (file) {
-                                    previewImg.src = URL.createObjectURL(file)
-                                }
-                            }
-                            $(".delete-btn").click(function(e) {
-                                var userId = $(this).data('id');
-                                e.preventDefault();
-                                deleteConfirm(userId);
-                            })
+                    </div>
+                    <!-- JavaScript Bundle with Popper -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+                    <script>
+                        $(document).ready(function() {
+                            $('#myTable').DataTable();
+                        });
+                    </script>
+                    <!-- SCRIPTS -->
+                    <script src="../plugins/jquery/jquery.min.js"></script>
+                    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <script src="../assetsuser/js/adminlte.min.js"></script>
 
 
-                            function deleteConfirm(userId) {
-                                Swal.fire({
-                                    title: 'ลบรายการ !',
-                                    text: "คุณแน่ใจหรือไม่ที่จะลบรายการ ?",
-                                    icon: 'warning',
-                                    dangerMode: true,
-                                    showCancelButton: true,
-                                    confirmButtonColor: '#3085d6',
-                                    cancelButtonColor: '#d33',
-                                    confirmButtonText: 'ใช่แน่ใจ!',
-                                    showLoaderOnConfirm: true,
-                                    preConfirm: function() {
-                                        return new Promise(function(resolve) {
-                                            $.ajax({
-                                                    url: 'index.php',
-                                                    type: 'GET',
-                                                    data: 'delete=' + userId,
-                                                })
-                                                .done(function() {
-                                                    Swal.fire({
-                                                        title: 'สำเร็จ',
-                                                        text: 'ลบรายการเรียบร้อย !',
-                                                        icon: 'success',
-                                                        timer: '2000'
-                                                    }).then(() => {
-                                                        document.location.href = 'index.php';
-                                                    })
-                                                })
-                                                .fail(function() {
-                                                    Swal.fire('Oops...', 'Something went wrong with ajax !', 'error')
-                                                    window.location.reload();
-                                                });
-                                        });
-                                    },
-                                });
-                            }
-                        </script>
-                        <!-- SCRIPTS -->
-                        <script src="../plugins/jquery/jquery.min.js"></script>
-                        <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                        <script src="../assetsuser/js/adminlte.min.js"></script>
-
-
-                        <!-- OPTIONAL SCRIPTS -->
-                        <script src="../plugins/chart.js/Chart.min.js"></script>
-                        <script src="../assetsuser/js/pages/dashboard.js"></script>
+                    <!-- OPTIONAL SCRIPTS -->
+                    <script src="../plugins/chart.js/Chart.min.js"></script>
+                    <script src="../assetsuser/js/pages/dashboard.js"></script>
 </body>
 
 </html>

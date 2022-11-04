@@ -10,8 +10,8 @@
 // const log = console.log;
 
 const chartProperties = {
-  width:1000,
-  height:600,
+  width:1300,
+  height:900,
   timeScale:{
     timeVisible:true,
     secondsVisible:false,

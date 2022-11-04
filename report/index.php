@@ -99,11 +99,11 @@ if (isset($_GET['delete'])) {
             <div class="content-header ml-4 ">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="page-wrapper elevation-3 col-lg-3" style="border-radius:35px;">
+                        <div class=" elevation-3 bg-dark col-lg-3" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                             <div class=" col-lg-10 ">
                                 <br>
-                                <h4 class="ml-4 text-dark"> ส่งออกรายงาน </h4>
-                                <p class="ml-4 text-dark"> ( Report (PDF, CSV) ) </p>
+                                <h4 class="ml-4 text-light"> ส่งออกรายงาน </h4>
+                                <p class="ml-4 text-light"> ( Report (PDF, CSV) ) </p>
                             </div>
                         </div>
                         <br> <br>
@@ -111,18 +111,18 @@ if (isset($_GET['delete'])) {
                 </div>
             </div>
             <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
-                <div class="row">
-                    <div class="col-12 col-xl-12 mb-4 mb-lg-0">
-                        <div class="card  bg-light elevation-3" style="border-radius:45px;">
-                            <div class="card-body text-center ">
-                                <a href="report-pdf.php" class="text-light btn btn-info elevation-3 mr-4" style="border-radius:35px;">
-                                    <h5><i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
-                                    <h5>รายงาน PDF</h5>
-                                </a>
-                                <a href="report-csv.php" class="text-light btn btn-success elevation-3" style="border-radius:35px;">
-                                    <h5><i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
-                                    <h5>รายงาน CSV</h5>
-                                </a>
+                <div class="col-lg-12  mb-4 mb-lg-0">
+                    <a href="report-pdf.php" class="ml-4 text-light btn btn-info elevation-3 mr-4 pt-3" style="border-radius:35px;">
+                        <h5>รายงาน PDF <i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
+                    </a>
+                    <a href="report-csv.php" class="text-light btn btn-success elevation-3 mr-4 pt-3" style="border-radius:35px;">
+                        <h5>รายงาน CSV <i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
+                    </a> <br><br>
+                    <div class="card" style="border-radius:45px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
+                        <div class="card-body  elevation-4" style="border-radius:45px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
+
+                            <div class="card-body text-left  ">
+
                                 <br>
                                 <div class="table-responsive">
                                     <table class=" table table-striped" id="myTable" style="width: 100%;">
@@ -178,7 +178,7 @@ if (isset($_GET['delete'])) {
 
                                             foreach ($result as $user) {
                                             ?>
-                                                <tr class="text-center text-dark">
+                                                <tr class="text-center text-light">
                                                     <td><?php echo  $user['options']; ?></td>
                                                     <td><?php echo $user['Assettype_name']; ?></td>
                                                     <td><?php echo $user['assetname']; ?></td>
