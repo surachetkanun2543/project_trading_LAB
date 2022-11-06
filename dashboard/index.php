@@ -77,21 +77,26 @@ $result3 = mysqli_query($db_connection, $query3);
     <!-- <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> -->
     <style>
         .swal-wide {
-
-            font-size: 20px;
-            width: 350px !important;
-            height: 400px !important;
+            background-image: linear-gradient(40deg,
+                    hsl(0deg 0% 100%) 1%,
+                    hsl(158deg 89% 78%) 51%,
+                    hsl(159deg 81% 75%) 49%,
+                    hsl(270deg 27% 94%) 99%);
+            font-size: 17px;
+            width: 480px !important;
+            height: 430px !important;
+            color: black;
         }
     </style>
     <script>
         $(document).ready(function() {
             Swal.fire({
-                position: 'top-right',
-                title: 'สำเร็จ!',
-                text: 'ยินดีต้อนรับเข้าสู่จดบันทึกและวิเคราะห์การลงทุน',
-                imageUrl: 'good.png',
+                position: 'top',
+                title: 'สวัสดีครับ !',
+                text: 'ยินดีต้อนรับเข้าสู่เว็บไซต์จดบันทึกและวิเคราะห์การลงทุน ',
+                imageUrl: 'https://static.thenounproject.com/png/1391881-200.png',
                 customClass: 'swal-wide',
-                timer: 2000,
+                timer: 4000,
                 showConfirmButton: false
             });
         });
@@ -126,7 +131,7 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details text-light">
                             <div class="card-number text-light">
-                                <h1>จำนวนเงินที่ลงทุน (รวมทั้งหมด)</h1>
+                                <h1>จำนวนเงินต้นทุน </h1>
                                 <?php
                                 foreach ($result2 as $results) { ?>
                                     <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
@@ -135,11 +140,11 @@ $result3 = mysqli_query($db_connection, $query3);
                                 ?>
                             </div>
                             <div class="date text-secondary">
-                                <h4> THB </h4>
+                                <h4> THB (ทั้งหมด)</h4>
                             </div>
                         </div>
-                        <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                        <div class="ownername ">
+                            <h4 class="text-secondary"><?php echo $user["name"]; ?></h4>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>
@@ -163,7 +168,7 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details text-light">
                             <div class="card-number text-light">
-                                <h1>จำนวนครั้งที่ซื้อ (เทรดซื้อ) </h1>
+                                <h1>จำนวนครั้งที่ซื้อ  </h1>
                                 <?php
                                 foreach ($result as $results) { ?>
                                     <h1 class=" text-primary"><?php echo number_format($results["SUM"]); ?></h1>
@@ -171,11 +176,11 @@ $result3 = mysqli_query($db_connection, $query3);
                                 ?>
                             </div>
                             <div class="date text-secondary">
-                                <h4> รายการ </h4>
+                                <h4> รายการ (ทั้งหมด)</h4>
                             </div>
                         </div>
                         <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                            <!-- <h4 class="text-secondary"><?php echo $user["name"]; ?></h4> -->
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>
@@ -200,7 +205,7 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details text-light">
                             <div class="card-number text-light">
-                                <h1>จำนวนครั้งที่ขาย (เทรดขาย) </h1>
+                                <h1>จำนวนครั้งที่ขาย  </h1>
                                 <?php
                                 foreach ($result3 as $results) { ?>
                                     <h1 class=" text-primary"><?php echo number_format($results["SUM2"]); ?></h1>
@@ -208,11 +213,11 @@ $result3 = mysqli_query($db_connection, $query3);
                                 ?>
                             </div>
                             <div class="date text-secondary">
-                                <h4> รายการ </h4>
+                                <h4> รายการ (ทั้งหมด)</h4>
                             </div>
                         </div>
                         <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                            <!-- <h4 class="text-secondary"><?php echo $user["name"]; ?></h4> -->
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>
@@ -236,28 +241,45 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details">
                             <div class="card-number">
-                                <h2>จำนวนเงินที่กำไร </h2>
+                                <h2>จำนวนเงินที่กำไร</h2>
                                 <?php
-                                foreach ($result2 as $results) { ?>
-                                    <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
-                                    <h2 class=" text-primary"><?php echo number_format($results["SUM1"]); ?></h2>
-                                <?php }
+
+                                $queryresultprofit = " SELECT (assetvolumesell * assetpricesell)-(assetvolume * assetprice) c FROM tb_sell as s INNER JOIN tb_journal as j on s.j_id=j.id WHERE s.ur_id ='$id' ORDER BY j.id ASC; ";
+                                $resultprofit = mysqli_query($db_connection, $queryresultprofit);
+
+                                $sum = 0;
+                                $cout_profit = 0;
+                                $cout_loss = 0;
+
+
+
+                                foreach ($resultprofit as $results) {
+                                    if (intval($results['c']) >  0) {
+                                        $sum = $sum + intval($results['c']);
+                                        $cout_profit++;
+
                                 ?>
+
+                                <?php } else {
+
+                                        $cout_loss++;
+                                    }
+                                }
+                                ?>
+                                <h2 class=" text-primary"><?php echo (number_format($sum)); ?></h2>
+
                             </div>
                             <div class="date text-secondary">
-                                <h4> THB </h4>
+                                <h4> THB (ทั้งหมด)</h4>
                             </div>
                         </div>
                         <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                            <!-- <h4 class="text-secondary"><?php echo $user["name"]; ?></h4> -->
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>
                     </div>
                 </div>
-
-
-
                 <div class="col-md-3 sm-4 mt-3">
                     <div class="card   elevation-4" style="border-radius:40px; background: linear-gradient(90deg, rgba(0,0,0,0.7721463585434174) 11%, rgba(68,7,60,1) 71%);">
                         <span class="bg-dark circle"></span>
@@ -274,20 +296,34 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details">
                             <div class="card-number">
-                                <h2>จำนวนเงินที่ขาดทุน </h2>
+                                <h2>จำนวนเงินที่ขาดทุน</h2>
                                 <?php
-                                foreach ($result2 as $results) { ?>
-                                    <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
-                                    <h2 class=" text-primary"><?php echo number_format($results["SUM1"]); ?></h2>
-                                <?php }
+
+                                $count = 0;
+
+                                $queryresultloss = " SELECT (assetvolume * assetprice)-(assetvolumesell * assetpricesell) FROM tb_sell as s INNER JOIN tb_journal as j on s.j_id=j.id WHERE s.ur_id='$id' ORDER BY j.id ASC;";
+                                $resultloss = mysqli_query($db_connection, $queryresultloss);
+
+                                foreach ($resultloss as $results) {
+
+                                    if ($count == 2) {
+
                                 ?>
+                                        <h2 class=" text-primary"><?php echo number_format($results["(assetvolume * assetprice)-(assetvolumesell * assetpricesell)"]); ?></h2>
+
+                                <?php }
+                                    $count++;
+                                }
+                                ?>
+
+
                             </div>
                             <div class="date text-secondary">
-                                <h4> THB </h4>
+                                <h4> THB (ทั้งหมด)</h4>
                             </div>
                         </div>
                         <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                            <h4 class="text-secondary"><?php echo $user["name"]; ?></h4>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>
@@ -311,21 +347,22 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details">
                             <div class="card-number">
-                                <h2>จำนวนครั้งที่กำไร </h2>
+                                <h2>จำนวนครั้งที่กำไร</h2>
                                 <?php
-                                foreach ($result2 as $results) { ?>
-                                    <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
-                                    <h2 class=" text-primary">3</h2>
-                                    </h2>
-                                <?php }
+                                // $queryresultprofitsum = " SELECT options, SUM(assetprice) AS sums FROM tb_journal WHERE `ur_id`='$id' ORDER BY id DESC";
+                                // $sum = mysqli_query($db_connection, $queryresultprofitsum);
                                 ?>
+
+                                <h2 class=" text-primary"><?php echo ($cout_profit); ?></h2>
+
+
                             </div>
                             <div class="date text-secondary">
-                                <h4> ครั้ง </h4>
+                                <h4> ครั้ง (ทั้งหมด) </h4>
                             </div>
                         </div>
                         <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                            <!-- <h4 class="text-secondary"><?php echo $user["name"]; ?></h4> -->
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>
@@ -348,21 +385,17 @@ $result3 = mysqli_query($db_connection, $query3);
                         </div>
                         <div class="card-details">
                             <div class="card-number">
-                                <h2>จำนวนครั้งที่ขาดทุน </h2>
+                                <h2>จำนวนครั้งที่ขาดทุน</h2>
                                 <?php
-                                foreach ($result2 as $results) { ?>
-                                    <h3 value="<?php echo $results["admin_id"]; ?>"> </h3>
-                                    <h2 class=" text-primary">78</h2>
-                                    </h2>
-                                <?php }
                                 ?>
+                                <h2 class=" text-primary"><?php echo ($cout_loss); ?></h2>
                             </div>
                             <div class="date text-secondary">
-                                <h4> ครั้ง </h4>
+                                <h4> ครั้ง (ทั้งหมด) </h4>
                             </div>
                         </div>
                         <div class="ownername">
-                            <h4><?php echo $user["name"]; ?></h4>
+                            <!-- <h4 class="text-secondary"><?php echo $user["name"]; ?></h4> -->
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/772px-Mastercard-logo.svg.png" />
                         </div>
                         <br><br>

@@ -50,7 +50,7 @@ $mail->Port       = 465;                                    //TCP port to connec
 //Content
 $mail->isHTML(true);                                  //Set email format to HTML
 $mail->Subject = 'Login notification alert ! ';
-$mail->Body = 'ตรวจพบการเข้าสู่ระบบ (journaltrading.tech) </b> หากไม่ใช้คุณโปรดติดต่อเจ้าหน้าที่ โทร 08638263547 หรือ อีเมล์ noti@journaltrading.tech เพื่อนำเดินการต่อไป';
+$mail->Body = 'ตรวจพบการเข้าสู่ระบบ (journaltrading.tech) </b> หากไม่ใช้คุณโปรดติดต่อเจ้าหน้าที่ โทร 191 หรือ อีเมล์ surachet.btc@journaltrading.tech เพื่อนำเดินการต่อไป';
 $mail->msgHTML(file_get_contents("noti.php"), dirname(__FILE__));
 
 if (isset($_SESSION['login_id'])) {
@@ -173,8 +173,8 @@ else :
                     }
 
 
-                    echo "<p class='showData'> 1 Bitcoin = " .
-                        $btc . " THB <br /> </p>";
+                    echo "<p class='showData'> ราคาบิตคอย์นขณะนี้ 1 Bitcoin = " .
+                        number_format($btc)  . " บาท <br /> </p>";
                     $THB = 1 / $btc;
 
                     // echo "10 THB = " . round($THB * 10, 8) . "BTC";

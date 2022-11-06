@@ -11,6 +11,7 @@
         "PHPMailer": true,
         "plugins": true,
         "portal.css": true,
+        "sell.php": true,
         "sendmail.php": true,
         "serviceuser": true,
         "test.php": true,

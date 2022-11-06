@@ -137,77 +137,49 @@ if (mysqli_num_rows($get_user) > 0) {
                                                 <h5> เปอร์เซ็น กำไร/ขาดทุน</h5>
                                             </th>
                                         </thead>
-                                        <tbody>
-                                            <?php
 
-                                            $get_tablesell = ("SELECT * FROM tb_sell 
-                                                as j 
-                                                INNER JOIN tb_journal 
-                                                as t 
-                                                on j.j_id=t.id 
-                                                ORDER BY `t`.`id`"
-                                            );
-
-                                            $result_tablesell = mysqli_query($conn, $get_tablesell);
-
-                                            foreach ($result_tablesell as $results) {
+                                        <?php
+                                        $id = $_SESSION['login_id'];
 
 
-                                                $earlier = new DateTime($results['assetdate']);
-                                                $later = new DateTime($results['assetdatesell']);
+                                        $get_tablesell = ("SELECT assetsellname,assetprice,assetpricesell,assetvolumesell,assetdate,assetdatesell,
+                                        (assetvolume * assetprice) , 
+                                        (assetvolumesell * assetpricesell) - (assetvolume * assetprice), 
+                                        (((assetvolumesell * assetpricesell - assetvolume * assetprice)) / (assetvolume * assetprice)) * 100 
+                                        FROM tb_sell as s 
+                                        INNER JOIN tb_journal as j 
+                                        on s.j_id=j.id 
+                                        WHERE s.ur_id ='$id' 
+                                        GROUP BY `j`.`assetname`"
+                                        );
 
-                                                $assetdate =  $results['assetdate']; // $_POST['startdate'] 
-                                                $assetdatesell = $results['assetdatesell']; // $_POST['enddate']
-
-                                                // n1 จำนวนที่ซื้อ n2 ราคาซื้อ
-                                                //ซื้อ
-                                                $N = $results['assetvolume'] * $results['assetprice'];
-                                                //ขาย
-                                                $Y = $results['assetvolumesell'] * $results['assetpricesell'];
-
-
-                                                if ($Y > $N) {
-
-                                                    $p = $Y - $N;
-
-                                                    $pp = ($p * 100) / $N;
-
-                                                    //แสดงเงินกำไร
-                                                    $res .= " <h4 class='text-light btn btn-outline-success pt-2 pb-2' style='border-radius:30px' ;>  " . " กำไร  " . number_format($p) . " บาท" . "</h4>";
-
-                                                    //แสดงเปอร์เซ้นกำไร
-                                                    $ress .= "<h4 class='text-light btn btn-outline-success pt-2 pb-2' style='border-radius:30px' ;>  " . "   " .  $pp .  " %" .  "</h5>";
+                                        $result_table = mysqli_query($conn, $get_tablesell);
 
 
-                                                    //ถ้าราคาซื้อมากกว่าราคาขาย ขาดทุน
-                                                } else {
-                                                    //ราคาต้นทุนลบราคาขาย
-                                                    $l = $N - $Y;
-
-                                                    $lp = ($l * 100) / $N;
-
-                                                    //แสดงเงินขาดทุน
-                                                    $res .= " <h4 class='text-light btn btn-outline-danger pt-2 pb-2' style='border-radius:30px' ;>  " . " ขาดทุน  " . number_format($l) . " บาท" . "</p>";
-
-                                                    //แสดงเปอร์เซ้นกำไร
-                                                    $ress .= "<h4 class='text-light btn btn-outline-danger  pt-2 pb-2' style='border-radius:30px' ;>   " . "   " .  $lp .  " %" .  "<p>";
-                                                }
+                                        foreach ($result_table as $results) {
 
 
-                                            ?>
+                                            $earlier = new DateTime($results['assetdate']);
+                                            $later = new DateTime($results['assetdatesell']);
+
+                                            $assetdate =  $results['assetdate']; // $_POST['startdate'] 
+                                            $assetdatesell = $results['assetdatesell']; // $_POST['enddate']
+
+                                        ?>
+                                            <tbody>
                                                 <tr class="text-center text-light">
 
                                                     <!-- ชื่อสินทรัพย์ -->
-                                                    <td><?php echo $results['assetname']; ?></td>
+                                                    <td><?php echo $results['assetsellname']; ?></td>
 
                                                     <!-- ราคาซื้อสินทรัพย์ -->
-                                                    <td><?php echo number_format($results['assetprice']); ?></td>
+                                                    <td><?php echo number_format($results['assetprice']); ?> บาท </td>
 
                                                     <!-- ราคาขายสินทรัพย์ -->
-                                                    <td><?php echo number_format($results['assetpricesell']); ?></td>
+                                                    <td><?php echo number_format($results['assetpricesell']); ?> บาท </td>
 
                                                     <!-- จำนวนสินทรัพย์ -->
-                                                    <td><?php echo $results['assetvolumesell']; ?></td>
+                                                    <td><?php echo $results['assetvolumesell']; ?> หน่วย </td>
 
                                                     <!-- จำนวนที่ซื้อสินทรัพย์ -->
                                                     <td><?php echo $results['assetdate']; ?></td>
@@ -216,24 +188,31 @@ if (mysqli_num_rows($get_user) > 0) {
                                                     <td><?php echo $results['assetdatesell']; ?></td>
 
                                                     <!-- จำนวนที่ถือครองสินทรัพย์ -->
-
                                                     <td>
-                                                        <?php echo $pos_diff = $earlier->diff($later)->format("%r%a"); ?>
+                                                        <?php echo $pos_diff = $earlier->diff($later)->format("%r%a"); ?> วัน
                                                     </td>
 
-                                                    <!-- จำนวนเงินกำไร/ขาดทุน -->
+                                                    <?php
+                                                    if ($results > 0) {
+                                                        echo "<td class='text-success'>";
+                                                        echo number_format($results['(assetvolumesell * assetpricesell) - (assetvolume * assetprice)']);
+                                                        'บาท';
+                                                        echo "</td>";
+                                                    } elseif ($results < 0) {
+                                                        echo "<td class='text-danger'>";
+                                                        echo number_format($results['(assetvolumesell * assetpricesell) - (assetvolume * assetprice)']);
+                                                        'บาท';
+                                                    }
+                                                    echo "</td>";
+
+                                                    ?>
+
                                                     <td>
-                                                        <?php echo $res; ?>
+                                                        <?php echo number_format($results['(((assetvolumesell * assetpricesell - assetvolume * assetprice)) / (assetvolume * assetprice)) * 100']);  ?> %
                                                     </td>
-
-                                                    <!-- จำนวนเปอร์เซ็นกำไร/ขาดทุน -->
-                                                    <td><?php echo $ress; ?></td>
-
-
                                                 </tr>
-                                            <?php }
-                                            ?>
-                                        </tbody>
+                                            <?php } ?>
+                                            </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -241,11 +220,6 @@ if (mysqli_num_rows($get_user) > 0) {
                     </div>
                     <!-- JavaScript Bundle with Popper -->
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-                    <script>
-                        $(document).ready(function() {
-                            $('#myTable').DataTable();
-                        });
-                    </script>
                     <!-- SCRIPTS -->
                     <script src="../plugins/jquery/jquery.min.js"></script>
                     <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

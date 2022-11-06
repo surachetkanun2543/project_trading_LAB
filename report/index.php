@@ -112,12 +112,28 @@ if (isset($_GET['delete'])) {
             </div>
             <main class="col-md-7 ml-sm-auto col-lg-12 px-md-3 py-4">
                 <div class="col-lg-12  mb-4 mb-lg-0">
-                    <a href="report-pdf.php" class="ml-4 text-light btn btn-info elevation-3 mr-4 pt-3" style="border-radius:35px;">
-                        <h5>รายงาน PDF <i class="fa fa-file-pdf" aria-hidden="true"> </i></h5>
-                    </a>
-                    <a href="report-csv.php" class="text-light btn btn-success elevation-3 mr-4 pt-3" style="border-radius:35px;">
-                        <h5>รายงาน CSV <i class="fa fa-file-csv" aria-hidden="true"> </i></h5>
-                    </a> <br><br>
+                    <div class="content-header ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="  bg-dark col-lg-5 " style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
+                                    <div class=" col-lg-10 ">
+                                        <br>
+                                        <a href="report-pdf.php" class=" mr-4 text-light btn btn-info elevation-4  pt-3 pb-1 mr-3" style="border-radius:35px;">
+                                            <h4>รายงานซื้อ PDF <i class="fa fa-file-pdf" aria-hidden="true"> </i></h4>
+                                        </a>
+                                        <a href="report-sell-pdf.php" class=" mr-4 text-light btn btn-info elevation-4  pt-3 pb-1 mr-3" style="border-radius:35px;">
+                                            <h4>รายงานขาย PDF <i class="fa fa-file-pdf" aria-hidden="true"> </i></h4>
+                                        </a>
+                                        <a href="report-csv.php" class="mr-4 text-light btn btn-success  elevation-4 pt-3 pb-1 " style="border-radius:35px;">
+                                            <h4>รายงาน CSV <i class="fa fa-file-csv" aria-hidden="true"> </i></h4>
+                                        </a>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
                     <div class="card" style="border-radius:45px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
                         <div class="card-body  elevation-4" style="border-radius:45px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
 

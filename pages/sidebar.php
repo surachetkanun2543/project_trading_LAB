@@ -48,7 +48,7 @@ function isActive($data)
                 while (output <= i) {
 
                     output += `
-            <h4 class="text-dark btn btn-lg btn-warning"  style="border-radius:40px; ">ข่าวธุรกิจที่น่าสนใจวันนี้ : ${latestNews[i].description} : ข่าวเมื่อวันที่ :  ${latestNews[i].publishedAt}  </h4>
+            <h4 class="text-dark btn btn-lg btn-warning"  style="border-radius:40px; ">ข่าวธุรกิจที่น่าสนใจวันนี้ : ${latestNews[i].title} : ข่าวเมื่อวันที่ :  ${latestNews[i].publishedAt}  </h4>
         `;
                     i++;
                 }

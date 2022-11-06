@@ -109,14 +109,19 @@ if (isset($_GET['delete'])) {
             $('#send').hide();
         });
     });
+    window.setTimeout(function() {
+        $(".alert").fadeTo(1000, 0).slideUp(1000, function() {
+            $(this).remove();
+        });
+    }, 3000);
 </script>
 
 <body class="hold-transition sidebar-mini">
     <div class="modal fade " id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered " role="document">
-            <div class="modal-content p-md-3  text-light" style="border-radius:40px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 40%, rgba(40,38,38,0.6713060224089635) 100%);">
+            <div class="modal-content p-md-3  text-light" style="border-radius:40px; background: linear-gradient(0deg, rgba(45,44,50,3.7413340336134453) 40%, rgba(40,38,38,0.6713060224089635) 100%);">
                 <div class="modal-header bg-success mt-3" style="border-radius:40px;">
-                    <h3 class="modal-title  text-dark text-center">กรุณากรอกข้อมูลการซื้อ </h3>
+                    <h4 class="modal-title  text-light text-center">กรุณากรอกข้อมูลการซื้อ </h4>
                 </div>
                 <div class="modal-body">
                     <form action="insert.php" method="post" enctype="multipart/form-data">
@@ -135,7 +140,7 @@ if (isset($_GET['delete'])) {
                             </div>
                             <div class="form-group col-lg-12">
                                 <label class="font-weight-bold text-small" for="options">สถานะ<span class="text-danger ml-1">*</span></label>
-                                <input class="form-control" style="border-radius:40px;" id="options" name="options" type="text" placeholder="buy" required="buy" />
+                                <input class="form-control" style="border-radius:40px;" id="options" name="options" type="text" placeholder="กรุณากรอก buy" required="buy" />
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="font-weight-bold text-small" for="assetname">ชื่อสินทรัพย์<span class="text-danger ml-1">*</span></label>
@@ -197,7 +202,6 @@ if (isset($_GET['delete'])) {
                                     <p class="ml-4 text-light"> (trading journal) </p>
                                 </div>
                             </div>
-                            <br>
                         </div>
                     </div>
                 </div>
@@ -205,7 +209,7 @@ if (isset($_GET['delete'])) {
                     <div classs="container p-5 text-center">
                         <div class="row no-gutters">
                             <div class="col-lg-6 col-md-12 m-auto">
-                                <div class="alert alert-success elevation-3  fade show" role="alert" style="border-radius:10px;">
+                                <div class="alert alert-success elevation-3 fade show text-light text-center" role="alert" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
                                     <h4> <?php
                                             echo $_SESSION['success'];
                                             unset($_SESSION['success']);
@@ -226,21 +230,29 @@ if (isset($_GET['delete'])) {
 
                 <main class=" col-md-7 ml-sm-auto col-lg-12 px-md-4 py-4 ">
                     <div class="row">
-                        <div class="col-lg-12  mb-4 mb-lg-0">
-
-                            <button type="button" class="text-light btn btn-success mb-3 ml-3 pt-3 text-center elevation-3" style="border-radius:30px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo">
-
-                                <h4> เพิ่มรายการซื้อ <i class="fa-solid fa-pen-to-square"> </i></h4>
-                            </button> <br>
+                        <div class="col-lg-12  mb-3 mb-lg-0">
+                            <div class="content-header ">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="  bg-dark col-lg-2" style="border-radius:35px;background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
+                                            <div class=" col-lg-10 ">
+                                                <br>
+                                                <button type="button" class="text-light btn btn-success  ml-2 mb-3  pt-3 pb-2  text-center elevation-3" style="border-radius:40px;" data-bs-toggle="modal" data-bs-target="#userModal" data-bs-whatever="@mdo">
+                                                    <h4> เพิ่มรายการซื้อ <i class="fa-solid fa-pen-to-square"> </i></h4>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
                             <div class="card" style="border-radius:50px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
                                 <div class="card-body  elevation-4" style="border-radius:50px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
-
-                                    <button type="button" class="elevation-4  bg-transparent text-light btn btn-success mb-3 pt-3 text-right  mr-4" style="border-radius:40px;">
-                                        <h5> รายการซื้อ
-                                        </h5>
-                                    </button>
-
                                     <div class="table" style="border-radius:50px;">
+                                        <button type="button" class="elevation-4  bg-transparent text-light btn btn-success mb-3 pt-3 text-right  mr-4" style="border-radius:20px;">
+                                            <h5> รายการซื้อ
+                                            </h5>
+                                        </button>
                                         <table class=" table" style="border-radius:50px;" id="myTable" style="width: 100%;">
                                             <thead class=" text-center thead-dark text-light mb-1" style="border-radius:35px;">
                                                 <th>
@@ -344,8 +356,7 @@ if (isset($_GET['delete'])) {
                                         </table>
                                     </div>
                                 </div>
-                            </div><br>
-
+                            </div>
                             <div class=" col-lg-12  mb-4 mt-4 mr-4 ">
                                 <div class="card " style="border-radius:50px; background: linear-gradient(0deg, rgba(45,44,44,0.7413340336134453) 20%, rgba(40,38,38,0.6713060224089635) 100%);">
                                     <div class="card-body  elevation-4" style="border-radius:50px; background: linear-gradient(0deg, rgba(11,10,10,0.5116421568627452) 20%, rgba(10,9,9,0.4780287114845938) 100%);">
@@ -395,8 +406,8 @@ if (isset($_GET['delete'])) {
                                                         <tr class="text-center text-light">
 
                                                             <td> <button type="button" class=" btn btn-danger btn-sm  text-light" style="border-radius:35px;"><?php echo  $user['options']; ?></button></td>
-                                                            <td><?php echo  $user['assetname']; ?></td>
-                                                            <td><?php echo $user['assetpricesell']; ?> บาท</td>
+                                                            <td><?php echo  $user['assetsellname']; ?></td>
+                                                            <td><?php echo number_format($user['assetpricesell']); ?> บาท</td>
                                                             <td><?php echo number_format($user['assetvolumesell'], '2'); ?> หน่วย </td>
                                                             <td><?php echo $user['assetdatesell']; ?></td>
                                                             <td><?php echo $user['assetnote']; ?></td>

@@ -552,15 +552,12 @@
 
 <body>
     <div class='nav'>
-        <h2> แจ้งเตือนการเข้าสู่ระบบ ! </h2>
+        <h2> บันทึกรายการสำเร็จ ! </h2>
         <br>
     </div>
-    <h3>Dear journaltrading trader,</h3>
-    <h4>ตรวจพบการเข้าสู่ระบบ journaltrading.tech <br>
-        หากไม่ใช้คุณโปรดติดต่อเจ้าหน้าที่ โทร 191 หรือ <br>
-        อีเมล์ surachet.btc@journaltrading.tech เพื่อนำเดินการต่อไป</h4>
-<h5>Country/District: Thailand</h5>
-<h5>Server: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36</h5>
+    <h4> บันทึกรายการเรียบร้อย! (journaltrading.tech) <br>
+        ยินดีด้วย คุณบันทึกรายการซื้อขายสำเร็จ <br>
+    </h4>
     <ul>
         <a href='#sctr1'>
             <li id='eyes'></li>
@@ -596,12 +593,12 @@
     <section class="special" data-scrollax-parent="true" id='ntr'>
         <div class="cover" id='hero' data-scrollax="properties: { translateY: '30%', 'opacity': 1.5 }">
             <br>
-            <img src='./assets/img/notiemail.png'>
+            <img src='img/notisell.png'>
         </div>
         <div class="content">
             <div class="text centralize">
                 <div data-scrollax="properties: { 'translateY': '150%', 'opacity': 1.5 }">
-                    <div class="scroll">Regards, The Jounaltrdaing.tech Team<br> journaltrading.tech จดบันทึกและวิเคราะห์การลงทุน </div>
+                    <div class="scroll">Yours sincerely, <br> journaltrading.tech จดบันทึกและวิเคราะห์การลงทุน </div>
                 </div>
             </div>
         </div>

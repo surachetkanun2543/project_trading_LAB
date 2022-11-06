@@ -1,9 +1,12 @@
 <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
+
     .swal-wide {
+        border-radius: 40px;
+        color: black;
         font-size: 20px;
-        width: 850px !important;
+        width: 650px !important;
         height: 450px !important;
     }
 </style>
@@ -33,12 +36,12 @@ if ($_GET['options']) {
 
     $sToken = $data1['Line_token'];
     $sMessage = "รายละเอียดการบันทึก\n";
-    $sMessage = " $user " . 'ผู้ใช้งานทั่วไป' . " \n";
+    $sMessage = " $user " . 'สมาชิก' . " \n";
     $sMessage .= "\n __________________ \n";
     $sMessage .= "\nรายละเอียดการบันทึก \n";
     $sMessage .= " __________________ \n";
     $sMessage .= "\nขื่อสินทรัพย์ : " . $options . " \n";
-    $imageFile = new CURLFILE('img/noti.jpeg');
+    $imageFile = new CURLFILE('img/noti.png');
 
 
     $data  = array(
@@ -65,24 +68,21 @@ if ($_GET['options']) {
 
     if ($result) {
         echo "
-        
-
-        
         <script> 
                         $(document).ready(function(){
                             Swal.fire({ 
-                                title: 'สำเร็จ!',
-                                text: 'ส่งแจ้งเตือนรายการผ่าน LINE เรียบร้อย !',
+                                title: 'เรียบร้อย!',
+                                text: 'ส่งแจ้งเตือนรายการเทรดผ่าน LINE ของคุณแล้วครับ !',
                                 icon: 'success',
-                                imageUrl: 'line.png',
+                                imageUrl: 'img/good.png',
                                 customClass: 'swal-wide',
-                                timer: 1000,
+                                timer: 2000,
                                 showConfirmButton : false
                             });
                         });
                     
                     </script>";
-        header("refresh:0.5 url=index.php");
+        header("refresh:1 url=index.php");
     } else {
         echo "<script> 
                         $(document).ready(function(){
